@@ -1,0 +1,25 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-small);
+  height: 60px;
+  padding: 0 var(--space-medium);
+  background-color: var(--color-blue-40);
+  color: white;
+  overflow: hidden;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  font-weight: 500;
+  width: 200px;
+  cursor: pointer;
+
+  /* Animation */
+  transition: background-color 0.3s ease-in;
+}
+
+.button:hover {
+  background-color: var(--color-blue-30);
+}

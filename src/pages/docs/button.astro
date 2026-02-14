@@ -1,15 +1,15 @@
 ---
-import ButtonComponent from "components/Button";
+import ButtonComponent from "components/button/Button";
 import Documentation from "layouts/Documentation.astro";
 
 const code = `
 import Button from "./Button"
 
-<Button>Click me</Button>
+<Button>I'm a button</Button>
 `.trim();
 ---
 
 <Documentation title="Button" code={code}>
   <p slot="description">The primary action of a page.</p>
-  <ButtonComponent slot="component" />
+  <ButtonComponent slot="component">I'm a button</ButtonComponent>
 </Documentation>
