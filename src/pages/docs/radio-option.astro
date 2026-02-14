@@ -1,0 +1,18 @@
+---
+import Documentation from "../../layouts/Documentation.astro";
+import RadioOptionComponent from "../../components/RadioOption";
+
+const code = `
+import Radio from "./Radio"
+
+<RadioOption>I'm a radio</RadioOption>
+`.trim();
+---
+
+<Documentation title="Radio option" code={code}>
+  <div slot="description">
+    <p>Individiual radio element.</p>
+    <p>Use <code>RadioGroup</code> for a complete usable item.</p>
+  </div>
+  <RadioOptionComponent slot="component" />
+</Documentation>

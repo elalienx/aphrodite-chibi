@@ -1,4 +1,4 @@
-export default function Radio() {
+export default function RadioOption() {
   return (
     <label>
       <input type="radio" />

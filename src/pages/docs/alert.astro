@@ -1,9 +1,15 @@
 ---
 import Documentation from "../../layouts/Documentation.astro";
 import AlertComponent from "../../components/Alert";
+
+const code = `
+import Alert from "./Alert"
+
+<Alert></Alert>
+`.trim();
 ---
 
-<Documentation title="Alert">
+<Documentation title="Alert" code={code}>
   <p slot="description">
     A banner with high contrast color to make the user aware of important
     information.

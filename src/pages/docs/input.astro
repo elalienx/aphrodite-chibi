@@ -1,9 +1,15 @@
 ---
 import Documentation from "../../layouts/Documentation.astro";
 import InputComponent from "../../components/Input";
+
+const code = `
+import Input from "./Input"
+
+<Input type="text" placeholder="I'm an input">
+`.trim();
 ---
 
-<Documentation title="Input">
+<Documentation title="Input" code={code}>
   <div slot="description">
     <p>How the user fill information.</p>
     <p>Use <code>InputField</code> for a complete usable item.</p>

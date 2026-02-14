@@ -1,9 +1,15 @@
 ---
 import Documentation from "../../layouts/Documentation.astro";
 import LabelComponent from "../../components/Label";
+
+const code = `
+import Label from "./Label"
+
+<Label>I'm a label</Label>
+`.trim();
 ---
 
-<Documentation title="Label">
+<Documentation title="Label" code={code}>
   <p slot="description">Describes an element of the formulary.</p>
   <LabelComponent slot="component" />
 </Documentation>
