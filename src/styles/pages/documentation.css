@@ -6,7 +6,7 @@ body {
   grid-template-columns: 1fr;
   gap: var(--space-big);
   max-width: 960px;
-  margin: var(--space-big) auto;
+  margin: var(--space-big) 5%;
   background-color: var(--color-page-background);
   font-family: var(--font-family);
 }
@@ -14,5 +14,6 @@ body {
 @media (min-width: 768px) {
   body {
     grid-template-columns: 200px 1fr;
+    margin-inline: auto;
   }
 }
