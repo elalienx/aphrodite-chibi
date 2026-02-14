@@ -1,0 +1,22 @@
+@import url("./variables.css");
+@import url("./typography.css");
+@import url("./fonts.css");
+@import url("./documentation/main.css");
+@import url("./documentation/nav.css");
+
+body {
+  display: grid;
+  height: 100dvh;
+  place-items: center;
+  background-color: var(--color-page-background);
+  font-family: var(--font-family);
+}
+
+body main {
+  margin-bottom: 5%; /** to optically align to the center, otherwise the image makes it feel aligned closer to the bottom. */
+  text-align: center;
+
+  img {
+    max-width: 320px;
+  }
+}
