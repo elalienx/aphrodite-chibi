@@ -1,5 +1,6 @@
 * {
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 h1,
@@ -8,9 +9,11 @@ h2 {
 }
 
 h1 {
-  font-size: 58px;
+  font-size: 48px;
+  font-weight: 700;
 }
 
 h2 {
-  font-size: 28px;
+  font-size: 36px;
+  font-weight: 500;
 }

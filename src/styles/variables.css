@@ -1,18 +1,15 @@
 :root {
-  /* # Swatches */
-  --color-black: #1f1f00;
-  --color-blue: #007aff;
+  /* Swatches */
+  --color-black: #1f1f1f;
+  --color-blue: #0071eb;
   --color-gray: #6e6e6e;
-  --color-green: #29c768;
-  --color-red: #e70d5a;
-  --color-yellow: #f39c12;
-  --color-orange: #ff7518;
+  --color-green: #22aa58;
+  --color-red: #c82c2c;
+  --color-orange: #f39c12;
   --color-light-gray: #f8f8f8;
 
   /* Special colors */
-  --color-page-background: #f5f5f5; /** the whole app background color. */
-  --color-blue-dark: #0156b3; /** for button hover effect. */
-  --color-green-dark: #054c22; /** for navbar text **/
+  --color-page-background: --color-light-gray; /** the whole app background color. */
 
   /* # Fonts */
   --font-family:
