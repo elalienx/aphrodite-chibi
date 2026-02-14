@@ -1,17 +1,18 @@
 ---
+import "../styles/documentation.css"
+
 interface Props {
   title: string;
-  description: string;
 }
 
-const { title, description } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="description" content={description}>
-    <title>{title}</title>
+    <meta name="description">
+    <title>Aphrodite Chibi | {title}</title>
   </head>
 
   <body>
