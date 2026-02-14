@@ -1,7 +1,12 @@
 ---
-import Component from "../../layouts/Component.astro"
+import Documentation from "../../layouts/Documentation.astro"
+import InputComponent from "../../components/Label"
 ---
 
-<Component title="Input" description="foo bar">
-    123 input
-</Component>
+<Documentation title="Input" description="foo bar">
+    <InputComponent/>
+    <div slot="description">
+        <p>How the user fill information.</p>
+         <p>Use <code>InputField</code> for a complete usable item.</p>
+    </div>
+</Documentation>

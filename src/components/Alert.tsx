@@ -1,3 +1,3 @@
 export default function Alert() {
-  return <div>I'm an alert</div>;
+  return <div>ℹ️ I'm an alert</div>;
 }

@@ -1,7 +1,11 @@
 ---
-import Component from "../../layouts/Component.astro"
+import Documentation from "../../layouts/Documentation.astro"
+import ButtonComponent from "../../components/Button"
 ---
 
-<Component title="Button" description="foo bar">
-    abc button
-</Component>
+<Documentation title="Button" description="foo bar">
+    <ButtonComponent/>
+    <div slot="description">
+        <p>The primary action of a page.</p>
+    </div>
+</Documentation>

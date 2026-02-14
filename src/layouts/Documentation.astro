@@ -16,22 +16,22 @@ const { title, description } = Astro.props;
 
   <body>
     <nav>
-    <a href="/">Home</a>
-    <a href="/docs/button">Button</a>
-    <a href="/docs/input">Input</a>
+        <a href="/">Home</a>
+        <a href="/docs/alert">Alert</a>
+        <a href="/docs/button">Button</a>
+        <a href="/docs/input">Input</a>
+        <a href="/docs/label">Label</a>
+        <a href="/docs/radio">Radio</a>
     </nav>
 
     <main>
-      <slot />
-      <!-- Component view -->
       <section class="component-view">
         <slot />
       </section>
-
-      <!-- Description -->
+      
       <header class="description">
         <h1>{title}</h1>
-        <p>{description}</p>
+        <slot name="description" />
       </header>
     </main>
   </body>
