@@ -7,9 +7,21 @@
     rgba(0, 0, 0, 0.04) 0px 1px 4px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 1px 0px;
 
-  .component-view {
-    background-color: var(--color-light-gray);
-    padding: var(--space-big);
+  .gallery {
+    background-color: var(--color-page-background);
+    padding: var(--space-medium);
     border-radius: var(--border-radius);
+
+    .component {
+      min-height: 200px;
+      display: grid;
+      place-items: center;
+    }
+
+    .code {
+      background-color: white;
+      padding: var(--space-small) var(--space-medium);
+      border-radius: var(--border-radius);
+    }
   }
 }

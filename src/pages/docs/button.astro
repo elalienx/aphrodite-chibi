@@ -3,11 +3,9 @@ import { Code } from 'astro:components';
 import Documentation from "../../layouts/Documentation.astro"
 import ButtonComponent from "../../components/Button"
 
-const code = `
-import Button from "./Button";
+const code = `import Button from "./Button"
 
-<Button label="Click me" />
-`;
+<Button>Click me</Button>`;
 ---
 
 <Documentation title="Button">
@@ -15,5 +13,5 @@ import Button from "./Button";
         <p>The primary action of a page.</p>
     </div>
     <ButtonComponent slot="component"/>
-    <Code slot="code" code={code} lang="typescript" theme="github-light"/>
+    <Code slot="code" code={code} lang="jsx" theme="github-light"/>
 </Documentation>

@@ -5,6 +5,7 @@
 
   h2 {
     font-size: var(--font-size-normal);
+    font-weight: bold;
   }
 
   a {

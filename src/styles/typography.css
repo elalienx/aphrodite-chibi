@@ -1,4 +1,7 @@
+@import url("./variables.css");
+
 * {
+  color: var(--color-text);
   font-size: 16px;
   font-weight: 400;
 }
@@ -6,6 +9,7 @@
 h1,
 h2 {
   margin: 0;
+  color: var(--color-gray-10);
 }
 
 h1 {
@@ -16,4 +20,8 @@ h1 {
 h2 {
   font-size: 36px;
   font-weight: 500;
+}
+
+code {
+  color: var(--color-blue-20);
 }
