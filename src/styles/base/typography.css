@@ -22,6 +22,10 @@ h2 {
   font-weight: 500;
 }
 
+p {
+  margin: 0;
+}
+
 code {
   color: var(--color-blue-20);
 }
