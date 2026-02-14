@@ -1,5 +1,16 @@
+import type { ReactNode } from "react";
 import "./alert.css";
 
-export default function Alert() {
-  return <div className="alert">ℹ️ I'm an alert</div>;
+interface Props {
+  /** Text to display inside the alert. */
+  children: ReactNode;
+}
+
+export default function Alert({ children }: Props) {
+  return (
+    <div className="alert">
+      <span className="icon">ℹ️</span>
+      {children}
+    </div>
+  );
 }

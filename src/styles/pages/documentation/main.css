@@ -8,8 +8,8 @@
     rgba(0, 0, 0, 0.08) 0px 0px 1px 0px;
 
   .gallery {
-    background-color: pink;
-    padding: var(--space-big);
+    background-color: var(--color-page-background);
+    padding: var(--space-medium);
     border-radius: var(--border-radius);
 
     .component {
@@ -19,6 +19,7 @@
     }
 
     .code {
+      padding: var(--space-small); /** wraps <Code> to show border-radius */
       background-color: white;
       border-radius: var(--border-radius);
     }
