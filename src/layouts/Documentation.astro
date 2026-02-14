@@ -44,7 +44,8 @@ const currentPath = Astro.url.pathname;
       </header>
 
       <section class="component-view">
-        <slot />
+        <slot name="component" />
+        <slot name="code"/>
       </section>
     </main>
   </body>

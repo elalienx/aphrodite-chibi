@@ -1,11 +1,19 @@
 ---
+import { Code } from 'astro:components';
 import Documentation from "../../layouts/Documentation.astro"
 import ButtonComponent from "../../components/Button"
+
+const code = `
+import Button from "./Button";
+
+<Button label="Click me" />
+`;
 ---
 
 <Documentation title="Button">
     <div slot="description">
         <p>The primary action of a page.</p>
     </div>
-    <ButtonComponent/>
+    <ButtonComponent slot="component"/>
+    <Code slot="code" code={code} lang="typescript"/>
 </Documentation>
