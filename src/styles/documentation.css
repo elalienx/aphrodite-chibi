@@ -1,44 +1,16 @@
 @import url("./variables.css");
 @import url("./typography.css");
+@import url("./documentation/main.css");
+@import url("./documentation/nav.css");
 
 body {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-big);
   max-width: 960px;
-  margin-inline: auto;
+  margin: var(--space-big) auto;
   background-color: var(--color-light-gray);
   font-family: var(--font-family);
-}
-
-nav {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-medium);
-
-  h2 {
-    font-size: var(--font-size-normal);
-  }
-
-  a {
-    padding-left: 4px;
-    font-size: 14px;
-    color: var(--color-black);
-    text-decoration: none;
-    border-left: solid 2px transparent;
-  }
-
-  a:hover {
-    border-color: var(--color-gray);
-  }
-
-  a.active {
-    border-color: var(--color-light-black);
-  }
-}
-
-main {
-  background-color: white;
 }
 
 @media (min-width: 768px) {
