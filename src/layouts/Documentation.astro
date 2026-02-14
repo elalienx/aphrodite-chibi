@@ -1,5 +1,5 @@
 ---
-import "../styles//documentation.css"
+import "../styles//documentation.css";
 
 interface Props {
   title: string;
@@ -20,22 +20,28 @@ const currentPath = Astro.url.pathname;
 
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="description">
+    <meta charset="UTF-8" />
+    <meta name="description" />
     <title>Aphrodite Chibi | {title}</title>
   </head>
 
   <body class="documentation">
     <!-- Navigation bar -->
     <nav>
-        <a href="/">Aphrodite Chibi</a>
-        
-        <h2>Components</h2>
-        {links.map(link => {
+      <a href="/">Aphrodite Chibi</a>
+
+      <h2>Components</h2>
+      {
+        links.map((link) => {
           const href = `/docs/${link.slug}`;
 
-          return <a href={href} class={currentPath === href ? "active" : ""}>{link.label}</a>
-        })}
+          return (
+            <a href={href} class={currentPath === href ? "active" : ""}>
+              {link.label}
+            </a>
+          );
+        })
+      }
     </nav>
 
     <!-- Content -->
@@ -47,14 +53,13 @@ const currentPath = Astro.url.pathname;
 
       <section class="gallery">
         <div class="component">
-            <slot name="component"/>
+          <slot name="component" />
         </div>
         <p>Example:</p>
         <div class="code">
-          <slot name="code"/>
+          <slot name="code" />
         </div>
       </section>
     </main>
   </body>
 </html>
-
