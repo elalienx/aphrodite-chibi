@@ -7,23 +7,23 @@
   header,
   section,
   footer {
-    margin-inline: var(--space-big);
+    margin-inline: var(--space-2xl);
   }
 
   header {
     background-color: pink;
-    margin-top: var(--space-big);
+    margin-top: var(--space-2xl);
   }
 
   section {
     background-color: aliceblue;
     display: flex;
     flex-direction: column;
-    gap: var(--space-small);
+    gap: var(--space-xs);
   }
 
   footer {
     background-color: palegreen;
-    margin-bottom: var(--space-big);
+    margin-bottom: var(--space-2xl);
   }
 }

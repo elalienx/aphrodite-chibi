@@ -42,7 +42,7 @@
   --color-orange-30: #cd7500;
   --color-orange-20: #4f2e03;
 
-  /* Gray */
+  /* -- Gray */
   --color-gray-100: #ffffff;
   --color-gray-95: #f4f4f4;
   --color-gray-90: #e3e3e3;
@@ -71,7 +71,7 @@
   --color-page-background: var(--color-gray-95);
   --color-border: var(--color-desaturated-90);
 
-  /* # Fonts */
+  /* Fonts */
   --font-family:
     "Circular Pro", Helvetica, Segoe UI, Arial, ui-sans-serif, sans-serif;
   --font-size-normal: 18px;
@@ -79,16 +79,29 @@
   --font-weight-bold: 700;
   --font-weight-normal: 500;
 
-  /* # Spacing */
-  --space-big: 32px;
+  /* Spacing */
+  --space-tiny: 2px;
+  --space-base: 4px;
+  --space-xxs: 6px;
+  --space-xs: 8px;
+  --space-small: 12px;
   --space-medium: 16px;
-  --space-small: 8px;
+  --space-large: 20px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+  --space-3xl: 40px;
+  --space-4xl: 42px;
+  --space-5xl: 48px;
+  --space-6xl: 60px;
+  --space-7xl: 64px;
+  --space-8xl: 72px;
+  --space-26xl: 104px;
+  --space-30xl: 120px;
 
-  /* # Other */
+  /* Other */
   --border-radius: 8px;
 
-  /* # Media queries */
-  /* Mobile is the default */
+  /* Media queries */
   --media-query-tablet: 550px;
   --media-query-desktop: 768px;
 }

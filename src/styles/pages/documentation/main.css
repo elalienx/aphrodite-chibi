@@ -1,5 +1,5 @@
 .documentation main {
-  padding: var(--space-big);
+  padding: var(--space-2xl);
 
   .gallery {
     background-color: var(--color-page-background);
@@ -13,7 +13,7 @@
     }
 
     .code {
-      padding: var(--space-small); /** wraps <Code> to show border-radius */
+      padding: var(--space-xs); /** wraps <Code> to show border-radius */
       background-color: white;
       border-radius: var(--border-radius);
     }
