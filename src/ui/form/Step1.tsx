@@ -8,11 +8,9 @@ import "./step-1.css";
 export default function Step1() {
   return (
     <div id="step-1" className="soft-background">
-      <header>
+      <section className="top">
         <h2>Step 1</h2>
-      </header>
 
-      <section>
         {/* Name */}
         <Label>Name</Label>
         <Input />
@@ -29,9 +27,9 @@ export default function Step1() {
       <hr />
 
       {/* Submit */}
-      <footer>
+      <section className="bottom">
         <Button>Next</Button>
-      </footer>
+      </section>
     </div>
   );
 }
