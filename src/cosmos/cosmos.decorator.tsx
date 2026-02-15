@@ -2,13 +2,12 @@
 import type { ReactNode } from "react";
 
 // Project files
-import "styles/style.css";
-import "styles/cosmos-style.css"; // To center tested components on screen
+import "./cosmos-style.css"; // To center tested components on screen
 
 interface Props {
   children: ReactNode;
 }
 
 export default function decorator({ children }: Props) {
-  return <div id="cosmos">{children}</div>;
+  return <div id="cosmos">{children}hello</div>;
 }
