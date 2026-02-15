@@ -69,7 +69,8 @@
 
   /** -- Backgrounds */
   --color-page-background: var(--color-gray-95);
-  --color-border: var(--color-desaturated-90);
+  --color-border-divider: var(--color-desaturated-90);
+  --color-border-input: var(--color-desaturated-60);
 
   /* Fonts */
   --font-family:

@@ -6,7 +6,7 @@ body {
 hr {
   width: 100%;
   margin: 0;
-  border: solid 0.5px var(--color-border);
+  border: solid 0.5px var(--color-border-divider);
 }
 
 .soft-background {

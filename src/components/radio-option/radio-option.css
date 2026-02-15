@@ -5,7 +5,7 @@
   height: 48px;
   background-color: white;
   border-radius: var(--border-radius);
-  border: solid 1px var(--color-border);
+  border: solid 1px var(--color-border-input);
   padding-inline: var(--space-medium);
 
   input[type="radio"]:checked {
