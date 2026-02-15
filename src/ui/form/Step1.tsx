@@ -5,7 +5,11 @@ import Label from "components/Label";
 import "styles/style.css";
 import "./step-1.css";
 
-export default function Step1() {
+interface Props {
+  onSubmit: () => void;
+}
+
+export default function Step1({ onSubmit }: Props) {
   return (
     <div id="step-1" className="soft-background">
       <section className="top">
@@ -26,9 +30,8 @@ export default function Step1() {
 
       <hr />
 
-      {/* Submit */}
       <section className="bottom">
-        <Button>Next</Button>
+        <Button onClick={onSubmit}>Next</Button>
       </section>
     </div>
   );

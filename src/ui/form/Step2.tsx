@@ -2,23 +2,36 @@ import Button from "components/button/Button";
 import Label from "components/Label";
 import RadioOption from "components/RadioOption";
 
-export default function Step2() {
+import "styles/style.css";
+import "./step-2.css";
+
+interface Props {
+  onSubmit: () => void;
+}
+
+export default function Step2({ onSubmit }: Props) {
   return (
-    <div id="step-2">
-      <h2>Step 2</h2>
+    <div id="step-2" className="soft-background">
+      <section className="top">
+        <h2>Step 2</h2>
 
-      {/* Age */}
-      <Label>Are you over 18?</Label>
-      <RadioOption>Yes</RadioOption>
-      <RadioOption>No</RadioOption>
+        {/* Age */}
+        <Label>Are you over 18?</Label>
+        <RadioOption>Yes</RadioOption>
+        <RadioOption>No</RadioOption>
 
-      {/* Income */}
-      <Label>Is you income in Swedish kronas?</Label>
-      <RadioOption>Yes</RadioOption>
-      <RadioOption>No</RadioOption>
+        {/* Income */}
+        <Label>Is you income in Swedish kronas?</Label>
+        <RadioOption>Yes</RadioOption>
+        <RadioOption>No</RadioOption>
+      </section>
+
+      <hr />
 
       {/* Submit */}
-      <Button>Submit</Button>
+      <section className="bottom">
+        <Button onClick={onSubmit}>Submit</Button>
+      </section>
     </div>
   );
 }
