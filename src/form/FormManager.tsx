@@ -3,8 +3,10 @@ import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Success from "./Success";
 
+type Step = "step-1" | "step-2" | "success";
+
 export default function FormManager() {
-  const [step, setStep] = useState("step-1");
+  const [step, setStep] = useState<Step>("step-2");
 
   return (
     <div>
