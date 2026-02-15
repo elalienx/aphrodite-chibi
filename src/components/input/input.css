@@ -1,0 +1,23 @@
+.input {
+  height: 48px;
+  border-radius: var(--border-radius);
+  border: solid 1px var(--color-border);
+  padding-inline: var(--space-medium);
+
+  /* Animation */
+  transition:
+    background-color 0.15s ease-in,
+    border-color 0.15s ease-in,
+    border-width 0.15s ease-in;
+}
+
+.input:hover {
+  background-color: var(--color-gray-90);
+  border: solid 2px var(--color-gray-30);
+}
+
+.input:focus {
+  background-color: var(--color-blue-95);
+  border: solid 2px var(--color-blue-40);
+  outline: none;
+}
