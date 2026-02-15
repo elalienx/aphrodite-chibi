@@ -7,8 +7,6 @@ body {
   gap: var(--space-big);
   max-width: 960px;
   margin: var(--space-big) 5%;
-  background-color: var(--color-page-background);
-  font-family: var(--font-family);
 }
 
 @media (min-width: 768px) {

@@ -1,0 +1,31 @@
+#step-1 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-medium);
+  max-width: 600px;
+
+  header,
+  section,
+  footer {
+    margin-inline: var(--space-big);
+  }
+
+  header {
+    background-color: pink;
+    margin-top: var(--space-big);
+  }
+
+  section {
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-small);
+  }
+
+  footer {
+    background-color: palegreen;
+    margin-bottom: var(--space-big);
+  }
+
+  text-align: left;
+}

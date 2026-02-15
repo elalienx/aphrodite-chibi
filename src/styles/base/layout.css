@@ -1,3 +1,8 @@
+body {
+  background-color: var(--color-page-background);
+  font-family: var(--font-family);
+}
+
 .soft-background {
   background-color: white;
   border-radius: var(--border-radius);

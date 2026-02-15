@@ -2,7 +2,6 @@ body {
   display: grid;
   height: 100dvh;
   place-items: center;
-  background-color: var(--color-page-background);
   font-family: var(--font-family);
 }
 
