@@ -1,5 +1,4 @@
 {
   "plugins": ["react-cosmos-plugin-vite"],
-  "decoratorPath": "./src/cosmos/cosmos.decorator.tsx",
-  "globalImports": ["./src/styles/style.css"]
+  "decoratorPath": "./cosmos.decorator.tsx"
 }
