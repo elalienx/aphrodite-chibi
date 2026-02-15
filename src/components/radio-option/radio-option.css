@@ -8,6 +8,10 @@
   border: solid 1px var(--color-border);
   padding-inline: var(--space-medium);
 
+  input[type="radio"]:checked {
+    accent-color: var(--color-green-40);
+  }
+
   /* Animation */
   transition:
     background-color 0.15s ease-in,
