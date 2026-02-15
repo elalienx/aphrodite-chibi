@@ -1,11 +1,13 @@
 body {
   display: grid;
-  height: 100dvh;
+  min-height: 100dvh;
   place-items: center;
   font-family: var(--font-family);
 }
 
 body main {
+  width: 100%;
+  max-width: 600px;
   margin-bottom: 5%; /** to optically align to the center, otherwise the image makes it feel aligned closer to the bottom. */
   text-align: center;
 

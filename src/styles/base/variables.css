@@ -69,6 +69,7 @@
 
   /** -- Backgrounds */
   --color-page-background: var(--color-gray-95);
+  --color-border: var(--color-desaturated-90);
 
   /* # Fonts */
   --font-family:

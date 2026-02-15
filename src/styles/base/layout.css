@@ -3,6 +3,11 @@ body {
   font-family: var(--font-family);
 }
 
+hr {
+  width: 100%;
+  border: solid 0.5px var(--color-border);
+}
+
 .soft-background {
   background-color: white;
   border-radius: var(--border-radius);
