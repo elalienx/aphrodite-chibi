@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-xs);
+  min-width: 200px;
   height: 60px;
   padding: 0 var(--space-medium);
   background-color: var(--color-blue-40);
@@ -13,7 +14,6 @@
   font-size: var(--font-size);
   font-family: var(--font-family);
   font-weight: 500;
-  width: 200px;
   cursor: pointer;
 
   /* Animation */
