@@ -63,9 +63,9 @@
   --color-desaturated-10: #262f40;
 
   /* Semantic colors */
-  /* -- Text */
-  --color-headings: var(--color-gray-10);
-  --color-text: var(--color-gray-30);
+  /* -- Typography */
+  --color-typography-dark: var(--color-gray-10);
+  --color-typography-default: var(--color-gray-30);
 
   /** -- Backgrounds */
   --color-page-background: var(--color-gray-95);

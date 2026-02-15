@@ -1,7 +1,7 @@
 @import url("./variables.css");
 
 * {
-  color: var(--color-text);
+  color: var(--color-typography-default);
   font-size: 16px;
   font-weight: 400;
 }
@@ -9,7 +9,7 @@
 h1,
 h2 {
   margin: 0;
-  color: var(--color-gray-10);
+  color: var(--color-typography-dark);
 }
 
 h1 {
