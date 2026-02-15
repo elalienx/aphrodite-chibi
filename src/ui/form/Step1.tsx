@@ -1,6 +1,6 @@
 import Button from "components/button/Button";
-import Input from "components/Input";
-import Label from "components/Label";
+import Input from "components/input/Input";
+import Label from "components/label/Label";
 
 import "styles/style.css";
 import "./step-1.css";

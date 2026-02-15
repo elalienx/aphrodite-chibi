@@ -1,6 +1,6 @@
 import Button from "components/button/Button";
-import Label from "components/Label";
-import RadioOption from "components/RadioOption";
+import Label from "components/label/Label";
+import RadioOption from "components/radio-option/RadioOption";
 
 import "styles/style.css";
 import "./step-2.css";
