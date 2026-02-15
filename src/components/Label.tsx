@@ -1,3 +1,10 @@
-export default function Label() {
-  return <label>I'm a label</label>;
+import type { ReactNode } from "react";
+
+interface Props {
+  /** Text to display inside the alert. */
+  children: ReactNode;
+}
+
+export default function Label({ children }: Props) {
+  return <label>{children}</label>;
 }
