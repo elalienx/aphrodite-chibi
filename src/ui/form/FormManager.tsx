@@ -6,7 +6,7 @@ import Success from "./Success";
 type Step = "step-1" | "step-2" | "success";
 
 export default function FormManager() {
-  const [step, setStep] = useState<Step>("step-2");
+  const [step, setStep] = useState<Step>("step-1");
 
   return (
     <div>

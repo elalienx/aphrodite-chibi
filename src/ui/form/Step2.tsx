@@ -4,7 +4,7 @@ import RadioOption from "components/RadioOption";
 
 export default function Step2() {
   return (
-    <div>
+    <div id="step-2">
       <h2>Step 2</h2>
 
       {/* Age */}

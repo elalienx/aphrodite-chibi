@@ -1,7 +1,7 @@
 export default function Success() {
   return (
-    <div>
-      <h2>Succes</h2>
+    <div id="success">
+      <h2>Success</h2>
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore quam
         fugit inventore, tenetur illo quae beatae omnis exercitationem quibusdam
