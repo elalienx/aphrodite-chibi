@@ -3,10 +3,12 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "astro": "astro",
     "build": "astro build && firebase deploy",
-    "preview": "astro preview",
-    "astro": "astro"
+    "cosmos-export": "cosmos-export",
+    "cosmos": "cosmos",
+    "dev": "astro dev",
+    "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
@@ -18,6 +20,8 @@
   },
   "devDependencies": {
     "prettier-plugin-astro": "^0.14.1",
+    "react-cosmos": "^7.1.1",
+    "react-cosmos-plugin-vite": "^7.1.1",
     "vite-tsconfig-paths": "^6.1.1"
   }
 }
