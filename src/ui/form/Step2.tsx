@@ -4,6 +4,7 @@ import RadioOption from "components/radio-option/RadioOption";
 
 import "styles/style.css";
 import "./step-2.css";
+import RadioGroup from "components/radio-group/RadioGroup";
 
 interface Props {
   onSubmit: () => void;
@@ -16,14 +17,18 @@ export default function Step2({ onSubmit }: Props) {
         <h2>Step 2</h2>
 
         {/* Age */}
-        <Label>Are you over 18?</Label>
-        <RadioOption>Yes</RadioOption>
-        <RadioOption>No</RadioOption>
+        <RadioGroup>
+          <Label>Are you over 18?</Label>
+          <RadioOption>Yes</RadioOption>
+          <RadioOption>No</RadioOption>
+        </RadioGroup>
 
         {/* Income */}
-        <Label>Is you income in Swedish kronas?</Label>
-        <RadioOption>Yes</RadioOption>
-        <RadioOption>No</RadioOption>
+        <RadioGroup>
+          <Label>Is your income in Swedish kronas?</Label>
+          <RadioOption>Yes</RadioOption>
+          <RadioOption>No</RadioOption>
+        </RadioGroup>
       </section>
 
       <hr />

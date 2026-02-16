@@ -17,17 +17,17 @@ export default function Step1({ onSubmit }: Props) {
         <h2>Step 1</h2>
 
         <InputField>
-          <Label>Name</Label>
+          <Label>Namn och efternamn</Label>
           <Input />
         </InputField>
 
         <InputField>
-          <Label>Email</Label>
+          <Label>E-postadress</Label>
           <Input />
         </InputField>
 
         <InputField>
-          <Label>Phone</Label>
+          <Label>Telefonnummer</Label>
           <Input />
         </InputField>
       </section>
