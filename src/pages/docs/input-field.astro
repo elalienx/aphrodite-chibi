@@ -1,0 +1,26 @@
+---
+import InputComponent from "components/input/Input";
+import InputFieldComponent from "components/input-field/InputField";
+import LabelComponent from "components/label/Label";
+import Documentation from "layouts/Documentation.astro";
+
+const code = `
+import InputField from "./InputField"
+
+<InputField id={CO_EMAIL}>
+    <Label>Medsökandes e-post</Label>
+    <Input type="email" placeholder="namn@email.se" />
+</InputField>
+`.trim();
+---
+
+<Documentation title="Input field" code={code}>
+  <div slot="description">
+    <p>How the user fill information.</p>
+    <p>Use <code>InputField</code> for a complete usable item.</p>
+  </div>
+  <InputFieldComponent slot="component">
+    <LabelComponent>Medsökandes e-post</LabelComponent>
+    <InputComponent />
+  </InputFieldComponent>
+</Documentation>
