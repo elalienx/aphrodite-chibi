@@ -4,7 +4,7 @@ import InputField from "components/input-field/InputField";
 import Label from "components/label/Label";
 
 import "styles/style.css";
-import "./step-1.css";
+import "./step1.css";
 
 interface Props {
   onSubmit: () => void;
@@ -12,7 +12,7 @@ interface Props {
 
 export default function Step1({ onSubmit }: Props) {
   return (
-    <div id="step-1" className="soft-background">
+    <div id="step1" className="soft-background">
       <section className="top">
         <h2>Step 1</h2>
 

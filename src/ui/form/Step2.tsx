@@ -3,7 +3,7 @@ import Label from "components/label/Label";
 import RadioOption from "components/radio-option/RadioOption";
 
 import "styles/style.css";
-import "./step-2.css";
+import "./step2.css";
 import RadioGroup from "components/radio-group/RadioGroup";
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 
 export default function Step2({ onSubmit }: Props) {
   return (
-    <div id="step-2" className="soft-background">
+    <div id="step2" className="soft-background">
       <section className="top">
         <h2>Step 2</h2>
 
