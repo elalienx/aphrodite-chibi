@@ -18,16 +18,25 @@ export default function Step2({ onSubmit }: Props) {
 
         {/* Age */}
         <RadioGroup>
-          <Label>Are you over 18?</Label>
-          <RadioOption>Yes</RadioOption>
-          <RadioOption>No</RadioOption>
+          <Label>Är du PEP?</Label>
+          <RadioOption>Ja</RadioOption>
+          <RadioOption>Nej</RadioOption>
         </RadioGroup>
 
         {/* Income */}
         <RadioGroup>
-          <Label>Is your income in Swedish kronas?</Label>
-          <RadioOption>Yes</RadioOption>
-          <RadioOption>No</RadioOption>
+          <Label>Har du huvudsaklig inkomst i utländsk valuta?</Label>
+          <RadioOption>Ja</RadioOption>
+          <RadioOption>Nej</RadioOption>
+        </RadioGroup>
+
+        {/* Property type */}
+        <RadioGroup>
+          <Label>För vilken typ av bostad söker du lån</Label>
+          <RadioOption>Villa</RadioOption>
+          <RadioOption>Lägenhet</RadioOption>
+          <RadioOption>Radhus</RadioOption>
+          <RadioOption>Fritidshus</RadioOption>
         </RadioGroup>
       </section>
 

@@ -12,14 +12,9 @@
   }
 
   .top {
-    background-color: pink;
     display: flex;
     flex-direction: column;
     gap: var(--space-xl);
-
-    & > * {
-      background-color: aqua;
-    }
   }
 
   .bottom {
