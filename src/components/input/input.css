@@ -3,6 +3,7 @@
   border-radius: var(--border-radius);
   border: solid 1px var(--color-border-input);
   padding-inline: var(--space-medium);
+  font-size: var(--font-size-normal);
 
   /* Animation */
   transition:

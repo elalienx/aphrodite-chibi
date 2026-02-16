@@ -2,7 +2,7 @@
 
 body {
   color: var(--color-typography-default);
-  font-size: 16px;
+  font-size: var(--font-size-normal);
   font-family: var(--font-family);
   font-weight: var(--font-weight-normal);
 }
