@@ -9,6 +9,7 @@ body {
   margin: var(--space-2xl) 5%;
 }
 
+/* Desktop */
 @media (min-width: 768px) {
   body {
     grid-template-columns: 200px 1fr;
