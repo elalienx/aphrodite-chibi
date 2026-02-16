@@ -1,5 +1,6 @@
 import Button from "components/button/Button";
 import Input from "components/input/Input";
+import InputField from "components/input-field/InputField";
 import Label from "components/label/Label";
 
 import "styles/style.css";
@@ -15,17 +16,20 @@ export default function Step1({ onSubmit }: Props) {
       <section className="top">
         <h2>Step 1</h2>
 
-        {/* Name */}
-        <Label>Name</Label>
-        <Input />
+        <InputField>
+          <Label>Name</Label>
+          <Input />
+        </InputField>
 
-        {/* Email */}
-        <Label>Email</Label>
-        <Input />
+        <InputField>
+          <Label>Email</Label>
+          <Input />
+        </InputField>
 
-        {/* Phone */}
-        <Label>Phone</Label>
-        <Input />
+        <InputField>
+          <Label>Phone</Label>
+          <Input />
+        </InputField>
       </section>
 
       <hr />
