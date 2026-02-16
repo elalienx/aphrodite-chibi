@@ -25,8 +25,8 @@
  * based on the input’s state (hover or checked).
  */
 .radio-option:has(input[type="radio"]:hover) {
-  background-color: var(--color-gray-90);
-  border: solid 2px var(--color-gray-30);
+  background-color: var(--color-gray-95);
+  border: solid 2px var(--color-gray-50);
 }
 
 .radio-option:has(input[type="radio"]:checked) {
