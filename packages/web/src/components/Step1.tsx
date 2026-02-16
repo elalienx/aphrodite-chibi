@@ -1,7 +1,7 @@
-import Button from "components/button/Button";
-import Input from "components/input/Input";
-import InputField from "components/input-field/InputField";
-import Label from "components/label/Label";
+import Button from "ui/components/button/Button";
+import Input from "ui/components/input/Input";
+import InputField from "ui/components/input-field/InputField";
+import Label from "ui/components/label/Label";
 
 import "styles/style.css";
 import "./step1.css";

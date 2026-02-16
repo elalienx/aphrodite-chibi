@@ -1,4 +1,4 @@
-import Button from "components/button/Button";
+import Button from "ui/components/button/Button";
 
 import "styles/style.css";
 import "./success.css";

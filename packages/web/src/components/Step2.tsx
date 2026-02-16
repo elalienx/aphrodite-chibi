@@ -1,10 +1,10 @@
-import Button from "components/button/Button";
-import Label from "components/label/Label";
-import RadioOption from "components/radio-option/RadioOption";
+import Button from "ui/components/button/Button";
+import RadioGroup from "ui/components/radio-group/RadioGroup";
+import RadioOption from "ui/components/radio-option/RadioOption";
+import Label from "ui/components/label/Label";
 
 import "styles/style.css";
 import "./step2.css";
-import RadioGroup from "components/radio-group/RadioGroup";
 
 interface Props {
   onSubmit: () => void;
