@@ -1,8 +1,8 @@
 import React from "react";
 
-import RadioOption from "../radio-option/RadioOption";
-import Label from "../label/Label";
 import "./radio-group.css";
+import Label from "../label/Label";
+import RadioOption from "../radio-option/RadioOption";
 
 interface Props {
   /** Text to display inside the alert. */
