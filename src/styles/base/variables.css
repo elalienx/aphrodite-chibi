@@ -78,7 +78,8 @@
   --font-size-normal: 18px;
   --font-size-small: 12px;
   --font-weight-bold: 700;
-  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-normal: 450;
 
   /* Spacing */
   --space-tiny: 2px;

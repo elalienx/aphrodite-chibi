@@ -2,7 +2,6 @@ body {
   display: grid;
   min-height: 100dvh;
   place-items: center;
-  font-family: var(--font-family);
 }
 
 body main {

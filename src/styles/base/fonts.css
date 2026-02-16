@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "Circular Pro";
-  src: url("/fonts/circular-pro-book.woff2") format("woff2");
+  src: url("/fonts/circular-pro-medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -16,8 +16,8 @@
 
 @font-face {
   font-family: "Circular Pro";
-  src: url("/fonts/circular-pro-medium.woff2") format("woff2");
-  font-weight: 400;
+  src: url("/fonts/circular-pro-book.woff2") format("woff2");
+  font-weight: 450;
   font-style: normal;
   font-display: swap;
 }
