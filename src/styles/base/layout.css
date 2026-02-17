@@ -33,5 +33,7 @@ hr {
 
   .bottom {
     background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
   }
 }
