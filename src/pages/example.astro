@@ -1,7 +1,7 @@
 ---
 import FormManager from "ui/form/FormManager";
 
-import "styles/pages/index.css";
+import "styles/pages/example.css";
 import "styles/style.css";
 ---
 
@@ -17,9 +17,13 @@ import "styles/style.css";
   </head>
   <body>
     <main>
-      <h1>Example form</h1>
+      <header>
+        <h1>Example form</h1>
+      </header>
       <FormManager client:visible />
-      <a href="/">Go back to home</a>
+      <footer>
+        <a href="/">Go back to home</a>
+      </footer>
     </main>
   </body>
 </html>

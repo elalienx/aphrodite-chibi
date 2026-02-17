@@ -23,6 +23,10 @@ h2 {
   font-weight: var(--font-weight-medium);
 }
 
+p {
+  margin: 0;
+}
+
 code {
   color: var(--color-blue-20);
 }

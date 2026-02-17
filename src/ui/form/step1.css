@@ -1,7 +1,6 @@
 #step1 {
   display: flex;
   flex-direction: column;
-  text-align: left;
 
   /* this could be a shared class .inner-top and inner-bottom */
   .top,
