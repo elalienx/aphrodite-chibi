@@ -9,7 +9,7 @@ interface Props {
 
 export default function Success({ onSubmit }: Props) {
   return (
-    <div id="success" className="soft-background">
+    <div className="soft-background">
       <section className="top">
         <h2>Success</h2>
         <p>

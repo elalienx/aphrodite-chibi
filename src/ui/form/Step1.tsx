@@ -12,7 +12,7 @@ interface Props {
 
 export default function Step1({ onSubmit }: Props) {
   return (
-    <div id="step1" className="soft-background">
+    <div className="soft-background">
       <section className="top">
         <h2>Step 1</h2>
 
