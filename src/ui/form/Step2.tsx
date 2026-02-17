@@ -1,9 +1,6 @@
 import Button from "components/button/Button";
 import Label from "components/label/Label";
 import RadioOption from "components/radio-option/RadioOption";
-
-import "styles/style.css";
-import "./step2.css";
 import RadioGroup from "components/radio-group/RadioGroup";
 
 interface Props {

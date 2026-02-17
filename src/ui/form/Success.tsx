@@ -1,8 +1,5 @@
 import Button from "components/button/Button";
 
-import "styles/style.css";
-import "./success.css";
-
 interface Props {
   onSubmit: () => void;
 }

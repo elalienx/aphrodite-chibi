@@ -3,9 +3,6 @@ import Input from "components/input/Input";
 import InputField from "components/input-field/InputField";
 import Label from "components/label/Label";
 
-import "styles/style.css";
-import "./step1.css";
-
 interface Props {
   onSubmit: () => void;
 }
