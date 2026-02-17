@@ -7,7 +7,7 @@
   header {
     display: flex;
     flex-direction: column;
-    gap: var(--space-medium);
+    gap: var(--space-base);
   }
 
   .gallery {
