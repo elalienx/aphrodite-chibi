@@ -1,23 +1,2 @@
 #success {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-
-  /* this could be a shared class .inner-top and inner-bottom */
-  .top,
-  .bottom {
-    margin-inline: var(--space-2xl);
-    margin-top: var(--space-2xl);
-    margin-bottom: var(--space-2xl);
-  }
-
-  .top {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-medium);
-  }
-
-  .bottom {
-    background-color: aliceblue;
-  }
 }
