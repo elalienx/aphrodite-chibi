@@ -1,5 +1,14 @@
 .documentation main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-medium);
   padding: var(--space-2xl);
+
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-medium);
+  }
 
   .gallery {
     background-color: var(--color-page-background);
