@@ -27,6 +27,15 @@ p {
   margin: 0;
 }
 
+a {
+  color: var(--color-typography-link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 code {
   color: var(--color-blue-20);
 }

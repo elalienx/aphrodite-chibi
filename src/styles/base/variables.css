@@ -66,6 +66,7 @@
   /* -- Typography */
   --color-typography-dark: var(--color-gray-10);
   --color-typography-default: var(--color-gray-30);
+  --color-typography-link: var(--color-blue-40);
 
   /** -- Backgrounds */
   --color-page-background: var(--color-gray-95);
