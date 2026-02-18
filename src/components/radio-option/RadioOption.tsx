@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import "./radio-option.css";
 
 interface Props {
-  /** Text to display inside the alert. */
+  /** Text to display inside the radio option. */
   label: string;
 }
 
