@@ -97,15 +97,19 @@
 
 /* Semantic values */
 :root {
-  /*  Typography colors */
-  --color-typography-dark: var(--color-gray-10);
-  --color-typography-default: var(--color-gray-30);
-  --color-typography-link: var(--color-blue-40);
-
   /* Background colors */
   --color-page-background: var(--color-gray-95);
   --color-border-divider: var(--color-desaturated-90);
   --color-border-input: var(--color-desaturated-60);
+
+  /* Typography colors */
+  --color-typography-dark: var(--color-gray-10);
+  --color-typography-default: var(--color-gray-30);
+  --color-typography-link: var(--color-blue-40);
+
+  /** Formulary colors */
+  --color-field-background: var(--color-gray-95);
+  --color-field-border-color: var(--color-gray-50);
 
   /* Formulary spacing */
   --gap-between-label-and-field: var(--space-xs);
