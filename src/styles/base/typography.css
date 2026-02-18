@@ -29,11 +29,11 @@ p {
 
 a {
   color: var(--color-typography-link);
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 code {

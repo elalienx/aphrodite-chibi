@@ -20,7 +20,7 @@ export default function Success({ onSubmit }: Props) {
       <hr />
 
       <section className="bottom">
-        <Button onClick={onSubmit}>Restart</Button>
+        <Button onClick={onSubmit}>STARTA OM ANSÖKAN</Button>
       </section>
     </div>
   );

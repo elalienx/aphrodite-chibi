@@ -32,7 +32,7 @@ export default function Step1({ onSubmit }: Props) {
       <hr />
 
       <section className="bottom">
-        <Button onClick={onSubmit}>Next</Button>
+        <Button onClick={onSubmit}>Nästa</Button>
       </section>
     </div>
   );

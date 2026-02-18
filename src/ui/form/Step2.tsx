@@ -41,7 +41,7 @@ export default function Step2({ onSubmit }: Props) {
 
       {/* Submit */}
       <section className="bottom">
-        <Button onClick={onSubmit}>Submit</Button>
+        <Button onClick={onSubmit}>Skicka in</Button>
       </section>
     </div>
   );
