@@ -13,27 +13,27 @@ export default function Step2({ onSubmit }: Props) {
       <section className="top">
         <h2>Step 2</h2>
 
-        {/* Age */}
+        {/* Political Exposed Person (PEP) */}
         <RadioGroup>
           <Label>Är du PEP?</Label>
-          <RadioOption>Ja</RadioOption>
-          <RadioOption>Nej</RadioOption>
+          <RadioOption id="PEP">Ja</RadioOption>
+          <RadioOption id="PEP">Nej</RadioOption>
         </RadioGroup>
 
         {/* Income */}
         <RadioGroup>
           <Label>Har du huvudsaklig inkomst i utländsk valuta?</Label>
-          <RadioOption>Ja</RadioOption>
-          <RadioOption>Nej</RadioOption>
+          <RadioOption id="income">Ja</RadioOption>
+          <RadioOption id="income">Nej</RadioOption>
         </RadioGroup>
 
         {/* Property type */}
         <RadioGroup>
           <Label>För vilken typ av bostad söker du lån</Label>
-          <RadioOption>Villa</RadioOption>
-          <RadioOption>Lägenhet</RadioOption>
-          <RadioOption>Radhus</RadioOption>
-          <RadioOption>Fritidshus</RadioOption>
+          <RadioOption id="propertyType">Villa</RadioOption>
+          <RadioOption id="propertyType">Lägenhet</RadioOption>
+          <RadioOption id="propertyType">Radhus</RadioOption>
+          <RadioOption id="propertyType">Fritidshus</RadioOption>
         </RadioGroup>
       </section>
 
