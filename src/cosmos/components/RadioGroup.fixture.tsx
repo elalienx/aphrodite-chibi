@@ -3,9 +3,9 @@ import Label from "../../components/label/Label";
 import RadioGroup from "../../components/radio-group/RadioGroup";
 
 export default (
-  <RadioGroup>
+  <RadioGroup id="sharedCustody">
     <Label>Har du delad vårdnad?</Label>
-    <RadioOption id="sharedCustody">Ja</RadioOption>
-    <RadioOption id="sharedCustody">Nej</RadioOption>
+    <RadioOption>Ja</RadioOption>
+    <RadioOption>Nej</RadioOption>
   </RadioGroup>
 );

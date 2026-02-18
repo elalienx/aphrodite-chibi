@@ -6,19 +6,23 @@ import Label from "../label/Label";
 import "./radio-group.css";
 
 interface Props {
-  /**  Content to display inside the radio group. */
+  /** Content to display inside the radio group. */
   children?: React.ReactNode;
+
+  /** Unique identifier of the parent radio group to make sure only one radio option is active. */
+  id: string;
 }
 
-export default function RadioGroup({ children }: Props) {
+export default function RadioGroup({ children, id }: Props) {
   // Safeguard
-  if (!children)
+  if (!children) {
     return (
       <p>
-        Please add an <code>Label</code> and at least two{" "}
+        Please add a <code>Label</code> and at least two{" "}
         <code>RadioOption</code> to get started
       </p>
     );
+  }
 
   const childArray = React.Children.toArray(children);
 
@@ -26,9 +30,17 @@ export default function RadioGroup({ children }: Props) {
     (child) => React.isValidElement(child) && child.type === Label,
   );
 
-  const options = childArray.filter(
-    (child) => React.isValidElement(child) && child.type === RadioOption,
-  );
+  // Filter and clone the RadioOptions to inject the 'id' prop
+  const options = childArray
+    .filter(
+      (child) => React.isValidElement(child) && child.type === RadioOption,
+    )
+    .map((option) => {
+      if (React.isValidElement(option)) {
+        return React.cloneElement(option, { id } as any);
+      }
+      return option;
+    });
 
   return (
     <div className="radio-group">
