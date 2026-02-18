@@ -85,26 +85,32 @@
   --space-30xl: 120px;
 }
 
+/* Fonts */
 :root {
-  /* Semantic colors: Typography */
-  --color-typography-dark: var(--color-gray-10);
-  --color-typography-default: var(--color-gray-30);
-  --color-typography-link: var(--color-blue-40);
-
-  /* Semantic colors: Backgrounds */
-  --color-page-background: var(--color-gray-95);
-  --color-border-divider: var(--color-desaturated-90);
-  --color-border-input: var(--color-desaturated-60);
-
-  /* Fonts */
   --font-family: "Circular Pro", ui-sans-serif, sans-serif;
   --font-size-normal: 16px;
   --font-size-small: 12px;
   --font-weight-bold: 700;
   --font-weight-medium: 500;
   --font-weight-normal: 450;
+}
 
-  /* Semantic space */
+/* Semantic values */
+:root {
+  /*  Typography colors */
+  --color-typography-dark: var(--color-gray-10);
+  --color-typography-default: var(--color-gray-30);
+  --color-typography-link: var(--color-blue-40);
+
+  /* Background colors */
+  --color-page-background: var(--color-gray-95);
+  --color-border-divider: var(--color-desaturated-90);
+  --color-border-input: var(--color-desaturated-60);
+
+  /* Formulary spacing */
+  --gap-between-label-and-field: var(--space-xs);
+
+  /* Others */
   --border-radius: 8px;
   --media-query-tablet: 550px;
   --media-query-desktop: 768px;
