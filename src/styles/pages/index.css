@@ -11,7 +11,7 @@ body main {
   align-items: center;
 
   img {
-    max-width: 320px;
+    max-width: 100%;
     aspect-ratio: 4/3;
   }
 }
