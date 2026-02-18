@@ -1,0 +1,19 @@
+:root {
+  --space-tiny: 2px;
+  --space-base: 4px;
+  --space-xxs: 6px;
+  --space-xs: 8px;
+  --space-small: 12px;
+  --space-medium: 16px;
+  --space-large: 20px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+  --space-3xl: 40px;
+  --space-4xl: 42px;
+  --space-5xl: 48px;
+  --space-6xl: 60px;
+  --space-7xl: 64px;
+  --space-8xl: 72px;
+  --space-26xl: 104px;
+  --space-30xl: 120px;
+}

@@ -1,67 +1,7 @@
+@import url("./_colors.css");
+@import url("./_spacing.css");
+
 :root {
-  /* -- Green */
-  --color-green-99: #f9fcfa;
-  --color-green-95: #f1fbf5;
-  --color-green-90: #e3f6ea;
-  --color-green-80: #c5efd6;
-  --color-green-70: #94ddb0;
-  --color-green-60: #61d78d;
-  --color-green-50: #2ac768;
-  --color-green-40: #22aa58;
-  --color-green-30: #1b8847;
-  --color-green-20: #0d6a33;
-  --color-green-10: #054c22;
-
-  /* -- Blue */
-  --color-blue-99: #f7f9ff;
-  --color-blue-95: #eef6ff;
-  --color-blue-90: #dfebf9;
-  --color-blue-80: #c1daf6;
-  --color-blue-70: #a3c8f1;
-  --color-blue-60: #6ba7ed;
-  --color-blue-50: #3b88dc;
-  --color-blue-40: #0071eb;
-  --color-blue-30: #0056b3;
-  --color-blue-20: #083e80;
-  --color-blue-10: #032a5a;
-
-  /* -- Red */
-  --color-red-95: #ffefef;
-  --color-red-90: #ffd2d2;
-  --color-red-70: #eaa2a2;
-  --color-red-50: #c82c2c;
-  --color-red-40: #f2256c;
-  --color-red-30: #871a1a;
-  --color-red-20: #4b1010;
-
-  /* -- Orange */
-  --color-orange-95: #fff3df;
-  --color-orange-90: #ffedd0;
-  --color-orange-60: #fbbf66;
-  --color-orange-50: #f39c12;
-  --color-orange-30: #cd7500;
-  --color-orange-20: #4f2e03;
-
-  /* -- Gray */
-  --color-gray-100: #ffffff;
-  --color-gray-95: #f4f4f4;
-  --color-gray-90: #e3e3e3;
-  --color-gray-80: #cccccc;
-  --color-gray-70: #b4b4b4;
-  --color-gray-50: #949596;
-  --color-gray-30: #4c4c4b;
-  --color-gray-10: #1f1f1f;
-
-  /* -- Desaturated */
-  --color-desaturated-90: #e7eaf5;
-  --color-desaturated-80: #cfd3e0;
-  --color-desaturated-70: #bec0cd;
-  --color-desaturated-60: #9295a7;
-  --color-desaturated-50: #747a90;
-  --color-desaturated-30: #4f5a70;
-  --color-desaturated-20: #303a4e;
-  --color-desaturated-10: #262f40;
-
   /* Semantic colors */
   /* -- Typography */
   --color-typography-dark: var(--color-gray-10);
@@ -81,25 +21,6 @@
   --font-weight-bold: 700;
   --font-weight-medium: 500;
   --font-weight-normal: 450;
-
-  /* Spacing */
-  --space-tiny: 2px;
-  --space-base: 4px;
-  --space-xxs: 6px;
-  --space-xs: 8px;
-  --space-small: 12px;
-  --space-medium: 16px;
-  --space-large: 20px;
-  --space-xl: 24px;
-  --space-2xl: 32px;
-  --space-3xl: 40px;
-  --space-4xl: 42px;
-  --space-5xl: 48px;
-  --space-6xl: 60px;
-  --space-7xl: 64px;
-  --space-8xl: 72px;
-  --space-26xl: 104px;
-  --space-30xl: 120px;
 
   /* Other */
   --border-radius: 8px;
