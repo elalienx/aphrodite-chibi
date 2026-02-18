@@ -1,14 +1,17 @@
 ---
+import RadioGroupComponent from "components/radio-group/RadioGroup";
+import RadioOption from "components/radio-option/RadioOption";
+import Label from "components/label/Label";
 import Documentation from "layouts/Documentation.astro";
 
 const code = `
 import InputField from "./InputField"
 
-<RadioField id={SHARED_CUSTODY}>
+<RadioGroup id={SHARED_CUSTODY}>
     <Label hasTooltip>Har du delad vårdnad?</Label>
     <RadioOption value={true}>Ja</RadioOption>
     <RadioOption value={false}>Nej</RadioOption>
-</RadioField>
+</RadioGroup>
 `.trim();
 ---
 
@@ -19,5 +22,9 @@ import InputField from "./InputField"
       and multiple choice options.
     </p>
   </div>
-  <p slot="component">(comming soon)</p>
+  <RadioGroupComponent id="propertyType" slot="component" client:load>
+    <Label>Property type</Label>
+    <RadioOption>House</RadioOption>
+    <RadioOption>Apartment</RadioOption>
+  </RadioGroupComponent>
 </Documentation>

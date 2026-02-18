@@ -1,7 +1,7 @@
 ---
-import InputComponent from "components/input/Input";
+import Input from "components/input/Input";
 import InputFieldComponent from "components/input-field/InputField";
-import LabelComponent from "components/label/Label";
+import Label from "components/label/Label";
 import Documentation from "layouts/Documentation.astro";
 
 const code = `
@@ -22,7 +22,7 @@ import InputField from "./InputField"
     </p>
   </div>
   <InputFieldComponent slot="component">
-    <LabelComponent>Medsökandes e-post</LabelComponent>
-    <InputComponent type="email" placeholder="namn@email.se" />
+    <Label>Medsökandes e-post</Label>
+    <Input type="email" placeholder="namn@email.se" />
   </InputFieldComponent>
 </Documentation>
