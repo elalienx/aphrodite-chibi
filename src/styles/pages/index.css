@@ -11,7 +11,7 @@ body main {
   align-items: center;
 
   img {
-    max-width: 100%;
+    max-width: 320px;
     height: auto;
   }
 }
