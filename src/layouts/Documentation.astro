@@ -39,7 +39,11 @@ const currentPath = Astro.url.pathname;
           const href = `/docs/${link.slug}`;
 
           return (
-            <a href={href} class={currentPath === href ? "active" : ""}>
+            <a
+              href={href}
+              class={currentPath === href ? "active" : ""}
+              data-astro-prefetch
+            >
               {link.label}
             </a>
           );
