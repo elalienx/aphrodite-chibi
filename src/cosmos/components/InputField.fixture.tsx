@@ -5,6 +5,6 @@ import InputField from "../../components/input-field/InputField";
 export default (
   <InputField>
     <Label>Har du delad vårdnad?</Label>
-    <Input />
+    <Input type="text" placeholder="Ja" />
   </InputField>
 );
