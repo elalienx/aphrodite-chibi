@@ -4,14 +4,14 @@ import "./radio-option.css";
 
 interface Props {
   /** Text to display inside the alert. */
-  children: ReactNode;
+  label: string;
 }
 
-export default function RadioOption({ children }: Props) {
+export default function RadioOption({ label }: Props) {
   return (
     <label className="radio-option">
       <input type="radio" />
-      {children}
+      {label}
     </label>
   );
 }

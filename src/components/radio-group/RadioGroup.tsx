@@ -6,7 +6,7 @@ import Label from "../label/Label";
 import "./radio-group.css";
 
 interface Props {
-  /** Text to display inside the alert. */
+  /**  Content to display inside the radio group. */
   children?: React.ReactNode;
 }
 

@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import "./button.css";
 
 interface Props {
-  /** Text to display inside the alert. */
+  /**  Text and/or icon to display inside the button. */
   children: ReactNode;
 
   /** The function to execute when clicked. */

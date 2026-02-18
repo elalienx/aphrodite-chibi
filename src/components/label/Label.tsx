@@ -1,12 +1,10 @@
-import type { ReactNode } from "react";
-
 import "./label.css";
 
 interface Props {
-  /** Text to display inside the alert. */
-  children: ReactNode;
+  /** Text to display inside the label. */
+  label: string;
 }
 
-export default function Label({ children }: Props) {
-  return <label className="label">{children}</label>;
+export default function Label({ label }: Props) {
+  return <label className="label">{label}</label>;
 }

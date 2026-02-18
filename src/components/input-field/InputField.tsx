@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import "./input-field.css";
 
 interface Props {
-  /** Text to display inside the alert. */
+  /**  Content to display inside the input field. */
   children?: ReactNode;
 }
 
