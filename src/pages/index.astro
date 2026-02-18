@@ -1,31 +1,22 @@
 ---
-import "styles/style.css";
+import BaseLayout from "layouts/BaseLayout.astro";
+
 import "styles/pages/index.css";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="Home of the Aphrodite Chibi library" />
-    <title>Aprodite Chibi</title>
-  </head>
-  <body>
-    <main>
-      <img
-        alt="Chibi version of the virtual idol Hatsume Miku"
-        fetchpriority="high"
-        src="/images/miku.png"
-        width="720"
-        height="540"
-      />
-      <h1>Aphrodite Chibi</h1>
-      <p>Making Lendo more Kawaii</p>
-      <a href="docs/button">View docs</a>
-      <a href="example">View example</a>
-    </main>
-  </body>
-</html>
+<BaseLayout
+  title="Aprodite Chibi"
+  description="Home of the Aphrodite Chibi library"
+>
+  <main>
+    <img
+      alt="Chibi version of the virtual idol Hatsume Miku"
+      fetchpriority="high"
+      src="/images/miku.png"
+    />
+    <h1>Aphrodite Chibi</h1>
+    <p>Making Lendo more Kawaii</p>
+    <a href="docs/button">View docs</a>
+    <a href="example">View example</a>
+  </main>
+</BaseLayout>
