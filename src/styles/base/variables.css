@@ -1,5 +1,6 @@
+/* Colors tokens */
 :root {
-  /* -- Green */
+  /* Green */
   --color-green-99: #f9fcfa;
   --color-green-95: #f1fbf5;
   --color-green-90: #e3f6ea;
@@ -12,7 +13,7 @@
   --color-green-20: #0d6a33;
   --color-green-10: #054c22;
 
-  /* -- Blue */
+  /* Blue */
   --color-blue-99: #f7f9ff;
   --color-blue-95: #eef6ff;
   --color-blue-90: #dfebf9;
@@ -25,7 +26,7 @@
   --color-blue-20: #083e80;
   --color-blue-10: #032a5a;
 
-  /* -- Red */
+  /* Red */
   --color-red-95: #ffefef;
   --color-red-90: #ffd2d2;
   --color-red-70: #eaa2a2;
@@ -34,7 +35,7 @@
   --color-red-30: #871a1a;
   --color-red-20: #4b1010;
 
-  /* -- Orange */
+  /* Orange */
   --color-orange-95: #fff3df;
   --color-orange-90: #ffedd0;
   --color-orange-60: #fbbf66;
@@ -42,7 +43,7 @@
   --color-orange-30: #cd7500;
   --color-orange-20: #4f2e03;
 
-  /* -- Gray */
+  /* Gray */
   --color-gray-100: #ffffff;
   --color-gray-95: #f4f4f4;
   --color-gray-90: #e3e3e3;
@@ -52,7 +53,7 @@
   --color-gray-30: #4c4c4b;
   --color-gray-10: #1f1f1f;
 
-  /* -- Desaturated */
+  /* Desaturated */
   --color-desaturated-90: #e7eaf5;
   --color-desaturated-80: #cfd3e0;
   --color-desaturated-70: #bec0cd;
@@ -61,28 +62,10 @@
   --color-desaturated-30: #4f5a70;
   --color-desaturated-20: #303a4e;
   --color-desaturated-10: #262f40;
+}
 
-  /* Semantic colors */
-  /* -- Typography */
-  --color-typography-dark: var(--color-gray-10);
-  --color-typography-default: var(--color-gray-30);
-  --color-typography-link: var(--color-blue-40);
-
-  /** -- Backgrounds */
-  --color-page-background: var(--color-gray-95);
-  --color-border-divider: var(--color-desaturated-90);
-  --color-border-input: var(--color-desaturated-60);
-
-  /* Fonts */
-  --font-family:
-    "Circular Pro", Helvetica, Segoe UI, Arial, ui-sans-serif, sans-serif;
-  --font-size-normal: 16px;
-  --font-size-small: 12px;
-  --font-weight-bold: 700;
-  --font-weight-medium: 500;
-  --font-weight-normal: 450;
-
-  /* Spacing */
+/* Space tokens */
+:root {
   --space-tiny: 2px;
   --space-base: 4px;
   --space-xxs: 6px;
@@ -100,11 +83,29 @@
   --space-8xl: 72px;
   --space-26xl: 104px;
   --space-30xl: 120px;
+}
 
-  /* Other */
+:root {
+  /* Semantic colors: Typography */
+  --color-typography-dark: var(--color-gray-10);
+  --color-typography-default: var(--color-gray-30);
+  --color-typography-link: var(--color-blue-40);
+
+  /* Semantic colors: Backgrounds */
+  --color-page-background: var(--color-gray-95);
+  --color-border-divider: var(--color-desaturated-90);
+  --color-border-input: var(--color-desaturated-60);
+
+  /* Fonts */
+  --font-family: "Circular Pro", ui-sans-serif, sans-serif;
+  --font-size-normal: 16px;
+  --font-size-small: 12px;
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+  --font-weight-normal: 450;
+
+  /* Semantic space */
   --border-radius: 8px;
-
-  /* Media queries */
   --media-query-tablet: 550px;
   --media-query-desktop: 768px;
 }

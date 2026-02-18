@@ -30,10 +30,10 @@ p {
 a {
   color: var(--color-typography-link);
   text-decoration: underline;
-}
 
-a:hover {
-  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 code {
