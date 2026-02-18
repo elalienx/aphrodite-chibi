@@ -2,8 +2,8 @@
 import type { ReactNode } from "react";
 
 // Project files
-import "./src/cosmos/cosmos-style.css"; // To center tested components on screen
-import "./src/styles/style.css";
+import "../styles/style.css";
+import "./cosmos-style.css"; // To center tested components on screen
 
 interface Props {
   children: ReactNode;
