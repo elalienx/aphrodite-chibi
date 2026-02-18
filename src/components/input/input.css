@@ -1,5 +1,5 @@
 .input {
-  height: 48px;
+  height: var(--height-of-field);
   border-radius: var(--border-radius);
   border: solid 1px var(--color-border-input);
   padding-inline: var(--space-medium);

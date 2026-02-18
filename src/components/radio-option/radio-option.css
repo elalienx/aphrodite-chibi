@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-xs);
-  height: 48px;
+  height: var(--height-of-field);
   background-color: white;
   border-radius: var(--border-radius);
   border: solid 1px var(--color-border-input);
