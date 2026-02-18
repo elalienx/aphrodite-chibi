@@ -2,7 +2,3 @@
 @import url("./base/layout.css");
 @import url("./base/typography.css");
 @import url("./base/variables.css");
-
-* {
-  box-sizing: border-box;
-}
