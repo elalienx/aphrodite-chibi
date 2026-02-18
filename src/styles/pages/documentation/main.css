@@ -21,8 +21,9 @@
       place-items: center;
     }
 
-    .code {
-      padding: var(--space-xs); /** wraps <Code> to show border-radius */
+    /** wraps <Code> to show border-radius */
+    .code-wrapper {
+      padding: var(--space-xs);
       background-color: white;
       border-radius: var(--border-radius);
     }
