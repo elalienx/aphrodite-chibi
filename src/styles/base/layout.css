@@ -41,3 +41,16 @@ hr {
     flex-direction: column;
   }
 }
+
+/* Debug */
+.debug-red {
+  background-color: #f4dddf;
+}
+
+.debug-green {
+  background-color: #e7efd9;
+}
+
+.debug-blue {
+  background-color: #d3dee8;
+}
