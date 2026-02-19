@@ -1,4 +1,5 @@
 ---
+import DocRadioGroup from "components/radio-group/DocRadioGroup";
 import Documentation from "layouts/Documentation.astro";
 
 const code = `
@@ -16,8 +17,8 @@ import InputField from "./InputField"
   <div slot="description">
     <p>
       The complete implementation of the radio option. It comes with a label and
-      and multiple choice options.
+      multiple choice options.
     </p>
   </div>
-  <p slot="component">(comming soon)</p>
+  <DocRadioGroup slot="component" />
 </Documentation>
