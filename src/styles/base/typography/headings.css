@@ -1,0 +1,125 @@
+.level-1,
+h1 {
+  font-size: 2rem;
+  line-height: 2.25rem;
+  letter-spacing: -0.065rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-typography-dark);
+  margin: 0;
+}
+
+.level-2,
+h2 {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  letter-spacing: -0.05rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-typography-dark);
+  margin: 0;
+}
+
+.level-3,
+h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: -0.03rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-typography-dark);
+  margin: 0;
+}
+
+.level-4,
+h4 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  letter-spacing: 0;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-typography-dark);
+  margin: 0;
+}
+
+.level-5,
+h5 {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.01rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-typography-dark);
+  margin: 0;
+}
+
+/* Tablet */
+@media (min-width: 550px) {
+  .level-1,
+  h1 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    letter-spacing: -0.065rem;
+  }
+
+  .level-2,
+  h2 {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    letter-spacing: -0.05rem;
+  }
+
+  .level-3,
+  h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: -0.03rem;
+  }
+
+  .level-4,
+  h4 {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    letter-spacing: 0;
+  }
+
+  .level-5,
+  h5 {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.01rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .level-1,
+  h1 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+    letter-spacing: -0.1rem;
+  }
+
+  .level-2,
+  h2 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    letter-spacing: -0.07rem;
+  }
+
+  .level-3,
+  h3 {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    letter-spacing: -0.05rem;
+  }
+
+  .level-4,
+  h4 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: -0.03rem;
+  }
+
+  .level-5,
+  h5 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    letter-spacing: 0;
+  }
+}

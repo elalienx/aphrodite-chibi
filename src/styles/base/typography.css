@@ -7,6 +7,15 @@ body {
   font-weight: var(--font-weight-normal);
 }
 
+p {
+  margin: 0;
+}
+
+code {
+  color: var(--color-blue-20);
+}
+
+/** Legacy */
 h1,
 h2 {
   margin: 0;
@@ -21,21 +30,4 @@ h1 {
 h2 {
   font-size: 36px;
   font-weight: var(--font-weight-medium);
-}
-
-p {
-  margin: 0;
-}
-
-a {
-  color: var(--color-typography-link);
-  text-decoration: underline;
-
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-code {
-  color: var(--color-blue-20);
 }
