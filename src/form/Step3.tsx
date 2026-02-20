@@ -13,7 +13,7 @@ export default function Step3({ onSubmit }: Props) {
   return (
     <div className="soft-background">
       <section className="top">
-        <h2>Step 3</h2>
+        <h2 className="level-4">Step 3</h2>
 
         <RadioGroup id="PEP">
           <Label>PEP</Label>

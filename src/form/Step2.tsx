@@ -11,7 +11,7 @@ export default function Step2({ onSubmit }: Props) {
   return (
     <div className="soft-background">
       <section className="top">
-        <h2>Step 2</h2>
+        <h2 className="level-4">Step 2</h2>
 
         {/* Political Exposed Person (PEP) */}
         <RadioGroup id="PEP">

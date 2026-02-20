@@ -11,7 +11,7 @@ export default function Step1({ onSubmit }: Props) {
   return (
     <div className="soft-background">
       <section className="top">
-        <h2>Step 1</h2>
+        <h2 className="level-4">Step 1</h2>
 
         <InputField>
           <Label>Namn och efternamn</Label>
