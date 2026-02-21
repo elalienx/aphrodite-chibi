@@ -5,9 +5,12 @@ import "./input-field.css";
 interface Props {
   /**  Content to display inside the input field. */
   children?: ReactNode;
+
+  /** Text to display if the form validation encountered an issue. */
+  validationMessage?: string;
 }
 
-export default function InputField({ children }: Props) {
+export default function InputField({ children, validationMessage }: Props) {
   // Safeguard
   if (!children)
     return (

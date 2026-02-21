@@ -15,7 +15,7 @@ export default function Step1({ onSubmit }: Props) {
 
         <InputField>
           <Label>Namn och efternamn</Label>
-          <Input type="text" placeholder="Leif Lend" />
+          <Input type="text" placeholder="Leif Lend" validationMessage="foobar" />
         </InputField>
 
         <InputField>
