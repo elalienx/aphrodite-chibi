@@ -1,6 +1,6 @@
 ---
 import Input from "components/input/Input";
-import InputFieldComponent from "components/input-field/InputField";
+import InputField from "components/input-field/InputField";
 import Label from "components/label/Label";
 import Documentation from "layouts/Documentation.astro";
 
@@ -16,13 +16,10 @@ import InputField from "./InputField"
 
 <Documentation title="Input Field" code={code}>
   <div slot="description">
-    <p>
-      The complete implementation of the input field. It comes with a label and
-      the option to enable tooltips.
-    </p>
+    <p>The complete implementation of the input field. It comes with a label and the option to enable tooltips.</p>
   </div>
-  <InputFieldComponent slot="component">
+  <InputField slot="component">
     <Label>Medsökandes e-post</Label>
     <Input type="email" placeholder="namn@email.se" />
-  </InputFieldComponent>
+  </InputField>
 </Documentation>

@@ -1,5 +1,5 @@
 ---
-import ButtonComponent from "components/button/Button";
+import Button from "components/button/Button";
 import Documentation from "layouts/Documentation.astro";
 
 const code = `
@@ -11,5 +11,5 @@ import Button from "./Button"
 
 <Documentation title="Button" code={code}>
   <p slot="description">The primary action of a page.</p>
-  <ButtonComponent slot="component">I'm a button</ButtonComponent>
+  <Button slot="component">I'm a button</Button>
 </Documentation>

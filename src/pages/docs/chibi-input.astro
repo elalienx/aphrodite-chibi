@@ -1,5 +1,5 @@
 ---
-import InputComponent from "components/input/Input";
+import Input from "components/input/Input";
 import Documentation from "layouts/Documentation.astro";
 
 const code = `
@@ -13,9 +13,8 @@ import Input from "./Input"
   <div slot="description">
     <p>How the user fills information.</p>
     <p>
-      Use <a href="/docs/chibi-input-field"><code>InputField</code></a> for a complete
-      usable item.
+      Use <a href="/docs/chibi-input-field"><code>InputField</code></a> for a complete usable item.
     </p>
   </div>
-  <InputComponent type="text" placeholder="I'm an input" slot="component" />
+  <Input type="text" placeholder="I'm an input" slot="component" />
 </Documentation>
