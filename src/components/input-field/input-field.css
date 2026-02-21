@@ -7,7 +7,7 @@
   .validation-message {
     background-color: var(--color-field-error-background);
     border: solid 2px var(--color-field-error-border-color);
-    border-radius: var(--border-radius);
-    padding: var(--space-base) var(--space-medium);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    padding: var(--space-base) var(--space-xs);
   }
 }
