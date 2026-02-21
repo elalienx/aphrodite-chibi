@@ -10,9 +10,32 @@ import "styles/pages/example.css";
   description="Example of a form with Aphrodite Chibi"
 >
   <main>
+    <header>
+      <h1>Road to MVP</h1>
+      <ul>
+        <li>Change third input based on <b>property type</b>.</li>
+        <li>Add tracking.</li>
+        <li>Add validations.</li>
+        <li>Add form submission.</li>
+        <li>Add persistence.</li>
+        <li>Add tooltips.</li>
+        <li>Add suffixes.</li>
+        <li>Add icons</li>
+      </ul>
+    </header>
     <Step client:visible />
     <footer>
       <a href="/">Go back to home</a>
     </footer>
   </main>
 </BaseLayout>
+
+<style>
+  header {
+    text-align: left;
+  }
+  ul {
+    padding: 0;
+    list-style-position: inside;
+  }
+</style>

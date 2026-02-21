@@ -7,21 +7,21 @@ export default function Step() {
   return (
     <div className="soft-background">
       <section className="top">
-        <h2 className="level-4">Step 1</h2>
+        <h2 className="level-4">2. Om bostaden</h2>
 
         <InputField>
-          <Label>Namn och efternamn</Label>
-          <Input type="text" placeholder="Leif Lend" />
+          <Label>Kvadratmeter</Label>
+          <Input type="number" placeholder="0" />
         </InputField>
 
         <InputField>
-          <Label>E-postadress</Label>
-          <Input type="email" placeholder="leif@lendo.se" />
+          <Label>Antal rum</Label>
+          <Input type="number" placeholder="0" />
         </InputField>
 
         <InputField>
-          <Label>Telefonnummer</Label>
-          <Input type="tel" placeholder="+46 729478013" />
+          <Label>Månadsavgift</Label>
+          <Input type="number" placeholder="0" />
         </InputField>
       </section>
 
