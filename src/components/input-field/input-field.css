@@ -1,5 +1,15 @@
 .input-field {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-between-label-and-field);
+
+  .label {
+    background-color: pink;
+    margin-bottom: var(--gap-between-label-and-field);
+  }
+
+  /* Override corners to look like is part of the input */
+  .validation-message {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
 }
