@@ -15,12 +15,12 @@ export default function Step1({ onSubmit }: Props) {
 
         <InputField>
           <Label>Namn och efternamn</Label>
-          <Input type="text" placeholder="Leif Lend" validationMessage="foobar" />
+          <Input type="text" placeholder="Leif Lend" validationMessage="foobar" suffix="kr" />
         </InputField>
 
         <InputField>
           <Label>E-postadress</Label>
-          <Input type="email" placeholder="leif@lendo.se" />
+          <Input type="email" placeholder="leif@lendo.se" suffix="kr/month" />
         </InputField>
 
         <InputField>

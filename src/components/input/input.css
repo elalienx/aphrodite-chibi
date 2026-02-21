@@ -1,8 +1,15 @@
+.wrapper {
+  display: flex;
+}
+
 .input {
+  flex-grow: 1;
   height: var(--height-of-field);
   border-radius: var(--border-radius);
   border: solid 1px var(--color-border-input);
   padding-inline: var(--space-medium);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
   font-size: var(--font-size-normal);
 
   /* Animation */
@@ -30,6 +37,13 @@
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   border-bottom: none; /** so there is no double line with the validation message */
+}
+
+/* Suffix handling */
+.input.has-suffix {
+  border-right: none; /** so there is no double line with the suffix */
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 /* Special variations */

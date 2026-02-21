@@ -1,0 +1,18 @@
+.suffix {
+  display: inline-block;
+  height: var(--height-of-field);
+  border: solid 1px var(--color-border-input);
+  border-radius: var(--border-radius);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  text-align: center;
+  line-height: var(--height-of-field);
+  padding-inline: var(--space-medium);
+}
+
+/* Error handling */
+.suffix.has-validation-message {
+  border: solid 2px var(--color-field-border-color-error);
+  border-bottom: none; /** so there is no double line with the validation message */
+  border-bottom-right-radius: 0;
+}
