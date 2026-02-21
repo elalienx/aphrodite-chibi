@@ -24,6 +24,14 @@
   outline: none;
 }
 
+/* Error handling */
+.input.has-validation-message {
+  border: solid 2px var(--color-field-border-color-error);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none; /** so there is no double line with the validation message */
+}
+
 /* Special variations */
 .input[type="number"] {
   text-align: center;

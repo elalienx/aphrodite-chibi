@@ -15,6 +15,7 @@ interface Props {
 export default function Input({ placeholder, type, validationMessage }: Props) {
   // Properties
   const mobileKeyboard = getMobileKeyboard(type);
+  const styleMessage = validationMessage ? "has-validation-message" : "";
 
   // Methods
   function getMobileKeyboard(type: string) {
@@ -34,7 +35,7 @@ export default function Input({ placeholder, type, validationMessage }: Props) {
 
   return (
     <>
-      <input className="input" type={type} inputMode={mobileKeyboard} placeholder={placeholder} />
+      <input className={`input ${styleMessage}`} type={type} inputMode={mobileKeyboard} placeholder={placeholder} />
       {validationMessage && <p className="validation-message">{validationMessage}</p>}
     </>
   );
