@@ -3,9 +3,11 @@ import Input from "components/input/Input";
 import InputField from "components/input-field/InputField";
 import Label from "components/label/Label";
 
+import "./step.css";
+
 export default function Step() {
   return (
-    <div className="soft-background">
+    <div id="step" className="soft-background">
       <section className="top">
         <header>
           <a href="/">Tillbaka</a>
@@ -14,17 +16,17 @@ export default function Step() {
 
         <InputField>
           <Label>Kvadratmeter</Label>
-          <Input type="number" placeholder="0" />
+          <Input type="number" placeholder="0" suffix="kvm" />
         </InputField>
 
         <InputField>
           <Label>Antal rum</Label>
-          <Input type="number" placeholder="0" />
+          <Input type="number" placeholder="0" suffix="st" />
         </InputField>
 
         <InputField>
           <Label>Månadsavgift</Label>
-          <Input type="number" placeholder="0" />
+          <Input type="number" placeholder="0" suffix="kr/mån" />
         </InputField>
       </section>
 

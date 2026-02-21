@@ -20,7 +20,7 @@ export default function Step1({ onSubmit }: Props) {
 
         <InputField>
           <Label>E-postadress</Label>
-          <Input type="email" placeholder="leif@lendo.se" suffix="kr/month" />
+          <Input type="email" placeholder="leif@lendo.se" />
         </InputField>
 
         <InputField>
