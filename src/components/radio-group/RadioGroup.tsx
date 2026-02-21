@@ -25,7 +25,6 @@ export default function RadioGroup({ children, id }: Props) {
   }
 
   const label = Children.toArray(children).find((child) => isValidElement(child) && child.type === Label);
-
   const radioOptions = Children.map(children, (child) => {
     if (isValidElement(child) && child.type === RadioOption) {
       return cloneElement(child, { id } as any);
