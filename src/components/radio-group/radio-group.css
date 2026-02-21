@@ -4,7 +4,7 @@
   gap: var(--gap-between-label-and-field);
   width: 100%;
   background-color: pink;
-  min-height: 100px;
+  min-height: 10px;
 
   .radio-options {
     display: grid;

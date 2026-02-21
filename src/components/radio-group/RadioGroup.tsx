@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children, isValidElement, cloneElement } from "react";
 
 import RadioOption from "../radio-option/RadioOption";
 import Label from "../label/Label";
@@ -23,18 +23,14 @@ export default function RadioGroup({ children, id }: Props) {
     );
   }
 
-  const childArray = React.Children.toArray(children);
-
-  const label = childArray.find((child) => React.isValidElement(child) && child.type === Label);
-
-  // Filter and clone the RadioOptions to inject the 'id' prop
+  const childArray = Children.toArray(children);
+  const label = childArray.find((child) => isValidElement(child) && child.type === Label);
   const options = childArray
-    .filter((child) => React.isValidElement(child) && child.type === RadioOption)
+    .filter((child) => isValidElement(child) && child.type === RadioOption)
     .map((option) => {
-      if (React.isValidElement(option)) {
-        return React.cloneElement(option, { id } as any);
+      if (isValidElement(option)) {
+        return cloneElement(option, { id } as any);
       }
-      return option;
     });
 
   return (
