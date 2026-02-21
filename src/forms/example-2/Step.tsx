@@ -8,7 +8,7 @@ export default function Step() {
     <div className="soft-background">
       <section className="top">
         <header>
-          <a>Tillbaka</a>
+          <a href="/">Tillbaka</a>
           <h2 className="level-4">2. Om bostaden</h2>
         </header>
 
