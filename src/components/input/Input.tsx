@@ -9,5 +9,31 @@ interface Props {
 }
 
 export default function Input({ placeholder = "", type = "text" }: Props) {
-  return <input className="input" type={type} placeholder={placeholder} />;
+  // Properties
+  const mobileKeyboard = getMobileKeyboard(type);
+
+  // Methods
+  function getMobileKeyboard(type: string) {
+    switch (type) {
+      case "number":
+        return "numeric";
+      case "email":
+        return "email";
+      case "tel":
+        return "tel";
+      case "password":
+      case "text":
+      default:
+        return "text";
+    }
+  }
+
+  return (
+    <input
+      className="input"
+      type={type}
+      inputMode={mobileKeyboard}
+      placeholder={placeholder}
+    />
+  );
 }
