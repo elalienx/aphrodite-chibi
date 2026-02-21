@@ -110,6 +110,8 @@
   /** Formulary colors */
   --color-field-background: var(--color-gray-95);
   --color-field-border-color: var(--color-gray-50);
+  --color-field-background-error: var(--color-red-95);
+  --color-field-border-color-error: var(--color-red-50);
 
   /* Formulary spacing */
   --gap-between-label-and-field: var(--space-xs);
