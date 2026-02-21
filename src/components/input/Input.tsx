@@ -6,15 +6,9 @@ interface Props {
 
   /** Decides what kind of keyboard to show on mobile. This does not affect validation. Handle that separately. */
   type: "text" | "number" | "email" | "tel" | "password";
-
-  /**  */
-  validationSatus?: "clear" | "info" | "warnig" | "error";
-
-  /**  */
-  validationMessage?: string;
 }
 
-export default function Input({ placeholder, type, validationSatus, validationMessage }: Props) {
+export default function Input({ placeholder, type }: Props) {
   // Properties
   const mobileKeyboard = getMobileKeyboard(type);
 
@@ -37,8 +31,6 @@ export default function Input({ placeholder, type, validationSatus, validationMe
   return (
     <>
       <input className="input" type={type} inputMode={mobileKeyboard} placeholder={placeholder} />
-
-      {validationMessage && <p className="validation-message">{validationMessage}</p>}
     </>
   );
 }
