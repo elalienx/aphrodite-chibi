@@ -1,10 +1,8 @@
-import { Children, isValidElement, cloneElement } from "react";
 import type { ReactNode } from "react";
 
-import RadioOption from "../radio-option/RadioOption";
-import Label from "../label/Label";
-
 import "./radio-group.css";
+import extractLabel from "helpers/extractLabel";
+import extractRadioOptions from "helpers/extractRadioOptions";
 
 interface Props {
   /** Content to display inside the radio group. */
@@ -24,12 +22,9 @@ export default function RadioGroup({ children, id }: Props) {
     );
   }
 
-  const label = Children.toArray(children).find((child) => isValidElement(child) && child.type === Label);
-  const radioOptions = Children.map(children, (child) => {
-    if (isValidElement(child) && child.type === RadioOption) {
-      return cloneElement(child, { id } as any);
-    }
-  });
+  // Components
+  const label = extractLabel(children);
+  const radioOptions = extractRadioOptions(children, id);
 
   return (
     <div className="radio-group">
