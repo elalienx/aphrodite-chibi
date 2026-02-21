@@ -23,7 +23,7 @@ export default function InputField({ children, validationMessage }: Props) {
     <div className="input-field">
       {children}
 
-      {validationMessage && <p className="validation-message">{validationMessage}</p>}
+      {/* {validationMessage && <p className="validation-message">{validationMessage}</p>} */}
     </div>
   );
 }
