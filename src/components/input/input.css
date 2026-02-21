@@ -1,5 +1,6 @@
 .wrapper {
   display: flex;
+  align-items: center;
 }
 
 .input {
@@ -7,6 +8,7 @@
   height: var(--height-of-field);
   border-radius: var(--border-radius);
   border: solid 1px var(--color-border-input);
+  padding-block: 0; /** removes small gap from forms   */
   padding-inline: var(--space-medium);
   font-family: var(--font-family);
   font-weight: var(--font-weight-normal);
