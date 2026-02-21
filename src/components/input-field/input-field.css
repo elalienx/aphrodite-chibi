@@ -3,7 +3,6 @@
   flex-direction: column;
 
   .label {
-    background-color: pink;
     margin-bottom: var(--gap-between-label-and-field);
   }
 

@@ -1,4 +1,5 @@
 import "./input.css";
+import "./validation-message.css";
 
 interface Props {
   /** An example value to show when the field is empty. */

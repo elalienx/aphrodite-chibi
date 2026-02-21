@@ -37,9 +37,3 @@
 .input[type="number"] {
   -moz-appearance: textfield;
 }
-
-.validation-message {
-  background-color: var(--color-field-background-error);
-  border: solid 2px var(--color-field-border-color-error);
-  padding: var(--space-xs) var(--space-medium);
-}
