@@ -18,23 +18,18 @@ export default function RadioGroup({ children, id }: Props) {
   if (!children) {
     return (
       <p>
-        Please add a <code>Label</code> and at least two{" "}
-        <code>RadioOption</code> to get started
+        Please add a <code>Label</code> and at least two <code>RadioOption</code> to get started
       </p>
     );
   }
 
   const childArray = React.Children.toArray(children);
 
-  const label = childArray.find(
-    (child) => React.isValidElement(child) && child.type === Label,
-  );
+  const label = childArray.find((child) => React.isValidElement(child) && child.type === Label);
 
   // Filter and clone the RadioOptions to inject the 'id' prop
   const options = childArray
-    .filter(
-      (child) => React.isValidElement(child) && child.type === RadioOption,
-    )
+    .filter((child) => React.isValidElement(child) && child.type === RadioOption)
     .map((option) => {
       if (React.isValidElement(option)) {
         return React.cloneElement(option, { id } as any);
