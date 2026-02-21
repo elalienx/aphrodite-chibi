@@ -18,18 +18,19 @@
   transition:
     background-color 0.15s ease-in,
     border-color 0.15s ease-in,
-    border-width 0.15s ease-in;
+    box-shadow 0.15s ease-in;
 }
 
 .input:hover {
   background-color: var(--color-field-background);
-  border-width: 2px;
   border-color: var(--color-field-border-color);
+  box-shadow: inset 0 0 0 1px var(--color-field-border-color); /* adds 1px inside */
 }
 
 .input:focus {
   background-color: var(--color-blue-99);
-  border: solid 2px var(--color-blue-40);
+  border-color: var(--color-blue-40);
+  box-shadow: inset 0 0 0 1px var(--color-blue-40);
   outline: none;
 }
 
