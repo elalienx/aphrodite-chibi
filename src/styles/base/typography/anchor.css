@@ -4,7 +4,6 @@ a {
   letter-spacing: 0.01rem;
   font-weight: var(--font-weight-book);
   color: var(--color-typography-link);
-  text-decoration: underline;
 
   &:hover {
     text-decoration: none;

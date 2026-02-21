@@ -7,7 +7,10 @@ export default function Step() {
   return (
     <div className="soft-background">
       <section className="top">
-        <h2 className="level-4">2. Om bostaden</h2>
+        <header>
+          <a>Tillbaka</a>
+          <h2 className="level-4">2. Om bostaden</h2>
+        </header>
 
         <InputField>
           <Label>Kvadratmeter</Label>
