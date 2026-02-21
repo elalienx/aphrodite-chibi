@@ -3,6 +3,8 @@
   flex-direction: column;
   gap: var(--gap-between-label-and-field);
   width: 100%;
+  background-color: pink;
+  min-height: 100px;
 
   .radio-options {
     display: grid;
