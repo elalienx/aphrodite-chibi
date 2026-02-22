@@ -5,10 +5,4 @@
   .label {
     margin-bottom: var(--gap-between-label-and-field);
   }
-
-  /* Override corners to look like is part of the input */
-  .validation-message {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
 }

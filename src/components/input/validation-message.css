@@ -4,4 +4,6 @@
   border: solid 2px var(--color-field-border-color-error);
   border-top: none;
   border-radius: var(--border-radius);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
