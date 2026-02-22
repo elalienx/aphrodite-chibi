@@ -34,7 +34,7 @@
   }
 
   .validation-message {
-    border-top: solid var(--border-base) var(--input-border-up);
+    border-top: solid var(--border-hover) var(--input-border-up);
   }
 }
 
@@ -47,6 +47,10 @@
 
 .input-wrapper:hover {
   outline-color: var(--input-border-hover);
+
+  &.has-suffix .input {
+    border-right-color: var(--input-border-hover);
+  }
 }
 
 .input-wrapper:focus-within {
@@ -57,4 +61,8 @@
 .input-wrapper.has-validation-message {
   border-color: var(--input-border-error);
   outline-color: var(--input-border-error);
+
+  .validation-message {
+    border-color: var(--input-border-error);
+  }
 }
