@@ -48,20 +48,28 @@
 .input-wrapper:hover {
   outline-color: var(--input-border-hover);
 
-  &.has-suffix .input {
-    border-right-color: var(--input-border-hover);
+  &.has-suffix .input,
+  .suffix {
+    border-color: var(--input-border-hover);
   }
 }
 
 .input-wrapper:focus-within {
   border-color: var(--input-border-focus);
   outline-color: var(--input-border-focus);
+
+  &.has-suffix .input,
+  .suffix {
+    border-color: var(--input-border-focus);
+  }
 }
 
 .input-wrapper.has-validation-message {
   border-color: var(--input-border-error);
   outline-color: var(--input-border-error);
 
+  &.has-suffix .input,
+  .suffix,
   .validation-message {
     border-color: var(--input-border-error);
   }
