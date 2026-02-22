@@ -5,26 +5,10 @@
 
 .input {
   flex-grow: 1;
-  height: var(--height-of-field);
-  border-radius: var(--border-radius);
-  border: solid 1px var(--color-border-input);
-  padding-block: 0; /** removes small gap from forms   */
-  padding-inline: var(--space-medium);
+  padding-block: 0; /* removes small gap from forms */
   font-family: var(--font-family);
   font-weight: var(--font-weight-normal);
   font-size: var(--font-size-normal);
-
-  /* Animation */
-  transition:
-    background-color 0.15s ease-in,
-    border-color 0.15s ease-in,
-    box-shadow 0.15s ease-in;
-}
-
-.input:hover {
-  background-color: var(--color-field-background);
-  border-color: var(--color-field-border-color);
-  box-shadow: inset 0 0 0 1px var(--color-field-border-color); /* adds 1px inside */
 }
 
 .input:focus {
