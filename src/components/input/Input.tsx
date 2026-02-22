@@ -3,6 +3,7 @@ import getCorrectMobileKeyboard from "helpers/getCorrectMobileKeyboard";
 import "./input-wrapper-layout.css";
 import "./input-wrapper-state.css";
 import "./input-wrapper-design.css";
+import "./input-type-number.css";
 
 interface Props {
   /** An example value to show when the field is empty. */

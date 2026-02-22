@@ -19,6 +19,7 @@
   .suffix {
     padding-inline: var(--space-medium);
     line-height: var(--height-of-field);
+    text-align: center;
   }
 
   .validation-message {
