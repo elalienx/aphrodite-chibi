@@ -1,4 +1,0 @@
-{
-  "plugins": ["react-cosmos-plugin-vite"],
-  "decoratorPath": "./src/cosmos/cosmos.decorator.tsx"
-}
