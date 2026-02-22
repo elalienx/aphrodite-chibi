@@ -3,6 +3,8 @@
 
   .input {
     background-color: palegreen;
+    border: none;
+    outline: none;
   }
 
   .suffix {
@@ -14,5 +16,32 @@
   }
 }
 
-.input {
+.input-wrapper {
+  --border-base: 2px;
+  --border-hover: 4px;
+  --outline-hover: 2px;
+
+  border-style: solid;
+  border-width: var(--border-base);
+  border-color: var(--input-border-up);
+}
+
+.input-wrapper:hover,
+.input-wrapper:focus-within,
+.input-wrapper.has-validation-message {
+  outline-style: solid;
+  outline-width: var(--outline-hover);
+}
+
+.input-wrapper:hover {
+  outline-color: var(--input-border-hover);
+}
+
+.input-wrapper:focus-within {
+  border-color: var(--input-border-focus);
+  outline-color: var(--input-border-focus);
+}
+
+.input-wrapper.has-validation-message {
+  outline-color: var(--input-border-error);
 }
