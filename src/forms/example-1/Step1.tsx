@@ -2,6 +2,8 @@ import Button from "components/button/Button";
 import Input from "components/input/Input";
 import InputField from "components/input-field/InputField";
 import Label from "components/label/Label";
+import RadioGroup from "components/radio-group/RadioGroup";
+import RadioOption from "components/radio-option/RadioOption";
 
 interface Props {
   onSubmit: () => void;
@@ -20,13 +22,19 @@ export default function Step1({ onSubmit }: Props) {
 
         <InputField>
           <Label>E-postadress</Label>
-          <Input type="email" placeholder="leif@lendo.se" />
+          <Input type="email" placeholder="leif@lendo.se" suffix="kr" />
         </InputField>
 
         <InputField>
           <Label>Telefonnummer</Label>
           <Input type="tel" placeholder="+46 729478013" />
         </InputField>
+
+        <RadioGroup id="PEP">
+          <Label>Är du PEP?</Label>
+          <RadioOption>Ja</RadioOption>
+          <RadioOption>Nej</RadioOption>
+        </RadioGroup>
       </section>
 
       <hr />
