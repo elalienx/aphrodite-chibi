@@ -23,12 +23,10 @@
   border: solid 2px var(--color-field-border-color-error);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  border-bottom: none; /** so there is no double line with the validation message */
 }
 
 /* Suffix handling */
 .input.has-suffix {
-  border-right: none; /** so there is no double line with the suffix */
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }

@@ -1,6 +1,7 @@
 .validation-message {
   padding: var(--space-xs) var(--space-medium);
-  border-radius: var(--border-radius);
   background-color: var(--color-field-background-error);
   border: solid 2px var(--color-field-border-color-error);
+  border-top: none;
+  border-radius: var(--border-radius);
 }

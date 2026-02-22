@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   min-width: var(--space-5xl);
+  border-left: none;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -10,6 +11,5 @@
 /* Error handling */
 .suffix.has-validation-message {
   border: solid 2px var(--color-field-border-color-error);
-  border-bottom: none; /** so there is no double line with the validation message */
   border-bottom-right-radius: 0;
 }
