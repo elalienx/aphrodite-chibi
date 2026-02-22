@@ -1,0 +1,18 @@
+.input-wrapper {
+  background-color: pink;
+
+  .input {
+    background-color: palegreen;
+  }
+
+  .suffix {
+    background-color: palegreen;
+  }
+
+  .validation-message {
+    background-color: palegreen;
+  }
+}
+
+.input {
+}

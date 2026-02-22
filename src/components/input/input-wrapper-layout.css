@@ -1,20 +1,4 @@
 .input-wrapper {
-  background-color: pink;
-
-  .input {
-    background-color: palegreen;
-  }
-
-  .suffix {
-    background-color: palegreen;
-  }
-
-  .validation-message {
-    background-color: palegreen;
-  }
-}
-
-.input-wrapper {
   display: grid;
   grid-template-columns: 1fr auto; /* To make the input take the full width if suffix does not exist. */
   grid-template-areas:
