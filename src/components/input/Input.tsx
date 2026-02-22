@@ -1,8 +1,6 @@
 import getCorrectMobileKeyboard from "helpers/getCorrectMobileKeyboard";
 
-import "./input.css";
-import "./suffix.css";
-import "./validation-message.css";
+import "./input-wrapper-layout.css";
 
 interface Props {
   /** An example value to show when the field is empty. */
@@ -21,21 +19,12 @@ interface Props {
 export default function Input({ placeholder, type, validationMessage, suffix }: Props) {
   // Properties
   const mobileKeyboard = getCorrectMobileKeyboard(type);
-  const cssMessage = validationMessage ? "has-validation-message" : "";
-  const cssSuffix = suffix ? "has-suffix" : "";
 
   return (
-    <>
-      <div className="input-and-suffix-wrapper">
-        <input
-          className={`input ${cssSuffix} ${cssMessage}`}
-          type={type}
-          inputMode={mobileKeyboard}
-          placeholder={placeholder}
-        />
-        {suffix && <span className={`suffix ${cssMessage}`}>{suffix}</span>}
-      </div>
+    <div className="input-wrapper">
+      <input className="input" type={type} inputMode={mobileKeyboard} placeholder={placeholder} />
+      {suffix && <span className="suffix">{suffix}</span>}
       {validationMessage && <p className="validation-message">{validationMessage}</p>}
-    </>
+    </div>
   );
 }
