@@ -97,21 +97,39 @@
 
 /* Semantic values */
 :root {
-  /* Background colors */
-  --color-page-background: var(--color-gray-95);
-  --color-border-divider: var(--color-desaturated-90);
-  --color-border-input: var(--color-desaturated-60);
-
-  /* Typography colors */
-  --color-typography-dark: var(--color-gray-10);
-  --color-typography-default: var(--color-gray-30);
-  --color-typography-link: var(--color-blue-40);
-
   /** Formulary colors */
   --color-field-background: var(--color-gray-95);
   --color-field-border-color: var(--color-gray-50);
   --color-field-background-error: var(--color-red-95);
   --color-field-border-color-error: var(--color-red-50);
+  --color-border-input: var(--color-desaturated-60);
+
+  --input-background-up: red;
+  --input-background-hover: orange;
+  --input-background-focus: yellow;
+  --input-background-error: green;
+  --input-background-succes: blue;
+
+  --input-border-up: blue;
+  --input-border-hover: green;
+  --input-border-focus: yellow;
+  --input-border-error: orange;
+  --input-border-succes: red;
+
+  /* -
+  -
+  -
+  -
+  - */
+
+  /* Background colors */
+  --color-page-background: var(--color-gray-95);
+  --color-border-divider: var(--color-desaturated-90);
+
+  /* Typography colors */
+  --color-typography-dark: var(--color-gray-10);
+  --color-typography-default: var(--color-gray-30);
+  --color-typography-link: var(--color-blue-40);
 
   /* Formulary spacing */
   --gap-between-label-and-field: var(--space-xs);
