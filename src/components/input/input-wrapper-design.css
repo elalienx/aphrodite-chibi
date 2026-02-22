@@ -6,6 +6,7 @@
     font-family: var(--font-family);
     font-size: var(--font-size-normal);
     font-weight: var(--font-weight-normal);
+    outline: none;
 
     border-left: none;
     border-top: none;

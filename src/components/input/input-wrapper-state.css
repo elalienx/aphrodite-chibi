@@ -1,7 +1,7 @@
 .input-wrapper {
-  --border-base: 2px;
-  --border-hover: 4px;
-  --outline-hover: 2px;
+  --border-base: 1px;
+  --border-hover: 2px;
+  --outline-hover: 1px;
 
   border-style: solid;
   border-width: var(--border-base);
