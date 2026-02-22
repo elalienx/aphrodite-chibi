@@ -3,11 +3,6 @@
   align-items: center;
   justify-content: center;
   min-width: var(--space-5xl);
-  height: var(--height-of-field);
-  padding-inline: var(--space-xs);
-  background-color: white; /** small detail to match input when the form has a background color. */
-  border: solid 1px var(--color-border-input);
-  border-radius: var(--border-radius);
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }

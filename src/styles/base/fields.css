@@ -4,11 +4,13 @@
 
 /* this should be a a "base" .field class */
 .input,
+.suffix,
 .radio-option {
   height: var(--height-of-field);
-  border-radius: var(--border-radius);
-  border: solid 1px var(--color-border-input);
   padding-inline: var(--space-medium);
+  background-color: white; /** small detail to match input when the form has a background color. */
+  border: solid 1px var(--color-border-input);
+  border-radius: var(--border-radius);
 
   /* Animation */
   transition:
@@ -23,6 +25,7 @@
  * based on the input’s state (hover or checked).
  */
 .input:hover,
+.suffix:hover,
 .radio-option:has(input[type="radio"]:hover) {
   background-color: var(--color-field-background);
   border-color: var(--color-field-border-color);
