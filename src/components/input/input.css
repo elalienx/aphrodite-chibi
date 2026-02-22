@@ -34,6 +34,7 @@
 /* Special variations */
 .input[type="number"] {
   text-align: center;
+  appearance: inherit;
   -moz-appearance: textfield; /** Remove spinner for Firefox */
 
   &::-webkit-outer-spin-button,
