@@ -20,6 +20,7 @@
   }
 }
 
+/* Shared outline behaviour */
 .input-wrapper:hover,
 .input-wrapper:focus-within,
 .input-wrapper.has-validation-message {
@@ -27,6 +28,7 @@
   outline-width: var(--outline-hover);
 }
 
+/* On hover */
 .input-wrapper:hover {
   outline-color: var(--input-border-hover);
 
@@ -36,6 +38,7 @@
   }
 }
 
+/* On focus */
 .input-wrapper:focus-within {
   border-color: var(--input-border-focus);
   outline-color: var(--input-border-focus);
@@ -46,6 +49,7 @@
   }
 }
 
+/* On showing error message */
 .input-wrapper.has-validation-message {
   border-color: var(--input-border-error);
   outline-color: var(--input-border-error);
