@@ -1,8 +1,5 @@
 .input-field {
   display: flex;
   flex-direction: column;
-
-  .label {
-    margin-bottom: var(--gap-between-label-and-field);
-  }
+  gap: var(--gap-between-label-and-field);
 }
