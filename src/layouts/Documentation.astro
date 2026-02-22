@@ -1,6 +1,8 @@
 ---
 import { Code } from "astro:components";
 
+import NavigationBar from "docs-components/NavigationBar.astro";
+
 import "styles/style.css";
 import "styles/pages/documentation.css";
 
@@ -30,26 +32,7 @@ const currentPath = Astro.url.pathname;
   </head>
 
   <body class="documentation">
-    <!-- Navigation bar -->
-    <nav>
-      <a href="/">Aphrodite Chibi</a>
-      <h2>Components</h2>
-      {
-        links.map((link) => {
-          const href = `/docs/${link.slug}`;
-
-          return (
-            <a
-              href={href}
-              class={currentPath === href ? "active" : ""}
-              data-astro-prefetch
-            >
-              {link.label}
-            </a>
-          );
-        })
-      }
-    </nav>
+    <NavigationBar links={links} currentPath={currentPath} />
 
     <!-- Content -->
     <main class="soft-background">
