@@ -40,7 +40,7 @@ export default function Input({ placeholder, type, validationMessage, suffix }: 
 
   return (
     <>
-      <div className="wrapper">
+      <div className="input-and-suffix-wrapper">
         <input
           className={`input ${styleSuffix} ${styleMessage}`}
           type={type}
