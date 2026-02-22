@@ -20,9 +20,11 @@ interface Props {
 export default function Input({ placeholder, type, validationMessage, suffix }: Props) {
   // Properties
   const mobileKeyboard = getCorrectMobileKeyboard(type);
+  const cssSuffix = suffix ? "has-suffix" : "";
+  const cssValidationMessage = validationMessage ? "has-validation-message" : "";
 
   return (
-    <div className="input-wrapper">
+    <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage}`}>
       <input className="input" type={type} inputMode={mobileKeyboard} placeholder={placeholder} />
       {suffix && <span className="suffix">{suffix}</span>}
       {validationMessage && <p className="validation-message">{validationMessage}</p>}

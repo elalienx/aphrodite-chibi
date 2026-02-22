@@ -43,5 +43,6 @@
 }
 
 .input-wrapper.has-validation-message {
+  border-color: var(--input-border-error);
   outline-color: var(--input-border-error);
 }
