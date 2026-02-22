@@ -3,7 +3,7 @@
 @import url("./typography/headings.css");
 
 body {
-  color: var(--color-typography-default);
+  color: var(--typography-default);
   font-size: var(--font-size-normal);
   font-family: var(--font-family);
   font-weight: var(--font-weight-normal);
@@ -22,7 +22,7 @@ code {
 h1,
 h2 {
   margin: 0;
-  color: var(--color-typography-dark);
+  color: var(--typography-dark);
 }
 
 h1 {

@@ -4,7 +4,7 @@ h1 {
   line-height: 2.25rem;
   letter-spacing: -0.065rem;
   font-weight: var(--font-weight-bold);
-  color: var(--color-typography-dark);
+  color: var(--typography-dark);
   margin: 0;
 }
 
@@ -14,7 +14,7 @@ h2 {
   line-height: 2.25rem;
   letter-spacing: -0.05rem;
   font-weight: var(--font-weight-bold);
-  color: var(--color-typography-dark);
+  color: var(--typography-dark);
   margin: 0;
 }
 
@@ -24,7 +24,7 @@ h3 {
   line-height: 2rem;
   letter-spacing: -0.03rem;
   font-weight: var(--font-weight-bold);
-  color: var(--color-typography-dark);
+  color: var(--typography-dark);
   margin: 0;
 }
 
@@ -34,7 +34,7 @@ h4 {
   line-height: 1.5rem;
   letter-spacing: 0;
   font-weight: var(--font-weight-bold);
-  color: var(--color-typography-dark);
+  color: var(--typography-dark);
   margin: 0;
 }
 
@@ -44,7 +44,7 @@ h5 {
   line-height: 1.25rem;
   letter-spacing: 0.01rem;
   font-weight: var(--font-weight-bold);
-  color: var(--color-typography-dark);
+  color: var(--typography-dark);
   margin: 0;
 }
 

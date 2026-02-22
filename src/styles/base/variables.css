@@ -118,9 +118,9 @@
   --divider-border: var(--color-desaturated-90);
 
   /* Typography colors */
-  --color-typography-dark: var(--color-gray-10);
-  --color-typography-default: var(--color-gray-30);
-  --color-typography-link: var(--color-blue-40);
+  --typography-dark: var(--color-gray-10);
+  --typography-default: var(--color-gray-30);
+  --typography-link: var(--color-blue-40);
 
   /* Formulary spacing */
   --gap-between-label-and-field: var(--space-xs);

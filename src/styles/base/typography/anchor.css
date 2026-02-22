@@ -3,7 +3,7 @@ a {
   line-height: 1.5rem;
   letter-spacing: 0.01rem;
   font-weight: var(--font-weight-book);
-  color: var(--color-typography-link);
+  color: var(--typography-link);
 
   &:hover {
     text-decoration: none;
