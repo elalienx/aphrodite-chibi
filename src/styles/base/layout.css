@@ -4,13 +4,13 @@
 
 body {
   margin: 0;
-  background-color: var(--color-page-background);
+  background-color: var(--page-background);
 }
 
 hr {
   width: 100%;
   margin: 0;
-  border: solid 0.5px var(--color-border-divider);
+  border: solid 0.5px var(divider-border);
 }
 
 .soft-background {

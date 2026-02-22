@@ -97,34 +97,25 @@
 
 /* Semantic values */
 :root {
-  /** Formulary colors */
-  --color-field-background: var(--color-gray-95);
-  --color-field-border-color: var(--color-gray-50);
-  --color-field-background-error: var(--color-red-95);
-  --color-field-border-color-error: var(--color-red-50);
-  --color-border-input: var(--color-desaturated-60);
+  /* Input backgrounds */
+  --input-background-up: var(--color-gray-95);
+  --input-background-hover: var(--color-blue-99);
+  --input-background-focus: var(--color-blue-99); /** same as hover **/
+  --input-background-error: var(--color-red-95);
+  --input-background-succes: green;
 
-  --input-background-up: red;
-  --input-background-hover: orange;
-  --input-background-focus: yellow;
-  --input-background-error: green;
-  --input-background-succes: blue;
+  /* Input borders */
+  --input-border-up: var(--color-gray-50);
+  --input-border-hover: var(--color-desaturated-60);
+  --input-border-focus: var(--color-blue-40);
+  --input-border-error: var(--color-red-50);
+  --input-border-succes: palegreen;
 
-  --input-border-up: blue;
-  --input-border-hover: green;
-  --input-border-focus: yellow;
-  --input-border-error: orange;
-  --input-border-succes: red;
+  /* Other backgrounds */
+  --page-background: var(--color-gray-95);
 
-  /* -
-  -
-  -
-  -
-  - */
-
-  /* Background colors */
-  --color-page-background: var(--color-gray-95);
-  --color-border-divider: var(--color-desaturated-90);
+  /* Other borders */
+  --divider-border: var(--color-desaturated-90);
 
   /* Typography colors */
   --color-typography-dark: var(--color-gray-10);

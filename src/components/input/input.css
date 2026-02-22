@@ -12,15 +12,15 @@
 }
 
 .input:focus {
-  background-color: var(--color-blue-99);
-  border-color: var(--color-blue-40);
-  box-shadow: inset 0 0 0 1px var(--color-blue-40);
+  background-color: var(--input-background-hover);
+  border-color: var(--input-border-focus);
+  box-shadow: inset 0 0 0 1px var(--input-border-focus);
   outline: none;
 }
 
 /* Error handling */
 .input.has-validation-message {
-  border: solid 2px var(--color-field-border-color-error);
+  border: solid 2px var(--input-border-up-error);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }

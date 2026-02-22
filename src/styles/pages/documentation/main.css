@@ -11,7 +11,7 @@
   }
 
   .gallery {
-    background-color: var(--color-page-background);
+    background-color: var(--page-background);
     padding: var(--space-medium);
     border-radius: var(--border-radius);
 
