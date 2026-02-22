@@ -124,7 +124,7 @@
 
   /* Formulary spacing */
   --gap-between-label-and-field: var(--space-xs);
-  --height-of-field: 48px;
+  --height-of-field: 48px; /** REFACTOR: rename to input-height. */
 
   /* Others */
   --border-radius: 8px;

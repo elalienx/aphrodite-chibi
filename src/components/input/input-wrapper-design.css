@@ -1,17 +1,25 @@
 .input-wrapper {
-  background-color: pink;
-
   .input {
-    background-color: palegreen;
-    border: none;
-    outline: none;
+    height: var(--height-of-field);
+    padding-inline: var(--space-medium);
+    color: var(--typography-default);
+    font-family: var(--font-family);
+    font-size: var(--font-size-normal);
+    font-weight: var(--font-weight-normal);
+
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
   }
 
   .suffix {
-    background-color: palegreen;
+    padding-inline: var(--space-medium);
+    line-height: var(--height-of-field);
   }
 
   .validation-message {
-    background-color: palegreen;
+    padding: var(--space-small) var(--space-medium);
+    background-color: var(--input-background-error);
+    font-weight: var(--font-weight-bold);
   }
 }
