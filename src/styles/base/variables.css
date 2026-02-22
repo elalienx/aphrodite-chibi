@@ -108,7 +108,7 @@
   --color-typography-link: var(--color-blue-40);
 
   /** Formulary colors */
-  --color-field-background: var(--color-gray-95);
+  --color-field-background: var(--color-blue-99);
   --color-field-border-color: var(--color-gray-50);
   --color-field-background-error: var(--color-red-95);
   --color-field-border-color-error: var(--color-red-50);
