@@ -3,8 +3,8 @@
   align-items: center;
   gap: var(--space-xs);
   height: var(--height-of-field);
-  background-color: white; /* In case it is used on a non-white background. */
   padding-inline: var(--space-medium);
+  background-color: white; /* In case it is used on a non-white background. */
   border: solid 1px var(--input-border-up);
   border-radius: var(--border-radius);
 
@@ -12,7 +12,7 @@
   transition:
     background-color 0.15s ease-in,
     border-color 0.15s ease-in,
-    box-shadow 0.15s ease-in;
+    outline-color 0.15s ease-in;
 }
 
 /**
@@ -30,9 +30,9 @@
   --color-accent: white;
 
   background-color: var(--color-background);
+  color: var(--color-accent);
   border-color: var(--color-background);
   outline: solid 1px var(--color-background);
-  color: var(--color-accent);
 
   input[type="radio"]:checked {
     accent-color: var(--color-accent);
