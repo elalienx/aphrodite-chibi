@@ -1,43 +1,41 @@
-# Astro Starter Kit: Minimal
-
-```sh
-pnpm create astro@latest -- --template minimal
-```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+# Aphrodite Chibi
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+Inside of the Aphrodite Chibi project, you'll see the following folders and files:
 
 ```text
 /
 ├── public/
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   └── components/
+│   └── doc-components/
+│   └── forms/
+│   └── helpers/
+│   └── layout/
+│   └── pages/index.astro 🏁 Entry point
+│   └── styles/
 └── package.json
+
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### Main folders
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
+1. **📦 Components:** The UI components of Aphrodite Chibi. Each folder contains a React TypeScript and at least one CSS file. If the folder contains more than one CSS file, the name explains how the component stlyes are divided into layout, state, design, and unique case scenarios.
+1. **📖 Docs Components:** The UI components of the documentation page. These are not neccesary to builld Lendo's website, only for reading the Aphrodite Chibi instruction manual. Contains a mix of React and Astro files.
+1. **📋 Forms:** Special React components which simulate a specic Lendo application form. Use to test Aphrodite Chibi integrations with schema validation, form handlers, state managmeent, and tracking.
+1. **📐 Layouts:** Special Astro components use to build other pages. Case in point a Document template for each page explaining an Aphrodite Chibi component.
+1. **📑 Pages:** Astro pages for accesing the documenation and examples of the form in action. As mentioned, `index.astro` is the entry point. 🏁
 
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
+| Command                | Action                                           |
+| :--------------------- | :----------------------------------------------- |
+| `pnpm install`         | Installs dependencies                            |
 | `pnpm dev`             | Starts local dev server at `localhost:4321`      |
 | `pnpm build`           | Build your production site to `./dist/`          |
 | `pnpm preview`         | Preview your build locally, before deploying     |
 | `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
