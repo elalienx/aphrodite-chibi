@@ -3,6 +3,7 @@
   align-items: center;
   gap: var(--space-xs);
   height: var(--height-of-field);
+  background-color: white; /* In case it is used on a non-white background. */
   padding-inline: var(--space-medium);
   border: solid 1px var(--input-border-up);
   border-radius: var(--border-radius);

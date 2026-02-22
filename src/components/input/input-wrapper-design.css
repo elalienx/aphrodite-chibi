@@ -18,6 +18,7 @@
 
   .suffix {
     padding-inline: var(--space-medium);
+    background-color: white; /* In case it is used on a non-white background. */
     line-height: var(--height-of-field);
     text-align: center;
   }
