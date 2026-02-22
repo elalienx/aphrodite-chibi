@@ -24,6 +24,18 @@
   border-style: solid;
   border-width: var(--border-base);
   border-color: var(--input-border-up);
+
+  .input {
+    border-right: solid var(--border-base) white; /** The color is set to not be visible on purpose to color it on state changes. */
+  }
+
+  .suffix {
+    border-left: solid var(--border-base) var(--input-border-up);
+  }
+
+  .validation-message {
+    border-top: solid var(--border-base) var(--input-border-up);
+  }
 }
 
 .input-wrapper:hover,
