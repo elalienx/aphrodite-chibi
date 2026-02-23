@@ -12,8 +12,6 @@ interface Props {
 
 const Step1Schema = v.object({
   name: v.pipe(v.string(), v.minLength(10)),
-  email: v.pipe(v.string(), v.email()),
-  telephone: v.pipe(v.string(), v.minLength(8)),
 });
 
 export default function Step1({ onSubmit }: Props) {
@@ -25,23 +23,9 @@ export default function Step1({ onSubmit }: Props) {
       <section className="top">
         <h2 className="level-4">Step 1</h2>
 
-        <Field of={step1Form} path={["email"]}>
-          {(field) => (
-            <InputField>
-              <Label>Namn och efternamn</Label>
-              <Input type="text" placeholder="kr" validationMessage={field.errors[0]} />
-            </InputField>
-          )}
-        </Field>
-
         <InputField>
-          <Label>E-postadress</Label>
-          <Input type="email" placeholder="leif@lendo.se" />
-        </InputField>
-
-        <InputField>
-          <Label>Telefonnummer</Label>
-          <Input type="tel" placeholder="+46 729478013" />
+          <Label>Namn och efternamn</Label>
+          <Input type="text" placeholder="Leif Lend" />
         </InputField>
       </section>
 
