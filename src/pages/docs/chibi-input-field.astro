@@ -1,7 +1,4 @@
 ---
-import Input from "components/input/Input";
-import InputField from "components/input-field/InputField";
-import Label from "components/label/Label";
 import Documentation from "layouts/Documentation.astro";
 
 const code = `
@@ -18,8 +15,4 @@ import InputField from "./InputField"
   <div slot="description">
     <p>The complete implementation of the input field. It comes with a label and the option to enable tooltips.</p>
   </div>
-  <InputField slot="component">
-    <Label>Medsökandes e-post</Label>
-    <Input type="email" placeholder="namn@email.se" />
-  </InputField>
 </Documentation>
