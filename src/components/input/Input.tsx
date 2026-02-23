@@ -31,7 +31,6 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   const field = useField(form, { path: [id] });
 
   // Properties
-  const fieldValue = typeof field.input === "string" ? field.input : "";
   const firstError = field.errors?.[0];
   const mobileKeyboard = getCorrectMobileKeyboard(type);
   const cssSuffix = suffix ? "has-suffix" : "";
@@ -39,14 +38,7 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
 
   return (
     <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage}`}>
-      <input
-        {...field.props}
-        className="input"
-        inputMode={mobileKeyboard}
-        placeholder={placeholder}
-        type={type}
-        value={fieldValue}
-      />
+      <input {...field.props} className="input" inputMode={mobileKeyboard} placeholder={placeholder} type={type} />
       {suffix && <span className="suffix">{suffix}</span>}
       {firstError && <p className="validation-message">{firstError}</p>}
     </div>
