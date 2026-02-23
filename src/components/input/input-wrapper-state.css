@@ -23,7 +23,8 @@
 /* Shared outline behaviour */
 .input-wrapper:hover,
 .input-wrapper:focus-within,
-.input-wrapper.has-validation-message {
+.input-wrapper.has-validation-message,
+.input-wrapper.is-valid {
   outline-style: solid;
   outline-width: var(--outline-hover);
 }
@@ -58,5 +59,17 @@
   .suffix,
   .validation-message {
     border-color: var(--input-border-error);
+  }
+}
+
+/** On being valid */
+.input-wrapper.is-valid {
+  border-color: green;
+  outline-color: green;
+
+  &.has-suffix .input,
+  .suffix,
+  .validation-message {
+    border-color: green;
   }
 }
