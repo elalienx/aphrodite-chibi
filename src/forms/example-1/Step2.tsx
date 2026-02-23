@@ -29,7 +29,7 @@ export default function Step2({ onSubmit }: Props) {
 
         {/* Property type */}
         <RadioGroup id="propertyType">
-          <Label>För vilken typ av bostad söker du lån</Label>
+          <Label>För vilken typ av bostad söker du lån?</Label>
           <RadioOption>Villa</RadioOption>
           <RadioOption>Lägenhet</RadioOption>
           <RadioOption>Radhus</RadioOption>
