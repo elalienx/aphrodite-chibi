@@ -11,7 +11,7 @@ export default function FormManager() {
 
   return (
     <div>
-      {step === "step1" && <Step1 onSubmit={() => setStep("step2")} />}
+      {step === "step1" && <Step1 />}
       {step === "step2" && <Step2 onSubmit={() => setStep("step3")} />}
       {step === "step3" && <Step3 onSubmit={() => setStep("success")} />}
       {step === "success" && <Success onSubmit={() => setStep("step1")} />}
