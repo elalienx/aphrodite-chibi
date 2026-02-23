@@ -1,4 +1,4 @@
-import { Field, Form, useForm } from "@formisch/react";
+import { Form, useForm } from "@formisch/react";
 import * as v from "valibot";
 
 import Button from "components/button/Button";
@@ -6,23 +6,31 @@ import Input from "components/input/Input";
 import InputField from "components/input-field/InputField";
 import Label from "components/label/Label";
 
-const Step1Schema = v.object({
-  name: v.pipe(v.string(), v.minLength(5)),
-  email: v.pipe(v.string(), v.email()),
+interface Props {
+  onContinue: () => void;
+}
+
+const schema = v.object({
+  name: v.pipe(v.string("Name must not be empty"), v.minLength(5, "This name is too short")),
+  email: v.pipe(v.string("Email must not be empty"), v.email("This email is not valid")),
 });
 
-export default function Step1() {
+export default function Step1({ onContinue }: Props) {
   // Properties
-  const form = useForm({ schema: Step1Schema, validate: "blur" });
+  const form = useForm({ schema: schema });
 
   // Methods
-  function onSubmit() {
-    // check if the form is valid
-    // then run the function send by the parent
+  function submitForm(values: v.InferInput<typeof schema>) {
+    console.log(values); // { name: string, email: string }
+
+    if (form.isValid) {
+      alert("Success 🎉");
+      onContinue();
+    }
   }
 
   return (
-    <Form className="soft-background" of={form} onSubmit={(output, event) => console.log(output)}>
+    <Form of={form} onSubmit={submitForm} className="soft-background">
       <section className="top">
         <h2 className="level-4">Step 1</h2>
 
