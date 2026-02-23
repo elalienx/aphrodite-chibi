@@ -35,9 +35,10 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   const mobileKeyboard = getCorrectMobileKeyboard(type);
   const cssSuffix = suffix ? "has-suffix" : "";
   const cssValidationMessage = firstError ? "has-validation-message" : "";
+  const cssIsValid = field.isValid ? "is-valid" : "";
 
   return (
-    <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage}`}>
+    <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage} ${cssIsValid}`}>
       <input {...field.props} className="input" inputMode={mobileKeyboard} placeholder={placeholder} type={type} />
       {suffix && <span className="suffix">{suffix}</span>}
       {firstError && <p className="validation-message">{firstError}</p>}
