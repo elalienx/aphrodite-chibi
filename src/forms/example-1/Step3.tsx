@@ -6,10 +6,10 @@ import RadioGroup from "components/radio-group/RadioGroup";
 import RadioOption from "components/radio-option/RadioOption";
 
 interface Props {
-  onSubmit: () => void;
+  onContinue: () => void;
 }
 
-export default function Step3({ onSubmit }: Props) {
+export default function Step3({ onContinue }: Props) {
   return (
     <div className="soft-background">
       <section className="top">
@@ -34,7 +34,7 @@ export default function Step3({ onSubmit }: Props) {
       </section>
       <hr />
       <section className="bottom">
-        <Button onClick={onSubmit}>Foobar</Button>
+        <Button onClick={onContinue}>Foobar</Button>
       </section>
     </div>
   );

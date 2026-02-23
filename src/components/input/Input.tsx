@@ -1,4 +1,6 @@
-import { useField, type FormStore } from "@formisch/react";
+import { useField } from "@formisch/react";
+import type { FormStore } from "@formisch/react";
+import * as v from "valibot";
 
 import getCorrectMobileKeyboard from "helpers/getCorrectMobileKeyboard";
 
@@ -8,7 +10,10 @@ import "./input-wrapper-design.css";
 import "./input-type-number.css";
 
 interface Props {
-  form: FormStore;
+  /** An instance of a Formisch form. */
+  form: FormStore<v.GenericSchema>;
+
+  /** Unique identifier of a form field. */
   id: string;
 
   /** An example value to show when the field is empty. */
