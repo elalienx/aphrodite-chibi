@@ -64,12 +64,12 @@
 
 /** On being valid */
 .input-wrapper.is-valid {
-  border-color: green;
-  outline-color: green;
+  border-color: var(--input-border-success);
+  outline-color: var(--input-border-success);
 
   &.has-suffix .input,
   .suffix,
   .validation-message {
-    border-color: green;
+    border-color: var(--input-border-success);
   }
 }
