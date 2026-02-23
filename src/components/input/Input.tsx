@@ -19,12 +19,9 @@ interface Props {
 
   /** Decoration text on the right side of the input. Used to indicate a currency or measurment unit. */
   suffix?: string;
-
-  /** Text to display if the form validation encountered an issue. */
-  validationMessage?: string;
 }
 
-export default function Input({ form, id, placeholder, type, suffix, validationMessage }: Props) {
+export default function Input({ form, id, placeholder, type, suffix }: Props) {
   // Local state
   const field = useField(form, { path: [id] });
 
