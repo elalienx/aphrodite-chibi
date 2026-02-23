@@ -10,22 +10,42 @@ importers:
     dependencies:
       '@astrojs/react':
         specifier: ^4.4.2
+<<<<<<< HEAD
         version: 4.4.2(@types/node@25.3.2)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+=======
+        version: 4.4.2(@types/node@25.2.3)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@formisch/react':
+        specifier: ^0.4.2
+        version: 0.4.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(valibot@1.2.0(typescript@5.9.3))
+>>>>>>> f904e5a (installed valibo, formisch, and set typescript to stict per formish recommendation)
       '@types/react':
         specifier: ^19.2.14
         version: 19.2.14
       '@types/react-dom':
         specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.14)
+      add:
+        specifier: ^2.0.6
+        version: 2.0.6
       astro:
         specifier: ^5.17.1
+<<<<<<< HEAD
         version: 5.17.2(@types/node@25.3.2)(rollup@4.57.1)(typescript@5.9.3)
+=======
+        version: 5.17.2(@types/node@25.2.3)(rollup@4.57.1)(typescript@5.9.3)
+      pnpm:
+        specifier: ^10.30.1
+        version: 10.30.1
+>>>>>>> f904e5a (installed valibo, formisch, and set typescript to stict per formish recommendation)
       react:
         specifier: ^19.2.4
         version: 19.2.4
       react-dom:
         specifier: ^19.2.4
         version: 19.2.4(react@19.2.4)
+      valibot:
+        specifier: ^1.2.0
+        version: 1.2.0(typescript@5.9.3)
     devDependencies:
       '@playwright/experimental-ct-react':
         specifier: ^1.58.2
@@ -467,6 +487,17 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@formisch/react@0.4.2':
+    resolution: {integrity: sha512-9ENyWeQgUyVvw50ZEQiStMkXZArDjB4uhRZWI2JpFWmzLSi9L5Yw80SQ4IF39EX2M3seIJwPs+FbPUrnq+mgzA==}
+    peerDependencies:
+      react: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      typescript: '>=5'
+      valibot: ^1.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   '@img/colour@1.0.0':
     resolution: {integrity: sha512-A5P/LfWGFSl6nsckYtjw9da+19jB8hkJ6ACTGcDfEJ0aE+l2n2El7dsVM7UVHZQ9s2lmYMWlrS21YLy2IR1LUw==}
     engines: {node: '>=18'}
@@ -847,6 +878,9 @@ packages:
     resolution: {integrity: sha512-NZyJarBfL7nWwIq+FDL6Zp/yHEhePMNnnJ0y3qfieCrmNvYct8uvtiV41UvlSe6apAfk0fY1FbWx+NwfmpvtTg==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+
+  add@2.0.6:
+    resolution: {integrity: sha512-j5QzrmsokwWWp6kUcJQySpbG+xfOBqqKnup3OIk1pz+kB/80SLorZ9V8zHFLO92Lcd+hbvq8bT+zOGoPkmBV0Q==}
 
   ansi-align@3.0.1:
     resolution: {integrity: sha512-IOfwwBF5iczOjp/WeY4YxyjqAFMQoZufdQWDd19SEExbVLNXqvpzSJ/M7Za4/sCPmQ0+GRquoA7bGcINcxew6w==}
@@ -1469,6 +1503,7 @@ packages:
     resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
     engines: {node: '>=12'}
 
+<<<<<<< HEAD
   playwright-core@1.58.2:
     resolution: {integrity: sha512-yZkEtftgwS8CsfYo7nm0KE8jsvm6i/PTgVtB8DL726wNf6H2IMsDuxCpJj59KDaxCtSnrWan2AeDqM7JBaultg==}
     engines: {node: '>=18'}
@@ -1477,6 +1512,11 @@ packages:
   playwright@1.58.2:
     resolution: {integrity: sha512-vA30H8Nvkq/cPBnNw4Q8TWz1EJyqgpuinBcHET0YVJVFldr8JDNiU9LaWAE1KqSkRYazuaBhTpB5ZzShOezQ6A==}
     engines: {node: '>=18'}
+=======
+  pnpm@10.30.1:
+    resolution: {integrity: sha512-NZDlUNU4TKo5vVx8c59yJwI0svYFnhMBj5dcMTseuf78wJcUBIdl1Nnv6WE4LDEuYkVywEIHYr3F1ZQM35vnOg==}
+    engines: {node: '>=18.12'}
+>>>>>>> f904e5a (installed valibo, formisch, and set typescript to stict per formish recommendation)
     hasBin: true
 
   postcss@8.5.6:
@@ -1798,6 +1838,14 @@ packages:
     hasBin: true
     peerDependencies:
       browserslist: '>= 4.21.0'
+
+  valibot@1.2.0:
+    resolution: {integrity: sha512-mm1rxUsmOxzrwnX5arGS+U4T25RdvpPjPN4yR0u9pUBov9+zGVtO84tif1eY4r6zWxVxu3KzIyknJy3rxfRZZg==}
+    peerDependencies:
+      typescript: '>=5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
   vfile-location@5.0.3:
     resolution: {integrity: sha512-5yXvWDEgqeiYiBe1lbxYF7UMAIm/IcopxMHrMQDq3nvKcjPKIhZklUKL+AE7J7uApI4kwe2snsK+eI6UTj9EHg==}
@@ -2258,6 +2306,14 @@ snapshots:
   '@esbuild/win32-x64@0.27.3':
     optional: true
 
+  '@formisch/react@0.4.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(valibot@1.2.0(typescript@5.9.3))':
+    dependencies:
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+      valibot: 1.2.0(typescript@5.9.3)
+    optionalDependencies:
+      typescript: 5.9.3
+
   '@img/colour@1.0.0':
     optional: true
 
@@ -2601,6 +2657,8 @@ snapshots:
       - supports-color
 
   acorn@8.15.0: {}
+
+  add@2.0.6: {}
 
   ansi-align@3.0.1:
     dependencies:
@@ -3527,6 +3585,7 @@ snapshots:
 
   picomatch@4.0.3: {}
 
+<<<<<<< HEAD
   playwright-core@1.58.2: {}
 
   playwright@1.58.2:
@@ -3534,6 +3593,9 @@ snapshots:
       playwright-core: 1.58.2
     optionalDependencies:
       fsevents: 2.3.2
+=======
+  pnpm@10.30.1: {}
+>>>>>>> f904e5a (installed valibo, formisch, and set typescript to stict per formish recommendation)
 
   postcss@8.5.6:
     dependencies:
@@ -3913,6 +3975,10 @@ snapshots:
       browserslist: 4.28.1
       escalade: 3.2.0
       picocolors: 1.1.1
+
+  valibot@1.2.0(typescript@5.9.3):
+    optionalDependencies:
+      typescript: 5.9.3
 
   vfile-location@5.0.3:
     dependencies:
