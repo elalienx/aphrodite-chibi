@@ -13,7 +13,7 @@ const Step1Schema = v.object({
 
 export default function Step1() {
   // Properties
-  const form = useForm({ schema: Step1Schema });
+  const form = useForm({ schema: Step1Schema, validate: "blur" });
 
   // Methods
   function onSubmit() {
