@@ -17,14 +17,12 @@ const schema = v.object({
 
 export default function Step1({ onContinue }: Props) {
   // Properties
-  const form = useForm({ schema: schema });
+  const form = useForm({ schema: schema, validate: "blur" });
 
   // Methods
   function submitForm(values: v.InferInput<typeof schema>) {
-    console.log(values); // { name: string, email: string }
-
     if (form.isValid) {
-      alert("Success 🎉");
+      alert(`Congratulations ${values.name} your email ${values.email} was created 🎉`);
       onContinue();
     }
   }
@@ -40,7 +38,7 @@ export default function Step1({ onContinue }: Props) {
         </InputField>
 
         <InputField>
-          <Label>Namn och efternamn</Label>
+          <Label>E-postadress</Label>
           <Input form={form} id="email" type="text" placeholder="leif@lendo.se" />
         </InputField>
       </section>
