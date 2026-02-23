@@ -11,7 +11,7 @@ import "./input-type-number.css";
 
 interface Props {
   /** An instance of a Formisch form. */
-  form: FormStore<v.GenericSchema>;
+  form: FormStore;
 
   /** Unique identifier of a form field. */
   id: string;
@@ -35,13 +35,31 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   const mobileKeyboard = getCorrectMobileKeyboard(type);
   const cssSuffix = suffix ? "has-suffix" : "";
   const cssValidationMessage = firstError ? "has-validation-message" : "";
-  const cssIsValid = field.isValid ? "is-valid" : "";
+  const cssIsValid = field.isTouched && field.isValid ? "is-valid" : "";
+
+  function onBlur() {
+    if (!field.isValid) {
+      alert(`error on ${field.props.name}`);
+    }
+  }
 
   return (
-    <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage} ${cssIsValid}`}>
-      <input {...field.props} className="input" inputMode={mobileKeyboard} placeholder={placeholder} type={type} />
-      {suffix && <span className="suffix">{suffix}</span>}
-      {firstError && <p className="validation-message">{firstError}</p>}
-    </div>
+    <>
+      <u style={{ textDecoration: "none" }}>
+        <li>Is dirty? {field.isDirty ? "yes" : "no"}</li>
+        <li>Is touched? {field.isTouched ? "yes" : "no"}</li>
+        <li>
+          Is valid? {field.isValid ? "yes" : "no"} <small>(looks like forms start on valid by default)</small>
+        </li>
+        <li>Has errors? {field.errors ? "yes" : "no"}</li>
+        <li>Number of errors {field.errors ? field.errors.length : "0"}</li>
+      </u>
+
+      <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage} ${cssIsValid}`}>
+        <input {...field.props} className="input" inputMode={mobileKeyboard} placeholder={placeholder} type={type} />
+        {suffix && <span className="suffix">{suffix}</span>}
+        {firstError && <p className="validation-message">{firstError}</p>}
+      </div>
+    </>
   );
 }
