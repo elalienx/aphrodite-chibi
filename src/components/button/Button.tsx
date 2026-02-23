@@ -7,11 +7,13 @@ interface Props {
 
   /** The function to execute when clicked. */
   onClick?: () => void;
+
+  type?: string;
 }
 
-export default function Button({ children, onClick }: Props) {
+export default function Button({ children, onClick, type = "button" }: Props) {
   return (
-    <button className="button" onClick={onClick}>
+    <button className="button" onClick={onClick} type={type}>
       {children}
     </button>
   );
