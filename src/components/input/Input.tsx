@@ -33,10 +33,14 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   const mobileKeyboard = getCorrectMobileKeyboard(type);
 
   // Validations
-  const mainError = (field.errors && field.errors[0]) || "";
-  const formFailedSubmission = form.isSubmitted && !form.isValid; // To override individual field validation if the user press the primary button
-  const individualError = field.isTouched && field.errors;
-  const showError = formFailedSubmission || individualError;
+  const mainError = field.errors?.[0] ?? null;
+  const formFailedSubmission = form.isSubmitted && !form.isValid;
+  const hasFieldError = Boolean(field.errors?.[0]);
+
+  // Only show error if:
+  // 1. Form failed submission AND this field has an error
+  // 2. OR field is touched AND has an error
+  const showError = (formFailedSubmission && hasFieldError) || (field.isTouched && hasFieldError);
 
   // Design
   const cssSuffix = suffix ? "has-suffix" : "";
@@ -44,6 +48,7 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
 
   return (
     <>
+      showError: {showError ? "y" : "n"}
       <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage}`}>
         <input {...field.props} className="input" inputMode={mobileKeyboard} placeholder={placeholder} type={type} />
         {suffix && <span className="suffix">{suffix}</span>}
