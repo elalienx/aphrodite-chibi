@@ -1,6 +1,5 @@
 import { useField } from "@formisch/react";
 import type { FormStore } from "@formisch/react";
-import * as v from "valibot";
 
 import getCorrectMobileKeyboard from "helpers/getCorrectMobileKeyboard";
 
@@ -8,7 +7,6 @@ import "./input-wrapper-layout.css";
 import "./input-wrapper-state.css";
 import "./input-wrapper-design.css";
 import "./input-type-number.css";
-import { useState } from "react";
 
 interface Props {
   /** An instance of a Formisch form. */
@@ -31,27 +29,17 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   // Global state
   const field = useField(form, { path: [id] });
 
-  // Local state
-  const [hasBlurred, setHasBlurred] = useState(false);
-
   // Properties
-  const firstError = field.errors?.[0];
   const mobileKeyboard = getCorrectMobileKeyboard(type);
+
+  const mainError = field.errors?.[0];
+  const failedValidation = field.isTouched && field.isDirty && field.errors;
+
   const cssSuffix = suffix ? "has-suffix" : "";
-  const cssValidationMessage = firstError ? "has-validation-message" : "";
-  const cssIsValid = hasBlurred && field.isValid ? "is-valid" : "";
+  const cssValidationMessage = failedValidation ? "has-validation-message" : "";
+  const cssIsValid = field.isTouched && field.isDirty && field.isValid ? "is-valid" : "";
+
   const showDebug = true;
-
-  // Methods
-  function onBlur() {
-    console.log("blurred out 📤");
-    setHasBlurred(true);
-  }
-
-  function onFocusCapture() {
-    console.log("focus in 📥");
-    setHasBlurred(false);
-  }
 
   return (
     <>
@@ -60,26 +48,18 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
         <ul>
           <li>Is dirty? {field.isDirty ? "yes" : "no"}</li>
           <li>Is touched? {field.isTouched ? "yes" : "no"}</li>
-          <li>
-            Is valid? {field.isValid ? "yes" : "no"} <small>(⚠️ looks like forms start on valid by default)</small>
-          </li>
+          <li>Is valid? {field.isValid ? "yes" : "no"} (forms start as valid by default)</li>
           <li>Has errors? {field.errors ? "yes" : "no"}</li>
           <li>Number of errors {field.errors ? field.errors.length : "0"}</li>
+          <li>Main error: {mainError ? mainError : "no errors yet"}</li>
+          <li>Failed validation: {failedValidation ? "failed" : "pass"}</li>
         </ul>
       )}
 
       <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage} ${cssIsValid}`}>
-        <input
-          {...field.props}
-          className="input"
-          inputMode={mobileKeyboard}
-          placeholder={placeholder}
-          type={type}
-          onBlur={onBlur}
-          onFocusCapture={onFocusCapture}
-        />
+        <input {...field.props} className="input" inputMode={mobileKeyboard} placeholder={placeholder} type={type} />
         {suffix && <span className="suffix">{suffix}</span>}
-        {firstError && <p className="validation-message">{firstError}</p>}
+        {failedValidation && <p className="validation-message">{mainError}</p>}
       </div>
     </>
   );

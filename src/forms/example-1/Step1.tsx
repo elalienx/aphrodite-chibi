@@ -25,7 +25,7 @@ const schema = v.object({
 
 export default function Step1({ onContinue }: Props) {
   // Properties
-  const form = useForm({ schema: schema });
+  const form = useForm({ schema: schema, validate: "blur" });
 
   // Methods
   function submitForm(values: v.InferInput<typeof schema>) {
