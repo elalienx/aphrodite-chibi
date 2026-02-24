@@ -33,6 +33,7 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   const mobileKeyboard = getCorrectMobileKeyboard(type);
 
   // Validations
+  const mainError = field.errors[0];
   const formFailedSubmission = form.isSubmitted && !form.isValid; // To override individual field validation if the user press the primary button
   const fieldNotTouched = !field.isDirty && !field.isTouched;
   const individualError = field.isTouched && field.errors;
@@ -44,12 +45,12 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
 
   return (
     <>
-      <ul>
+      {/* <ul>
         <li>form.isSubmitted {form.isSubmitted ? "✅" : "❌"}</li>
         <li>form.isValid {form.isValid ? "✅" : "❌"}</li>
         <li>formFailedSubmitssion {formFailedSubmission ? "✅" : "❌"}</li>
         <li>fieldNotTouched {fieldNotTouched ? "✅" : "❌"}</li>
-      </ul>
+      </ul> */}
 
       <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage}`}>
         <input {...field.props} className="input" inputMode={mobileKeyboard} placeholder={placeholder} type={type} />
