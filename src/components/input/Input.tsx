@@ -36,6 +36,7 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   const mainError = field.errors?.[0] ?? null;
   const formFailedSubmission = form.isSubmitted && !form.isValid;
   const hasFieldError = Boolean(field.errors?.[0]);
+  const isConfirmedValid = form.isSubmitted && !hasFieldError;
 
   // Only show error if:
   // 1. Form failed submission AND this field has an error
@@ -45,10 +46,11 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   // Design
   const cssSuffix = suffix ? "has-suffix" : "";
   const cssValidationMessage = showError ? "has-validation-message" : "";
+  const cssSuccess = isConfirmedValid ? "is-valid" : "";
 
   return (
     <>
-      <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage}`}>
+      <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage} ${cssSuccess}`}>
         <input {...field.props} className="input" inputMode={mobileKeyboard} placeholder={placeholder} type={type} />
         {suffix && <span className="suffix">{suffix}</span>}
         {showError && <p className="validation-message">{mainError}</p>}
