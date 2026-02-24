@@ -7,6 +7,7 @@ import "./input-wrapper-layout.css";
 import "./input-wrapper-state.css";
 import "./input-wrapper-design.css";
 import "./input-type-number.css";
+import { useEffect, useState } from "react";
 
 interface Props {
   /** An instance of a Formisch form. */
@@ -26,41 +27,22 @@ interface Props {
 }
 
 export default function Input({ form, id, placeholder, type, suffix }: Props) {
-  // Global state
+  // State
   const field = useField(form, { path: [id] });
 
   // Properties
   const mobileKeyboard = getCorrectMobileKeyboard(type);
-
-  const mainError = field.errors?.[0];
-  const failedValidation = field.isTouched && field.isDirty && field.errors;
-
   const cssSuffix = suffix ? "has-suffix" : "";
-  const cssValidationMessage = failedValidation ? "has-validation-message" : "";
-  const cssIsValid = field.isTouched && field.isDirty && field.isValid ? "is-valid" : "";
-
-  const showDebug = true;
+  const cssValidationMessage = field.errors ? "has-validation-message" : "";
+  const cssIsValid = field.isValid && field.isDirty ? "is-valid" : "";
 
   return (
-    <>
-      {/* This can be a React component */}
-      {showDebug && (
-        <ul>
-          <li>Is dirty? {field.isDirty ? "yes" : "no"}</li>
-          <li>Is touched? {field.isTouched ? "yes" : "no"}</li>
-          <li>Is valid? {field.isValid ? "yes" : "no"} (forms start as valid by default)</li>
-          <li>Has errors? {field.errors ? "yes" : "no"}</li>
-          <li>Number of errors {field.errors ? field.errors.length : "0"}</li>
-          <li>Main error: {mainError ? mainError : "no errors yet"}</li>
-          <li>Failed validation: {failedValidation ? "failed" : "pass"}</li>
-        </ul>
-      )}
+    <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage} ${cssIsValid}`}>
+      <input {...field.props} className="input" inputMode={mobileKeyboard} placeholder={placeholder} type={type} />
 
-      <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage} ${cssIsValid}`}>
-        <input {...field.props} className="input" inputMode={mobileKeyboard} placeholder={placeholder} type={type} />
-        {suffix && <span className="suffix">{suffix}</span>}
-        {failedValidation && <p className="validation-message">{mainError}</p>}
-      </div>
-    </>
+      {suffix && <span className="suffix">{suffix}</span>}
+
+      {field.errors && <p className="validation-message">{field.errors[0]}</p>}
+    </div>
   );
 }
