@@ -31,15 +31,31 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
 
   // Properties
   const mobileKeyboard = getCorrectMobileKeyboard(type);
+
+  // Validations
+  const formFailedSubmission = form.isSubmitted && !form.isValid; // To override individual field validation if the user press the primary button
+  const fieldNotTouched = !field.isDirty && !field.isTouched;
+  const individualError = field.isTouched && field.errors;
+  const showError = formFailedSubmission || individualError;
+
+  // Design
   const cssSuffix = suffix ? "has-suffix" : "";
-  const cssValidationMessage = field.errors ? "has-validation-message" : "";
-  const cssIsValid = field.isValid && field.isDirty ? "is-valid" : "";
+  const cssValidationMessage = showError ? "has-validation-message" : "";
 
   return (
-    <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage} ${cssIsValid}`}>
-      <input {...field.props} className="input" inputMode={mobileKeyboard} placeholder={placeholder} type={type} />
-      {suffix && <span className="suffix">{suffix}</span>}
-      {field.errors && <p className="validation-message">{field.errors[0]}</p>}
-    </div>
+    <>
+      <ul>
+        <li>form.isSubmitted {form.isSubmitted ? "✅" : "❌"}</li>
+        <li>form.isValid {form.isValid ? "✅" : "❌"}</li>
+        <li>formFailedSubmitssion {formFailedSubmission ? "✅" : "❌"}</li>
+        <li>fieldNotTouched {fieldNotTouched ? "✅" : "❌"}</li>
+      </ul>
+
+      <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage}`}>
+        <input {...field.props} className="input" inputMode={mobileKeyboard} placeholder={placeholder} type={type} />
+        {suffix && <span className="suffix">{suffix}</span>}
+        {showError && <p className="validation-message">{field.errors[0]}</p>}
+      </div>
+    </>
   );
 }
