@@ -34,3 +34,4 @@ pnpm-debug.log*
 /playwright/.cache/
 /playwright/.auth/
 /playwright-report
+firebase-debug.log
