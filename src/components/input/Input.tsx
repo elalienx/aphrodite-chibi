@@ -8,6 +8,7 @@ import "./input-wrapper-layout.css";
 import "./input-wrapper-state.css";
 import "./input-wrapper-design.css";
 import "./input-type-number.css";
+import { useState } from "react";
 
 interface Props {
   /** An instance of a Formisch form. */
@@ -27,16 +28,30 @@ interface Props {
 }
 
 export default function Input({ form, id, placeholder, type, suffix }: Props) {
-  // Local state
+  // Global state
   const field = useField(form, { path: [id] });
+
+  // Local state
+  const [hasBlurred, setHasBlurred] = useState(false);
 
   // Properties
   const firstError = field.errors?.[0];
   const mobileKeyboard = getCorrectMobileKeyboard(type);
   const cssSuffix = suffix ? "has-suffix" : "";
   const cssValidationMessage = firstError ? "has-validation-message" : "";
-  const cssIsValid = field.isTouched && field.isValid ? "is-valid" : "";
-  const showDebug = false;
+  const cssIsValid = hasBlurred && field.isValid ? "is-valid" : "";
+  const showDebug = true;
+
+  // Methods
+  function onBlur() {
+    console.log("blurred out 📤");
+    setHasBlurred(true);
+  }
+
+  function onFocusCapture() {
+    console.log("focus in 📥");
+    setHasBlurred(false);
+  }
 
   return (
     <>
@@ -46,7 +61,7 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
           <li>Is dirty? {field.isDirty ? "yes" : "no"}</li>
           <li>Is touched? {field.isTouched ? "yes" : "no"}</li>
           <li>
-            Is valid? {field.isValid ? "yes" : "no"} <small>(looks like forms start on valid by default)</small>
+            Is valid? {field.isValid ? "yes" : "no"} <small>(⚠️ looks like forms start on valid by default)</small>
           </li>
           <li>Has errors? {field.errors ? "yes" : "no"}</li>
           <li>Number of errors {field.errors ? field.errors.length : "0"}</li>
@@ -54,7 +69,15 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
       )}
 
       <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage} ${cssIsValid}`}>
-        <input {...field.props} className="input" inputMode={mobileKeyboard} placeholder={placeholder} type={type} />
+        <input
+          {...field.props}
+          className="input"
+          inputMode={mobileKeyboard}
+          placeholder={placeholder}
+          type={type}
+          onBlur={onBlur}
+          onFocusCapture={onFocusCapture}
+        />
         {suffix && <span className="suffix">{suffix}</span>}
         {firstError && <p className="validation-message">{firstError}</p>}
       </div>
