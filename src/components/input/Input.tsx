@@ -36,24 +36,22 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   const cssSuffix = suffix ? "has-suffix" : "";
   const cssValidationMessage = firstError ? "has-validation-message" : "";
   const cssIsValid = field.isTouched && field.isValid ? "is-valid" : "";
-
-  function onBlur() {
-    if (!field.isValid) {
-      alert(`error on ${field.props.name}`);
-    }
-  }
+  const showDebug = false;
 
   return (
     <>
-      <ul>
-        <li>Is dirty? {field.isDirty ? "yes" : "no"}</li>
-        <li>Is touched? {field.isTouched ? "yes" : "no"}</li>
-        <li>
-          Is valid? {field.isValid ? "yes" : "no"} <small>(looks like forms start on valid by default)</small>
-        </li>
-        <li>Has errors? {field.errors ? "yes" : "no"}</li>
-        <li>Number of errors {field.errors ? field.errors.length : "0"}</li>
-      </ul>
+      {/* This can be a React component */}
+      {showDebug && (
+        <ul>
+          <li>Is dirty? {field.isDirty ? "yes" : "no"}</li>
+          <li>Is touched? {field.isTouched ? "yes" : "no"}</li>
+          <li>
+            Is valid? {field.isValid ? "yes" : "no"} <small>(looks like forms start on valid by default)</small>
+          </li>
+          <li>Has errors? {field.errors ? "yes" : "no"}</li>
+          <li>Number of errors {field.errors ? field.errors.length : "0"}</li>
+        </ul>
+      )}
 
       <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage} ${cssIsValid}`}>
         <input {...field.props} className="input" inputMode={mobileKeyboard} placeholder={placeholder} type={type} />

@@ -22,7 +22,7 @@ export default function Step1({ onContinue }: Props) {
   // Methods
   function submitForm(values: v.InferInput<typeof schema>) {
     if (form.isValid) {
-      alert(`Congratulations ${values.name} your email ${values.email} was created 🎉`);
+      console.log(`${values.name} your email ${values.email} has been verified`);
       onContinue();
     }
   }
