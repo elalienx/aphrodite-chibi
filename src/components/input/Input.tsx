@@ -3,11 +3,10 @@ import type { FormStore } from "@formisch/react";
 
 import getCorrectMobileKeyboard from "helpers/getCorrectMobileKeyboard";
 
+import "./input-type-number.css";
+import "./input-wrapper-design.css";
 import "./input-wrapper-layout.css";
 import "./input-wrapper-state.css";
-import "./input-wrapper-design.css";
-import "./input-type-number.css";
-import { useEffect, useState } from "react";
 
 interface Props {
   /** An instance of a Formisch form. */
@@ -39,9 +38,7 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   return (
     <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage} ${cssIsValid}`}>
       <input {...field.props} className="input" inputMode={mobileKeyboard} placeholder={placeholder} type={type} />
-
       {suffix && <span className="suffix">{suffix}</span>}
-
       {field.errors && <p className="validation-message">{field.errors[0]}</p>}
     </div>
   );
