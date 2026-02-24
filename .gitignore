@@ -26,3 +26,4 @@ pnpm-debug.log*
 
 # Firebase cache
 .firebase/
+firebase-debug.log
