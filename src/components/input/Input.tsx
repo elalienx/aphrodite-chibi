@@ -45,7 +45,7 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
 
   return (
     <>
-      <u style={{ textDecoration: "none" }}>
+      <ul>
         <li>Is dirty? {field.isDirty ? "yes" : "no"}</li>
         <li>Is touched? {field.isTouched ? "yes" : "no"}</li>
         <li>
@@ -53,7 +53,7 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
         </li>
         <li>Has errors? {field.errors ? "yes" : "no"}</li>
         <li>Number of errors {field.errors ? field.errors.length : "0"}</li>
-      </u>
+      </ul>
 
       <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage} ${cssIsValid}`}>
         <input {...field.props} className="input" inputMode={mobileKeyboard} placeholder={placeholder} type={type} />
