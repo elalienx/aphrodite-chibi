@@ -48,7 +48,6 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
 
   return (
     <>
-      showError: {showError ? "y" : "n"}
       <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage}`}>
         <input {...field.props} className="input" inputMode={mobileKeyboard} placeholder={placeholder} type={type} />
         {suffix && <span className="suffix">{suffix}</span>}
