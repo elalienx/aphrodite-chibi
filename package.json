@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "astro": "astro",
-    "build": "astro build && firebase deploy",
+    "build": "astro build",
+    "deploy": "astro build && firebase deploy",
     "dev": "astro dev",
     "preview": "astro preview"
   },
@@ -21,7 +22,6 @@
     "valibot": "^1.2.0"
   },
   "devDependencies": {
-    "prettier-plugin-astro": "^0.14.1",
-    "vite-tsconfig-paths": "^6.1.1"
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
