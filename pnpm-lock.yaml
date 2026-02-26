@@ -17,7 +17,11 @@ importers:
       '@formisch/react':
         specifier: ^0.4.2
         version: 0.4.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(valibot@1.2.0(typescript@5.9.3))
+<<<<<<< HEAD
 >>>>>>> f904e5a (installed valibo, formisch, and set typescript to stict per formish recommendation)
+=======
+        version: 4.4.2(@types/node@25.3.2)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+>>>>>>> dbf14f9 (adding tests)
       '@types/react':
         specifier: ^19.2.14
         version: 19.2.14
@@ -36,7 +40,11 @@ importers:
       pnpm:
         specifier: ^10.30.1
         version: 10.30.1
+<<<<<<< HEAD
 >>>>>>> f904e5a (installed valibo, formisch, and set typescript to stict per formish recommendation)
+=======
+        version: 5.17.2(@types/node@25.3.2)(rollup@4.57.1)(typescript@5.9.3)
+>>>>>>> dbf14f9 (adding tests)
       react:
         specifier: ^19.2.4
         version: 19.2.4
@@ -1516,7 +1524,18 @@ packages:
   pnpm@10.30.1:
     resolution: {integrity: sha512-NZDlUNU4TKo5vVx8c59yJwI0svYFnhMBj5dcMTseuf78wJcUBIdl1Nnv6WE4LDEuYkVywEIHYr3F1ZQM35vnOg==}
     engines: {node: '>=18.12'}
+<<<<<<< HEAD
 >>>>>>> f904e5a (installed valibo, formisch, and set typescript to stict per formish recommendation)
+=======
+  playwright-core@1.58.2:
+    resolution: {integrity: sha512-yZkEtftgwS8CsfYo7nm0KE8jsvm6i/PTgVtB8DL726wNf6H2IMsDuxCpJj59KDaxCtSnrWan2AeDqM7JBaultg==}
+    engines: {node: '>=18'}
+    hasBin: true
+
+  playwright@1.58.2:
+    resolution: {integrity: sha512-vA30H8Nvkq/cPBnNw4Q8TWz1EJyqgpuinBcHET0YVJVFldr8JDNiU9LaWAE1KqSkRYazuaBhTpB5ZzShOezQ6A==}
+    engines: {node: '>=18'}
+>>>>>>> dbf14f9 (adding tests)
     hasBin: true
 
   postcss@8.5.6:
@@ -3595,7 +3614,17 @@ snapshots:
       fsevents: 2.3.2
 =======
   pnpm@10.30.1: {}
+<<<<<<< HEAD
 >>>>>>> f904e5a (installed valibo, formisch, and set typescript to stict per formish recommendation)
+=======
+  playwright-core@1.58.2: {}
+
+  playwright@1.58.2:
+    dependencies:
+      playwright-core: 1.58.2
+    optionalDependencies:
+      fsevents: 2.3.2
+>>>>>>> dbf14f9 (adding tests)
 
   postcss@8.5.6:
     dependencies:
@@ -3996,10 +4025,14 @@ snapshots:
       vfile-message: 4.0.3
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   vite@6.4.1(@types/node@25.3.2):
 =======
   vite@6.4.1(@types/node@25.2.3):
 >>>>>>> 55eb5fc (ddd)
+=======
+  vite@6.4.1(@types/node@25.3.2):
+>>>>>>> dbf14f9 (adding tests)
     dependencies:
       esbuild: 0.25.12
       fdir: 6.5.0(picomatch@4.0.3)
