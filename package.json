@@ -23,8 +23,6 @@
     "valibot": "^1.2.0"
   },
   "devDependencies": {
-    "@playwright/experimental-ct-react": "^1.58.2",
-    "@types/node": "^25.3.2",
     "prettier-plugin-astro": "^0.14.1"
   }
 }

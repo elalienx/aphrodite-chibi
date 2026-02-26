@@ -3995,7 +3995,11 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
+<<<<<<< HEAD
   vite@6.4.1(@types/node@25.3.2):
+=======
+  vite@6.4.1(@types/node@25.2.3):
+>>>>>>> 55eb5fc (ddd)
     dependencies:
       esbuild: 0.25.12
       fdir: 6.5.0(picomatch@4.0.3)
