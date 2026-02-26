@@ -1,2 +1,3 @@
 // Import styles, initialize component theme here.
-// import '../src/common.css';
+import "../src/styles/style.css";
+import "./center-component.css";
