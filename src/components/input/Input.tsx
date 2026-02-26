@@ -50,19 +50,13 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   // Design
   const cssSuffix = suffix ? "has-suffix" : "";
   const cssValidationMessage = showError ? "has-validation-message" : "";
-  // const cssSuccess = isConfirmedValid ? "is-valid" : "";
+  const cssSuccess = isConfirmedValid ? "is-valid" : "";
 
   return (
     <>
-      <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage}`}>
-        <input
-          {...field.props}
-          className="input"
-          inputMode={mobileKeyboard}
-          placeholder={placeholder}
-          type={type}
-          value={field.input}
-        />
+      <p>form.isSubmitted {form.isSubmitted ? "y" : "n"}</p>
+      <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage} ${cssSuccess}`}>
+        <input {...field.props} className="input" inputMode={mobileKeyboard} placeholder={placeholder} type={type} />
         {suffix && <span className="suffix">{suffix}</span>}
         {showError && <p className="validation-message">{mainError}</p>}
       </div>

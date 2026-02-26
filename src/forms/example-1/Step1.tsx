@@ -17,7 +17,6 @@ const schema = v.object({
 
 export default function Step1({ onContinue }: Props) {
   // Properties
-  const initialInput = { name: "Eduardo", email: "ean@lendo.se" };
   const form = useForm({ schema: schema, validate: "blur" });
 
   // Methods
