@@ -1,7 +1,7 @@
 import { useField } from "@formisch/react";
 import type { FormStore } from "@formisch/react";
 
-import getCorrectMobileKeyboard from "helpers/getCorrectMobileKeyboard";
+import getCorrectMobileKeyboard from "../../helpers/getCorrectMobileKeyboard";
 
 import "./input-type-number.css";
 import "./input-wrapper-design.css";

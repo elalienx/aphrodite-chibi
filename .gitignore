@@ -27,3 +27,10 @@ pnpm-debug.log*
 # Firebase cache
 .firebase/
 firebase-debug.log
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
