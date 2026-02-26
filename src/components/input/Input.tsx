@@ -1,4 +1,4 @@
-import getCorrectMobileKeyboard from "helpers/getCorrectMobileKeyboard";
+import getCorrectMobileKeyboard from "../../helpers/getCorrectMobileKeyboard";
 
 import "./input-wrapper-layout.css";
 import "./input-wrapper-state.css";
