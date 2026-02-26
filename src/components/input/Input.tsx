@@ -26,6 +26,10 @@ interface Props {
 }
 
 export default function Input({ form, id, placeholder, type, suffix }: Props) {
+  // Safeguards
+  if (!form) return <p>This component requires a Formisch form and id</p>;
+  if (!id) return <p>Please pass an id to know which field this input belongs too</p>;
+
   // State
   const field = useField(form, { path: [id] });
 
