@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "layouts/BaseLayout.astro";
-import Step from "forms/example-2/step/Step";
+import FormManager from "forms/example-2/FormManager";
 
 import "styles/pages/example.css";
 ---
@@ -24,7 +24,7 @@ import "styles/pages/example.css";
       </section>
     </section>
 
-    <Step client:visible />
+    <FormManager client:visible />
     <footer>
       <a href="/">Go back to home</a>
     </footer>

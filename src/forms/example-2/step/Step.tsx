@@ -18,11 +18,7 @@ export default function Step({ onContinue }: Props) {
 
   // Methods
   function submitForm() {
-    if (form.isValid) {
-      onContinue();
-    } else {
-      alert("somethig failed");
-    }
+    if (form.isValid) onContinue();
   }
 
   return (
