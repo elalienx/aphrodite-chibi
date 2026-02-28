@@ -7,8 +7,7 @@
     "build": "astro build",
     "deploy": "astro build && firebase deploy",
     "dev": "astro dev",
-    "preview": "astro preview",
-    "playwright": "playwright test -c playwright-ct.config.ts"
+    "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
@@ -22,7 +21,6 @@
     "valibot": "^1.2.0"
   },
   "devDependencies": {
-    "@playwright/experimental-ct-react": "^1.58.2",
     "@types/node": "^25.3.2",
     "prettier-plugin-astro": "^0.14.1"
   }
