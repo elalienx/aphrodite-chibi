@@ -36,11 +36,11 @@ export default function Step1({ onContinue }: Props) {
           <Label>Namn och efternamn</Label>
           <Input form={form} id="name" type="text" placeholder="Leif Lend" />
         </InputField>
-        {/* 
+
         <InputField>
           <Label>E-postadress</Label>
           <Input form={form} id="email" type="text" placeholder="leif@lendo.se" />
-        </InputField> */}
+        </InputField>
       </section>
 
       <hr />
