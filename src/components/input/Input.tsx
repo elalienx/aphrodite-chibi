@@ -1,5 +1,6 @@
+import { useState, type FocusEvent } from "react";
 import { useField } from "@formisch/react";
-import type { FormStore } from "@formisch/react";
+import type { FieldElement, FormStore } from "@formisch/react";
 
 import getCorrectMobileKeyboard from "../../helpers/getCorrectMobileKeyboard";
 
@@ -7,7 +8,6 @@ import "./input-type-number.css";
 import "./input-wrapper-design.css";
 import "./input-wrapper-layout.css";
 import "./input-wrapper-state.css";
-import Debug from "components/debug/Debug";
 
 interface Props {
   /** An instance of a Formisch form. */
@@ -33,34 +33,53 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
 
   // State
   const field = useField(form, { path: [id] });
+  const [isFocused, setIsFocused] = useState(false);
 
   // Properties
   const mobileKeyboard = getCorrectMobileKeyboard(type);
 
-  // Validations
-  const mainError = field.errors?.[0] ?? null;
-  const formFailedSubmission = form.isSubmitted && !form.isValid;
-  const hasFieldError = !!field.errors?.[0];
-  const isConfirmedValid = form.isSubmitted && !hasFieldError;
+  // -- State helpers
+  const hasError = !!field.errors?.length;
+  const hasUserTyped = field.isDirty;
 
-  // Only show error if:
-  // 1. Form failed submission AND this field has an error
-  // 2. OR field is touched AND has an error
-  const showError = (formFailedSubmission && hasFieldError) || (field.isDirty && hasFieldError);
+  // -- Validation logic
+  const shouldValidate = !isFocused && hasUserTyped;
+  const showError = shouldValidate && hasError;
+  const showSuccess = shouldValidate && !hasError;
 
-  // Design
+  // -- Design
   const cssSuffix = suffix ? "has-suffix" : "";
+  const cssFocusWithin = isFocused ? "focus-within" : "";
   const cssValidationMessage = showError ? "has-validation-message" : "";
-  const cssSuccess = isConfirmedValid ? "is-valid" : "";
+  const cssSuccess = showSuccess ? "is-valid" : "";
+
+  // Methods
+  function onFocus(event: FocusEvent<HTMLInputElement>) {
+    field.props.onFocus(event);
+    setIsFocused(true);
+  }
+
+  function onBlur(event: FocusEvent<HTMLInputElement>) {
+    field.props.onBlur(event);
+    setIsFocused(false);
+  }
 
   return (
     <>
-      <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage} ${cssSuccess}`}>
-        <input {...field.props} className="input" inputMode={mobileKeyboard} placeholder={placeholder} type={type} />
+      <div className={`input-wrapper ${cssSuffix} ${cssFocusWithin} ${cssValidationMessage} ${cssSuccess}`}>
+        <input
+          {...field.props}
+          className="input"
+          inputMode={mobileKeyboard}
+          placeholder={placeholder}
+          type={type}
+          onFocus={onFocus}
+          onBlur={onBlur}
+        />
+
         {suffix && <span className="suffix">{suffix}</span>}
-        {showError && <p className="validation-message">{mainError}</p>}
+        {showError && <p className="validation-message">{field.errors?.[0]}</p>}
       </div>
-      <Debug form={form} field={field} />
     </>
   );
 }

@@ -22,7 +22,7 @@
 
 /* Shared outline behaviour */
 .input-wrapper:hover,
-.input-wrapper:focus-within,
+.input-wrapper.focus-within,
 .input-wrapper.has-validation-message,
 .input-wrapper.is-valid {
   outline-style: solid;
@@ -40,7 +40,7 @@
 }
 
 /* On focus */
-.input-wrapper:focus-within {
+.input-wrapper.focus-within {
   border-color: var(--input-border-focus);
   outline-color: var(--input-border-focus);
 
