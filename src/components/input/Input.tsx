@@ -7,6 +7,7 @@ import "./input-type-number.css";
 import "./input-wrapper-design.css";
 import "./input-wrapper-layout.css";
 import "./input-wrapper-state.css";
+import Debug from "components/debug/Debug";
 
 interface Props {
   /** An instance of a Formisch form. */
@@ -54,7 +55,7 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
 
   return (
     <>
-      <p>form.isSubmitted {form.isSubmitted ? "y" : "n"}</p>
+      <Debug form={form} field={field} />
       <div className={`input-wrapper ${cssSuffix} ${cssValidationMessage} ${cssSuccess}`}>
         <input {...field.props} className="input" inputMode={mobileKeyboard} placeholder={placeholder} type={type} />
         {suffix && <span className="suffix">{suffix}</span>}
