@@ -42,11 +42,16 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   const debug = false;
   const mobileKeyboard = getCorrectMobileKeyboard(type);
   const cssSuffix = suffix ? "has-suffix" : "";
-  let cssState = "";
-
-  if (form.isSubmitted && !field.isValid) cssState = "error";
+  let cssState: InputState = setCSSState();
 
   // Methods
+  function setCSSState() {
+    if (form.isSubmitted && !field.isValid) return "error";
+    if (isFocused) return "focus";
+
+    return "default";
+  }
+
   function onFocus(event: FocusEvent<HTMLInputElement>) {
     field.props.onFocus(event);
     setIsFocused(true);
