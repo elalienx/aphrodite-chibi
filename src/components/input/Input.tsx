@@ -38,22 +38,13 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
 
   // Properties
   const mobileKeyboard = getCorrectMobileKeyboard(type);
-
-  // State helpers
   const hasError = !!field.errors?.length;
   const hasUserTyped = field.isDirty;
-
-  // Validation logic
   const shouldValidate = !isFocused && hasUserTyped;
-
-  // Unified state logic
   let state: InputState = "default";
 
-  if (isFocused) {
-    state = "focus";
-  } else if (shouldValidate) {
-    state = hasError ? "error" : "success";
-  }
+  if (isFocused && !hasError) state = "focus";
+  if (shouldValidate) state = hasError ? "error" : "success";
 
   const cssState = state !== "default" ? `is-${state}` : "";
   const cssSuffix = suffix ? "has-suffix" : "";
