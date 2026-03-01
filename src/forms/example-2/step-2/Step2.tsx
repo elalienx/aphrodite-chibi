@@ -6,13 +6,13 @@ import InputField from "components/input-field/InputField";
 import Label from "components/label/Label";
 
 import schema from "./schema";
-import "./step.css";
+import "./step-2.css";
 
 interface Props {
   onContinue: () => void;
 }
 
-export default function Step({ onContinue }: Props) {
+export default function Step2({ onContinue }: Props) {
   // Properties
   const form = useForm({ schema: schema, validate: "blur", revalidate: "blur" });
 
@@ -22,7 +22,7 @@ export default function Step({ onContinue }: Props) {
   }
 
   return (
-    <Form of={form} onSubmit={submitForm} id="step" className="soft-background">
+    <Form of={form} onSubmit={submitForm} id="step-2" className="soft-background">
       <section className="top">
         <header>
           <a href="/">Tillbaka</a>

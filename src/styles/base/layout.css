@@ -35,7 +35,7 @@ hr {
     flex-direction: column;
     gap: var(--space-xl);
 
-    header {
+    & > header {
       display: flex;
       flex-direction: column;
       text-align: start;
@@ -46,5 +46,19 @@ hr {
   .bottom {
     display: flex;
     flex-direction: column;
+  }
+}
+
+.soft-green-background {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-base);
+  padding: var(--space-xl);
+  background-color: var(--color-green-99);
+  border: solid 1px var(--color-green-90);
+  border-radius: var(--border-radius);
+
+  & > header {
+    text-align: center;
   }
 }

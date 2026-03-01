@@ -8,12 +8,27 @@ export default function Success({ onContinue }: Props) {
   return (
     <div className="soft-background">
       <section className="top">
-        <h2 className="level-4">Success</h2>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore quam fugit inventore, tenetur illo quae
-          beatae omnis exercitationem quibusdam officiis amet, dolorem ipsum? Deleniti molestiae vero distinctio est
-          corrupti? Maiores.
-        </p>
+        <header>
+          <h3>Tack för din ansökan!</h3>
+        </header>
+
+        <section className="soft-green-background">
+          <header>
+            <h4>Vad händer nu?</h4>
+          </header>
+          <b>Vi ringer dig!</b>
+          <p>En handläggare från Lendo kommer att ringa upp dig inom kort för att gå igenom din bolåneansökan.</p>
+          <br />
+          <p>
+            Det är viktigt att du svarar när vi ringer, eftersom vi behöver prata med dig innan vi kan gå vidare med
+            eventuella erbjudanden.
+          </p>
+          <br />
+          <b>Vill du hellre ringa oss direkt?</b>
+          <p>
+            Kontakta oss på <a href="tel:+46771190190">0771 - 190 190</a>.
+          </p>
+        </section>
       </section>
 
       <hr />
