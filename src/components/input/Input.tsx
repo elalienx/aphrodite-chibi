@@ -1,6 +1,6 @@
 import { useState, type FocusEvent } from "react";
 import { useField } from "@formisch/react";
-import type { FieldElement, FormStore } from "@formisch/react";
+import type { FormStore } from "@formisch/react";
 
 import getCorrectMobileKeyboard from "../../helpers/getCorrectMobileKeyboard";
 
@@ -26,34 +26,42 @@ interface Props {
   suffix?: string;
 }
 
+type InputState = "default" | "focus" | "error" | "success";
+
 export default function Input({ form, id, placeholder, type, suffix }: Props) {
   // Safeguards
   if (!form) return <p>This component requires a Formisch form and id</p>;
   if (!id) return <p>Please pass an id to know which field this input belongs too</p>;
 
-  // State
+  // Field binding
   const field = useField(form, { path: [id] });
+
+  // Local focus tracking
   const [isFocused, setIsFocused] = useState(false);
 
-  // Properties
+  // Mobile keyboard
   const mobileKeyboard = getCorrectMobileKeyboard(type);
 
-  // -- State helpers
+  // State helpers
   const hasError = !!field.errors?.length;
   const hasUserTyped = field.isDirty;
 
-  // -- Validation logic
+  // Validation logic
   const shouldValidate = !isFocused && hasUserTyped;
-  const showError = shouldValidate && hasError;
-  const showSuccess = shouldValidate && !hasError;
 
-  // -- Design
+  // Unified state logic
+  let state: InputState = "default";
+
+  if (isFocused) {
+    state = "focus";
+  } else if (shouldValidate) {
+    state = hasError ? "error" : "success";
+  }
+
+  const cssState = state !== "default" ? `is-${state}` : "";
   const cssSuffix = suffix ? "has-suffix" : "";
-  const cssFocusWithin = isFocused ? "focus-within" : "";
-  const cssValidationMessage = showError ? "has-validation-message" : "";
-  const cssSuccess = showSuccess ? "is-valid" : "";
 
-  // Methods
+  // Event handlers
   function onFocus(event: FocusEvent<HTMLInputElement>) {
     field.props.onFocus(event);
     setIsFocused(true);
@@ -65,21 +73,18 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   }
 
   return (
-    <>
-      <div className={`input-wrapper ${cssSuffix} ${cssFocusWithin} ${cssValidationMessage} ${cssSuccess}`}>
-        <input
-          {...field.props}
-          className="input"
-          inputMode={mobileKeyboard}
-          placeholder={placeholder}
-          type={type}
-          onFocus={onFocus}
-          onBlur={onBlur}
-        />
-
-        {suffix && <span className="suffix">{suffix}</span>}
-        {showError && <p className="validation-message">{field.errors?.[0]}</p>}
-      </div>
-    </>
+    <div className={`input-wrapper ${cssSuffix} ${cssState}`}>
+      <input
+        {...field.props}
+        className="input"
+        inputMode={mobileKeyboard}
+        placeholder={placeholder}
+        type={type}
+        onFocus={onFocus}
+        onBlur={onBlur}
+      />
+      {suffix && <span className="suffix">{suffix}</span>}
+      {state === "error" && <p className="validation-message">{field.errors?.[0]}</p>}
+    </div>
   );
 }

@@ -22,9 +22,9 @@
 
 /* Shared outline behaviour */
 .input-wrapper:hover,
-.input-wrapper.focus-within,
-.input-wrapper.has-validation-message,
-.input-wrapper.is-valid {
+.input-wrapper.is-focus,
+.input-wrapper.is-error,
+.input-wrapper.is-success {
   outline-style: solid;
   outline-width: var(--outline-hover);
 }
@@ -40,7 +40,7 @@
 }
 
 /* On focus */
-.input-wrapper.focus-within {
+.input-wrapper.is-focus {
   border-color: var(--input-border-focus);
   outline-color: var(--input-border-focus);
 
@@ -51,7 +51,7 @@
 }
 
 /* On showing error message */
-.input-wrapper.has-validation-message {
+.input-wrapper.is-error {
   border-color: var(--input-border-error);
   outline-color: var(--input-border-error);
 
@@ -63,7 +63,7 @@
 }
 
 /** On being valid */
-.input-wrapper.is-valid {
+.input-wrapper.is-success {
   border-color: var(--input-border-success);
   outline-color: var(--input-border-success);
 
