@@ -1,5 +1,6 @@
-import { test, expect } from "@playwright/experimental-ct-react";
+// @ts-ignore
 import type { Locator } from "@playwright/test";
+import { test, expect } from "@playwright/experimental-ct-react";
 
 import FormManager from "../src/forms/example-3/FormManager";
 
