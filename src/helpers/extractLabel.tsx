@@ -1,6 +1,6 @@
 import { Children, isValidElement, cloneElement, type ReactNode } from "react";
 
-import Label from "components/label/Label";
+import Label from "../components/label/Label";
 
 export default function extractLabel(children: ReactNode, id: string) {
   const reactComponents = Children.toArray(children);

@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 
 import "./input-field.css";
-import extractLabel from "helpers/extractLabel";
-import extractInput from "helpers/extractInput";
+import extractLabel from "../../helpers/extractLabel";
+import extractInput from "../../helpers/extractInput";
 
 interface Props {
   /**  Content to display inside the input field. */

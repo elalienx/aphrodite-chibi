@@ -79,11 +79,12 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
       <input
         {...field.props}
         className="input"
+        id={id}
         inputMode={mobileKeyboard}
+        onBlur={onBlur}
+        onFocus={onFocus}
         placeholder={placeholder}
         type={type}
-        onFocus={onFocus}
-        onBlur={onBlur}
       />
       {suffix && <span className="suffix">{suffix}</span>}
       {state === "error" && <p className="validation-message">{field.errors?.[0]}</p>}

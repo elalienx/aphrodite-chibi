@@ -20,8 +20,8 @@ test.beforeEach(async ({ mount }) => {
   const component = await mount(<FormManager />);
 
   title = component.getByRole("heading", { name: "Playwright test" });
-  input1 = component.getByRole("textbox", { name: "Leif Lend" });
-  input2 = component.getByRole("textbox", { name: "leif@lendo.se" });
+  input1 = component.getByRole("textbox", { name: "Namn och efternamn" });
+  input2 = component.getByRole("textbox", { name: "E-postadress" });
   wrapper1 = input1.locator("..");
   wrapper2 = input2.locator("..");
   submitButton = component.getByRole("button", { name: "Nästa" });

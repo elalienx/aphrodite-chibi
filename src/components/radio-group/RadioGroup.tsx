@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 
 import "./radio-group.css";
-import extractLabel from "helpers/extractLabel";
-import extractRadioOptions from "helpers/extractRadioOptions";
+import extractLabel from "../../helpers/extractLabel";
+import extractRadioOptions from "../../helpers/extractRadioOptions";
 
 interface Props {
   /** Content to display inside the radio group. */

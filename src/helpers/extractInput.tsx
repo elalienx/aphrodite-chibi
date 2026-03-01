@@ -1,6 +1,6 @@
 import { Children, isValidElement, cloneElement, type ReactNode } from "react";
 
-import Input from "components/input/Input";
+import Input from "../components/input/Input";
 
 export default function extractInput(children: ReactNode, id: string) {
   const reactComponents = Children.toArray(children);

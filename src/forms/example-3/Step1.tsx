@@ -29,14 +29,14 @@ export default function Step1({ onContinue }: Props) {
       <section className="top">
         <h4>Playwright test</h4>
 
-        <InputField>
+        <InputField id="name">
           <Label>Namn och efternamn</Label>
-          <Input form={form} id="name" type="text" placeholder="Leif Lend" />
+          <Input form={form} type="text" placeholder="Leif Lend" />
         </InputField>
 
-        <InputField>
+        <InputField id="email">
           <Label>E-postadress</Label>
-          <Input form={form} id="email" type="text" placeholder="leif@lendo.se" />
+          <Input form={form} type="text" placeholder="leif@lendo.se" />
         </InputField>
       </section>
 
