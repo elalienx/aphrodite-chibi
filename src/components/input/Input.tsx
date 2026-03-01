@@ -2,6 +2,8 @@ import { useState, type FocusEvent } from "react";
 import { useField } from "@formisch/react";
 import type { FormStore } from "@formisch/react";
 
+import Debug from "../../components/debug/Debug";
+
 import getCorrectMobileKeyboard from "./getCorrectMobileKeyboard";
 import "./input-type-number.css";
 import "./input-wrapper-design.css";
@@ -40,7 +42,8 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   const mobileKeyboard = getCorrectMobileKeyboard(type);
   const cssSuffix = suffix ? "has-suffix" : "";
   let cssState = "";
-  let state = "";
+
+  if (form.isSubmitted && !field.isValid) cssState === "error";
 
   // Methods
   function onFocus(event: FocusEvent<HTMLInputElement>) {
@@ -54,18 +57,21 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   }
 
   return (
-    <div className={`input-wrapper ${cssState} ${cssSuffix}`}>
-      <input
-        {...field.props}
-        className="input"
-        inputMode={mobileKeyboard}
-        placeholder={placeholder}
-        type={type}
-        onFocus={onFocus}
-        onBlur={onBlur}
-      />
-      {suffix && <span className="suffix">{suffix}</span>}
-      {state === "error" && <p className="validation-message">{field.errors?.[0]}</p>}
-    </div>
+    <>
+      <Debug form={form} field={field} />
+      <div className={`input-wrapper ${cssState} ${cssSuffix}`}>
+        <input
+          {...field.props}
+          className="input"
+          inputMode={mobileKeyboard}
+          placeholder={placeholder}
+          type={type}
+          onFocus={onFocus}
+          onBlur={onBlur}
+        />
+        {suffix && <span className="suffix">{suffix}</span>}
+        {cssState === "error" && <p className="validation-message">{field.errors?.[0]}</p>}
+      </div>
+    </>
   );
 }
