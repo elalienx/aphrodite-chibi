@@ -23,7 +23,7 @@ export default function RadioGroup({ children, id }: Props) {
   }
 
   // Components
-  const label = extractLabel(children);
+  const label = extractLabel(children, id);
   const radioOptions = extractRadioOptions(children, id);
 
   return (

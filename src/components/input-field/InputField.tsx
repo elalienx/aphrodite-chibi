@@ -1,16 +1,17 @@
 import type { ReactNode } from "react";
 
 import "./input-field.css";
+import extractLabel from "helpers/extractLabel";
 
 interface Props {
   /**  Content to display inside the input field. */
   children?: ReactNode;
 
-  /** Text to display if the form validation encountered an issue. */
-  validationMessage?: string;
+  /** Unique identifier of the parent radio group to make sure only one radio option is active. */
+  id: string;
 }
 
-export default function InputField({ children, validationMessage }: Props) {
+export default function InputField({ children, id }: Props) {
   // Safeguard
   if (!children)
     return (
@@ -19,5 +20,13 @@ export default function InputField({ children, validationMessage }: Props) {
       </p>
     );
 
-  return <div className="input-field">{children}</div>;
+  // Components
+  const label = extractLabel(children, id);
+
+  return (
+    <div className="input-field">
+      {label}
+      {children}
+    </div>
+  );
 }

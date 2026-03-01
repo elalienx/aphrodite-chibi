@@ -32,12 +32,12 @@ export default function Step1({ onContinue }: Props) {
       <section className="top">
         <h2 className="level-4">Step 1</h2>
 
-        <InputField>
+        <InputField id="name">
           <Label>Namn och efternamn</Label>
           <Input form={form} id="name" type="text" placeholder="Leif Lend" />
         </InputField>
 
-        <InputField>
+        <InputField id="email">
           <Label>E-postadress</Label>
           <Input form={form} id="email" type="text" placeholder="leif@lendo.se" />
         </InputField>
