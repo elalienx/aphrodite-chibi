@@ -26,7 +26,7 @@ export default function Debug({ form, field }: Props) {
           <b>isDirty:</b> {showBoolean(form.isDirty)}
         </li>
         <li>
-          <b>errors:</b> {showBoolean(form.isSubmitted)}
+          <b>isSubmitted:</b> {showBoolean(form.isSubmitted)}
         </li>
         <li>
           <b>isSubmitting:</b> {showBoolean(form.isSubmitting)}
