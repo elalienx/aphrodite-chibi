@@ -39,3 +39,11 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm preview`         | Preview your build locally, before deploying     |
 | `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `pnpm astro -- --help` | Get help using the Astro CLI                     |
+
+## Files with TS no check
+
+Due to working alone, I do not have the time to make sure the TypeScript compiler is 100% happy. Until others join and can help me debug, I will list the files with Typescript lines dissabled.
+| File | Code |
+| --- | --- |
+| FormManager.spec.tsx | `import type { Locator } from "@playwright/test";` |
+| Input.tsx | `const field = useField(form, { path: [id] });` |
