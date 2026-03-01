@@ -30,7 +30,7 @@ export default function Step1({ onContinue }: Props) {
   return (
     <Form of={form} onSubmit={submitForm} className="soft-background">
       <section className="top">
-        <h2 className="level-4">Step 1</h2>
+        <h4>Playwright test</h4>
 
         <InputField>
           <Label>Namn och efternamn</Label>
