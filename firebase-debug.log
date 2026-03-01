@@ -145,3 +145,32 @@
 [debug] [2026-02-23T17:50:27.088Z] Checked if tokens are valid: true, expires at: 1771872618718
 [debug] [2026-02-23T17:50:27.093Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/aphrodite-chibi/channels/live/releases versionName=projects%2F656949835%2Fsites%2Faphrodite-chibi%2Fversions%2Fabf30cace5c3325d
 [debug] [2026-02-23T17:50:27.094Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/aphrodite-chibi/channels/live/releases {}
+[debug] [2026-03-01T18:56:35.658Z] ----------------------------------------------------------------------
+[debug] [2026-03-01T18:56:35.667Z] Command:       /usr/local/bin/firebase /Users/eduardo/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2026-03-01T18:56:35.668Z] CLI Version:   15.6.0
+[debug] [2026-03-01T18:56:35.668Z] Platform:      darwin
+[debug] [2026-03-01T18:56:35.668Z] Node Version:  v20.18.2
+[debug] [2026-03-01T18:56:35.669Z] Time:          Sun Mar 01 2026 19:56:35 GMT+0100 (Central European Standard Time)
+[debug] [2026-03-01T18:56:35.669Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-03-01T18:56:35.673Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2026-03-01T18:56:36.953Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-01T18:56:36.955Z] > authorizing via signed-in user (eduardo_alvarez_nowak@outlook.com)
+[debug] [2026-03-01T18:56:36.955Z] [iam] checking project aphrodite-chibi for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-03-01T18:56:36.956Z] Checked if tokens are valid: false, expires at: 1771872618718
+[debug] [2026-03-01T18:56:36.957Z] Checked if tokens are valid: false, expires at: 1771872618718
+[debug] [2026-03-01T18:56:36.957Z] > refreshing access token with scopes: []
+[debug] [2026-03-01T18:56:36.959Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-03-01T18:56:36.960Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-03-01T18:56:37.091Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-03-01T18:56:37.091Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-03-01T18:56:37.103Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/aphrodite-chibi:testIamPermissions [none]
+[debug] [2026-03-01T18:56:37.103Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/aphrodite-chibi:testIamPermissions  x-goog-user-project=aphrodite-chibi
+[debug] [2026-03-01T18:56:37.103Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/aphrodite-chibi:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-03-01T18:56:37.274Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2026-03-01T18:56:37.274Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2026-03-01T18:56:37.970Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/aphrodite-chibi:testIamPermissions 200
+[debug] [2026-03-01T18:56:37.971Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/aphrodite-chibi:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-03-01T18:56:37.972Z] Checked if tokens are valid: true, expires at: 1772394996091
+[debug] [2026-03-01T18:56:37.972Z] Checked if tokens are valid: true, expires at: 1772394996091
+[debug] [2026-03-01T18:56:37.973Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/aphrodite-chibi [none]

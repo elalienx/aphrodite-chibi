@@ -4,8 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "astro": "astro",
-    "build": "astro build",
-    "deploy": "astro build && firebase deploy",
+    "build": "astro build && firebase deploy",
     "dev": "astro dev",
     "preview": "astro preview",
     "playwright": "playwright test -c playwright-ct.config.ts"
