@@ -20,11 +20,8 @@ export default function Step1({ onContinue }: Props) {
   const form = useForm({ schema: schema, validate: "blur", revalidate: "blur" });
 
   // Methods
-  function submitForm(values: v.InferInput<typeof schema>) {
-    if (form.isValid) {
-      console.log(`${values.name} the email ${values.email} is valid`);
-      onContinue();
-    }
+  function submitForm() {
+    if (form.isValid) onContinue();
   }
 
   return (
