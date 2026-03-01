@@ -43,12 +43,29 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   const debug = false;
   const mobileKeyboard = getCorrectMobileKeyboard(type);
   const cssSuffix = suffix ? "has-suffix" : "";
-  let cssState: InputState = setCSSState();
+  const state: InputState = setState();
 
   // Methods
-  function setCSSState() {
-    if (form.isSubmitted && !field.isValid) return "error";
-    if (isFocused) return "focus";
+  function setState(): InputState {
+    // 1️⃣ Error after submit
+    if (form.isSubmitted && !field.isValid) {
+      return "error";
+    }
+
+    // 2️⃣ Error after user modified field AND it's invalid AND blurred
+    if (field.isDirty && !field.isValid && !isFocused) {
+      return "error";
+    }
+
+    // 3️⃣ Focus state (if not in error)
+    if (isFocused) {
+      return "focus";
+    }
+
+    // 4️⃣ Success after valid change + blur
+    if (field.isDirty && field.isValid && !isFocused) {
+      return "success";
+    }
 
     return "default";
   }
@@ -66,7 +83,7 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   return (
     <>
       {debug && <Debug form={form} field={field} />}
-      <div className={`input-wrapper ${cssState} ${cssSuffix}`}>
+      <div className={`input-wrapper ${state} ${cssSuffix}`}>
         <input
           {...field.props}
           className="input"
@@ -77,7 +94,7 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
           onBlur={onBlur}
         />
         {suffix && <span className="suffix">{suffix}</span>}
-        {cssState === "error" && <p className="validation-message">{field.errors?.[0]}</p>}
+        {state === "error" && <p className="validation-message">{field.errors?.[0]}</p>}
       </div>
     </>
   );
