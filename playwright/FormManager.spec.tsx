@@ -20,7 +20,7 @@ test.beforeEach(async ({ mount }) => {
   submitButton = component.getByRole("button", { name: "Nästa" });
 });
 
-test("Should show error on both field when pressing submit", async ({ mount }) => {
+test("1. Should show error on both field when pressing submit", async ({ mount }) => {
   // Act
   await submitButton.click();
 
@@ -29,11 +29,21 @@ test("Should show error on both field when pressing submit", async ({ mount }) =
   await expect(wrapper2.getByText("Please enter your email")).toBeVisible();
 });
 
-test("Should show active state of first field", async ({ mount }) => {
+test("2. First field should be active on focus", async ({ mount }) => {
   // Act
   await input1.focus();
 
   // Assert
   await expect(wrapper1).toHaveClass(/focus/);
-  await expect(wrapper2).not.toHaveClass(/error/);
+  await expect(wrapper2).toHaveClass(/default/);
+});
+
+test("3. First field should return to normal on blur", async ({ mount }) => {
+  // Act
+  await input1.focus();
+  await input1.blur();
+
+  // Assert
+  await expect(wrapper1).toHaveClass(/default/);
+  await expect(wrapper2).toHaveClass(/default/);
 });
