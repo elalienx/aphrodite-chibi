@@ -1,16 +1,26 @@
 import { test, expect } from "@playwright/experimental-ct-react";
+import type { Locator } from "@playwright/test";
 
 import FormManager from "../src/forms/example-3/FormManager";
 
-test("Should show error on both field when pressing submit", async ({ mount }) => {
+let input1: Locator;
+let input2: Locator;
+let wrapper1: Locator;
+let wrapper2: Locator;
+let submitButton: Locator;
+
+test.beforeEach(async ({ mount }) => {
   // Arrange
   const component = await mount(<FormManager />);
-  const submitButton = component.getByRole("button", { name: "Nästa" });
-  const input1 = component.getByRole("textbox", { name: "Leif Lend" });
-  const input2 = component.getByRole("textbox", { name: "leif@lendo.se" });
-  const wrapper1 = input1.locator("..");
-  const wrapper2 = input2.locator("..");
 
+  input1 = component.getByRole("textbox", { name: "Leif Lend" });
+  input2 = component.getByRole("textbox", { name: "leif@lendo.se" });
+  wrapper1 = input1.locator("..");
+  wrapper2 = input2.locator("..");
+  submitButton = component.getByRole("button", { name: "Nästa" });
+});
+
+test("Should show error on both field when pressing submit", async ({ mount }) => {
   // Act
   await submitButton.click();
 
@@ -20,13 +30,6 @@ test("Should show error on both field when pressing submit", async ({ mount }) =
 });
 
 test("Should show active state of first field", async ({ mount }) => {
-  // Arrange
-  const component = await mount(<FormManager />);
-  const input1 = component.getByRole("textbox", { name: "Leif Lend" });
-  const input2 = component.getByRole("textbox", { name: "leif@lendo.se" });
-  const wrapper1 = input1.locator("..");
-  const wrapper2 = input2.locator("..");
-
   // Act
   await input1.focus();
 
