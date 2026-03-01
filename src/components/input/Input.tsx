@@ -37,7 +37,7 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   // State
   // @ts-ignore
   const field = useField(form, { path: [id] });
-  const [isFocused, setIsFocused] = useState(false);
+  const [fieldIsFocused, setFieldIsFocused] = useState(false);
 
   // Properties
   const debug = false;
@@ -47,37 +47,33 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
 
   // Methods
   function setState(): InputState {
-    // 1️⃣ Error after submit
-    if (form.isSubmitted && !field.isValid) {
+    // Show error only if field is invalid AND (submitted OR user modified it)
+    if (!field.isValid && (form.isSubmitted || field.isDirty)) {
       return "error";
     }
 
-    // 2️⃣ Error after user modified field AND it's invalid AND blurred
-    if (field.isDirty && !field.isValid && !isFocused) {
-      return "error";
-    }
-
-    // 3️⃣ Focus state (if not in error)
-    if (isFocused) {
+    // Focus state
+    if (fieldIsFocused) {
       return "focus";
     }
 
-    // 4️⃣ Success after valid change + blur
-    if (field.isDirty && field.isValid && !isFocused) {
+    // Success state (valid, dirty, blurred)
+    if (field.isValid && field.isDirty && !fieldIsFocused) {
       return "success";
     }
 
+    // Default
     return "default";
   }
 
   function onFocus(event: FocusEvent<HTMLInputElement>) {
     field.props.onFocus(event);
-    setIsFocused(true);
+    setFieldIsFocused(true);
   }
 
   function onBlur(event: FocusEvent<HTMLInputElement>) {
     field.props.onBlur(event);
-    setIsFocused(false);
+    setFieldIsFocused(false);
   }
 
   return (
