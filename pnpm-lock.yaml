@@ -20,9 +20,6 @@ importers:
       '@types/react-dom':
         specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.14)
-      add:
-        specifier: ^2.0.6
-        version: 2.0.6
       astro:
         specifier: ^5.17.1
         version: 5.18.0(@types/node@25.3.2)(rollup@4.59.0)(typescript@5.9.3)
@@ -867,9 +864,6 @@ packages:
     resolution: {integrity: sha512-UVJyE9MttOsBQIDKw1skb9nAwQuR5wuGD3+82K6JgJlm/Y+KI92oNsMNGZCYdDsVtRHSak0pcV5Dno5+4jh9sw==}
     engines: {node: '>=0.4.0'}
     hasBin: true
-
-  add@2.0.6:
-    resolution: {integrity: sha512-j5QzrmsokwWWp6kUcJQySpbG+xfOBqqKnup3OIk1pz+kB/80SLorZ9V8zHFLO92Lcd+hbvq8bT+zOGoPkmBV0Q==}
 
   ansi-align@3.0.1:
     resolution: {integrity: sha512-IOfwwBF5iczOjp/WeY4YxyjqAFMQoZufdQWDd19SEExbVLNXqvpzSJ/M7Za4/sCPmQ0+GRquoA7bGcINcxew6w==}
@@ -2641,8 +2635,6 @@ snapshots:
       - supports-color
 
   acorn@8.16.0: {}
-
-  add@2.0.6: {}
 
   ansi-align@3.0.1:
     dependencies:
