@@ -8,7 +8,7 @@ export default function FormManager() {
   const [step, setStep] = useState<Step>("step1");
 
   return (
-    <div>
+    <div id="form-manager">
       {step === "step1" && <Step1 onContinue={() => setStep("success")} />}
       {step === "success" && <Success onContinue={() => setStep("step1")} />}
     </div>
