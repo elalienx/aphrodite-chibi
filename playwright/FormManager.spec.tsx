@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/experimental-ct-react";
 
-import FormManager from "forms/example-3/FormManager";
+import FormManager from "../src/forms/example-3/FormManager";
 
 test("should work", async ({ mount }) => {
   const component = await mount(<FormManager />);
