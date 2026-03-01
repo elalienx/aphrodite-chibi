@@ -35,6 +35,7 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   if (!id) return <p>Please pass an id to know which field this input belongs too</p>;
 
   // State
+  // @ts-ignore
   const field = useField(form, { path: [id] });
   const [isFocused, setIsFocused] = useState(false);
 
