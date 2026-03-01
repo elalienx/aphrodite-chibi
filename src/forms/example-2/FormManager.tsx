@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Step2 from "./step-2/Step2";
 import Step1 from "./step-1/Step1";
+import Step2 from "./step-2/Step2";
 import Success from "./success/Success";
 
 type Step = "step-1" | "step-2" | "success";
