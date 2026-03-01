@@ -39,11 +39,12 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   const [isFocused, setIsFocused] = useState(false);
 
   // Properties
+  const debug = false;
   const mobileKeyboard = getCorrectMobileKeyboard(type);
   const cssSuffix = suffix ? "has-suffix" : "";
   let cssState = "";
 
-  if (form.isSubmitted && !field.isValid) cssState === "error";
+  if (form.isSubmitted && !field.isValid) cssState = "error";
 
   // Methods
   function onFocus(event: FocusEvent<HTMLInputElement>) {
@@ -58,7 +59,7 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
 
   return (
     <>
-      <Debug form={form} field={field} />
+      {debug && <Debug form={form} field={field} />}
       <div className={`input-wrapper ${cssState} ${cssSuffix}`}>
         <input
           {...field.props}
