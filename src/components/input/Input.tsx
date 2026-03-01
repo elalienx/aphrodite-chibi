@@ -2,8 +2,7 @@ import { useState, type FocusEvent } from "react";
 import { useField } from "@formisch/react";
 import type { FormStore } from "@formisch/react";
 
-import getCorrectMobileKeyboard from "../../helpers/getCorrectMobileKeyboard";
-
+import getCorrectMobileKeyboard from "./getCorrectMobileKeyboard";
 import "./input-type-number.css";
 import "./input-wrapper-design.css";
 import "./input-wrapper-layout.css";
@@ -33,13 +32,11 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   if (!form) return <p>This component requires a Formisch form and id</p>;
   if (!id) return <p>Please pass an id to know which field this input belongs too</p>;
 
-  // Field binding
+  // State
   const field = useField(form, { path: [id] });
-
-  // Local focus tracking
   const [isFocused, setIsFocused] = useState(false);
 
-  // Mobile keyboard
+  // Properties
   const mobileKeyboard = getCorrectMobileKeyboard(type);
 
   // State helpers
