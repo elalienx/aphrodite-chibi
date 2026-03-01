@@ -13,7 +13,7 @@ interface Props {
   form: FormStore;
 
   /** Unique identifier of a form field. */
-  id: string;
+  id?: string;
 
   /** An example value to show when the field is empty. */
   placeholder?: string;

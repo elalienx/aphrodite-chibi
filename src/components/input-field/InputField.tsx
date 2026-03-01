@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 import "./input-field.css";
 import extractLabel from "helpers/extractLabel";
+import extractInput from "helpers/extractInput";
 
 interface Props {
   /**  Content to display inside the input field. */
@@ -22,11 +23,12 @@ export default function InputField({ children, id }: Props) {
 
   // Components
   const label = extractLabel(children, id);
+  const input = extractInput(children, id);
 
   return (
     <div className="input-field">
       {label}
-      {children}
+      {input}
     </div>
   );
 }

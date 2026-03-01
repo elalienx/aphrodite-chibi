@@ -20,7 +20,7 @@ export default function Label({ children, id }: Props) {
 
   return (
     <label className="label" htmlFor={id}>
-      @{id}@ {children}
+      {children}
     </label>
   );
 }
