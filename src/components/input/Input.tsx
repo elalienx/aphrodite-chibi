@@ -44,12 +44,6 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
 
   // Methods
   function setState(): InputState {
-    // Safeguard
-    if (!form) {
-      console.error("The form failed to initialize");
-      return "default";
-    }
-
     if (!field.isValid && (form.isSubmitted || field.isDirty)) {
       return "error";
     }
