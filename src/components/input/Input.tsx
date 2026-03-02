@@ -44,7 +44,11 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
 
   // Methods
   function setState(): InputState {
-    if (!field.isValid && (form.isSubmitted || field.isDirty)) {
+    if (!field.isValid && form?.isSubmitted) {
+      return "error";
+    }
+
+    if (!field.isValid && field.isDirty) {
       return "error";
     }
 
