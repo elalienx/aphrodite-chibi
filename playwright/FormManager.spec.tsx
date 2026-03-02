@@ -27,6 +27,11 @@ test.beforeEach(async ({ mount }) => {
   submitButton = component.getByRole("button", { name: "Nästa" });
 });
 
+test.afterEach(async ({}) => {
+  // to clean the Playwright selector and make it easy to observe the end result
+  await expect(title).toBeVisible();
+});
+
 test("1. Should show error state when submitting empty form", async ({ mount }) => {
   // Act
   await submitButton.click();
@@ -34,7 +39,6 @@ test("1. Should show error state when submitting empty form", async ({ mount }) 
   // Assert
   await expect(wrapper1).toHaveClass(/error/);
   await expect(wrapper2).toHaveClass(/error/);
-  await expect(title).toBeVisible();
 });
 
 test("2. Should show active state when input is focused and untouched", async ({ mount }) => {
@@ -44,7 +48,6 @@ test("2. Should show active state when input is focused and untouched", async ({
   // Assert
   await expect(wrapper1).toHaveClass(/focus/);
   await expect(wrapper2).toHaveClass(/default/);
-  await expect(title).toBeVisible();
 });
 
 test("3. Should return to default state when input is focused and then blurred without typing", async ({ mount }) => {
@@ -55,7 +58,6 @@ test("3. Should return to default state when input is focused and then blurred w
   // Assert
   await expect(wrapper1).toHaveClass(/default/);
   await expect(wrapper2).toHaveClass(/default/);
-  await expect(title).toBeVisible();
 });
 
 test("4. Should remain active while typing invalid value without blurring", async ({ mount }) => {
@@ -65,7 +67,6 @@ test("4. Should remain active while typing invalid value without blurring", asyn
   // Assert
   await expect(wrapper1).toHaveClass(/focus/);
   await expect(wrapper2).toHaveClass(/default/);
-  await expect(title).toBeVisible();
 });
 
 test("5. Should show error state when invalid value is entered and input is blurred", async ({ mount }) => {
@@ -76,7 +77,6 @@ test("5. Should show error state when invalid value is entered and input is blur
   // Assert
   await expect(wrapper1).toHaveClass(/error/);
   await expect(wrapper2).toHaveClass(/default/);
-  await expect(title).toBeVisible();
 });
 
 test("6. Should remain active while typing valid value without blurring", async () => {
@@ -86,7 +86,6 @@ test("6. Should remain active while typing valid value without blurring", async 
   // Assert
   await expect(wrapper1).toHaveClass(/focus/);
   await expect(wrapper2).toHaveClass(/default/);
-  await expect(title).toBeVisible();
 });
 
 test("7. Should show success state when valid value is entered and input is blurred", async () => {
@@ -97,54 +96,65 @@ test("7. Should show success state when valid value is entered and input is blur
   // Assert
   await expect(wrapper1).toHaveClass(/success/);
   await expect(wrapper2).toHaveClass(/default/);
-  await expect(title).toBeVisible();
 });
 
 test("8. Should keep error state when focusing a field that already has an error", async () => {
-  // Arrange
-  await input1.fill(invalidName);
-  await input1.blur();
-  await wrapper1.getByText("Name is too short").waitFor();
-  await expect(title).toBeVisible();
+  await test.step("fill invalid data", async () => {
+    // Act
+    await input1.fill(invalidName);
+    await input1.blur();
 
-  // Act
-  await input1.focus();
+    // Assert
+    await expect(wrapper1.getByText("Name is too short")).toBeVisible();
+  });
 
-  // Assert
-  await expect(wrapper1).toHaveClass(/error/);
-  await expect(wrapper2).toHaveClass(/default/);
-  await expect(title).toBeVisible();
+  await test.step("fill valid data", async () => {
+    // Act
+    await input1.focus();
+
+    // Assert
+    await expect(wrapper1).toHaveClass(/error/);
+    await expect(wrapper2).toHaveClass(/default/);
+  });
 });
 
 test("9. Should keep error state while correcting invalid field without blurring", async () => {
-  // Arrange
-  await input1.fill(invalidName);
-  await input1.blur();
-  await wrapper1.getByText("Name is too short").waitFor();
-  await expect(title).toBeVisible();
+  await test.step("fill invalid data", async () => {
+    // Act
+    await input1.fill(invalidName);
+    await input1.blur();
 
-  // Act
-  await input1.fill(validName);
+    // Assert
+    await expect(wrapper1.getByText("Name is too short")).toBeVisible();
+  });
 
-  // Assert
-  await expect(wrapper1).toHaveClass(/error/);
-  await expect(wrapper2).toHaveClass(/default/);
-  await expect(title).toBeVisible();
+  await test.step("fill valid data", async () => {
+    // Act
+    await input1.fill(validName);
+
+    // Assert
+    await expect(wrapper1).toHaveClass(/error/);
+    await expect(wrapper2).toHaveClass(/default/);
+  });
 });
 
 test("10. Should transition from error to success when valid value is entered and input is blurred", async () => {
-  // Arrange
-  await input1.fill(invalidName);
-  await input1.blur();
-  await wrapper1.getByText("Name is too short").waitFor();
-  await expect(title).toBeVisible();
+  await test.step("fill invalid data", async () => {
+    // Act
+    await input1.fill(invalidName);
+    await input1.blur();
 
-  // Act
-  await input1.fill(validName);
-  await input1.blur();
+    // Assert
+    await expect(wrapper1.getByText("Name is too short")).toBeVisible();
+  });
 
-  // Assert
-  await expect(wrapper1).toHaveClass(/success/);
-  await expect(wrapper2).toHaveClass(/default/);
-  await expect(title).toBeVisible();
+  await test.step("fill valid data", async () => {
+    // Act
+    await input1.fill(validName);
+    await input1.blur();
+
+    // Assert
+    await expect(wrapper1).toHaveClass(/success/);
+    await expect(wrapper2).toHaveClass(/default/);
+  });
 });
