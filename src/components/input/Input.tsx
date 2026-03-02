@@ -45,22 +45,18 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
 
   // Methods
   function setState(): InputState {
-    // Show error only if field is invalid AND (submitted OR user modified it)
     if (!field.isValid && (form.isSubmitted || field.isDirty)) {
       return "error";
     }
 
-    // Focus state
     if (fieldIsFocused) {
       return "focus";
     }
 
-    // Success state (valid, dirty, blurred)
     if (field.isValid && field.isDirty && !fieldIsFocused) {
       return "success";
     }
 
-    // Default
     return "default";
   }
 
