@@ -161,7 +161,7 @@ test("10. Should transition from error to success when valid value is entered an
   });
 });
 
-test("10. Second field should not validate while active after first field has been interacted with", async () => {
+test("11. Second field should not validate while active after first field has been interacted with", async () => {
   await test.step("first input: fill invalid data", async () => {
     // Act
     await input1.fill(invalidName);
@@ -184,7 +184,7 @@ test("10. Second field should not validate while active after first field has be
 
   await test.step("second input: fill invalid data", async () => {
     // Act
-    await input2.fill(invalidEmail);
+    await input2.fill("e"); // just one character is enough to see if it will fail
 
     // Assert
     await expect(wrapper1).toHaveClass(/success/);
