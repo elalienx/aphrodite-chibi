@@ -8,7 +8,7 @@ const validName = "Eduardo";
 const validEmail = "eduardo@lendo.se";
 const invalidName = "Ed"; // Below minimum length
 const invalidEmail = "eduardo@lendo"; // Missing top-level domain (e.g., .com, .se)
-let title: Locator;
+let cleanUpText: Locator;
 let input1: Locator;
 let input2: Locator;
 let wrapper1: Locator;
@@ -19,7 +19,7 @@ test.beforeEach(async ({ mount }) => {
   // Arrange
   const component = await mount(<FormManager />);
 
-  title = component.getByRole("heading", { name: "Playwright test" });
+  cleanUpText = component.getByText("Text to clean Playwright selector");
   input1 = component.getByRole("textbox", { name: "Namn och efternamn" });
   input2 = component.getByRole("textbox", { name: "E-postadress" });
   wrapper1 = input1.locator("..");
@@ -28,8 +28,7 @@ test.beforeEach(async ({ mount }) => {
 });
 
 test.afterEach(async ({}) => {
-  // to clean the Playwright selector and make it easy to observe the end result
-  await expect(title).toBeVisible();
+  await expect(cleanUpText).toBeVisible();
 });
 
 test("1. Should show error state when submitting empty form", async ({ mount }) => {
@@ -106,6 +105,7 @@ test("8. Should keep error state when focusing a field that already has an error
 
     // Assert
     await expect(wrapper1.getByText("Name is too short")).toBeVisible();
+    await expect(wrapper2).toHaveClass(/default/);
   });
 
   await test.step("fill valid data", async () => {
@@ -126,6 +126,7 @@ test("9. Should keep error state while correcting invalid field without blurring
 
     // Assert
     await expect(wrapper1.getByText("Name is too short")).toBeVisible();
+    await expect(wrapper2).toHaveClass(/default/);
   });
 
   await test.step("fill valid data", async () => {
@@ -146,6 +147,7 @@ test("10. Should transition from error to success when valid value is entered an
 
     // Assert
     await expect(wrapper1.getByText("Name is too short")).toBeVisible();
+    await expect(wrapper2).toHaveClass(/default/);
   });
 
   await test.step("fill valid data", async () => {

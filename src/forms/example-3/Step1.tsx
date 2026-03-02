@@ -42,8 +42,10 @@ export default function Step1({ onContinue }: Props) {
 
       <hr />
 
-      <section className="bottom">
+      <section className="bottom" style={{ textAlign: "center" }}>
         <Button type="submit">Nästa</Button>
+        <br />
+        <small>(Text to clean Playwright selector)</small>
       </section>
     </Form>
   );
