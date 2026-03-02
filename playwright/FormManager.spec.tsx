@@ -188,6 +188,6 @@ test("11. Second field should not validate while active after first field has be
 
     // Assert
     await expect(wrapper1).toHaveClass(/success/);
-    await expect(wrapper2).toHaveClass(/active/);
+    await expect(wrapper2).toHaveClass(/focus/);
   });
 });
