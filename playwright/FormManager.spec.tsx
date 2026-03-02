@@ -160,3 +160,34 @@ test("10. Should transition from error to success when valid value is entered an
     await expect(wrapper2).toHaveClass(/default/);
   });
 });
+
+test("10. Second field should not validate while active after first field has been interacted with", async () => {
+  await test.step("first input: fill invalid data", async () => {
+    // Act
+    await input1.fill(invalidName);
+    await input1.blur();
+
+    // Assert
+    await expect(wrapper1.getByText("Name is too short")).toBeVisible();
+    await expect(wrapper2).toHaveClass(/default/);
+  });
+
+  await test.step("first input: fill valid data", async () => {
+    // Act
+    await input1.fill(validName);
+    await input1.blur();
+
+    // Assert
+    await expect(wrapper1).toHaveClass(/success/);
+    await expect(wrapper2).toHaveClass(/default/);
+  });
+
+  await test.step("second input: fill invalid data", async () => {
+    // Act
+    await input2.fill(invalidEmail);
+
+    // Assert
+    await expect(wrapper1).toHaveClass(/success/);
+    await expect(wrapper2).toHaveClass(/active/);
+  });
+});
