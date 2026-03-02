@@ -3,16 +3,16 @@ import Step1 from "./step-1/Step1";
 import Step2 from "./step-2/Step2";
 import Success from "./success/Success";
 
-type Step = "step-1" | "step-2" | "success";
+type Step = "step1" | "step2" | "success";
 
 export default function FormManager() {
-  const [step, setStep] = useState<Step>("step-1");
+  const [step, setStep] = useState<Step>("step1");
 
   return (
     <div>
-      {step === "step-1" && <Step1 onContinue={() => setStep("step-2")} />}
-      {step === "step-2" && <Step2 onContinue={() => setStep("success")} />}
-      {step === "success" && <Success onContinue={() => setStep("step-1")} />}
+      {step === "step1" && <Step1 onContinue={() => setStep("step2")} />}
+      {step === "step2" && <Step2 onContinue={() => setStep("success")} />}
+      {step === "success" && <Success onContinue={() => setStep("step1")} />}
     </div>
   );
 }
