@@ -10,7 +10,7 @@ import "./input-wrapper-state.css";
 
 interface Props {
   /** An instance of a Formisch form. */
-  form: FormStore;
+  form?: FormStore;
 
   /** Unique identifier of a form field. */
   id?: string;
@@ -38,13 +38,18 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   const [fieldIsFocused, setFieldIsFocused] = useState(false);
 
   // Properties
-  const debug = false;
   const mobileKeyboard = getCorrectMobileKeyboard(type);
   const cssSuffix = suffix ? "has-suffix" : "";
   const state: InputState = setState();
 
   // Methods
   function setState(): InputState {
+    // Safeguard
+    if (!form) {
+      console.error("The form failed to initialize");
+      return "default";
+    }
+
     if (!field.isValid && (form.isSubmitted || field.isDirty)) {
       return "error";
     }

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import type { FormStore } from "@formisch/react";
 
 import "./input-field.css";
 import extractLabel from "../../helpers/extractLabel";
@@ -10,9 +11,12 @@ interface Props {
 
   /** Unique identifier of the parent radio group to make sure only one radio option is active. */
   id: string;
+
+  /** An instance of a Formisch form. */
+  form: FormStore;
 }
 
-export default function InputField({ children, id }: Props) {
+export default function InputField({ children, id, form }: Props) {
   // Safeguard
   if (!children)
     return (
@@ -23,7 +27,7 @@ export default function InputField({ children, id }: Props) {
 
   // Components
   const label = extractLabel(children, id);
-  const input = extractInput(children, id);
+  const input = extractInput(children, id, form);
 
   return (
     <div className="input-field">
