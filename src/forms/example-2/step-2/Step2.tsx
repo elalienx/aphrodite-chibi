@@ -29,19 +29,19 @@ export default function Step2({ onContinue }: Props) {
           <h4>2. Om bostaden</h4>
         </header>
 
-        <InputField>
+        <InputField form={form} id="size">
           <Label>Kvadratmeter</Label>
-          <Input form={form} id="size" type="number" placeholder="0" suffix="kvm" />
+          <Input type="number" placeholder="0" suffix="kvm" />
         </InputField>
 
-        <InputField>
+        <InputField form={form} id="rooms">
           <Label>Antal rum</Label>
-          <Input form={form} id="rooms" type="number" placeholder="0" suffix="st" />
+          <Input type="number" placeholder="0" suffix="st" />
         </InputField>
 
-        <InputField>
+        <InputField form={form} id="monthly_fee">
           <Label>Månadsavgift</Label>
-          <Input form={form} id="monthly_fee" type="number" placeholder="0" suffix="kr/mån" />
+          <Input type="number" placeholder="0" suffix="kr/mån" />
         </InputField>
       </section>
 
