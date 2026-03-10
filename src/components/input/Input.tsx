@@ -1,4 +1,4 @@
-import { useState, type FocusEvent } from "react";
+import { useEffect, useState, type FocusEvent } from "react";
 import { useField } from "@formisch/react";
 import type { FormStore } from "@formisch/react";
 
@@ -30,47 +30,53 @@ type InputState = "default" | "focus" | "error" | "success";
 export default function Input({ form, id, placeholder, type, suffix }: Props) {
   // Safeguards
   if (!form) return <p>This component requires a Formisch form and id</p>;
-  if (!id) return <p>Please pass an id to know which field this input belongs too</p>;
+  if (!id)
+    return <p>Please pass an id to know which field this input belongs too</p>;
 
   // State
   // @ts-ignore
   const field = useField(form, { path: [id] });
-  const [fieldIsFocused, setFieldIsFocused] = useState(false);
+  const [state, setState] = useState("default");
 
   // Properties
   const mobileKeyboard = getCorrectMobileKeyboard(type);
   const cssSuffix = suffix ? "has-suffix" : "";
-  const state: InputState = setState();
+
+  useEffect(() => {
+    if (form.isSubmitted && !field.isValid) {
+      setState((_prev) => "error");
+    }
+  }, [form.isSubmitted, field.isValid]);
 
   // Methods
-  function setState(): InputState {
-    if (!field.isValid && form?.isSubmitted) {
-      return "error";
-    }
-
-    if (!field.isValid && field.isDirty) {
-      return "error";
-    }
-
-    if (fieldIsFocused) {
-      return "focus";
-    }
-
-    if (field.isValid && field.isDirty && !fieldIsFocused) {
-      return "success";
-    }
-
-    return "default";
-  }
-
   function onFocus(event: FocusEvent<HTMLInputElement>) {
     field.props.onFocus(event);
-    setFieldIsFocused(true);
+
+    // Safeguard
+    if (state === "error" || state === "success") return;
+
+    setState((_prev) => "focus");
   }
 
   function onBlur(event: FocusEvent<HTMLInputElement>) {
     field.props.onBlur(event);
-    setFieldIsFocused(false);
+
+    if (!field.isValid) {
+      setState((_prev) => "error");
+      return;
+    }
+
+    if (field.isDirty && !field.isValid) {
+      setState((_prev) => "error");
+      return;
+    }
+
+    if (!field.isValid) {
+      setState((_prev) => "success");
+      return;
+    }
+
+    setState("default");
   }
 
   return (
@@ -86,7 +92,10 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
         type={type}
       />
       {suffix && <span className="suffix">{suffix}</span>}
-      {state === "error" && <p className="validation-message">{field.errors?.[0]}</p>}
+      {state === "error" && (
+        <p className="validation-message">{field.errors?.[0]}</p>
+      )}
+      field.isValid: {field.isValid ? "y" : "n"}
     </div>
   );
 }
