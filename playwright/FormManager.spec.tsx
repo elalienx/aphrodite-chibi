@@ -5,9 +5,7 @@ import { test, expect } from "@playwright/experimental-ct-react";
 import FormManager from "../src/forms/example-3/FormManager";
 
 const validName = "Eduardo";
-const validEmail = "eduardo@lendo.se";
 const invalidName = "Ed"; // Below minimum length
-const invalidEmail = "eduardo@lendo"; // Missing top-level domain (e.g., .com, .se)
 let cleanUpText: Locator;
 let input1: Locator;
 let input2: Locator;
@@ -27,11 +25,11 @@ test.beforeEach(async ({ mount }) => {
   submitButton = component.getByRole("button", { name: "Nästa" });
 });
 
-test.afterEach(async ({}) => {
+test.afterEach(async () => {
   await expect(cleanUpText).toBeVisible();
 });
 
-test("1. Should show error state when submitting empty form", async ({ mount }) => {
+test("1. Should show error state when submitting empty form", async () => {
   // Act
   await submitButton.click();
 
@@ -40,7 +38,7 @@ test("1. Should show error state when submitting empty form", async ({ mount }) 
   await expect(wrapper2).toHaveClass(/error/);
 });
 
-test("2. Should show active state when input is focused and untouched", async ({ mount }) => {
+test("2. Should show active state when input is focused and untouched", async () => {
   // Act
   await input1.focus();
 
@@ -49,9 +47,7 @@ test("2. Should show active state when input is focused and untouched", async ({
   await expect(wrapper2).toHaveClass(/default/);
 });
 
-test("3. Should return to default state when input is focused and then blurred without typing", async ({
-  mount,
-}) => {
+test("3. Should return to default state when input is focused and then blurred without typing", async () => {
   // Act
   await input1.focus();
   await input1.blur();
@@ -61,7 +57,7 @@ test("3. Should return to default state when input is focused and then blurred w
   await expect(wrapper2).toHaveClass(/default/);
 });
 
-test("4. Should remain active while typing invalid value without blurring", async ({ mount }) => {
+test("4. Should remain active while typing invalid value without blurring", async () => {
   // Act
   await input1.fill(invalidName);
 
@@ -70,9 +66,7 @@ test("4. Should remain active while typing invalid value without blurring", asyn
   await expect(wrapper2).toHaveClass(/default/);
 });
 
-test("5. Should show error state when invalid value is entered and input is blurred", async ({
-  mount,
-}) => {
+test("5. Should show error state when invalid value is entered and input is blurred", async () => {
   // Act
   await input1.fill(invalidName);
   await input1.blur();
