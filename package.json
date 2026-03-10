@@ -1,13 +1,17 @@
 {
   "name": "aphrodite-chibi",
-  "type": "module",
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
     "astro": "astro",
     "build": "astro build && firebase deploy",
     "dev": "astro dev",
-    "preview": "astro preview",
-    "playwright": "playwright test -c playwright-ct.config.ts"
+    "fmt:check": "oxfmt --check",
+    "fmt": "oxfmt",
+    "lint:fix": "oxlint --fix",
+    "lint": "oxlint",
+    "playwright": "playwright test -c playwright-ct.config.ts",
+    "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
@@ -22,6 +26,8 @@
   "devDependencies": {
     "@playwright/experimental-ct-react": "^1.58.2",
     "@types/node": "^25.3.2",
+    "oxfmt": "^0.37.0",
+    "oxlint": "^1.52.0",
     "prettier-plugin-astro": "^0.14.1"
   }
 }

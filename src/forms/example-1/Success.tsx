@@ -10,9 +10,9 @@ export default function Success({ onContinue }: Props) {
       <section className="top">
         <h2 className="level-4">Success</h2>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore quam fugit inventore, tenetur illo quae
-          beatae omnis exercitationem quibusdam officiis amet, dolorem ipsum? Deleniti molestiae vero distinctio est
-          corrupti? Maiores.
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore quam fugit inventore,
+          tenetur illo quae beatae omnis exercitationem quibusdam officiis amet, dolorem ipsum?
+          Deleniti molestiae vero distinctio est corrupti? Maiores.
         </p>
       </section>
 

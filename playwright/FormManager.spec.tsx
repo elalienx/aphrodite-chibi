@@ -49,7 +49,9 @@ test("2. Should show active state when input is focused and untouched", async ({
   await expect(wrapper2).toHaveClass(/default/);
 });
 
-test("3. Should return to default state when input is focused and then blurred without typing", async ({ mount }) => {
+test("3. Should return to default state when input is focused and then blurred without typing", async ({
+  mount,
+}) => {
   // Act
   await input1.focus();
   await input1.blur();
@@ -68,7 +70,9 @@ test("4. Should remain active while typing invalid value without blurring", asyn
   await expect(wrapper2).toHaveClass(/default/);
 });
 
-test("5. Should show error state when invalid value is entered and input is blurred", async ({ mount }) => {
+test("5. Should show error state when invalid value is entered and input is blurred", async ({
+  mount,
+}) => {
   // Act
   await input1.fill(invalidName);
   await input1.blur();
