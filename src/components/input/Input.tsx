@@ -88,13 +88,7 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
         return;
       }
     },
-    [
-      fieldIsFocused,
-      form.isSubmitted,
-      field.isDirty,
-      field.isValid,
-      inputState,
-    ],
+    [fieldIsFocused, form.isSubmitted, field.isDirty, field.isValid, inputState],
   );
 
   function onFocus(event: FocusEvent<HTMLInputElement>) {
