@@ -20,10 +20,7 @@ export const schema = v.object({
     v.transform((value) => Number(value)),
     v.number("Must be a valid number"),
     v.minValue(1, "Ange bostadens månadsavgift för att gå vidare."),
-    v.maxValue(
-      10_000,
-      "Månadsavgiften är för hög. Du kan som högst ange en avgift på 100 000 kr/mån.",
-    ),
+    v.maxValue(10_000, "Månadsavgiften är för hög. Du kan som högst ange en avgift på 100 000 kr/mån."),
   ),
 });
 
