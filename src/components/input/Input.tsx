@@ -1,4 +1,4 @@
-import { useState, type FocusEvent } from "react";
+import { useEffect, useState, type FocusEvent } from "react";
 import { useField } from "@formisch/react";
 import type { FormStore } from "@formisch/react";
 
@@ -30,38 +30,51 @@ type InputState = "default" | "focus" | "error" | "success";
 export default function Input({ form, id, placeholder, type, suffix }: Props) {
   // Safeguards
   if (!form) return <p>This component requires a Formisch form and id</p>;
-  if (!id) return <p>Please pass an id to know which field this input belongs too</p>;
+  if (!id) return <p>Pass an id to know which field this input belongs</p>;
 
   // State
   // @ts-ignore
   const field = useField(form, { path: [id] });
+  const [inputState, setInputstate] = useState<InputState>("default");
   const [fieldIsFocused, setFieldIsFocused] = useState(false);
 
   // Properties
+  const ariaErrorName = `aria-error-${id}`;
   const mobileKeyboard = getCorrectMobileKeyboard(type);
   const cssSuffix = suffix ? "has-suffix" : "";
-  const state: InputState = setState();
 
   // Methods
-  function setState(): InputState {
-    if (!field.isValid && form?.isSubmitted) {
-      return "error";
-    }
+  useEffect(
+    function calculateInputState() {
+      // Show error after form submission
+      if (form.isSubmitted && !field.isValid) setInputstate("error");
 
-    if (!field.isValid && field.isDirty) {
-      return "error";
-    }
+      // If the field already had an error, keep it even when focusing again
+      if (fieldIsFocused && inputState === "error") return;
 
-    if (fieldIsFocused) {
-      return "focus";
-    }
+      // If the field already had a success, keep it even when focusing again
+      if (fieldIsFocused && inputState === "success") return;
 
-    if (field.isValid && field.isDirty && !fieldIsFocused) {
-      return "success";
-    }
+      // While editing a fresh field, stay in focus state
+      if (fieldIsFocused) return;
 
-    return "default";
-  }
+      // Default before interaction
+      if (!field.isDirty) return;
+
+      // Validate success
+      if (field.isValid) setInputstate("success");
+
+      // Validate failure
+      if (!field.isValid) setInputstate("error");
+    },
+    [
+      fieldIsFocused,
+      form.isSubmitted,
+      field.isDirty,
+      field.isValid,
+      inputState,
+    ],
+  );
 
   function onFocus(event: FocusEvent<HTMLInputElement>) {
     field.props.onFocus(event);
@@ -74,11 +87,13 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   }
 
   return (
-    <div className={`input-wrapper ${state} ${cssSuffix}`}>
+    <div className={`input-wrapper ${inputState} ${cssSuffix}`}>
       <input
         {...field.props}
-        className="input"
         id={id}
+        aria-errormessage={ariaErrorName}
+        aria-invalid={!!field.errors}
+        className="input"
         inputMode={mobileKeyboard}
         onBlur={onBlur}
         onFocus={onFocus}
@@ -86,7 +101,11 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
         type={type}
       />
       {suffix && <span className="suffix">{suffix}</span>}
-      {state === "error" && <p className="validation-message">{field.errors?.[0]}</p>}
+      {inputState === "error" && (
+        <p id={ariaErrorName} className="validation-message">
+          {field.errors?.[0]}
+        </p>
+      )}
     </div>
   );
 }
