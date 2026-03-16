@@ -47,25 +47,46 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   useEffect(
     function calculateInputState() {
       // Show error after form submission
-      if (form.isSubmitted && !field.isValid) setInputstate("error");
+      if (form.isSubmitted && !field.isValid) {
+        setInputstate("error");
+        return;
+      }
 
       // If the field already had an error, keep it even when focusing again
-      if (fieldIsFocused && inputState === "error") return;
+      if (fieldIsFocused && inputState === "error") {
+        setInputstate("error");
+        return;
+      }
 
       // If the field already had a success, keep it even when focusing again
-      if (fieldIsFocused && inputState === "success") return;
+      if (fieldIsFocused && inputState === "success") {
+        setInputstate("success");
+        return;
+      }
 
       // While editing a fresh field, stay in focus state
-      if (fieldIsFocused) return;
+      if (fieldIsFocused) {
+        setInputstate("focus");
+        return;
+      }
 
       // Default before interaction
-      if (!field.isDirty) return;
+      if (!field.isDirty) {
+        setInputstate("default");
+        return;
+      }
 
       // Validate success
-      if (field.isValid) setInputstate("success");
+      if (field.isValid) {
+        setInputstate("success");
+        return;
+      }
 
       // Validate failure
-      if (!field.isValid) setInputstate("error");
+      if (!field.isValid) {
+        setInputstate("error");
+        return;
+      }
     },
     [
       fieldIsFocused,
