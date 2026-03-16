@@ -39,7 +39,7 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   const [fieldIsFocused, setFieldIsFocused] = useState(false);
 
   // Properties
-  const ariaErrorName = `aria-error-${id}`;
+  const ariaErrorId = `aria-error-${id}`;
   const mobileKeyboard = getCorrectMobileKeyboard(type);
   const cssSuffix = suffix ? "has-suffix" : "";
 
@@ -112,7 +112,7 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
       <input
         {...field.props}
         id={id}
-        aria-errormessage={ariaErrorName}
+        aria-errormessage={ariaErrorId}
         aria-invalid={!!field.errors}
         className="input"
         inputMode={mobileKeyboard}
@@ -123,7 +123,7 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
       />
       {suffix && <span className="suffix">{suffix}</span>}
       {inputState === "error" && (
-        <p id={ariaErrorName} className="validation-message">
+        <p id={ariaErrorId} className="validation-message">
           {field.errors?.[0]}
         </p>
       )}
