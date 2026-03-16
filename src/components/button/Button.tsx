@@ -8,7 +8,7 @@ interface Props {
   /** The function to execute when clicked. */
   onClick?: () => void;
 
-  type?: string;
+  type?: "button" | "submit" | "reset" | undefined;
 }
 
 export default function Button({ children, onClick, type = "button" }: Props) {
