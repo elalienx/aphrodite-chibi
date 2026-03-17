@@ -31,14 +31,15 @@ Inside of the Aphrodite Chibi project, you'll see the following folders and file
 
 All commands are run from the root of the project, from a terminal:
 
-| Command        | Action                                              |
-| :------------- | :-------------------------------------------------- |
-| `pnpm install` | Installs dependencies                               |
-| `pnpm dev`     | Starts local dev server at `localhost:4321`         |
-| `pnpm preview` | Preview your build locally, before deploying        |
-| `pnpm build`   | Build the site to `./dist/` and deploys to Firebase |
-| `pnpm format`  | Format all files using Void Zero OXftm formatter    |
-| `pnpm lint`    | Lint all files using Void Zero OXlint linter        |
+| Command                | Action                                              |
+| :--------------------- | :-------------------------------------------------- |
+| `pnpm install`         | Installs dependencies                               |
+| `pnpm dev`             | Starts local dev server at `localhost:4321`         |
+| `pnpm preview`         | Preview your build locally, before deploying        |
+| `pnpm build`           | Build the site to `./dist/` and deploys to Firebase |
+| `pnpm format`          | Format all files using Void Zero OXftm formatter    |
+| `pnpm lint`            | Lint all files using Void Zero OXlint linter        |
+| `pnpm playwright --ui` | Open Playwright UI viewer to run tests              |
 
 ## ⚠️ Files with TS no check
 
