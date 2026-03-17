@@ -14,14 +14,13 @@ export default function Step1({ onContinue }: Props) {
         </header>
 
         <ul>
+          <li>Add tooltips.</li>
+          <li>Add icons.</li>
           <li>Change third input based on property type.</li>
           <li>Add validations.</li>
-          <li>Clicking on labels focus the input.</li>
           <li>Add form submission.</li>
           <li>Add persistence.</li>
           <li>Add tracking.</li>
-          <li>Add tooltips.</li>
-          <li>Add icons.</li>
         </ul>
       </section>
 
