@@ -2,7 +2,7 @@
 import type { Locator } from "@playwright/test";
 import { test, expect } from "@playwright/experimental-ct-react";
 
-import FormManager from "../src/forms/example-3/FormManager";
+import FormManager from "../src/forms/example-1/FormManager";
 
 const validName = "Eduardo";
 const invalidName = "Ed"; // Below minimum length

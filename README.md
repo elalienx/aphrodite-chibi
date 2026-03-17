@@ -31,16 +31,16 @@ Inside of the Aphrodite Chibi project, you'll see the following folders and file
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `pnpm install`         | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+| Command                | Action                                              |
+| :--------------------- | :-------------------------------------------------- |
+| `pnpm install`         | Installs dependencies                               |
+| `pnpm dev`             | Starts local dev server at `localhost:4321`         |
+| `pnpm preview`         | Preview your build locally, before deploying        |
+| `pnpm build`           | Build the site to `./dist/` and deploys to Firebase |
+| `pnpm format`          | Format all files using Void Zero OXftm formatter    |
+| `pnpm astro -- --help` | Lint all files using Void Zero OXlint linter        |
 
-## Files with TS no check
+## ⚠️ Files with TS no check
 
 Due to working alone, I do not have the time to make sure the TypeScript compiler is 100% happy. Until others join and can help me debug, I will list the files with Typescript lines dissabled.
 | File | Code |
