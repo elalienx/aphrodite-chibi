@@ -1,19 +1,22 @@
 .tooltip-icon {
-    background-color: pink;
-    padding: var(--space-small);
-    cursor:help
+    border: none;
+    background-color: transparent;
+    cursor:help;
+
+    /* Positionining */
+    anchor-name: --foobar; /** refactor hardcoded id **/
 }
 
-.tooltip-popopver {
+[popover]{
     background-color: white;
     min-width: 320px;
     max-width: 500px;
     padding: var(--space-small);
-    border: solid 1px var(--border-divider); /** refactor to better semantic color */
+    border: solid 1px var(--default-border);
     border-radius: var(--border-radius);
 
     /* Positioning */
-    position-anchor: --help; /** refactor hardcoded id **/
+    position-anchor: --foobar; /** refactor hardcoded id **/
     position-area: top center;
     position-try-fallbacks: flip-block, flip-inline;
 }

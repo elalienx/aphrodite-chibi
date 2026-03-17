@@ -115,6 +115,7 @@
   --page-background: var(--color-gray-95);
 
   /* Other borders */
+  --default-border: var(--color-desaturated-90);
   --divider-border: var(--color-desaturated-90);
 
   /* Typography colors */
