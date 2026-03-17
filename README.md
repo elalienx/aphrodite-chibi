@@ -7,7 +7,7 @@ Making Lendo more Kawaii <3
 Inside of the Aphrodite Chibi project, you'll see the following folders and files:
 
 ```text
-/
+/ root/
 ├── public/
 ├── src/
 │   └── components/
