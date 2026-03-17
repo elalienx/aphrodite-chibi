@@ -189,3 +189,26 @@ test("11. Second field should not validate while active after first field has be
     await expect(wrapper2).toHaveClass(/focus/);
   });
 });
+
+test("12. Should keep error if user clears the input after a validation error", async () => {
+  await test.step("fill invalid data", async () => {
+    // Act
+    await input1.fill(invalidName);
+    await input1.blur();
+
+    // Assert
+    await expect(wrapper1).toHaveClass(/error/);
+    await expect(wrapper2).toHaveClass(/default/);
+  });
+
+  await test.step("clear invalid data", async () => {
+    // Act
+    await input1.fill("");
+    await input1.blur();
+
+    // Assert
+    await expect(cleanUpText).toBeVisible(); // weird trick to force a validation re-render
+    await expect(wrapper1).toHaveClass(/error/);
+    await expect(wrapper2).toHaveClass(/default/);
+  });
+});
