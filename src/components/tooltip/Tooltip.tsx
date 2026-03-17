@@ -16,7 +16,7 @@ export default function Tooltip({id, text }: Props) {
       </button>
 
      {/* Dialog window */}
-      <div id={id} className="tooltip-popopver" popover="hint" style={{positionAnchor: `--${id}`}}>
+      <div id={id} className="tooltip-popopver" popover="auto" style={{positionAnchor: `--${id}`}}>
         {text}
       </div>
     </>
