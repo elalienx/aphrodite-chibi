@@ -53,13 +53,19 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
       }
 
       // If the field already had an error, keep it even when focusing again
-      if (fieldIsFocused && inputState === "error") {
+      if (inputState === "error" && fieldIsFocused) {
+        setInputstate("error");
+        return;
+      }
+
+      // If the field alreadt had an error, keep it even if user clears the input
+      if (inputState === "error" && field.input === "") {
         setInputstate("error");
         return;
       }
 
       // If the field already had a success, keep it even when focusing again
-      if (fieldIsFocused && inputState === "success") {
+      if (inputState === "success" && fieldIsFocused) {
         setInputstate("success");
         return;
       }
