@@ -1,10 +1,10 @@
 import { Form, useForm } from "@formisch/react";
 import * as v from "valibot";
 
+import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
 import InputField from "../../components/input-field/InputField";
 import Label from "../../components/label/Label";
-import Button from "../../components/button/Button";
 
 interface Props {
   onContinue: () => void;
@@ -20,17 +20,14 @@ export default function Step1({ onContinue }: Props) {
   const form = useForm({ schema: schema, validate: "blur", revalidate: "blur" });
 
   // Methods
-  function submitForm(values: v.InferInput<typeof schema>) {
-    if (form.isValid) {
-      console.log(`${values.name} the email ${values.email} is valid`);
-      onContinue();
-    }
+  function submitForm() {
+    if (form.isValid) onContinue();
   }
 
   return (
     <Form of={form} onSubmit={submitForm} className="soft-background">
       <section className="top">
-        <h2 className="level-4">Step 1</h2>
+        <h4>Playwright test</h4>
 
         <InputField form={form} id="name">
           <Label>Namn och efternamn</Label>
@@ -45,8 +42,10 @@ export default function Step1({ onContinue }: Props) {
 
       <hr />
 
-      <section className="bottom">
+      <section className="bottom" style={{ textAlign: "center" }}>
         <Button type="submit">Nästa</Button>
+        <br />
+        <small>(Text to clean Playwright selector)</small>
       </section>
     </Form>
   );
