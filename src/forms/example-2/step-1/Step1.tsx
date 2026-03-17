@@ -29,7 +29,7 @@ export default function Step1({ onContinue }: Props) {
 
       <hr />
 
-        <Tooltip id="two" text="This is another tooltip 🔵" />
+      <Tooltip id="two" text="This is another tooltip 🔵" />
 
       <section className="bottom">
         <Button onClick={onContinue}>Nästa</Button>
