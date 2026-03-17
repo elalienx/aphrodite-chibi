@@ -1,0 +1,13 @@
+.tooltip-icon {
+    background-color: pink;
+    cursor:help
+}
+
+.tooltip-popopver {
+    background-color: white;
+    min-width: 320px;
+    max-width: 500px;
+    padding: var(--space-small);
+    border: solid 1px var(--border-divider); /** refactor to better semantic color */
+    border-radius: var(--border-radius);
+}
