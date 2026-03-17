@@ -11,13 +11,25 @@ interface Props {
 }
 
 const schema = v.object({
-  name: v.pipe(v.string("Please enter your name."), v.minLength(3, "This name is too short")),
-  email: v.pipe(v.string("Please enter your email."), v.email("This email is not valid")),
+  name: v.pipe(
+    v.string("Please enter your full name."),
+    v.nonEmpty("Name must not be empty."),
+    v.minLength(3, "Name is too short."),
+  ),
+  email: v.pipe(
+    v.string("Please enter your email."),
+    v.nonEmpty("Email must not be empty."),
+    v.email("The email address is badly formatted."),
+  ),
 });
 
 export default function Step1({ onContinue }: Props) {
   // Properties
-  const form = useForm({ schema: schema, validate: "blur", revalidate: "blur" });
+  const form = useForm({
+    schema: schema,
+    validate: "blur",
+    revalidate: "blur",
+  });
 
   // Methods
   function submitForm() {
