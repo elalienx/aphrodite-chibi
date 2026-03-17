@@ -10,4 +10,9 @@
     padding: var(--space-small);
     border: solid 1px var(--border-divider); /** refactor to better semantic color */
     border-radius: var(--border-radius);
+
+    /* Positioning */
+    position-anchor: --help; /** refactor hardcoded id **/
+    position-area: top center;
+    position-try-fallbacks: flip-block, flip-inline;
 }
