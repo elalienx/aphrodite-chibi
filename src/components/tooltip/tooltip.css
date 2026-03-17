@@ -4,7 +4,7 @@
   cursor: help;
 
   /* Positionining */
-  anchor-name: --foobar; /** refactor hardcoded id **/
+  /* The "anchor-name" is done inside the React component so we can assign dynamic ids. */
 }
 
 .tooltip-popopver {
@@ -16,7 +16,7 @@
   border-radius: var(--border-radius);
 
   /* Positioning */
-  position-anchor: --foobar; /** refactor hardcoded id **/
+  /* The "position-anchor" is done inside the React component so we can assign dynamic ids. */
   position-area: top center;
   position-try-fallbacks: flip-block, flip-inline;
 }
