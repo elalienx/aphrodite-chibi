@@ -1,5 +1,6 @@
 .tooltip-icon {
     background-color: pink;
+    padding: var(--space-small);
     cursor:help
 }
 

@@ -1,4 +1,6 @@
 import Button from "components/button/Button";
+import TooltipIcon from "components/tooltip/TooltipIcon";
+import TooltipPopover from "components/tooltip/TooltipPopover";
 
 interface Props {
   onContinue: () => void;
@@ -12,6 +14,9 @@ export default function Step1({ onContinue }: Props) {
           <a href="/">Tillbaka</a>
           <h4>Road to MPV</h4>
         </header>
+
+        <TooltipIcon/>
+        <TooltipPopover text="This is a native tooltip"/>
 
         <ul>
           <li>Add tooltips.</li>
