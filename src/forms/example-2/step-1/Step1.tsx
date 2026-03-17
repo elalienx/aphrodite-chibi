@@ -14,7 +14,7 @@ export default function Step1({ onContinue }: Props) {
           <h4>Road to MPV</h4>
         </header>
 
-        <Tooltip text="This is a native tooltip"/>
+        <Tooltip text="This is a native tooltip" />
 
         <ul>
           <li>Add tooltips.</li>
