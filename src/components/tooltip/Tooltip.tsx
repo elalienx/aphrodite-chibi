@@ -9,15 +9,18 @@ interface Props {
 }
 
 export default function Tooltip({ id, text }: Props) {
+  // Properties
+  const cssAnchorId = `--${id}`;
+
   return (
     <>
       {/* Icon */}
-      <button className="tooltip-icon" popoverTarget={id} style={{ anchorName: `--${id}` }}>
+      <button className="tooltip-icon" popoverTarget={id} style={{ anchorName: cssAnchorId }}>
         ℹ️
       </button>
 
       {/* Dialog window */}
-      <div id={id} className="tooltip-popopver" popover="auto" style={{ positionAnchor: `--${id}` }}>
+      <div id={id} className="tooltip-popopver" popover="auto" style={{ positionAnchor: cssAnchorId }}>
         {text}
       </div>
     </>
