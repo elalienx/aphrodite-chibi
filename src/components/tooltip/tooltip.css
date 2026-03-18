@@ -21,7 +21,3 @@
   position-area: top center;
   position-try-fallbacks: flip-block, flip-inline;
 }
-
-.tooltip-popopver[position-area^="top"]::after {
-  content: "@";
-}
