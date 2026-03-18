@@ -20,7 +20,7 @@ export default function Tooltip({ id, text }: Props) {
       </button>
 
       {/* Dialog window */}
-      <div id={id} className="tooltip-popopver" popover="auto" style={{ positionAnchor: cssAnchorId }}>
+      <div id={id} className="tooltip-popopver soft-shadow" popover="auto" style={{ positionAnchor: cssAnchorId }}>
         {text}
       </div>
     </>
