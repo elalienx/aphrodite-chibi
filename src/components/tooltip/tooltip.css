@@ -8,10 +8,11 @@
 }
 
 .tooltip-popopver {
-  background-color: white;
   min-width: 320px;
   max-width: 500px;
+  margin: var(--space-small);
   padding: var(--space-small);
+  background-color: white;
   border: solid 1px var(--default-border);
   border-radius: var(--border-radius);
 

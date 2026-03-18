@@ -14,7 +14,7 @@ export default function Step1({ onContinue }: Props) {
           <h4>Road to MPV</h4>
         </header>
 
-        <Tooltip id="one" text="This is a native tooltip 🔴" />
+        <Tooltip id="one" text="This is the first tooltip 🥇" />
 
         <ul>
           <li>Add tooltips.</li>
@@ -27,9 +27,9 @@ export default function Step1({ onContinue }: Props) {
         </ul>
       </section>
 
-      <hr />
+      <Tooltip id="two" text="This is the second tooltip 🥈" />
 
-      <Tooltip id="two" text="This is another tooltip 🔵" />
+      <hr />
 
       <section className="bottom">
         <Button onClick={onContinue}>Nästa</Button>
