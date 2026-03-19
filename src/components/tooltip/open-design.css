@@ -1,0 +1,14 @@
+.open-design {
+  background-color: pink;
+  padding: var(--space-xl);
+}
+
+.window {
+  min-width: 300px;
+  max-width: 400px;
+  margin: var(--space-small); /** to have space between the icon opening the tooltip and the tooltip itself. */
+  padding: var(--space-small);
+  background-color: white;
+  border: solid 1px var(--default-border);
+  border-radius: var(--border-radius);
+}
