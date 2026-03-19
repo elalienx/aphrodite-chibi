@@ -11,8 +11,8 @@ import "./open-design.css";
 export default function OpenDesign() {
   return (
     <div className="open-design">
-      <div className="window soft-shadow">Im the best tooltip 🥇</div>
-      <div className="arrow">{/* empty on purpose */}</div>
+      <div className="window soft-shadow">Im the best tooltip in pug world 🥇</div>
+      <div className="arrow ">{/* empty on purpose */}</div>
     </div>
   );
 }

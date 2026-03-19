@@ -1,14 +1,38 @@
 .open-design {
+  min-width: 300px;
+  max-width: 400px;
   background-color: pink;
-  padding: var(--space-xl);
+  padding: var(--space-small);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.window,
+.arrow {
+  position: relative;
+  background-color: white;
+  border: solid 1px var(--default-border);
 }
 
 .window {
-  min-width: 300px;
-  max-width: 400px;
-  margin: var(--space-small); /** to have space between the icon opening the tooltip and the tooltip itself. */
+  width: 100%; /** fill the parent width. */
   padding: var(--space-small);
-  background-color: white;
-  border: solid 1px var(--default-border);
   border-radius: var(--border-radius);
+}
+
+.arrow {
+  --size: 16px;
+
+  width: var(--size);
+  height: var(--size);
+  rotate: 45deg;
+
+  /* Hide top part of the rotated shape */
+  border-left: none;
+  border-top: none;
+
+  /* Positioning */
+  margin-top: -8px;
 }
