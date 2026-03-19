@@ -15,6 +15,7 @@
   background-color: white;
   border: solid 1px var(--default-border);
   border-radius: var(--border-radius);
+  text-align: start;
 
   /* Positioning */
   /* The "position-anchor" is done inside the React component so we can assign dynamic ids. */
