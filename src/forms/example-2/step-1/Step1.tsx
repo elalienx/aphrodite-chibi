@@ -1,5 +1,4 @@
 import Button from "components/button/Button";
-import Tooltip from "components/tooltip/Tooltip";
 
 interface Props {
   onContinue: () => void;
@@ -14,8 +13,6 @@ export default function Step1({ onContinue }: Props) {
           <h4>Road to MPV</h4>
         </header>
 
-        <Tooltip id="one" text="This is the first tooltip 🥇" />
-
         <ul>
           <li>Add tooltips.</li>
           <li>Add icons.</li>
@@ -26,8 +23,6 @@ export default function Step1({ onContinue }: Props) {
           <li>Add tracking.</li>
         </ul>
       </section>
-
-      <Tooltip id="two" text="This is the second tooltip 🥈" />
 
       <hr />
 
