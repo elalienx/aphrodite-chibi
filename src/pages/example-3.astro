@@ -10,9 +10,9 @@ import Tooltip from "components/tooltip/Tooltip";
   <main>
     <header>
       <h1>Tooltip playground</h1>
-    </header>
-    <section style="text-align: center;">
       <p>See how the new tooltip component behaves.</p>
+    </header>
+    <section style="display: flex; flex-direction: row; justify-content: space-around;">
       <Tooltip id="one" text="Im the first tooltip 🔴" client:visible/>
       <Tooltip id="two" text="Im the second tooltip 🔵" client:visible/>
     </section>

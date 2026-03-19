@@ -1,7 +1,7 @@
 .tooltip-icon {
   border: none;
   background-color: transparent;
-  cursor: help;
+  cursor: pointer;
 
   /* Positionining */
   /* The "anchor-name" is done inside the React component so we can assign dynamic ids. */
@@ -10,12 +10,11 @@
 .tooltip-popopver {
   min-width: 320px;
   max-width: 500px;
-  margin: var(--space-small);
+  margin: var(--space-small); /** to have space between the icon opening the tooltip and the tooltip itself. */
   padding: var(--space-small);
   background-color: white;
   border: solid 1px var(--default-border);
   border-radius: var(--border-radius);
-  text-align: start;
 
   /* Positioning */
   /* The "position-anchor" is done inside the React component so we can assign dynamic ids. */
