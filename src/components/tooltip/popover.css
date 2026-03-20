@@ -5,5 +5,5 @@
 
   /* Positioning */
   position-area: top;
-  position-try-fallbacks: --custom-right;
+  position-try-fallbacks: --bottom;
 }

@@ -1,3 +1,13 @@
+.popover {
+  position: absolute;
+  background-color: transparent; /** removes default design */
+  border: none; /** removes default design */
+
+  /* Positioning */
+  position-area: top;
+  position-try-fallbacks: --bottom;
+}
+
 .tooltip {
   display: flex;
   flex-direction: column;
@@ -28,15 +38,17 @@
   }
 }
 
-@position-try --custom-right {
-  .tooltip {
-    flex-direction: row-reverse;
+@position-try --custom-bottom {
+  .popover {
+    .tooltip {
+      flex-direction: column-reverse;
 
-    .arrow {
-      background-color: yellow;
-      margin-right: var(--offset);
-      border-right: none;
-      border-top: none;
+      .arrow {
+        background-color: yellow;
+        margin-bottom: var(--offset);
+        border-right: none;
+        border-top: none;
+      }
     }
   }
 }
