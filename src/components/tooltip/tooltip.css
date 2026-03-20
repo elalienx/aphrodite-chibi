@@ -31,10 +31,9 @@
 @position-try --custom-right {
   .tooltip {
     flex-direction: row-reverse;
-    align-items: center;
-    background-color: yellow;
 
     .arrow {
+      background-color: yellow;
       margin-right: var(--offset);
       border-right: none;
       border-top: none;
