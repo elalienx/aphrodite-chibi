@@ -1,6 +1,8 @@
 .tool-tip-plus {
   display: flex;
+  align-items: center;
   max-width: 400px;
+  margin: var(--space-small); /** so the tooltip does not touch the button triggering it. **/
 
   .window {
     width: 100%; /** fill the parent width. */
@@ -12,29 +14,56 @@
 
   .arrow {
     --size: 16px;
-    --offset: 8px;
+    --offset: -8px;
 
     width: var(--size);
     height: var(--size);
     background-color: white;
     border: solid 1px var(--default-border);
     rotate: 45deg;
-
-    /* Changes depending on location */
-    border-left: none;
-    border-top: none;
-    margin-top: calc(var(--offset) * -1);
   }
 }
 
-/* Tooltip on top of button, arrow pointing down */
-.tool-tip-plus {
+/* Tooltip on top of button triggering it, arrow pointing down */
+.tool-tip-plus.top {
   flex-direction: column;
-  align-items: center;
 
   .arrow {
     border-left: none;
     border-top: none;
-    margin-top: calc(var(--offset) * -1);
+    margin-top: var(--offset);
+  }
+}
+
+/* Tooltip on bottom of button triggering it, arrow pointing up */
+.tool-tip-plus.bottom {
+  flex-direction: column-reverse;
+
+  .arrow {
+    border-right: none;
+    border-bottom: none;
+    margin-bottom: var(--offset);
+  }
+}
+
+/* Tooltip on left of button triggering it, arrow pointing right */
+.tool-tip-plus.left {
+  flex-direction: row;
+
+  .arrow {
+    border-left: none;
+    border-bottom: none;
+    margin-left: var(--offset);
+  }
+}
+
+/* Tooltip on right of button triggering it, arrow pointing left */
+.tool-tip-plus.right {
+  flex-direction: row-reverse;
+
+  .arrow {
+    border-right: none;
+    border-top: none;
+    margin-right: var(--offset);
   }
 }
