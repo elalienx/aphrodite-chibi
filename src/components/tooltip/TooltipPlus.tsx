@@ -1,7 +1,7 @@
-import "./open-design.css";
+import "./tooltip-plus.css";
 
 interface Props {
-  direction: "top" | "left" | "right" | "bottom";
+  direction?: "top" | "left" | "right" | "bottom";
 }
 
 export default function TooltipPlus({ direction = "top" }: Props) {
