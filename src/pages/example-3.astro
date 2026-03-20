@@ -3,6 +3,7 @@ import BaseLayout from "layouts/BaseLayout.astro";
 
 import "styles/pages/example.css";
 import Tooltip from "components/tooltip/Tooltip";
+import TooltipPlus from "components/tooltip/TooltipPlus";
 ---
 
 <BaseLayout title="Road to MVP" description="Example of a form with Aphrodite Chibi">
@@ -18,6 +19,14 @@ import Tooltip from "components/tooltip/Tooltip";
       <Tooltip id="one" text="Im the first tooltip 🔴" client:visible/>
       <Tooltip id="two" text="Im the second tooltip 🔵" client:visible/>
     </div>
+    </section>
+
+    <section>
+      <h2>Open design</h2>
+      <TooltipPlus direction="top" client:visible/>
+      <TooltipPlus direction="bottom" client:visible/>
+      <TooltipPlus direction="left" client:visible/>
+      <TooltipPlus direction="right" client:visible/>
     </section>
   </main>
 </BaseLayout>

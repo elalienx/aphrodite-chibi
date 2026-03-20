@@ -1,4 +1,5 @@
-import "./tooltip.css";
+import "./tooltip-classic.css";
+import "./tooltip-plus.css";
 
 interface Props {
   /** Unique identifier of the tooltip. */
@@ -20,8 +21,12 @@ export default function Tooltip({ id, text }: Props) {
       </button>
 
       {/* Dialog window */}
-      <div id={id} className="tooltip-popopver soft-shadow" popover="auto" style={{ positionAnchor: cssAnchorId }}>
+      {/* <div id={id} className="tooltip-popopver soft-shadow" popover="auto" style={{ positionAnchor: cssAnchorId }}>
         {text}
+      </div> */}
+      <div id={id} className="tooltip-plus" popover="auto" style={{ positionAnchor: cssAnchorId }}>
+        <div className="content soft-shadow">{text}</div>
+        <div className="arrow ">{/* empty on purpose */}</div>
       </div>
     </>
   );

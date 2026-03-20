@@ -1,10 +1,10 @@
-.tool-tip-plus {
+.tooltip {
   display: flex;
   align-items: center;
   max-width: 400px;
   margin: var(--space-small); /** so the tooltip does not touch the button triggering it. **/
 
-  .window {
+  .content {
     width: 100%; /** fill the parent width. */
     padding: var(--space-small);
     background-color: white;
@@ -25,7 +25,7 @@
 }
 
 /* Tooltip on top of button triggering it, arrow pointing down */
-.tool-tip-plus.top {
+.tooltip.top {
   flex-direction: column;
 
   .arrow {
@@ -36,7 +36,7 @@
 }
 
 /* Tooltip on bottom of button triggering it, arrow pointing up */
-.tool-tip-plus.bottom {
+.tooltip.bottom {
   flex-direction: column-reverse;
 
   .arrow {
@@ -47,7 +47,7 @@
 }
 
 /* Tooltip on left of button triggering it, arrow pointing right */
-.tool-tip-plus.left {
+.tooltip.left {
   flex-direction: row;
 
   .arrow {
@@ -58,7 +58,7 @@
 }
 
 /* Tooltip on right of button triggering it, arrow pointing left */
-.tool-tip-plus.right {
+.tooltip.right {
   flex-direction: row-reverse;
 
   .arrow {
