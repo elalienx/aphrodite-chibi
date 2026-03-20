@@ -16,8 +16,7 @@ export default function Step1({ onContinue }: Props) {
         <ul>
           <li>Add tooltips.</li>
           <li>Add icons.</li>
-          <li>Change third input based on property type.</li>
-          <li>Add validations.</li>
+          <li>Change third input based on previous page property type.</li>
           <li>Add form submission.</li>
           <li>Add persistence.</li>
           <li>Add tracking.</li>
