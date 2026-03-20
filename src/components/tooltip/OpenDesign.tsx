@@ -8,9 +8,9 @@ import "./open-design.css";
  * - Native CSS shape with clip path.
  * - Have a pre-stylized SVG with boder and shadown that can be positioned and rotated to each edge.
  */
-export default function OpenDesign() {
+export default function TooltipPlus() {
   return (
-    <div className="open-design">
+    <div className="tool-tip-plus">
       <div className="window soft-shadow">Im the best tooltip in pug world 🥇</div>
       <div className="arrow ">{/* empty on purpose */}</div>
     </div>

@@ -1,34 +1,40 @@
-.open-design {
+.tool-tip-plus {
   display: flex;
-  min-width: 300px;
   max-width: 400px;
 
-  /* Changes depending on location */
+  .window {
+    width: 100%; /** fill the parent width. */
+    padding: var(--space-small);
+    background-color: white;
+    border: solid 1px var(--default-border);
+    border-radius: var(--border-radius);
+  }
+
+  .arrow {
+    --size: 16px;
+    --offset: 8px;
+
+    width: var(--size);
+    height: var(--size);
+    background-color: white;
+    border: solid 1px var(--default-border);
+    rotate: 45deg;
+
+    /* Changes depending on location */
+    border-left: none;
+    border-top: none;
+    margin-top: calc(var(--offset) * -1);
+  }
+}
+
+/* Tooltip on top of button, arrow pointing down */
+.tool-tip-plus {
   flex-direction: column;
   align-items: center;
-}
 
-.window {
-  width: 100%; /** fill the parent width. */
-  padding: var(--space-small);
-  background-color: white;
-  border: solid 1px var(--default-border);
-  border-radius: var(--border-radius);
-}
-
-/* From the bottom of the window pointing down */
-.arrow {
-  --size: 16px;
-  --offset: 8px;
-
-  width: var(--size);
-  height: var(--size);
-  background-color: white;
-  border: solid 1px var(--default-border);
-  rotate: 45deg;
-
-  /* Changes depending on location */
-  border-left: none;
-  border-top: none;
-  margin-top: calc(var(--offset) * -1);
+  .arrow {
+    border-left: none;
+    border-top: none;
+    margin-top: calc(var(--offset) * -1);
+  }
 }
