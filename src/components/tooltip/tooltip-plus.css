@@ -1,21 +1,21 @@
-.tooltip-wrapper {
+/* ROOT: popover wrapper (do NOT touch display) */
+.popover {
   background-color: transparent;
   border: none;
-
-  /* Positioning */
-  /* The "position-anchor" is done inside the React component so we can assign dynamic ids. */
+  position: absolute;
   position-area: top;
-  position-try-fallbacks: flip-block, flip-inline;
+  position-try-fallbacks: --custom-right;
 }
 
 .tooltip {
   display: flex;
+  flex-direction: column;
   align-items: center;
   max-width: 400px;
-  margin: var(--space-small); /** so the tooltip does not touch the button triggering it. **/
+  margin: var(--space-small);
 
   .content {
-    width: 100%; /** fill the parent width. */
+    width: 100%;
     padding: var(--space-small);
     background-color: white;
     border: solid 1px var(--default-border);
@@ -28,52 +28,27 @@
 
     width: var(--size);
     height: var(--size);
+    margin-top: var(--offset);
     background-color: white;
     border: solid 1px var(--default-border);
-    rotate: 45deg;
-  }
-}
-
-/* Tooltip on top of button triggering it, arrow pointing down */
-.tooltip.top {
-  flex-direction: column;
-
-  .arrow {
+    transform: rotate(45deg);
     border-left: none;
     border-top: none;
-    margin-top: var(--offset);
   }
 }
 
-/* Tooltip on bottom of button triggering it, arrow pointing up */
-.tooltip.bottom {
-  flex-direction: column-reverse;
+/* ===== POSITION-AWARE STYLES ===== */
 
-  .arrow {
-    border-right: none;
-    border-bottom: none;
-    margin-bottom: var(--offset);
-  }
-}
+@position-try --custom-right {
+  .tooltip {
+    flex-direction: row-reverse;
+    align-items: center;
+    background-color: yellow;
 
-/* Tooltip on left of button triggering it, arrow pointing right */
-.tooltip.left {
-  flex-direction: row;
-
-  .arrow {
-    border-left: none;
-    border-bottom: none;
-    margin-left: var(--offset);
-  }
-}
-
-/* Tooltip on right of button triggering it, arrow pointing left */
-.tooltip.right {
-  flex-direction: row-reverse;
-
-  .arrow {
-    border-right: none;
-    border-top: none;
-    margin-right: var(--offset);
+    .arrow {
+      margin-right: var(--offset);
+      border-right: none;
+      border-top: none;
+    }
   }
 }
