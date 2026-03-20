@@ -1,8 +1,6 @@
 .open-design {
   min-width: 300px;
   max-width: 400px;
-  background-color: pink;
-  padding: var(--space-small);
 
   display: flex;
   flex-direction: column;
@@ -11,7 +9,6 @@
 
 .window,
 .arrow {
-  position: relative;
   background-color: white;
   border: solid 1px var(--default-border);
 }
@@ -22,17 +19,17 @@
   border-radius: var(--border-radius);
 }
 
+/* From the bottom of the window pointing down */
 .arrow {
   --size: 16px;
+  --offset: 8px;
 
   width: var(--size);
   height: var(--size);
   rotate: 45deg;
 
-  /* Hide top part of the rotated shape */
+  /* Changes depending on location */
   border-left: none;
   border-top: none;
-
-  /* Positioning */
-  margin-top: -8px;
+  margin-top: calc(var(--offset) * -1);
 }
