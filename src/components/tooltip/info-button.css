@@ -1,0 +1,8 @@
+.info-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  /* Positionining */
+  /* The "anchor-name" is done inside the React component so we can assign dynamic ids. */
+}

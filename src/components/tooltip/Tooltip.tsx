@@ -1,4 +1,6 @@
-import "./tooltip-plus.css";
+import "./info-button.css";
+import "./popover.css";
+import "./tooltip.css";
 
 interface Props {
   /** Unique identifier of the tooltip. */
@@ -15,7 +17,7 @@ export default function Tooltip({ id, text }: Props) {
   return (
     <>
       {/* Icon */}
-      <button className="tooltip-icon" popoverTarget={id} style={{ anchorName: cssAnchorId }}>
+      <button className="info-button" popoverTarget={id} style={{ anchorName: cssAnchorId }}>
         ℹ️
       </button>
 

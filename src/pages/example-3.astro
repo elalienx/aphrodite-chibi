@@ -3,7 +3,6 @@ import BaseLayout from "layouts/BaseLayout.astro";
 
 import "styles/pages/example.css";
 import Tooltip from "components/tooltip/Tooltip";
-import TooltipPlus from "components/tooltip/TooltipPlus";
 ---
 
 <BaseLayout title="Road to MVP" description="Example of a form with Aphrodite Chibi">
@@ -14,19 +13,11 @@ import TooltipPlus from "components/tooltip/TooltipPlus";
     </header>
 
     <section>
-    <h2>Interactive tooltip</h2>
+    <h2>Interactive tooltips</h2>
     <div style="display: flex; flex-direction: row; gap: var(--space-xl);">
       <Tooltip id="one" text="Im the first tooltip 🔴" client:visible/>
       <Tooltip id="two" text="Im the second tooltip 🔵" client:visible/>
     </div>
-    </section>
-
-    <section>
-      <h2>Open design</h2>
-      <TooltipPlus direction="top"/>
-      <TooltipPlus direction="bottom"/>
-      <TooltipPlus direction="left"/>
-      <TooltipPlus direction="right"/>
     </section>
   </main>
 </BaseLayout>

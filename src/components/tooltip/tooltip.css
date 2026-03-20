@@ -1,12 +1,3 @@
-/* ROOT: popover wrapper (do NOT touch display) */
-.popover {
-  background-color: transparent;
-  border: none;
-  position: absolute;
-  position-area: top;
-  position-try-fallbacks: --custom-right;
-}
-
 .tooltip {
   display: flex;
   flex-direction: column;
@@ -36,8 +27,6 @@
     border-top: none;
   }
 }
-
-/* ===== POSITION-AWARE STYLES ===== */
 
 @position-try --custom-right {
   .tooltip {
