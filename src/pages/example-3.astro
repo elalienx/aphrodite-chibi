@@ -11,22 +11,21 @@ import TooltipPlus from "components/tooltip/TooltipPlus";
     <header style="text-align: left;">
       <h1>Tooltip playground</h1>
       <p>See how the new tooltip component behaves.</p>
-    </header>
+    </header> 
 
     <section>
-    <h2>Interactive tooltip</h2>
-    <div style="display: flex; flex-direction: row; gap: var(--space-xl);">
-      <Tooltip id="one" text="Im the first tooltip 🔴" client:visible/>
-      <Tooltip id="two" text="Im the second tooltip 🔵" client:visible/>
-    </div>
-    </section>
-
-    <section>
-      <h2>Open design</h2>
-      <TooltipPlus direction="top" client:visible/>
+      <h2>Tooltip positioning</h2>
+      <h3>Top</h3>
       <TooltipPlus direction="bottom" client:visible/>
-      <TooltipPlus direction="left" client:visible/>
+      
+      <h3>Bottom</h3>
+      <TooltipPlus direction="top" client:visible/>
+
+      <h3>Left</h3>
       <TooltipPlus direction="right" client:visible/>
+      
+      <h3>Right</h3>
+      <TooltipPlus direction="left" client:visible/>
     </section>
   </main>
 </BaseLayout>
