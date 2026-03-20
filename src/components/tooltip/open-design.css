@@ -1,21 +1,18 @@
 .open-design {
+  display: flex;
   min-width: 300px;
   max-width: 400px;
 
-  display: flex;
+  /* Changes depending on location */
   flex-direction: column;
   align-items: center;
-}
-
-.window,
-.arrow {
-  background-color: white;
-  border: solid 1px var(--default-border);
 }
 
 .window {
   width: 100%; /** fill the parent width. */
   padding: var(--space-small);
+  background-color: white;
+  border: solid 1px var(--default-border);
   border-radius: var(--border-radius);
 }
 
@@ -26,6 +23,8 @@
 
   width: var(--size);
   height: var(--size);
+  background-color: white;
+  border: solid 1px var(--default-border);
   rotate: 45deg;
 
   /* Changes depending on location */
