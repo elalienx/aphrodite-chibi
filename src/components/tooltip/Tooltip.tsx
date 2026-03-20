@@ -1,28 +1,14 @@
 import "./tooltip.css";
 
 interface Props {
-  /** Unique identifier of the tooltip. */
-  id: string;
-
-  /** The text to display when clicking the tooltip. */
-  text: string;
+  direction?: "top" | "left" | "right" | "bottom";
 }
 
-export default function Tooltip({ id, text }: Props) {
-  // Properties
-  const cssAnchorId = `--${id}`;
-
+export default function TooltipPlus({ direction = "top" }: Props) {
   return (
-    <>
-      {/* Icon */}
-      <button className="tooltip-icon" popoverTarget={id} style={{ anchorName: cssAnchorId }}>
-        ℹ️
-      </button>
-
-      {/* Dialog window */}
-      <div id={id} className="tooltip-popopver soft-shadow" popover="auto" style={{ positionAnchor: cssAnchorId }}>
-        {text}
-      </div>
-    </>
+    <div className={`tooltip ${direction}`}>
+      <div className="content soft-shadow">Im the best tooltip in pug world 🥇</div>
+      <div className="arrow ">{/* empty on purpose */}</div>
+    </div>
   );
 }

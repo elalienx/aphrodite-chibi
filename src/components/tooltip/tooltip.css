@@ -1,23 +1,69 @@
-.tooltip-icon {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
+.tooltip {
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+  margin: var(--space-small); /** so the tooltip does not touch the button triggering it. **/
 
-  /* Positionining */
-  /* The "anchor-name" is done inside the React component so we can assign dynamic ids. */
+  .content {
+    width: 100%; /** fill the parent width. */
+    padding: var(--space-small);
+    background-color: white;
+    border: solid 1px var(--default-border);
+    border-radius: var(--border-radius);
+  }
+
+  .arrow {
+    --size: 16px;
+    --offset: -8px;
+
+    width: var(--size);
+    height: var(--size);
+    background-color: white;
+    border: solid 1px var(--default-border);
+    rotate: 45deg;
+  }
 }
 
-.tooltip-popopver {
-  min-width: 320px;
-  max-width: 500px;
-  margin: var(--space-small); /** to have space between the icon opening the tooltip and the tooltip itself. */
-  padding: var(--space-small);
-  background-color: white;
-  border: solid 1px var(--default-border);
-  border-radius: var(--border-radius);
+/* Tooltip on top of button triggering it, arrow pointing down */
+.tooltip.top {
+  flex-direction: column;
 
-  /* Positioning */
-  /* The "position-anchor" is done inside the React component so we can assign dynamic ids. */
-  position-area: top center;
-  position-try-fallbacks: flip-block, flip-inline;
+  .arrow {
+    border-left: none;
+    border-top: none;
+    margin-top: var(--offset);
+  }
+}
+
+/* Tooltip on bottom of button triggering it, arrow pointing up */
+.tooltip.bottom {
+  flex-direction: column-reverse;
+
+  .arrow {
+    border-right: none;
+    border-bottom: none;
+    margin-bottom: var(--offset);
+  }
+}
+
+/* Tooltip on left of button triggering it, arrow pointing right */
+.tooltip.left {
+  flex-direction: row;
+
+  .arrow {
+    border-left: none;
+    border-bottom: none;
+    margin-left: var(--offset);
+  }
+}
+
+/* Tooltip on right of button triggering it, arrow pointing left */
+.tooltip.right {
+  flex-direction: row-reverse;
+
+  .arrow {
+    border-right: none;
+    border-top: none;
+    margin-right: var(--offset);
+  }
 }
