@@ -2,6 +2,7 @@
   position: absolute;
   background-color: transparent; /** removes default design */
   border: none; /** removes default design */
+  background-color: pink;
 
   /* Positioning */
   position-area: top;
@@ -38,17 +39,18 @@
   }
 }
 
-@position-try --custom-bottom {
-  .popover {
-    .tooltip {
-      flex-direction: column-reverse;
+@position-try --bottom {
+  background-color: blue;
+  top: anchor(bottom);
 
-      .arrow {
-        background-color: yellow;
-        margin-bottom: var(--offset);
-        border-right: none;
-        border-top: none;
-      }
+  .tooltip {
+    flex-direction: column-reverse;
+
+    .arrow {
+      background-color: yellow;
+      margin-bottom: var(--offset);
+      border-right: none;
+      border-top: none;
     }
   }
 }

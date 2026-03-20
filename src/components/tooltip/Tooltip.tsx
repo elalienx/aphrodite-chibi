@@ -1,5 +1,4 @@
 import "./info-button.css";
-import "./popover.css";
 import "./tooltip.css";
 
 interface Props {

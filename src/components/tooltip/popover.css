@@ -1,9 +1,0 @@
-.popover {
-  position: absolute;
-  background-color: transparent; /** removes default design */
-  border: none; /** removes default design */
-
-  /* Positioning */
-  position-area: top;
-  position-try-fallbacks: --bottom;
-}
