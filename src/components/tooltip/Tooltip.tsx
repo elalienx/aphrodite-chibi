@@ -22,7 +22,7 @@ export default function Tooltip({ id, text }: Props) {
 
       {/* Popopver */}
       <div id={id} className="tooltip" popover="auto" style={{ positionAnchor: anchorName }}>
-        <div className="content">{text}</div>
+        <div className="content soft-shadow">{text}</div>
         <div className="arrow ">{/* empty on purpose */}</div>
       </div>
     </>
