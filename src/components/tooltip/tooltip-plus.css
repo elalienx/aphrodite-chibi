@@ -1,3 +1,13 @@
+.tooltip-wrapper {
+  background-color: transparent;
+  border: none;
+
+  /* Positioning */
+  /* The "position-anchor" is done inside the React component so we can assign dynamic ids. */
+  position-area: top;
+  position-try-fallbacks: flip-block, flip-inline;
+}
+
 .tooltip {
   display: flex;
   align-items: center;
