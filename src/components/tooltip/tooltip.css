@@ -2,18 +2,10 @@
   position: absolute;
   position-area: top;
   position-try-fallbacks: --bottom;
-
-  .content {
-    max-width: 400px;
-    padding: var(--space-small);
-    background-color: white;
-    border: solid 1px var(--default-border);
-    border-radius: var(--border-radius);
-  }
+  background-color: pink;
 }
 
-.tooltip:popover-open {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@position-try --bottom {
+  background-color: red;
+  position-area: bottom;
 }
