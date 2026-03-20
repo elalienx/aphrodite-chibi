@@ -1,4 +1,37 @@
 .tooltip {
+  position: absolute;
+  max-width: 400px;
+  margin: var(--space-base);
+  background-color: transparent; /** removes default design */
+  border: none; /** removes default design */
   position-area: top;
   position-try-fallbacks: bottom;
+
+  .content {
+    width: 100%;
+    padding: var(--space-small);
+    background-color: white;
+    border: solid 1px var(--default-border);
+    border-radius: var(--border-radius);
+  }
+
+  .arrow {
+    --size: 16px;
+    --offset: -8px;
+
+    width: var(--size);
+    height: var(--size);
+    margin-top: var(--offset);
+    background-color: white;
+    border: solid 1px var(--default-border);
+    transform: rotate(45deg);
+    border-left: none;
+    border-top: none;
+  }
+}
+
+.tooltip:popover-open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
