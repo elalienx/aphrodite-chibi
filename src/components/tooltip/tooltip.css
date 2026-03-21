@@ -4,7 +4,7 @@
   margin: var(--space-base);
   background-color: transparent; /** removes default design */
   border: none; /** removes default design */
-  position-area: top center;
+  position-area: top;
   position-try-fallbacks: bottom;
 
   .content {
