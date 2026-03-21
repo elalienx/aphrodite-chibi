@@ -30,6 +30,7 @@
   }
 }
 
+/* Default top position */
 .tooltip:popover-open {
   display: flex;
   flex-direction: column;
@@ -38,6 +39,7 @@
 
 @position-try --bottom {
   position-area: bottom;
+  background-color: blue;
 
   .tooltip {
     background-color: yellow;
