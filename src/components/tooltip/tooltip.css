@@ -1,6 +1,7 @@
 .popover {
   position: fixed;
   max-width: 400px;
+  margin: var(--space-base);
   background-color: transparent; /** Removes default design */
   border: none; /** Removes default design */
   position-area: top; /** Initial position in relation to the info-button **/
@@ -40,7 +41,14 @@
 
 /* Use the anchored query to check the fallback */
 @container anchored(fallback: flip-block) {
-  .tooltip .arrow {
-    background-color: red;
+  .tooltip {
+     flex-direction: column-reverse;
+
+     .arrow {
+      margin-bottom: var(--offset);
+      border: solid 1px var(--default-border);
+      border-right: none;
+      border-bottom: none;
+     }
   }
 }
