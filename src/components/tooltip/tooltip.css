@@ -1,11 +1,18 @@
-.tooltip {
-  position: absolute;
+.popover {
+  position: fixed;
   max-width: 400px;
-  margin: var(--space-base);
-  background-color: transparent; /** removes default design */
-  border: none; /** removes default design */
-  position-area: top;
-  position-try-fallbacks: bottom;
+  background-color: transparent; /** Removes default design */
+  border: none; /** Removes default design */
+  position-area: top; /** Initial position in relation to the info-button **/
+  position-try-fallbacks: flip-block; /* Reposition in the block direction */
+  container-type: anchored;  /* Make it an anchored query container */
+}
+
+
+.tooltip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .content {
     width: 100%;
@@ -30,22 +37,10 @@
   }
 }
 
-/* Default top position */
-.tooltip:popover-open {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-@position-try --bottom {
-  position-area: bottom;
-  background-color: blue;
-
-  .tooltip {
-    background-color: yellow;
-  }
-
-  .arrow {
+/* Use the anchored query to check the fallback */
+@container anchored(fallback: flip-block) {
+  .tooltip .arrow {
     background-color: red;
   }
 }
