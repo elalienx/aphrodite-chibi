@@ -14,12 +14,13 @@ export default function Step1({ onContinue }: Props) {
         </header>
 
         <ul>
-          <li>Add tooltips.</li>
           <li>Add icons.</li>
+          <li>Form currency using spaces.</li>
           <li>Change third input based on previous page property type.</li>
           <li>Add form submission.</li>
           <li>Add persistence.</li>
           <li>Add tracking.</li>
+          <li>Add tooltips.</li>
         </ul>
       </section>
 
