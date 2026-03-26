@@ -10,17 +10,16 @@ interface Props {
 export default function Icon({ icon }: Props) {
   // Properties
   // @ts-ignore
-  const shape = icons[icon] ?? icons._default;
-  const boundingBox = `0 0 ${shape.width} 512`;
-
-  console.log("icon", icon);
-  console.log("shape", shape);
+  const shape = icons[icon] || icons._default;
+  const boundingBox = `0 0 ${shape.width} 24`;
 
   return (
-    <span className="icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox={boundingBox}>
-        <path d={shape.path} />
-      </svg>
-    </span>
+    <svg
+      className="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox={boundingBox}
+    >
+      <path d={shape.path} />
+    </svg>
   );
 }

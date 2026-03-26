@@ -1,6 +1,7 @@
 import { Form, useForm } from "@formisch/react";
 
 import Button from "components/button/Button";
+import Icon from "components/icon/Icon";
 import Input from "components/input/Input";
 import InputField from "components/input-field/InputField";
 import Label from "components/label/Label";
@@ -14,7 +15,11 @@ interface Props {
 
 export default function Step2({ onContinue }: Props) {
   // Properties
-  const form = useForm({ schema: schema, validate: "blur", revalidate: "blur" });
+  const form = useForm({
+    schema: schema,
+    validate: "blur",
+    revalidate: "blur",
+  });
 
   // Methods
   function submitForm() {
@@ -22,7 +27,12 @@ export default function Step2({ onContinue }: Props) {
   }
 
   return (
-    <Form of={form} onSubmit={submitForm} id="step-2" className="soft-background">
+    <Form
+      of={form}
+      onSubmit={submitForm}
+      id="step-2"
+      className="soft-background"
+    >
       <section className="top">
         <header>
           <a href="/">Tillbaka</a>
@@ -48,7 +58,9 @@ export default function Step2({ onContinue }: Props) {
       <hr />
 
       <section className="bottom">
-        <Button type="submit">Nästa</Button>
+        <Button type="submit">
+          Nästa <Icon icon="arrow-right" />
+        </Button>
       </section>
     </Form>
   );
