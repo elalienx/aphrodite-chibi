@@ -1,0 +1,7 @@
+.icon {
+  --size: 16px;
+
+  height: var(--size);
+  fill: currentColor; /** to utilize the parent text color */
+  vertical-align: text-bottom; /** to align icons to the text */
+}

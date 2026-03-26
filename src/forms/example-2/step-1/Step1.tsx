@@ -1,4 +1,5 @@
 import Button from "components/button/Button";
+import Icon from "components/icon/Icon";
 
 interface Props {
   onContinue: () => void;
@@ -27,7 +28,9 @@ export default function Step1({ onContinue }: Props) {
       <hr />
 
       <section className="bottom">
-        <Button onClick={onContinue}>Nästa</Button>
+        <Button onClick={onContinue}>
+          Nästa <Icon icon="arrow-right" />
+        </Button>
       </section>
     </div>
   );
