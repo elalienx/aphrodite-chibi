@@ -33,10 +33,10 @@ export default function FormManager() {
         {/* Apartment type */}
         <RadioGroup form={form} id={"apartment_type"}>
           <Label>Apartment type</Label>
-          <RadioOption>House</RadioOption>
-          <RadioOption>Apartment</RadioOption>
-          <RadioOption>Summer house</RadioOption>
-          <RadioOption>Other</RadioOption>
+          <RadioOption value="house">House</RadioOption>
+          <RadioOption value="apartment">Apartment</RadioOption>
+          <RadioOption value="summer_house">Summer house</RadioOption>
+          <RadioOption value="other">Other</RadioOption>
         </RadioGroup>
 
         {/* Do you like beer? (yes/no) */}

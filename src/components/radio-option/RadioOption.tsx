@@ -1,27 +1,40 @@
 import type { ReactNode } from "react";
+import type { FormStore } from "@formisch/react";
 
 import "./radio-option.css";
 
 interface Props {
-  /** Text to display inside the radio option. */
-  children: ReactNode;
+  /** An instance of a Formisch form. */
+  form?: FormStore;
 
   /** Unique identifier of the parent radio group to make sure only one radio option is active. */
   id?: string;
+
+  /** Text to display inside the radio option. */
+  children: ReactNode;
+
+  /** The value sent to the database. */
+  value: string | number | boolean;
 }
 
-export default function RadioOption({ children, id }: Props) {
+export default function RadioOption({ form, id, children, value }: Props) {
   // Safeguard
-  if (!id)
-    return (
-      <p>
-        Please pass an <code>id</code> to identify this radio option
-      </p>
-    );
+  if (!form) return <p>This component requires a Formisch form and id</p>;
+  if (!id) return <p>Pass an id to know which field this input belongs</p>;
+
+  // State
+  // @ts-ignore
+  const field = useField(form, { path: [id] });
 
   return (
     <label className="radio-option">
-      <input type="radio" name={id} />
+      <input
+        {...field.props}
+        checked={field.input === value}
+        name={id}
+        type="radio"
+        value={value}
+      />
       {children}
     </label>
   );
