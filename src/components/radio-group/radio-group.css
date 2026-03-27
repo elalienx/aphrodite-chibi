@@ -5,7 +5,7 @@
 
   .radio-options {
     display: grid;
-    gap: var(--space-xxs);
+    gap: var(--space-small);
   }
 }
 
