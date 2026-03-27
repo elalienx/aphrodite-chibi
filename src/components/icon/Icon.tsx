@@ -4,7 +4,7 @@ import "./icon.css";
 
 interface Props {
   /** The icon name */
-  icon: string;
+  icon: "arrow-left" | "arrow-right" | "info" | "x-mark";
 }
 
 export default function Icon({ icon }: Props) {
