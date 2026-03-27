@@ -17,7 +17,7 @@ export default function FieldValidationMessage({
   return (
     <div id={ariaErrorId} className="field-validation-message">
       <div className="pointy-arrow">{/* Design done using CSS */}</div>
-      <p>{children}</p>
+      <p className="content">{children}</p>
     </div>
   );
 }
