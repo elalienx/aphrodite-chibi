@@ -35,7 +35,9 @@ export default function Step2({ onContinue }: Props) {
     >
       <section className="top">
         <header>
-          <a href="/">Tillbaka</a>
+          <a href="/">
+            <Icon icon="arrow-left" /> Tillbaka
+          </a>
           <h4>2. Om bostaden</h4>
         </header>
 

@@ -10,7 +10,9 @@ export default function Step1({ onContinue }: Props) {
     <div id="step-1" className="soft-background">
       <section className="top">
         <header>
-          <a href="/">Tillbaka</a>
+          <a href="/">
+            <Icon icon="arrow-left" /> Tillbaka
+          </a>
           <h4>Road to MPV</h4>
         </header>
 
