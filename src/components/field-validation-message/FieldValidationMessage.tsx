@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 
+import "./field-validation-message.css";
+
 interface Props {
   /**  Content to display inside the input field. */
   children?: ReactNode;
@@ -13,7 +15,7 @@ export default function FieldValidationMessage({
   ariaErrorId,
 }: Props) {
   return (
-    <div id={ariaErrorId} className="field-error-message">
+    <div id={ariaErrorId} className="field-validation-message">
       <div className="pointy-arrow">{/* Design done using CSS */}</div>
       <p>{children}</p>
     </div>

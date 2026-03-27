@@ -5,6 +5,7 @@ import type { FormStore } from "@formisch/react";
 import extractLabel from "../../helpers/extractLabel";
 import extractRadioOptions from "../../helpers/extractRadioOptions";
 import "./radio-group.css";
+import FieldValidationMessage from "components/field-validation-message/FieldValidationMessage";
 
 interface Props {
   /** An instance of a Formisch form. */
@@ -45,9 +46,9 @@ export default function RadioGroup({ form, id, children }: Props) {
       <div className="radio-options">{radioOptions}</div>
 
       {field.errors && (
-        <p id={ariaErrorId} className="generic-validation-message">
+        <FieldValidationMessage ariaErrorId={ariaErrorId}>
           {field.errors?.[0]}
-        </p>
+        </FieldValidationMessage>
       )}
     </div>
   );
