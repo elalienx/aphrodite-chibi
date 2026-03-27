@@ -7,9 +7,9 @@ import RadioGroup from "components/radio-group/RadioGroup";
 import RadioOption from "components/radio-option/RadioOption";
 
 const schema = v.object({
-  apartment_type: v.pipe(v.nonEmpty("What property you will purchase.")),
-  likes_beer: v.pipe(v.nonEmpty("Say either yes or no.")),
-  likes_guiness: v.pipe(v.nonEmpty("Say either yes or no.")),
+  apartment_type: v.pipe(v.string("What property you will purchase.")),
+  likes_beer: v.pipe(v.string("Say either yes or no.")),
+  likes_guiness: v.pipe(v.string("Say either yes or no.")),
 });
 
 export default function FormManager() {
@@ -42,15 +42,15 @@ export default function FormManager() {
         {/* Do you like beer? (yes/no) */}
         <RadioGroup form={form} id={"likes_beer"}>
           <Label>Apartment type</Label>
-          <RadioOption value={true}>Yes</RadioOption>
-          <RadioOption value={false}>No</RadioOption>
+          <RadioOption value="true">Yes</RadioOption>
+          <RadioOption value="false">No</RadioOption>
         </RadioGroup>
 
         {/* Do you like Guiness? (yes/no) */}
         <RadioGroup form={form} id={"likes_guiness"}>
           <Label>Apartment type</Label>
-          <RadioOption value={true}>Yes</RadioOption>
-          <RadioOption value={false}>No</RadioOption>
+          <RadioOption value="true">Yes</RadioOption>
+          <RadioOption value="false">No</RadioOption>
         </RadioGroup>
 
         <hr />

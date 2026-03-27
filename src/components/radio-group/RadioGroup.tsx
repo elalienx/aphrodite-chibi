@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { useField } from "@formisch/react";
 import type { FormStore } from "@formisch/react";
 
 import extractLabel from "../../helpers/extractLabel";
@@ -27,6 +28,13 @@ export default function RadioGroup({ form, id, children }: Props) {
     );
   }
 
+  // State
+  // @ts-ignore
+  const field = useField(form, { path: [id] });
+
+  // Properties
+  const ariaErrorId = `aria-error-${id}`;
+
   // Components
   const label = extractLabel(children, id);
   const radioOptions = extractRadioOptions(children, id, form);
@@ -35,6 +43,12 @@ export default function RadioGroup({ form, id, children }: Props) {
     <div className="radio-group">
       {label}
       <div className="radio-options">{radioOptions}</div>
+
+      {field.errors && (
+        <p id={ariaErrorId} className="validation-message">
+          {field.errors?.[0]}
+        </p>
+      )}
     </div>
   );
 }

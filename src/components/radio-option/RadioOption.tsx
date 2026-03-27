@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { useField } from "@formisch/react";
 import type { FormStore } from "@formisch/react";
 
 import "./radio-option.css";
@@ -14,7 +15,7 @@ interface Props {
   children: ReactNode;
 
   /** The value sent to the database. */
-  value: string | number | boolean;
+  value: string | number;
 }
 
 export default function RadioOption({ form, id, children, value }: Props) {
