@@ -1,27 +1,28 @@
 import type { ReactNode } from "react";
 import type { FormStore } from "@formisch/react";
 
-import "./input-field.css";
 import extractLabel from "../../helpers/extractLabel";
 import extractInput from "../../helpers/extractInput";
+import "./input-field.css";
 
 interface Props {
-  /**  Content to display inside the input field. */
-  children?: ReactNode;
-
-  /** Unique identifier of the parent radio group to make sure only one radio option is active. */
-  id: string;
-
   /** An instance of a Formisch form. */
   form: FormStore;
+
+  /** Unique identifier of the parent input group to make sure only one radio option is active. */
+  id: string;
+
+  /**  Content to display inside the input field. */
+  children?: ReactNode;
 }
 
-export default function InputField({ children, id, form }: Props) {
+export default function InputField({ form, id, children }: Props) {
   // Safeguard
   if (!children)
     return (
       <p>
-        Please add an <code>Label</code> and a <code>InputField</code> to get started
+        Please add an <code>Label</code> and a <code>InputField</code> to get
+        started
       </p>
     );
 
