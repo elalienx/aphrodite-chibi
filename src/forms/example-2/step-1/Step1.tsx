@@ -11,7 +11,7 @@ export default function Step1({ onContinue }: Props) {
       <section className="top">
         <header>
           <a className="link-go-back" href="/">
-            <Icon icon="arrow-left" /> Tillbaka
+            <Icon name="arrow-left" /> Tillbaka
           </a>
           <h4>Road to MPV</h4>
         </header>
@@ -31,7 +31,7 @@ export default function Step1({ onContinue }: Props) {
 
       <section className="bottom">
         <Button onClick={onContinue}>
-          Nästa <Icon icon="arrow-right" />
+          Nästa <Icon name="arrow-right" />
         </Button>
       </section>
     </div>

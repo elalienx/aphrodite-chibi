@@ -4,14 +4,14 @@ import "./icon.css";
 
 interface Props {
   /** The icon name */
-  icon: "arrow-left" | "arrow-right" | "info" | "x-mark";
+  name: "arrow-left" | "arrow-right" | "info" | "x-mark";
 }
 
-export default function Icon({ icon }: Props) {
+export default function Icon({ name }: Props) {
   // Properties
   // @ts-ignore
-  const shape = icons[icon] || icons._default;
-  const boundingBox = `0 0 ${shape.width} 24`;
+  const icon = icons[name] || icons._default;
+  const boundingBox = `0 0 ${icon.width} 24`;
 
   return (
     <svg
@@ -19,7 +19,7 @@ export default function Icon({ icon }: Props) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox={boundingBox}
     >
-      <path d={shape.path} />
+      <path d={icon.path} />
     </svg>
   );
 }

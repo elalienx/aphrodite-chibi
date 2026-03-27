@@ -36,7 +36,7 @@ export default function Step2({ onContinue }: Props) {
       <section className="top">
         <header>
           <a className="link-go-back" href="/">
-            <Icon icon="arrow-left" /> Tillbaka
+            <Icon name="arrow-left" /> Tillbaka
           </a>
           <h4>2. Om bostaden</h4>
         </header>
@@ -61,7 +61,7 @@ export default function Step2({ onContinue }: Props) {
 
       <section className="bottom">
         <Button type="submit">
-          Nästa <Icon icon="arrow-right" />
+          Nästa <Icon name="arrow-right" />
         </Button>
       </section>
     </Form>
