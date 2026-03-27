@@ -2,21 +2,14 @@ import { Form, useForm } from "@formisch/react";
 import * as v from "valibot";
 
 import Button from "../../components/button/Button";
-import Input from "../../components/input/Input";
-import InputField from "../../components/input-field/InputField";
 import Label from "../../components/label/Label";
+import RadioGroup from "components/radio-group/RadioGroup";
+import RadioOption from "components/radio-option/RadioOption";
 
 const schema = v.object({
-  name: v.pipe(
-    v.string("Please enter your full name."),
-    v.nonEmpty("Name must not be empty."),
-    v.minLength(3, "Name is too short."),
-  ),
-  email: v.pipe(
-    v.string("Please enter your email."),
-    v.nonEmpty("Email must not be empty."),
-    v.email("The email address is badly formatted."),
-  ),
+  apartment_type: v.pipe(v.nonEmpty("What property you will purchase.")),
+  likes_beer: v.pipe(v.nonEmpty("Say either yes or no.")),
+  likes_guiness: v.pipe(v.nonEmpty("Say either yes or no.")),
 });
 
 export default function FormManager() {
@@ -38,13 +31,27 @@ export default function FormManager() {
         <h4>Radio button test</h4>
 
         {/* Apartment type */}
-        <p>placeholder</p>
+        <RadioGroup form={form} id={"apartment_type"}>
+          <Label>Apartment type</Label>
+          <RadioOption>House</RadioOption>
+          <RadioOption>Apartment</RadioOption>
+          <RadioOption>Summer house</RadioOption>
+          <RadioOption>Other</RadioOption>
+        </RadioGroup>
 
         {/* Do you like beer? (yes/no) */}
-        <p>placeholder</p>
+        <RadioGroup form={form} id={"likes_beer"}>
+          <Label>Apartment type</Label>
+          <RadioOption value={true}>Yes</RadioOption>
+          <RadioOption value={false}>No</RadioOption>
+        </RadioGroup>
 
         {/* Do you like Guiness? (yes/no) */}
-        <p>placeholder</p>
+        <RadioGroup form={form} id={"likes_guiness"}>
+          <Label>Apartment type</Label>
+          <RadioOption value={true}>Yes</RadioOption>
+          <RadioOption value={false}>No</RadioOption>
+        </RadioGroup>
 
         <hr />
       </section>
