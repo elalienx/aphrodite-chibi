@@ -13,7 +13,7 @@
     grid-area: top-right;
   }
 
-  .validation-message {
+  .input-validation-message {
     grid-area: bottom;
   }
 }

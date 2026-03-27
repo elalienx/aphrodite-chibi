@@ -1,0 +1,3 @@
+.field-validation-message {
+  border: solid 2px var(--input-border-error);
+}

@@ -23,7 +23,7 @@
     text-align: center;
   }
 
-  .validation-message {
+  .input-validation-message {
     padding: var(--space-small) var(--space-medium);
     background-color: var(--input-background-error);
     font-weight: var(--font-weight-bold);

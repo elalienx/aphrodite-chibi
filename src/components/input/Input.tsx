@@ -94,7 +94,13 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
         return;
       }
     },
-    [fieldIsFocused, form.isSubmitted, field.isDirty, field.isValid, inputState],
+    [
+      fieldIsFocused,
+      form.isSubmitted,
+      field.isDirty,
+      field.isValid,
+      inputState,
+    ],
   );
 
   function onFocus(event: FocusEvent<HTMLInputElement>) {
@@ -123,7 +129,7 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
       />
       {suffix && <span className="suffix">{suffix}</span>}
       {inputState === "error" && (
-        <p id={ariaErrorId} className="validation-message">
+        <p id={ariaErrorId} className="input-validation-message">
           {field.errors?.[0]}
         </p>
       )}
