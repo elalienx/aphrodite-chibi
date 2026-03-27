@@ -17,13 +17,12 @@ export default function Step1({ onContinue }: Props) {
         </header>
 
         <ul>
-          <li>Add icons.</li>
           <li>Change third input based on previous page property type.</li>
           <li>Add form submission.</li>
           <li>Add persistence.</li>
           <li>Format input currency using spaces.</li>
-          <li>Add tracking.</li>
           <li>Add tooltips.</li>
+          <li>Add tracking.</li>
         </ul>
       </section>
 
