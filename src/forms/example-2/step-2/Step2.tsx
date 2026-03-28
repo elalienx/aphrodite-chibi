@@ -26,12 +26,7 @@ export default function Step2({ onContinue }: Props) {
   }
 
   return (
-    <Form
-      of={form}
-      onSubmit={submitForm}
-      id="step-2"
-      className="soft-background"
-    >
+    <Form of={form} onSubmit={submitForm} id="step-2" className="soft-background">
       <section className="top">
         <header>
           <a className="link-go-back" href="/">

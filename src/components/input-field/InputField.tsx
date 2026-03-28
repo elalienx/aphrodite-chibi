@@ -21,8 +21,7 @@ export default function InputField({ form, id, children }: Props) {
   if (!children)
     return (
       <p>
-        Please add an <code>Label</code> and a <code>InputField</code> to get
-        started
+        Please add an <code>Label</code> and a <code>InputField</code> to get started
       </p>
     );
 
