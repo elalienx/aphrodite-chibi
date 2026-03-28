@@ -18,7 +18,6 @@ export default function Step2({ onContinue }: Props) {
   const form = useForm({
     schema: schema,
     validate: "blur",
-    revalidate: "blur",
   });
 
   // Methods

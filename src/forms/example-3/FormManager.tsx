@@ -17,7 +17,6 @@ export default function FormManager() {
   const form = useForm({
     schema: schema,
     validate: "blur",
-    revalidate: "blur",
   });
 
   // Methods
