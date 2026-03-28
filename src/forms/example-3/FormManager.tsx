@@ -3,8 +3,8 @@ import * as v from "valibot";
 
 import Button from "../../components/button/Button";
 import Label from "../../components/label/Label";
-import RadioGroup from "components/radio-group/RadioGroup";
-import RadioOption from "components/radio-option/RadioOption";
+import RadioGroup from "../../components/radio-group/RadioGroup";
+import RadioOption from "../../components/radio-option/RadioOption";
 
 const schema = v.object({
   apartment_type: v.pipe(v.string("What property you will purchase.")),
@@ -51,12 +51,12 @@ export default function FormManager() {
           <RadioOption value="true">Yes</RadioOption>
           <RadioOption value="false">No</RadioOption>
         </RadioGroup>
-
-        <hr />
       </section>
 
+      <hr />
+
       <section className="bottom" style={{ textAlign: "center" }}>
-        <Button type="submit">Nästa</Button>
+        <Button type="submit">Next</Button>
         <br />
         <small>(Text to clean Playwright selector)</small>
       </section>

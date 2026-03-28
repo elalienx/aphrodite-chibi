@@ -18,11 +18,11 @@ test.beforeEach(async ({ mount }) => {
   const component = await mount(<FormManager />);
 
   cleanUpText = component.getByText("Text to clean Playwright selector");
-  input1 = component.getByRole("textbox", { name: "Namn och efternamn" });
-  input2 = component.getByRole("textbox", { name: "E-postadress" });
+  input1 = component.getByRole("textbox", { name: "Full name" });
+  input2 = component.getByRole("textbox", { name: "E-mail" });
   wrapper1 = input1.locator("..");
   wrapper2 = input2.locator("..");
-  submitButton = component.getByRole("button", { name: "Nästa" });
+  submitButton = component.getByRole("button", { name: "Next" });
 });
 
 test.afterEach(async () => {

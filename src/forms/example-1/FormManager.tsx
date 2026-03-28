@@ -37,12 +37,12 @@ export default function FormPage() {
         <h4>Playwright test</h4>
 
         <InputField form={form} id="name">
-          <Label>Namn och efternamn</Label>
+          <Label>Full name</Label>
           <Input type="text" placeholder="Leif Lend" />
         </InputField>
 
         <InputField form={form} id="email">
-          <Label>E-postadress</Label>
+          <Label>E-mail</Label>
           <Input type="text" placeholder="leif@lendo.se" />
         </InputField>
       </section>
@@ -50,7 +50,7 @@ export default function FormPage() {
       <hr />
 
       <section className="bottom" style={{ textAlign: "center" }}>
-        <Button type="submit">Nästa</Button>
+        <Button type="submit">Next</Button>
         <br />
         <small>(Text to clean Playwright selector)</small>
       </section>
