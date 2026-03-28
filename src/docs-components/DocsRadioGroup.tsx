@@ -5,10 +5,10 @@ import RadioOption from "components/radio-option/RadioOption";
 /** Hack until finding a better way to handle DocRadioGroup */
 export default function DocsRadioGroup() {
   return (
-    <RadioGroup id="sharedCustody">
+    <RadioGroup form={null} id="sharedCustody">
       <Label>Har du delad vårdnad?</Label>
-      <RadioOption>Ja</RadioOption>
-      <RadioOption>Nej</RadioOption>
+      <RadioOption value="true">Ja</RadioOption>
+      <RadioOption value="false">Nej</RadioOption>
     </RadioGroup>
   );
 }

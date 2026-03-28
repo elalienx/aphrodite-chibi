@@ -20,6 +20,7 @@ interface Props {
 
 export default function RadioGroup({ form, id, children }: Props) {
   // Safeguard
+  if (!form) return <p>Please add a Formisch form to get started</p>;
   if (!children) {
     return (
       <p>
