@@ -1,16 +1,59 @@
-import { useState } from "react";
-import Step1 from "./Step1";
-import Success from "./Success";
+import { Form, useForm } from "@formisch/react";
+import * as v from "valibot";
 
-type Step = "step1" | "success";
+import Button from "../../components/button/Button";
+import Input from "../../components/input/Input";
+import InputField from "../../components/input-field/InputField";
+import Label from "../../components/label/Label";
 
-export default function FormManager() {
-  const [step, setStep] = useState<Step>("step1");
+const schema = v.object({
+  name: v.pipe(
+    v.string("Please enter your full name."),
+    v.nonEmpty("Name must not be empty."),
+    v.minLength(3, "Name is too short."),
+  ),
+  email: v.pipe(
+    v.string("Please enter your email."),
+    v.nonEmpty("Email must not be empty."),
+    v.email("The email address is badly formatted."),
+  ),
+});
+
+export default function FormPage() {
+  // Properties
+  const form = useForm({
+    schema: schema,
+    validate: "blur",
+  });
+
+  // Methods
+  function submitForm() {
+    if (form.isValid) alert("Form submitted successfully");
+  }
 
   return (
-    <div id="form-manager">
-      {step === "step1" && <Step1 onContinue={() => setStep("success")} />}
-      {step === "success" && <Success onContinue={() => setStep("step1")} />}
-    </div>
+    <Form of={form} onSubmit={submitForm} className="soft-background">
+      <section className="top">
+        <h4>Playwright test</h4>
+
+        <InputField form={form} id="name">
+          <Label>Namn och efternamn</Label>
+          <Input type="text" placeholder="Leif Lend" />
+        </InputField>
+
+        <InputField form={form} id="email">
+          <Label>E-postadress</Label>
+          <Input type="text" placeholder="leif@lendo.se" />
+        </InputField>
+      </section>
+
+      <hr />
+
+      <section className="bottom" style={{ textAlign: "center" }}>
+        <Button type="submit">Nästa</Button>
+        <br />
+        <small>(Text to clean Playwright selector)</small>
+      </section>
+    </Form>
   );
 }
