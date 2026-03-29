@@ -4,7 +4,7 @@ import "./field-validation-message.css";
 
 interface Props {
   /**  Content to display inside the input field. */
-  children?: ReactNode;
+  children: ReactNode;
 
   /** A unique identifier for accessibility errors. */
   ariaErrorId: string;
@@ -12,9 +12,8 @@ interface Props {
 
 export default function FieldValidationMessage({ children, ariaErrorId }: Props) {
   return (
-    <div id={ariaErrorId} className="field-validation-message">
-      <div className="pointy-arrow">{/* Design done using CSS */}</div>
-      <p className="content">{children}</p>
-    </div>
+    <p id={ariaErrorId} className="field-validation-message">
+      {children}
+    </p>
   );
 }
