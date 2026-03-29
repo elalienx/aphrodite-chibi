@@ -21,7 +21,7 @@ export default defineConfig({
       name: "chromium",
       use: {
         ...devices["Desktop Chrome"],
-        viewport: { width: 800, height: 600 },
+        viewport: { width: 640, height: 480 },
       },
     },
   ],
