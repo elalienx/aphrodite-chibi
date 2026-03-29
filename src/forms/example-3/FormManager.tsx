@@ -15,38 +15,26 @@ const schema = v.object({
 
 export default function FormManager() {
   // Local state
-  const [formResult, setFormResult] = useState("Stand by");
   const form = useForm({ schema: schema, validate: "blur" });
 
   // Methods
   function submitForm() {
-    if (form.isValid) setFormResult("Success");
+    if (form.isValid) alert("Success");
   }
 
   return (
     <Form of={form} onSubmit={submitForm} className="soft-background">
       <section className="top">
-        <h4>Radio button test</h4>
+        <h4>Radio group tests</h4>
 
-        {/* Apartment type */}
-        <RadioGroup form={form} id={"apartment_type"}>
-          <Label>Apartment type</Label>
-          <RadioOption value="house">House</RadioOption>
-          <RadioOption value="apartment">Apartment</RadioOption>
-          <RadioOption value="summer_house">Summer house</RadioOption>
-          <RadioOption value="other">Other</RadioOption>
-        </RadioGroup>
-
-        {/* Do you like beer? (yes/no) */}
-        <RadioGroup form={form} id={"likes_beer"}>
-          <Label>Apartment type</Label>
+        <RadioGroup form={form} id="likes_beer">
+          <Label>Do you like beer?</Label>
           <RadioOption value="true">Yes</RadioOption>
           <RadioOption value="false">No</RadioOption>
         </RadioGroup>
 
-        {/* Do you like Guiness? (yes/no) */}
-        <RadioGroup form={form} id={"likes_guiness"}>
-          <Label>Apartment type</Label>
+        <RadioGroup form={form} id="likes_guiness">
+          <Label> Do you like Guiness?</Label>
           <RadioOption value="true">Yes</RadioOption>
           <RadioOption value="false">No</RadioOption>
         </RadioGroup>
@@ -57,7 +45,6 @@ export default function FormManager() {
       <section className="bottom" style={{ textAlign: "center" }}>
         <Button type="submit">Next</Button>
         <br />
-        <p>Form result: {formResult}</p>
         <small>(Text to clean Playwright selector)</small>
       </section>
     </Form>
