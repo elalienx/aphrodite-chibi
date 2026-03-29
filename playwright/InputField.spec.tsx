@@ -2,7 +2,7 @@
 import type { Locator } from "@playwright/test";
 import { test, expect } from "@playwright/experimental-ct-react";
 
-import FormManager from "../src/forms/example-1/FormPage";
+import FormPage from "../src/forms/example-1/FormPage";
 
 const validName = "Eduardo";
 const invalidName = "Ed"; // Below minimum length
@@ -14,8 +14,7 @@ let wrapper1: Locator;
 let wrapper2: Locator;
 
 test.beforeEach(async ({ mount }) => {
-  // Arrange
-  const component = await mount(<FormManager />);
+  const component = await mount(<FormPage />);
 
   cleanUpText = component.getByText("Text to clean Playwright selector");
   input1 = component.getByRole("textbox", { name: "Full name" });

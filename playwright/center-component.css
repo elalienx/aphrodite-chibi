@@ -7,7 +7,3 @@ body {
   display: grid;
   place-items: center;
 }
-
-#form-manager {
-  width: 550px;
-}

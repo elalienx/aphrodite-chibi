@@ -2,7 +2,7 @@
 import type { Locator } from "@playwright/test";
 import { test, expect } from "@playwright/experimental-ct-react";
 
-import FormManager from "../src/forms/example-3/FormManager";
+import FormPage from "../src/forms/example-2/FormPage";
 
 let cleanUpText: Locator;
 let radio1_error: Locator;
@@ -12,7 +12,7 @@ let radio2_optionB: Locator;
 let submitButton: Locator;
 
 test.beforeEach(async ({ mount }) => {
-  const component = await mount(<FormManager />);
+  const component = await mount(<FormPage />);
 
   radio1_optionA = component.locator("#likes_beer_true");
   radio2_optionB = component.locator("#likes_guiness_true");
