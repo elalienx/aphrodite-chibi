@@ -1,8 +1,5 @@
 import { defineConfig, devices } from "@playwright/experimental-ct-react";
 
-/**
- * See https://playwright.dev/docs/test-configuration.
- */
 export default defineConfig({
   testDir: "./",
   snapshotDir: "./__snapshots__",
