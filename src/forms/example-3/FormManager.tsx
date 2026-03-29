@@ -5,6 +5,7 @@ import Button from "../../components/button/Button";
 import Label from "../../components/label/Label";
 import RadioGroup from "../../components/radio-group/RadioGroup";
 import RadioOption from "../../components/radio-option/RadioOption";
+import { useState } from "react";
 
 const schema = v.object({
   apartment_type: v.pipe(v.string("What property you will purchase.")),
@@ -13,15 +14,13 @@ const schema = v.object({
 });
 
 export default function FormManager() {
-  // Properties
-  const form = useForm({
-    schema: schema,
-    validate: "blur",
-  });
+  // Local state
+  const [formResult, setFormResult] = useState("Stand by");
+  const form = useForm({ schema: schema, validate: "blur" });
 
   // Methods
   function submitForm() {
-    if (form.isValid) alert("Success");
+    if (form.isValid) setFormResult("Success");
   }
 
   return (
@@ -58,6 +57,7 @@ export default function FormManager() {
       <section className="bottom" style={{ textAlign: "center" }}>
         <Button type="submit">Next</Button>
         <br />
+        <p>Form result: {formResult}</p>
         <small>(Text to clean Playwright selector)</small>
       </section>
     </Form>
