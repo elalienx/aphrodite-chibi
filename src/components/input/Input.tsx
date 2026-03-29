@@ -4,9 +4,11 @@ import type { FormStore } from "@formisch/react";
 
 import getCorrectMobileKeyboard from "./getCorrectMobileKeyboard";
 import "./input-type-number.css";
+import type { InputState } from "./InputState";
 import "./input-wrapper-design.css";
 import "./input-wrapper-layout.css";
 import "./input-wrapper-state.css";
+import calculateInputState from "./calculateInputState";
 
 interface Props {
   /** An instance of a Formisch form. */
@@ -25,8 +27,6 @@ interface Props {
   suffix?: string;
 }
 
-type InputState = "default" | "focus" | "error" | "success";
-
 export default function Input({ form, id, placeholder, type, suffix }: Props) {
   // Safeguards
   if (!form) return <p>This component requires a Formisch form and id</p>;
@@ -44,58 +44,11 @@ export default function Input({ form, id, placeholder, type, suffix }: Props) {
   const cssSuffix = suffix ? "has-suffix" : "";
 
   // Methods
-  useEffect(
-    function calculateInputState() {
-      // Show error after form submission
-      if (form.isSubmitted && !field.isValid) {
-        setInputstate("error");
-        return;
-      }
+  useEffect(() => {
+    const nextState = calculateInputState(form, field, inputState, fieldIsFocused);
 
-      // If the field already had an error, keep it even when focusing again
-      if (inputState === "error" && fieldIsFocused) {
-        setInputstate("error");
-        return;
-      }
-
-      // If the field alreadt had an error, keep it even if user clears the input
-      if (inputState === "error" && field.input === "") {
-        setInputstate("error");
-        return;
-      }
-
-      // If the field already had a success, keep it even when focusing again
-      if (inputState === "success" && fieldIsFocused) {
-        setInputstate("success");
-        return;
-      }
-
-      // While editing a fresh field, stay in focus state
-      if (fieldIsFocused) {
-        setInputstate("focus");
-        return;
-      }
-
-      // Default before interaction
-      if (!field.isDirty) {
-        setInputstate("default");
-        return;
-      }
-
-      // Validate success
-      if (field.isValid) {
-        setInputstate("success");
-        return;
-      }
-
-      // Validate failure
-      if (!field.isValid) {
-        setInputstate("error");
-        return;
-      }
-    },
-    [fieldIsFocused, form.isSubmitted, field.isDirty, field.isValid, inputState],
-  );
+    setInputstate(nextState);
+  }, [fieldIsFocused, form.isSubmitted, field.isDirty, field.isValid, inputState]);
 
   function onFocus(event: FocusEvent<HTMLInputElement>) {
     field.props.onFocus(event);
