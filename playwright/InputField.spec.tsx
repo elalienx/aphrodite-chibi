@@ -9,9 +9,9 @@ const invalidName = "Ed"; // Below minimum length
 let cleanUpText: Locator;
 let input1: Locator;
 let input2: Locator;
+let submitButton: Locator;
 let wrapper1: Locator;
 let wrapper2: Locator;
-let submitButton: Locator;
 
 test.beforeEach(async ({ mount }) => {
   // Arrange

@@ -27,9 +27,18 @@ export default function RadioOption({ form, id, children, value }: Props) {
   // @ts-ignore
   const field = useField(form, { path: [id] });
 
+  // Properties
+  const labelId = `${id}_${value}`;
+
   return (
-    <label className="radio-option">
-      <input {...field.props} checked={field.input === value} name={id} type="radio" value={value} />
+    <label className="radio-option" id={labelId}>
+      <input
+        {...field.props}
+        checked={field.input === value}
+        name={id}
+        type="radio"
+        value={value}
+      />
       {children}
     </label>
   );
