@@ -1,28 +1,30 @@
 .field-validation-message {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+  width: 100%;
+  padding: var(--space-xs) var(--space-medium);
+  background-color: var(--input-background-error);
+  border: solid 2px var(--input-border-error);
+  border-radius: var(--border-radius);
+  font-weight: var(--font-weight-bold);
 
-  .pointy-arrow {
+  /* Pointy arrow */
+  &::before {
     --size: 12px;
-    --offset: -7px; /** ((size/2) * -1) -1 */
+    --border: 2px;
+    --half-size: calc(var(--size) / 2);
+    --half-border: calc(var(--border) / 2); /* visual tweak for border rendering */
+
+    content: "";
+    position: absolute;
+    top: calc(-1 * (var(--half-size) + var(--border)));
+    left: calc(50% - var(--half-size) - var(--half-border));
+    rotate: 45deg;
 
     width: var(--size);
     height: var(--size);
     background-color: var(--input-background-error);
-    border: solid 2px var(--input-border-error);
+    border: solid var(--border) var(--input-border-error);
     border-right: none;
     border-bottom: none;
-    margin-bottom: var(--offset);
-    rotate: 45deg;
   }
-
-  .content {
-    width: 100%;
-    padding: var(--space-xs) var(--space-medium);
-    background-color: var(--input-background-error);
-    border: solid 2px var(--input-border-error);
-    border-radius: var(--border-radius);
-    font-weight: var(--font-weight-bold);
-  }
-}
+} 
