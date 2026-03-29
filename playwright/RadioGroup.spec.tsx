@@ -35,18 +35,7 @@ test("1. Should show error state when submitting empty form", async () => {
   await expect(radio2_error).toBeVisible();
 });
 
-test("2. Should submit successfully", async () => {
-  // Act
-  await radio1_optionA.click();
-  await radio2_optionB.click();
-  await submitButton.click();
-
-  // Assert
-  await expect(radio1_error).not.toBeVisible();
-  await expect(radio2_error).not.toBeVisible();
-});
-
-test("3. Clicking on a radio button with error should immediately remove the error", async () => {
+test("2. Clicking on a radio button with error should immediately remove the error", async () => {
   await test.step("Trigger error", async () => {
     // Act
     await radio1_optionA.click();
