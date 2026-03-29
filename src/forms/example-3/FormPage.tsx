@@ -5,7 +5,6 @@ import Button from "../../components/button/Button";
 import Label from "../../components/label/Label";
 import RadioGroup from "../../components/radio-group/RadioGroup";
 import RadioOption from "../../components/radio-option/RadioOption";
-import { useState } from "react";
 
 const schema = v.object({
   apartment_type: v.pipe(v.string("What property you will purchase.")),
@@ -13,7 +12,7 @@ const schema = v.object({
   likes_guiness: v.pipe(v.string("Say either yes or no.")),
 });
 
-export default function FormManager() {
+export default function FormPage() {
   // Local state
   const form = useForm({ schema: schema, validate: "blur" });
 
