@@ -24,8 +24,7 @@ export default function RadioGroup({ form, id, children }: Props) {
   if (!children) {
     return (
       <p>
-        Please add a <code>Label</code> and at least two{" "}
-        <code>RadioOption</code> to get started
+        Please add a <code>Label</code> and at least two <code>RadioOption</code> to get started
       </p>
     );
   }
@@ -46,11 +45,7 @@ export default function RadioGroup({ form, id, children }: Props) {
       {label}
       <div className="radio-options">{radioOptions}</div>
 
-      {field.errors && (
-        <FieldValidationMessage ariaErrorId={ariaErrorId}>
-          {field.errors?.[0]}
-        </FieldValidationMessage>
-      )}
+      {field.errors && <FieldValidationMessage ariaErrorId={ariaErrorId}>{field.errors?.[0]}</FieldValidationMessage>}
     </div>
   );
 }

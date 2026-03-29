@@ -37,8 +37,8 @@ test("1. Should show error state when submitting empty form", async () => {
 
 test("2. Should submit successfully", async () => {
   // Act
-  await radio1_optionA.click();
   await radio2_optionB.click();
+  await radio1_optionA.click();
   await submitButton.click();
 
   // Assert

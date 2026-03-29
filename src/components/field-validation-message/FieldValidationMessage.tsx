@@ -12,8 +12,9 @@ interface Props {
 
 export default function FieldValidationMessage({ children, ariaErrorId }: Props) {
   return (
-    <p id={ariaErrorId} className="field-validation-message">
-      {children}
-    </p>
+    <div id={ariaErrorId} className="field-validation-message">
+      <div className="pointy-arrow">{/* Stylized using CSS */}</div>
+      <p className="content">{children}</p>
+    </div>
   );
 }
