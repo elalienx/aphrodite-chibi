@@ -38,7 +38,7 @@ export default function RadioGroup({ form, id, children }: Props) {
     <div className="radio-group">
       {label}
       <div className="radio-options">{radioOptions}</div>
-      {/* {field.errors && <FieldValidationMessage ariaErrorId={ariaErrorId}>{field.errors?.[0]}</FieldValidationMessage>} */}
+      {field.errors && <FieldValidationMessage ariaErrorId={ariaErrorId}>{field.errors?.[0]}</FieldValidationMessage>}
     </div>
   );
 }

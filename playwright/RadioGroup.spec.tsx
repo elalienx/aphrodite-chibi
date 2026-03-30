@@ -15,7 +15,7 @@ test.beforeEach(async ({ mount }) => {
   const component = await mount(<FormPage />);
 
   radio1_optionA = component.locator("#likes_beer_true");
-  radio2_optionA = component.locator("#likes_guiness_false");
+  radio2_optionA = component.locator("#likes_guiness_true");
   radio1_error = component.locator("#aria-error-likes_beer");
   radio2_error = component.locator("#aria-error-likes_guiness");
   cleanUpText = component.getByText("Text to clean Playwright selector");
@@ -39,6 +39,7 @@ test("2. Should submit form without errors", async () => {
   // Act
   await radio1_optionA.click();
   await radio2_optionA.click();
+  await radio2_optionA.click(); // again
   await submitButton.click();
 
   // Assert
