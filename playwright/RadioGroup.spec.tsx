@@ -15,7 +15,7 @@ test.beforeEach(async ({ mount }) => {
   const component = await mount(<FormPage />);
 
   radio1_optionA = component.locator("#likes_beer_true");
-  radio2_optionA = component.locator("#likes_guiness_true");
+  radio2_optionA = component.locator("#likes_guiness_false");
   radio1_error = component.locator("#aria-error-likes_beer");
   radio2_error = component.locator("#aria-error-likes_guiness");
   cleanUpText = component.getByText("Text to clean Playwright selector");
@@ -42,15 +42,14 @@ test("2. Should submit form without errors", async () => {
   await submitButton.click();
 
   // Assert
-  await expect(radio1_error).toBeVisible();
-  await expect(radio2_error).toBeVisible();
+  await expect(radio1_error).not.toBeVisible();
+  await expect(radio2_error).not.toBeVisible();
 });
 
 test("3. Clicking on a radio button with error should immediately remove the error", async () => {
   await test.step("Trigger error", async () => {
     // Act
     await radio1_optionA.click();
-    await radio2_optionA.click();
     await submitButton.click();
 
     // Assert

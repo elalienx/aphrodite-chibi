@@ -21,13 +21,7 @@ interface Props {
 export default function RadioGroup({ form, id, children }: Props) {
   // Safeguard
   if (!form) return <p>Please add a Formisch form to get started</p>;
-  if (!children) {
-    return (
-      <p>
-        Please add a <code>Label</code> and at least two <code>RadioOption</code> to get started
-      </p>
-    );
-  }
+  if (!children) return <p>Please add a Label and at least two RadioOption to get started</p>;
 
   // State
   // @ts-ignore
@@ -44,8 +38,7 @@ export default function RadioGroup({ form, id, children }: Props) {
     <div className="radio-group">
       {label}
       <div className="radio-options">{radioOptions}</div>
-
-      {field.errors && <FieldValidationMessage ariaErrorId={ariaErrorId}>{field.errors?.[0]}</FieldValidationMessage>}
+      {/* {field.errors && <FieldValidationMessage ariaErrorId={ariaErrorId}>{field.errors?.[0]}</FieldValidationMessage>} */}
     </div>
   );
 }

@@ -2,6 +2,9 @@
   display: flex;
   flex-direction: column;
   gap: var(--gap-between-label-and-field);
+  gap: 24px;
+
+  background-color: navajowhite;
 
   .radio-options {
     display: grid;
