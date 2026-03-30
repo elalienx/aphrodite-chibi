@@ -1,5 +1,7 @@
+// Node modules
 import { Form, useForm } from "@formisch/react";
 
+// Project files
 import Button from "components/button/Button";
 import Icon from "components/icon/Icon";
 import Input from "components/input/Input";
@@ -15,10 +17,7 @@ interface Props {
 
 export default function Step2({ onContinue }: Props) {
   // Properties
-  const form = useForm({
-    schema: schema,
-    validate: "blur",
-  });
+  const form = useForm({ schema: schema, validate: "blur" });
 
   // Methods
   function submitForm() {

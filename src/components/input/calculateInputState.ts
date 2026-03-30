@@ -1,4 +1,7 @@
+// Node modules
 import type { FieldStore, FormStore } from "@formisch/react";
+
+// Project files
 import type { InputState } from "./InputState";
 
 export default function calculateInputState(

@@ -1,6 +1,8 @@
+// Node modules
 import { Form, useForm } from "@formisch/react";
 import * as v from "valibot";
 
+// Project files
 import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
 import InputField from "../../components/input-field/InputField";
@@ -21,14 +23,11 @@ const schema = v.object({
 
 export default function FormPage() {
   // Properties
-  const form = useForm({
-    schema: schema,
-    validate: "blur",
-  });
+  const form = useForm({ schema: schema, validate: "blur" });
 
   // Methods
   function submitForm() {
-    if (form.isValid) alert("Form submitted successfully");
+    if (form.isValid) alert("Success");
   }
 
   return (

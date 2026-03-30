@@ -1,4 +1,7 @@
+// Node modules
 import type { ReactNode } from "react";
+
+// Project files
 import "./label.css";
 
 interface Props {
@@ -11,12 +14,7 @@ interface Props {
 
 export default function Label({ children, id }: Props) {
   // Safeguard
-  if (!id)
-    return (
-      <p>
-        Please pass an <code>id</code> to connect this label to a formulary field
-      </p>
-    );
+  if (!id) return <p>Please pass an id to connect this label to a formulary field</p>;
 
   return (
     <label className="label" htmlFor={id}>

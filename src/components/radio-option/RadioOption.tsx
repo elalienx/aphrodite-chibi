@@ -1,6 +1,8 @@
+// Node modules
 import type { ReactNode } from "react";
 import type { FieldStore } from "@formisch/react";
 
+// Project files
 import "./radio-option.css";
 
 interface Props {

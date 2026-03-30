@@ -1,6 +1,8 @@
+// Node modules
 import { Form, useForm } from "@formisch/react";
 import * as v from "valibot";
 
+// Project files
 import Button from "../../components/button/Button";
 import Label from "../../components/label/Label";
 import RadioGroup from "../../components/radio-group/RadioGroup";

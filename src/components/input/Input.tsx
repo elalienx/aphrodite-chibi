@@ -1,14 +1,16 @@
+// Node modules
 import { useEffect, useState, type FocusEvent } from "react";
 import { useField } from "@formisch/react";
 import type { FormStore } from "@formisch/react";
 
+// Project files
+import calculateInputState from "./calculateInputState";
 import getCorrectMobileKeyboard from "./getCorrectMobileKeyboard";
-import "./input-type-number.css";
 import type { InputState } from "./InputState";
+import "./input-type-number.css";
 import "./input-wrapper-design.css";
 import "./input-wrapper-layout.css";
 import "./input-wrapper-state.css";
-import calculateInputState from "./calculateInputState";
 
 interface Props {
   /** An instance of a Formisch form. */
