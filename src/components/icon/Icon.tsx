@@ -11,10 +11,14 @@ export default function Icon({ name }: Props) {
   // Properties
   // @ts-ignore
   const icon = icons[name] || icons._default;
-  const boundingBox = `0 0 ${icon.width} 24`;
+  const boundingBox = `0 0 ${icon.width} 640`;
 
   return (
-    <svg className="icon" xmlns="http://www.w3.org/2000/svg" viewBox={boundingBox}>
+    <svg
+      className="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox={boundingBox}
+    >
       <path d={icon.path} />
     </svg>
   );
