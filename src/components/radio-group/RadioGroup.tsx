@@ -32,7 +32,7 @@ export default function RadioGroup({ form, id, children }: Props) {
 
   // Components
   const label = extractLabel(children, id);
-  const radioOptions = extractRadioOptions(children, id, form);
+  const radioOptions = extractRadioOptions(field, id, children);
 
   return (
     <div className="radio-group">

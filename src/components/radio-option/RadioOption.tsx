@@ -1,12 +1,11 @@
 import type { ReactNode } from "react";
-import { useField } from "@formisch/react";
-import type { FormStore } from "@formisch/react";
+import type { FieldStore } from "@formisch/react";
 
 import "./radio-option.css";
 
 interface Props {
   /** An instance of a Formisch form. */
-  form?: FormStore;
+  field?: FieldStore;
 
   /** Unique identifier of the parent radio group to make sure only one radio option is active. */
   id?: string;
@@ -18,14 +17,10 @@ interface Props {
   value: string | number;
 }
 
-export default function RadioOption({ form, id, children, value }: Props) {
+export default function RadioOption({ field, id, children, value }: Props) {
   // Safeguard
-  if (!form) return <p>This component requires a Formisch form and id</p>;
+  if (!field) return <p>This component requires a Formisch field</p>;
   if (!id) return <p>Pass an id to know which field this input belongs</p>;
-
-  // State
-  // @ts-ignore
-  const field = useField(form, { path: [id] });
 
   // Properties
   const labelId = `${id}_${value}`;
