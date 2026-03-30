@@ -7,7 +7,6 @@ import RadioGroup from "../../components/radio-group/RadioGroup";
 import RadioOption from "../../components/radio-option/RadioOption";
 
 const schema = v.object({
-  apartment_type: v.pipe(v.string("What property you will purchase.")),
   likes_beer: v.pipe(v.string("Say either yes or no.")),
   likes_guiness: v.pipe(v.string("Say either yes or no.")),
 });
