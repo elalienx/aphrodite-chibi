@@ -8,14 +8,14 @@ let cleanUpText: Locator;
 let radio1_error: Locator;
 let radio1_optionA: Locator;
 let radio2_error: Locator;
-let radio2_optionB: Locator;
+let radio2_optionA: Locator;
 let submitButton: Locator;
 
 test.beforeEach(async ({ mount }) => {
   const component = await mount(<FormPage />);
 
   radio1_optionA = component.locator("#likes_beer_true");
-  radio2_optionB = component.locator("#likes_guiness_true");
+  radio2_optionA = component.locator("#likes_guiness_true");
   radio1_error = component.locator("#aria-error-likes_beer");
   radio2_error = component.locator("#aria-error-likes_guiness");
   cleanUpText = component.getByText("Text to clean Playwright selector");
@@ -35,10 +35,22 @@ test("1. Should show error state when submitting empty form", async () => {
   await expect(radio2_error).toBeVisible();
 });
 
-test("2. Clicking on a radio button with error should immediately remove the error", async () => {
+test("2. Should submit form without errors", async () => {
+  // Act
+  await radio1_optionA.click();
+  await radio2_optionA.click();
+  await submitButton.click();
+
+  // Assert
+  await expect(radio1_error).toBeVisible();
+  await expect(radio2_error).toBeVisible();
+});
+
+test("3. Clicking on a radio button with error should immediately remove the error", async () => {
   await test.step("Trigger error", async () => {
     // Act
     await radio1_optionA.click();
+    await radio2_optionA.click();
     await submitButton.click();
 
     // Assert
@@ -48,7 +60,7 @@ test("2. Clicking on a radio button with error should immediately remove the err
 
   await test.step("Clear error", async () => {
     // Act
-    await radio2_optionB.click();
+    await radio2_optionA.click();
 
     // Assert
     await expect(radio1_error).not.toBeVisible();
