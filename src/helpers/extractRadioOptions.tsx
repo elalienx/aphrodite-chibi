@@ -1,6 +1,8 @@
+// Node modules
 import { type ReactNode, Children, isValidElement, cloneElement } from "react";
 import type { FieldStore } from "@formisch/react";
 
+// Project files
 import RadioOption from "../components/radio-option/RadioOption";
 
 export default function extractRadioOptions(field: FieldStore, id: string, children: ReactNode) {
