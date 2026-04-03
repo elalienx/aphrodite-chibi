@@ -20,7 +20,7 @@ export default function Step2({ onContinue }: Props) {
   const { updateFormStore } = useFormStore();
 
   // Local state
-  const form = useForm({ schema: schema, validate: "blur" });
+  const form = useForm({ schema: schema, validate: "blur", revalidate: "blur" });
 
   // Methods
   function submitForm(values: InferOutput<typeof schema>) {
