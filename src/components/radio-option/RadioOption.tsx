@@ -12,7 +12,7 @@ interface Props {
   /** Unique identifier of the parent radio group to make sure only one radio option is active. */
   id?: string;
 
-  /** An instance of a Formisch form. */
+  /** An instance of a Formisch field. */
   field?: FieldStore;
 
   /** The value sent to the database. */
