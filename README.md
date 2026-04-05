@@ -4,7 +4,7 @@ Making Lendo more Kawaii <3
 
 ## 🚀 Project Structure
 
-Inside of the Aphrodite Chibi project, you'll see the following folders and files:
+Inside the Aphrodite Chibi project, you'll see the following folders and files:
 
 ```text
 / root/
