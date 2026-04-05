@@ -5,7 +5,7 @@ import type { FormStore } from "@formisch/react";
 
 // Project files
 import ValidationMessage from "components/validation-message/ValidationMessage";
-import extractLabel from "helpers/extractLabel";
+import extractLabel from "helpers/extractLabel3";
 import extractRadioOptions from "helpers/extractRadioOptions";
 import "./radio-group.css";
 

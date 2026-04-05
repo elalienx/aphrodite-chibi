@@ -10,7 +10,7 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: 0,
-  workers: 8,
+  workers: process.env.CI ? 8 : undefined,
   reporter: "list",
   use: {
     trace: "on-first-retry",
