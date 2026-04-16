@@ -1,12 +1,12 @@
-// Node modules
-import type { ReactNode } from "react";
 import { useField } from "@formisch/react";
 import type { FormStore } from "@formisch/react";
-
 // Project files
 import ValidationMessage from "components/validation-message/ValidationMessage";
 import extractLabel from "helpers/extractLabel";
 import extractRadioOptions from "helpers/extractRadioOptions";
+// Node modules
+import type { ReactNode } from "react";
+
 import "./radio-group.css";
 
 interface Props {

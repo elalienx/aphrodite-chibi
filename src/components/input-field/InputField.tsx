@@ -1,10 +1,10 @@
-// Node modules
-import type { ReactNode } from "react";
 import type { FormStore } from "@formisch/react";
-
+import extractInput from "helpers/extractInput";
 // Project files
 import extractLabel from "helpers/extractLabel";
-import extractInput from "helpers/extractInput";
+// Node modules
+import type { ReactNode } from "react";
+
 import "./input-field.css";
 
 interface Props {

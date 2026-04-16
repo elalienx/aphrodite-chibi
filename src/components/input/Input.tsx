@@ -1,12 +1,13 @@
-// Node modules
-import { useEffect, useState, type ChangeEvent, type FocusEvent } from "react";
 import { useField } from "@formisch/react";
 import type { FormStore } from "@formisch/react";
+// Node modules
+import { useEffect, useState, type ChangeEvent, type FocusEvent } from "react";
 
 // Project files
 import calculateInputState from "./calculateInputState";
 import getCorrectMobileKeyboard from "./getCorrectMobileKeyboard";
 import type { InputState } from "./InputState";
+
 import "./input-wrapper-design.css";
 import "./input-wrapper-layout.css";
 import "./input-wrapper-state.css";

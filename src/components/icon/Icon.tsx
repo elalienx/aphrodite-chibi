@@ -1,5 +1,6 @@
 // Project files
 import icons from "./font-awesome.json";
+
 import "./icon.css";
 
 interface Props {

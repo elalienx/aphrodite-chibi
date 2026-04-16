@@ -1,6 +1,5 @@
 // Node modules
 import { expect, test } from "@playwright/experimental-ct-react";
-
 // Project files
 import FormManager from "forms/road-to-mvp/FormManager";
 

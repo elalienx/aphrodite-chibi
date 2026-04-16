@@ -1,15 +1,16 @@
 // Node modules
 import { Form, useForm } from "@formisch/react";
-
 // Project files
 import Button from "components/button/Button";
 import Icon from "components/icon/Icon";
-import Input from "components/input/Input";
 import InputField from "components/input-field/InputField";
+import Input from "components/input/Input";
 import Label from "components/label/Label";
+
 import useApplication from "../state/useApplication";
 import type { Step } from "../types/Step";
 import getSchema from "./schema";
+
 import "./step-2.css";
 
 interface Props {
