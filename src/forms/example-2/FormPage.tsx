@@ -19,7 +19,16 @@ export default function FormPage() {
 
   // Methods
   function submitForm() {
-    if (form.isValid) alert("Success");
+    if (form.isValid) {
+      // Access the entire form data object
+      console.log("Form Values:", form.values);
+
+      // Or access specific keys
+      console.log("Likes Beer:", form.values.likes_beer);
+      console.log("Likes Guinness:", form.values.likes_guiness);
+
+      alert("Success");
+    }
   }
 
   return (
@@ -35,8 +44,8 @@ export default function FormPage() {
 
         <RadioGroup form={form} id="likes_guiness">
           <Label> Do you like Guiness?</Label>
-          <RadioOption value="true">Yes</RadioOption>
-          <RadioOption value="false">No</RadioOption>
+          <RadioOption value={true}>Yes</RadioOption>
+          <RadioOption value={false}>No</RadioOption>
         </RadioGroup>
       </section>
 

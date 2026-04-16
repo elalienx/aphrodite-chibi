@@ -16,7 +16,7 @@ interface Props {
   field?: FieldStore;
 
   /** The value sent to the database. */
-  value: string | number;
+  value: string | number | boolean;
 }
 
 export default function RadioOption({ children, id, field, value }: Props) {
@@ -27,6 +27,7 @@ export default function RadioOption({ children, id, field, value }: Props) {
   return (
     <label className="radio-option">
       <input {...field.props} checked={field.input === value} name={id} type="radio" value={value} />
+      {children}
       {children}
     </label>
   );
