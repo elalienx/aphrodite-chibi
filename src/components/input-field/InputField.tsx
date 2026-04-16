@@ -20,7 +20,7 @@ interface Props {
 
 export default function InputField({ children, id, form }: Props) {
   // Safeguard
-  if (!children) return <p>Please add a Label and a InputField to get started</p>;
+  if (!children) {return <p>Please add a Label and a InputField to get started</p>;}
 
   // Components
   const label = extractLabel(children, id);

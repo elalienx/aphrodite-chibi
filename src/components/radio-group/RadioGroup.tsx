@@ -22,8 +22,8 @@ interface Props {
 
 export default function RadioGroup({ children, id, form }: Props) {
   // Safeguard
-  if (!children) return <p>Please add a Label and at least two RadioOption to get started</p>;
-  if (!form) return <p>Please add a Formisch form to get started</p>;
+  if (!children) {return <p>Please add a Label and at least two RadioOption to get started</p>;}
+  if (!form) {return <p>Please add a Formisch form to get started</p>;}
 
   // State
   // @ts-ignore

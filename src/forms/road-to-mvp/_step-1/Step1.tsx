@@ -10,7 +10,7 @@ import RadioOption from "components/radio-option/RadioOption";
 import useApplication from "../state/useApplication";
 import type { Step } from "../types/Step";
 import schema from "./schema";
-import { apartment, holidayHome, terracedHouse, house } from "../data/propertyTypes";
+import { apartment, holidayHome, house, terracedHouse } from "../data/propertyTypes";
 
 interface Props {
   /** Allows a button to change what step to display. */
@@ -22,7 +22,7 @@ export default function Step2({ setStep }: Props) {
   const { updateApplication } = useApplication();
 
   // Local state
-  const form = useForm({ schema: schema, validate: "blur", revalidate: "blur" });
+  const form = useForm({ revalidate: "blur", schema: schema, validate: "blur" });
 
   // Methods
   function submitForm(values: object) {

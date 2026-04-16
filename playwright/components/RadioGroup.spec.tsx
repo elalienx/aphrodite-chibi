@@ -1,7 +1,7 @@
 // Node modules
 // @ts-ignore
 import type { Locator } from "@playwright/test";
-import { test, expect } from "@playwright/experimental-ct-react";
+import { expect, test } from "@playwright/experimental-ct-react";
 
 // Project files
 import FormPage from "forms/example-2/FormPage";
@@ -41,7 +41,7 @@ test("2. Should submit form without errors", async () => {
   // Act
   await radio1_optionA.click();
   await radio2_optionA.click();
-  await radio2_optionA.click(); // again until we fix the re-render bug
+  await radio2_optionA.click(); // Again until we fix the re-render bug
   await submitButton.click();
 
   // Assert

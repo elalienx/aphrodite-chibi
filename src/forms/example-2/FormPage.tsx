@@ -15,11 +15,11 @@ const schema = v.object({
 
 export default function FormPage() {
   // Local state
-  const form = useForm({ schema: schema, validate: "blur", revalidate: "blur" });
+  const form = useForm({ revalidate: "blur", schema: schema, validate: "blur" });
 
   // Methods
   function submitForm() {
-    if (form.isValid) alert("Success");
+    if (form.isValid) {alert("Success");}
   }
 
   return (

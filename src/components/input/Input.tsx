@@ -1,5 +1,5 @@
 // Node modules
-import { useEffect, useState, type ChangeEvent, type FocusEvent } from "react";
+import { type ChangeEvent, type FocusEvent, useEffect, useState } from "react";
 import { useField } from "@formisch/react";
 import type { FormStore } from "@formisch/react";
 
@@ -30,8 +30,8 @@ interface Props {
 
 export default function Input({ id, form, placeholder, type, suffix }: Props) {
   // Safeguards
-  if (!form) return <p>This component requires a Formisch form and id</p>;
-  if (!id) return <p>Pass an id to know which field this input belongs</p>;
+  if (!form) {return <p>This component requires a Formisch form and id</p>;}
+  if (!id) {return <p>Pass an id to know which field this input belongs</p>;}
 
   // State
   // @ts-ignore
@@ -42,7 +42,7 @@ export default function Input({ id, form, placeholder, type, suffix }: Props) {
   // Properties
   const ariaErrorId = `aria-error-${id}`;
   const mobileKeyboard = getCorrectMobileKeyboard(type);
-  const curatedType = type === "number" ? "text" : type; // to allow us to control the type number manually as it has too many quirks.
+  const curatedType = type === "number" ? "text" : type; // To allow us to control the type number manually as it has too many quirks.
   const cssSuffix = suffix ? "has-suffix" : "";
   const cssTypeNumber = type === "number" ? "type-number" : "";
 
@@ -86,7 +86,7 @@ export default function Input({ id, form, placeholder, type, suffix }: Props) {
         {...field.props}
         id={id}
         aria-errormessage={ariaErrorId}
-        aria-invalid={!!field.errors}
+        aria-invalid={Boolean(field.errors)}
         className={`input ${cssTypeNumber}`}
         inputMode={mobileKeyboard}
         onBlur={onBlur}

@@ -1,5 +1,5 @@
 // Node modules
-import { Children, isValidElement, cloneElement, type ReactNode } from "react";
+import { Children, type ReactNode, cloneElement, isValidElement } from "react";
 
 // Project files
 import Label from "components/label/Label";

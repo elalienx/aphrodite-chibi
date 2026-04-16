@@ -1,7 +1,7 @@
 // Node modules
 // @ts-ignore
 import type { Locator } from "@playwright/test";
-import { test, expect } from "@playwright/experimental-ct-react";
+import { expect, test } from "@playwright/experimental-ct-react";
 
 // Project files
 import FormPage from "forms/example-1/FormPage";
@@ -183,7 +183,7 @@ test("11. Second field should not validate while active after first field has be
 
   await test.step("second input: fill invalid data", async () => {
     // Act
-    await input2.fill("1"); // just one character is enough to see if it will fail
+    await input2.fill("1"); // Just one character is enough to see if it will fail
 
     // Assert
     await expect(wrapper1).toHaveClass(/success/);
@@ -208,7 +208,7 @@ test("12. Should keep error if user clears the input after a validation error", 
     await input1.blur();
 
     // Assert
-    await expect(cleanUpText).toBeVisible(); // weird trick to force a validation re-render
+    await expect(cleanUpText).toBeVisible(); // Weird trick to force a validation re-render
     await expect(wrapper1).toHaveClass(/error/);
     await expect(wrapper2).toHaveClass(/default/);
   });

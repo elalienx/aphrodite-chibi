@@ -7,7 +7,7 @@ const size = v.pipe(
   v.transform((value) => Number(value)),
   v.number("Must be a valid number."),
   v.minValue(1, "Boytan är för liten."),
-  v.maxValue(2_000, "Boytan är för stor. Max 2000 kvm."),
+  v.maxValue(2000, "Boytan är för stor. Max 2000 kvm."),
 );
 
 const rooms = v.pipe(
@@ -37,8 +37,8 @@ const operating_cost = v.pipe(
   v.maxValue(10_000, "Driftskostnaden är för hög. Max 10 000 kr/mån."),
 );
 
-const apartmentSchema = v.object({ size, rooms, monthly_fee });
-const normalSchema = v.object({ size, rooms, operating_cost });
+const apartmentSchema = v.object({ monthly_fee, rooms, size });
+const normalSchema = v.object({ operating_cost, rooms, size });
 
 export default function getSchema(isApartment: boolean) {
   return isApartment ? apartmentSchema : normalSchema;

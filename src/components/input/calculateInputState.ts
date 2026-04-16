@@ -11,28 +11,28 @@ export default function calculateInputState(
   fieldIsFocused: boolean,
 ): InputState {
   // Show error after form submission
-  if (form.isSubmitted && !field.isValid) return "error";
+  if (form.isSubmitted && !field.isValid) {return "error";}
 
   // If the field already had an error, keep it even when focusing again
-  if (inputState === "error" && fieldIsFocused) return "error";
+  if (inputState === "error" && fieldIsFocused) {return "error";}
 
   // If the field already had an error, keep it even if user clears the input
-  if (inputState === "error" && field.input === "") return "error";
+  if (inputState === "error" && field.input === "") {return "error";}
 
   // If the field already had a success, keep it even when focusing again
-  if (inputState === "success" && fieldIsFocused) return "success";
+  if (inputState === "success" && fieldIsFocused) {return "success";}
 
   // While editing a fresh field, stay in focus state
-  if (fieldIsFocused) return "focus";
+  if (fieldIsFocused) {return "focus";}
 
   // Default before interaction
-  if (!field.isDirty) return "default";
+  if (!field.isDirty) {return "default";}
 
   // Validate success
-  if (field.isValid) return "success";
+  if (field.isValid) {return "success";}
 
   // Validate failure
-  if (!field.isValid) return "error";
+  if (!field.isValid) {return "error";}
 
   // Default case
   return "default";

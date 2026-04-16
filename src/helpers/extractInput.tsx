@@ -1,5 +1,5 @@
 // Node modules
-import { Children, isValidElement, cloneElement, type ReactNode } from "react";
+import { Children, type ReactNode, cloneElement, isValidElement } from "react";
 import type { FormStore } from "@formisch/react";
 
 // Project files
@@ -9,5 +9,5 @@ export default function extractInput(children: ReactNode, id: string, form: Form
   const reactComponents = Children.toArray(children);
   const input = reactComponents.find((child) => isValidElement(child) && child.type === Input);
 
-  return input && isValidElement(input) ? cloneElement(input, { id, form } as any) : null;
+  return input && isValidElement(input) ? cloneElement(input, { form, id } as any) : null;
 }
