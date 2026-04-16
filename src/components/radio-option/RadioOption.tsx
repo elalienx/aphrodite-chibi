@@ -26,8 +26,7 @@ export default function RadioOption({ children, id, field, value }: Props) {
 
   return (
     <label className="radio-option">
-      <input {...field.props} checked={field.input === value} name={id} type="radio" value={value} />
-      {children}
+      <input {...field.props} checked={field.input === String(value)} name={id} type="radio" value={String(value)} />
       {children}
     </label>
   );
