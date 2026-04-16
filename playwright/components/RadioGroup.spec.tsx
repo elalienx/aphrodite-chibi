@@ -1,9 +1,6 @@
-// Node modules
+import { test, expect } from "@playwright/experimental-ct-react";
 // @ts-ignore
 import type { Locator } from "@playwright/test";
-import { test, expect } from "@playwright/experimental-ct-react";
-
-// Project files
 import FormPage from "forms/example-2/FormPage";
 
 let cleanUpText: Locator;

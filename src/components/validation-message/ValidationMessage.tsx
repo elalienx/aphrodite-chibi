@@ -1,7 +1,5 @@
-// Node modules
 import type { ReactNode } from "react";
 
-// Project files
 import "./validation-message.css";
 
 interface Props {

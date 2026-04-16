@@ -1,6 +1,6 @@
-// Project files
 import Button from "components/button/Button";
 import Icon from "components/icon/Icon";
+
 import type { Step } from "../types/Step";
 
 interface Props {

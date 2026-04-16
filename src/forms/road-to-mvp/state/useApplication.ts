@@ -1,7 +1,5 @@
-// Node modules
 import { create } from "zustand";
 
-// Project files
 import initialApplication from "../data/initialApplication";
 import type Application from "../types/Application";
 

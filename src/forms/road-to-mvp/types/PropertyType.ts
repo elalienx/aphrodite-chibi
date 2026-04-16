@@ -1,4 +1,3 @@
-// Project files
 import { apartment, holidayHome, terracedHouse, house } from "../data/propertyTypes";
 
 /** Available kind of assets that can be purchased via a mortgage. */

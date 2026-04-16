@@ -1,7 +1,7 @@
-// Project files
 import Button from "components/button/Button";
-import type { Step } from "../types/Step";
+
 import useApplication from "../state/useApplication";
+import type { Step } from "../types/Step";
 
 interface Props {
   /** Allows a button to change what step to display. */

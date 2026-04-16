@@ -1,4 +1,3 @@
-// Node modules
 import * as v from "valibot";
 
 const size = v.pipe(

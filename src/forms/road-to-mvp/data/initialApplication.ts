@@ -1,4 +1,3 @@
-// Project files
 import type Application from "../types/Application";
 
 const initialApplication: Application = {

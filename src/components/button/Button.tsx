@@ -1,7 +1,5 @@
-// Node modules
 import type { ReactNode } from "react";
 
-// Project files
 import "./button.css";
 
 interface Props {

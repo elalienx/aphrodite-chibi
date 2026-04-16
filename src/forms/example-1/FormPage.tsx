@@ -1,12 +1,9 @@
-// Node modules
 import { Form, useForm } from "@formisch/react";
-import * as v from "valibot";
-
-// Project files
 import Button from "components/button/Button";
-import Input from "components/input/Input";
 import InputField from "components/input-field/InputField";
+import Input from "components/input/Input";
 import Label from "components/label/Label";
+import * as v from "valibot";
 
 const schema = v.object({
   name: v.pipe(

@@ -1,4 +1,3 @@
-// Project files
 import type { PropertyType } from "./PropertyType";
 
 export default interface Application {
