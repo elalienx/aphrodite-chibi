@@ -26,7 +26,7 @@ export default function FormPage() {
 
         <InputField form={form} id="owner">
           <Label>Owner</Label>
-          <Input placeholder="Jhon Doe" />
+          <Input type="text" placeholder="Jhon Doe" />
         </InputField>
 
         <RadioGroup form={form} id="type">
@@ -34,6 +34,23 @@ export default function FormPage() {
           <RadioOption value="card">Card</RadioOption>
           <RadioOption value="paypal">Paypal</RadioOption>
         </RadioGroup>
+
+        {/* Payment type: Card */}
+        <InputField form={form} id="number">
+          <Label>Number</Label>
+          <Input type="number" placeholder="1234 1234 1234 1234" />
+        </InputField>
+
+        <InputField form={form} id="expiration">
+          <Label>Expiration</Label>
+          <Input type="text" placeholder="MM/YY" />
+        </InputField>
+
+        {/* Payment type: Paypal */}
+        <InputField form={form} id="email">
+          <Label>Email</Label>
+          <Input type="email" placeholder="example@email.com" />
+        </InputField>
       </section>
 
       <hr />
