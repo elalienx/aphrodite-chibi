@@ -14,6 +14,9 @@ export default function FormPage() {
   // Local state
   const form = useForm({ schema: schema, validate: "blur", revalidate: "blur" });
 
+  // Properties
+  // const type = getInput(schema, { path: ["type"] });
+
   // Methods
   function submitForm() {
     if (form.isValid) alert("Success");
@@ -35,7 +38,7 @@ export default function FormPage() {
           <RadioOption value="paypal">Paypal</RadioOption>
         </RadioGroup>
 
-        {/* Payment type: Card */}
+        {/* Payment method: Card */}
         <InputField form={form} id="number">
           <Label>Number</Label>
           <Input type="number" placeholder="1234 1234 1234 1234" />
@@ -46,7 +49,7 @@ export default function FormPage() {
           <Input type="text" placeholder="MM/YY" />
         </InputField>
 
-        {/* Payment type: Paypal */}
+        {/* Payment method: Paypal */}
         <InputField form={form} id="email">
           <Label>Email</Label>
           <Input type="email" placeholder="example@email.com" />
