@@ -22,13 +22,13 @@ interface Props {
   placeholder?: string;
 
   /** Decides what kind of keyboard to show on mobile. This does not affect validation. Handle that separately. */
-  type: "text" | "number" | "email" | "tel" | "password";
+  type?: "text" | "number" | "email" | "tel" | "password";
 
   /** Decoration text on the right side of the input. Used to indicate a currency or measurment unit. */
   suffix?: string;
 }
 
-export default function Input({ id, form, placeholder, type, suffix }: Props) {
+export default function Input({ id, form, placeholder, type = "text", suffix }: Props) {
   // Safeguards
   if (!form) return <p>This component requires a Formisch form and id</p>;
   if (!id) return <p>Pass an id to know which field this input belongs</p>;

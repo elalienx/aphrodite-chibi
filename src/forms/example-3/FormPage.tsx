@@ -1,20 +1,14 @@
 // Node modules
 import { Form, useForm } from "@formisch/react";
-import * as v from "valibot";
 
 // Project files
 import Button from "components/button/Button";
 import Label from "components/label/Label";
 import RadioGroup from "components/radio-group/RadioGroup";
 import RadioOption from "components/radio-option/RadioOption";
-
-const schema = v.object({
-  likes_beer: v.pipe(v.string("Say either yes or no.")),
-  likes_guiness: v.pipe(
-    v.string("Say either yes or no."),
-    v.transform((value) => value === "true"), // converts to boolean
-  ),
-});
+import schema from "./schema";
+import InputField from "components/input-field/InputField";
+import Input from "components/input/Input";
 
 export default function FormPage() {
   // Local state
@@ -28,18 +22,17 @@ export default function FormPage() {
   return (
     <Form of={form} onSubmit={submitForm} className="soft-background">
       <section className="top">
-        <h4>Dynamic field validation</h4>
+        <h4>Radio group tests</h4>
 
-        <RadioGroup form={form} id="likes_beer">
-          <Label>Do you like beer?</Label>
-          <RadioOption value="yes">Yes</RadioOption>
-          <RadioOption value="no">No</RadioOption>
-        </RadioGroup>
+        <InputField form={form} id="owner">
+          <Label>Owner</Label>
+          <Input placeholder="Jhon Doe" />
+        </InputField>
 
-        <RadioGroup form={form} id="likes_guiness">
-          <Label> Do you like Guiness?</Label>
-          <RadioOption value={true}>Yes</RadioOption>
-          <RadioOption value={false}>No</RadioOption>
+        <RadioGroup form={form} id="type">
+          <Label>Type</Label>
+          <RadioOption value="card">Card</RadioOption>
+          <RadioOption value="paypal">Paypal</RadioOption>
         </RadioGroup>
       </section>
 
