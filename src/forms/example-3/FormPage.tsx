@@ -22,7 +22,7 @@ export default function FormPage() {
   return (
     <Form of={form} onSubmit={submitForm} className="soft-background">
       <section className="top">
-        <h4>Radio group tests</h4>
+        <h4>Dynamic Form Spike</h4>
 
         <InputField form={form} id="owner">
           <Label>Owner</Label>
