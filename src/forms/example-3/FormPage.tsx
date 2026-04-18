@@ -6,16 +6,13 @@ import Button from "components/button/Button";
 import Label from "components/label/Label";
 import RadioGroup from "components/radio-group/RadioGroup";
 import RadioOption from "components/radio-option/RadioOption";
-import schema from "./schema";
 import InputField from "components/input-field/InputField";
 import Input from "components/input/Input";
+import schema from "./schema";
 
 export default function FormPage() {
   // Local state
   const form = useForm({ schema: schema, validate: "blur", revalidate: "blur" });
-
-  // Properties
-  // const type = getInput(schema, { path: ["type"] });
 
   // Methods
   function submitForm() {

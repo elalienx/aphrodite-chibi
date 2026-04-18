@@ -7,7 +7,7 @@ const owner = v.pipe(
   v.minLength(3, "Name is too short."),
 );
 
-// Payment method: Card
+// Payment method: Credit card
 const number = v.pipe(
   v.string("Please enter your card number."),
   v.nonEmpty("Please enter your card number."),
