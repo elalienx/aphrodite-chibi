@@ -1,5 +1,6 @@
 // Node modules
 import * as v from "valibot";
+import type { PropertyType } from "../types/PropertyType";
 
 const size = v.pipe(
   v.string("Ange bostadens yta för att gå vidare."),
@@ -37,9 +38,16 @@ const operating_cost = v.pipe(
   v.maxValue(10_000, "Driftskostnaden är för hög. Max 10 000 kr/mån."),
 );
 
-const apartmentSchema = v.object({ size, rooms, monthly_fee });
-const normalSchema = v.object({ size, rooms, operating_cost });
+const tenant_ownership = v.pipe(
+  v.string("Say either yes or no."),
+  v.transform((value) => value === "true"), // converts to boolean
+);
 
-export default function getSchema(isApartment: boolean) {
+const apartmentSchema = v.object({ tenant_ownership, size, rooms, monthly_fee });
+const normalSchema = v.object({ tenant_ownership, size, rooms, operating_cost });
+
+export default function getSchema(propertyType: PropertyType) {
+  const isApartment = propertyType === "apartment";
+
   return isApartment ? apartmentSchema : normalSchema;
 }
