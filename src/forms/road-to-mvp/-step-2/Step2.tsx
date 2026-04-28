@@ -12,21 +12,30 @@ import useApplication from "../state/useApplication";
 import type { Step } from "../types/Step";
 import getSchema from "./schema";
 import "./step-2.css";
+import RadioGroup from "components/radio-group/RadioGroup";
+import RadioOption from "components/radio-option/RadioOption";
+import type { PropertyType } from "../types/PropertyType";
 
 interface Props {
   /** Allows a button to change what step to display. */
   setStep: (step: Step) => void;
 
-  /** Check whether the user selected an apartment to tailor this step questions. */
-  isApartment: boolean;
+  /** Check the property the user selected to tailor this step questions. */
+  propertyType: PropertyType;
 }
 
-export default function Step2({ setStep, isApartment }: Props) {
+export default function Step2({ setStep, propertyType }: Props) {
   // Global state
   const { updateApplication } = useApplication();
 
+  // Properties
+  const isApartment = propertyType === "apartment";
+  // const isRadhus = propertyType === "terraced_house";
+  // const hasMonthlyFee = (isRadhus && !hasTerraceOwnership) || isApartment;
+  // const hasOperatingCost = (isRadhus && hasTerraceOwnership) || !isApartment;
+
   // Local state
-  const form = useForm({ schema: getSchema(isApartment), validate: "blur", revalidate: "blur" });
+  const form = useForm({ schema: getSchema(propertyType), validate: "blur", revalidate: "blur" });
 
   // Methods
   function submitForm(values: object) {
@@ -43,6 +52,12 @@ export default function Step2({ setStep, isApartment }: Props) {
           <ArrowGoBack onClick={() => setStep("step-1")} />
           <h4>2. Om bostaden</h4>
         </header>
+
+        <RadioGroup form={form} id="tenant_ownership">
+          <Label>Vad har radhuset för upplåtelseform?</Label>
+          <RadioOption value={true}>Bostadsrätt</RadioOption>
+          <RadioOption value={false}>Äganderätt</RadioOption>
+        </RadioGroup>
 
         <InputField form={form} id="size">
           <Label>Kvadratmeter</Label>

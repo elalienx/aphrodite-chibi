@@ -1,23 +1,6 @@
 // Node modules
 import * as v from "valibot";
-
-const size = v.pipe(
-  v.string("Ange bostadens yta för att gå vidare."),
-  v.nonEmpty("Ange bostadens yta för att gå vidare."),
-  v.transform((value) => Number(value)),
-  v.number("Must be a valid number."),
-  v.minValue(1, "Boytan är för liten."),
-  v.maxValue(2_000, "Boytan är för stor. Max 2000 kvm."),
-);
-
-const rooms = v.pipe(
-  v.string("Ange hur många rum bostaden har för att gå vidare."),
-  v.nonEmpty("Ange hur många rum bostaden har för att gå vidare."),
-  v.transform((value) => Number(value)),
-  v.number("Must be a valid number."),
-  v.minValue(1, "Du kan som lägst ange 1 rum."),
-  v.maxValue(10, "Du kan som högst ange 10 rum."),
-);
+import type { PropertyType } from "../types/PropertyType";
 
 const monthly_fee = v.pipe(
   v.string("Ange bostadens månadsavgift för att gå vidare."),
@@ -37,9 +20,34 @@ const operating_cost = v.pipe(
   v.maxValue(10_000, "Driftskostnaden är för hög. Max 10 000 kr/mån."),
 );
 
-const apartmentSchema = v.object({ size, rooms, monthly_fee });
-const normalSchema = v.object({ size, rooms, operating_cost });
+const rooms = v.pipe(
+  v.string("Ange hur många rum bostaden har för att gå vidare."),
+  v.nonEmpty("Ange hur många rum bostaden har för att gå vidare."),
+  v.transform((value) => Number(value)),
+  v.number("Must be a valid number."),
+  v.minValue(1, "Du kan som lägst ange 1 rum."),
+  v.maxValue(10, "Du kan som högst ange 10 rum."),
+);
 
-export default function getSchema(isApartment: boolean) {
+const tenant_ownership = v.pipe(
+  v.string("Say either yes or no."),
+  v.transform((value) => value === "true"), // converts to boolean
+);
+
+const size = v.pipe(
+  v.string("Ange bostadens yta för att gå vidare."),
+  v.nonEmpty("Ange bostadens yta för att gå vidare."),
+  v.transform((value) => Number(value)),
+  v.number("Must be a valid number."),
+  v.minValue(1, "Boytan är för liten."),
+  v.maxValue(2_000, "Boytan är för stor. Max 2000 kvm."),
+);
+
+const apartmentSchema = v.object({ tenant_ownership, size, rooms, monthly_fee });
+const normalSchema = v.object({ tenant_ownership, size, rooms, operating_cost });
+
+export default function getSchema(propertyType: PropertyType) {
+  const isApartment = propertyType === "apartment";
+
   return isApartment ? apartmentSchema : normalSchema;
 }
