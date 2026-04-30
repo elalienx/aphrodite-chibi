@@ -1,7 +1,7 @@
 // Node modules
 // @ts-ignore
 import type { Locator } from "@playwright/test";
-import { test, expect } from "@playwright/experimental-ct-react";
+import { test, expect, type MountResult } from "@playwright/experimental-ct-react";
 
 // Project files
 import FormPage from "forms/example-1/FormPage";
@@ -14,10 +14,10 @@ let input2: Locator;
 let submitButton: Locator;
 let wrapper1: Locator;
 let wrapper2: Locator;
+let component: MountResult;
 
 test.beforeEach(async ({ mount }) => {
-  const component = await mount(<FormPage />);
-
+  component = await mount(<FormPage />);
   cleanUpText = component.getByText("Text to clean Playwright selector");
   input1 = component.getByRole("textbox", { name: "Full name" });
   input2 = component.getByRole("textbox", { name: "Age" });
@@ -37,6 +37,7 @@ test("1. Should show error state when submitting empty form", async () => {
   // Assert
   await expect(wrapper1).toHaveClass(/error/);
   await expect(wrapper2).toHaveClass(/error/);
+  await expect(component).toHaveScreenshot();
 });
 
 test("2. Should show active state when input is focused and untouched", async () => {
@@ -46,6 +47,7 @@ test("2. Should show active state when input is focused and untouched", async ()
   // Assert
   await expect(wrapper1).toHaveClass(/focus/);
   await expect(wrapper2).toHaveClass(/default/);
+  await expect(component).toHaveScreenshot();
 });
 
 test("3. Should return to default state when input is focused and then blurred without typing", async () => {
@@ -56,6 +58,7 @@ test("3. Should return to default state when input is focused and then blurred w
   // Assert
   await expect(wrapper1).toHaveClass(/default/);
   await expect(wrapper2).toHaveClass(/default/);
+  await expect(component).toHaveScreenshot();
 });
 
 test("4. Should remain active while typing invalid value without blurring", async () => {
@@ -65,6 +68,7 @@ test("4. Should remain active while typing invalid value without blurring", asyn
   // Assert
   await expect(wrapper1).toHaveClass(/focus/);
   await expect(wrapper2).toHaveClass(/default/);
+  await expect(component).toHaveScreenshot();
 });
 
 test("5. Should show error state when invalid value is entered and input is blurred", async () => {
@@ -75,6 +79,7 @@ test("5. Should show error state when invalid value is entered and input is blur
   // Assert
   await expect(wrapper1).toHaveClass(/error/);
   await expect(wrapper2).toHaveClass(/default/);
+  await expect(component).toHaveScreenshot();
 });
 
 test("6. Should remain active while typing valid value without blurring", async () => {
@@ -84,6 +89,7 @@ test("6. Should remain active while typing valid value without blurring", async 
   // Assert
   await expect(wrapper1).toHaveClass(/focus/);
   await expect(wrapper2).toHaveClass(/default/);
+  await expect(component).toHaveScreenshot();
 });
 
 test("7. Should show success state when valid value is entered and input is blurred", async () => {
@@ -94,6 +100,7 @@ test("7. Should show success state when valid value is entered and input is blur
   // Assert
   await expect(wrapper1).toHaveClass(/success/);
   await expect(wrapper2).toHaveClass(/default/);
+  await expect(component).toHaveScreenshot();
 });
 
 test("8. Should keep error state when focusing a field that already has an error", async () => {
@@ -114,6 +121,7 @@ test("8. Should keep error state when focusing a field that already has an error
     // Assert
     await expect(wrapper1).toHaveClass(/error/);
     await expect(wrapper2).toHaveClass(/default/);
+    await expect(component).toHaveScreenshot();
   });
 });
 
@@ -135,6 +143,7 @@ test("9. Should keep error state while correcting invalid field without blurring
     // Assert
     await expect(wrapper1).toHaveClass(/error/);
     await expect(wrapper2).toHaveClass(/default/);
+    await expect(component).toHaveScreenshot();
   });
 });
 
@@ -157,6 +166,7 @@ test("10. Should transition from error to success when valid value is entered an
     // Assert
     await expect(wrapper1).toHaveClass(/success/);
     await expect(wrapper2).toHaveClass(/default/);
+    await expect(component).toHaveScreenshot();
   });
 });
 
@@ -188,6 +198,7 @@ test("11. Second field should not validate while active after first field has be
     // Assert
     await expect(wrapper1).toHaveClass(/success/);
     await expect(wrapper2).toHaveClass(/focus/);
+    await expect(component).toHaveScreenshot();
   });
 });
 
@@ -211,5 +222,6 @@ test("12. Should keep error if user clears the input after a validation error", 
     await expect(cleanUpText).toBeVisible(); // weird trick to force a validation re-render
     await expect(wrapper1).toHaveClass(/error/);
     await expect(wrapper2).toHaveClass(/default/);
+    await expect(component).toHaveScreenshot();
   });
 });
