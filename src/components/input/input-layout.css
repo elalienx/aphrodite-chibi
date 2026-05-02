@@ -1,0 +1,62 @@
+.input-wrapper {
+  --border-thin: 1px;
+  --border-thick: 2px;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "top-left top-right"
+    "bottom bottom";
+
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  border-style: solid;
+  border-width: var(--border-thin);
+  border-color: var(--input-border-up);
+
+  &:hover,
+  &.focus,
+  &.error,
+  &.success {
+    outline-style: solid;
+    outline-width: var(--border-thin);
+  }
+
+  .input {
+    grid-area: top-left;
+    height: var(--height-of-field);
+    padding-inline: var(--space-medium);
+    color: var(--typography-default);
+    font-family: var(--font-family);
+    font-size: var(--font-size-normal);
+    font-weight: var(--font-weight-normal);
+    outline: none;
+
+    /* Borders */
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    border-right: solid var(--border-thin) white;
+
+    &.type-number {
+      text-align: center;
+    }
+  }
+
+  .suffix {
+    grid-area: top-right;
+    padding-inline: var(--space-medium);
+    background-color: white;
+    line-height: var(--height-of-field);
+    text-align: center;
+    border-left: solid var(--border-thin) var(--input-border-up);
+  }
+
+  .input-validation-message {
+    grid-area: bottom;
+    padding: var(--space-small) var(--space-medium);
+    background-color: var(--input-background-error);
+    font-weight: var(--font-weight-bold);
+    border-top: solid var(--border-thick) var(--input-border-up);
+  }
+}

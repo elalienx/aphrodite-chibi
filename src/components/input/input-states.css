@@ -1,0 +1,51 @@
+.input-wrapper {
+  &:hover {
+    outline-color: var(--input-border-hover);
+
+    &.has-suffix .input {
+      background-color: var(--input-background-hover);
+    }
+
+    &.has-suffix .input,
+    .suffix {
+      border-color: var(--input-border-hover);
+    }
+  }
+
+  &.focus {
+    border-color: var(--input-border-focus);
+    outline-color: var(--input-border-focus);
+
+    &.has-suffix .input,
+    .suffix {
+      border-color: var(--input-border-focus);
+    }
+  }
+
+  &.error {
+    border-color: var(--input-border-error);
+    outline-color: var(--input-border-error);
+
+    &.has-suffix .input,
+    .suffix {
+      background-color: white;
+    }
+
+    &.has-suffix .input,
+    .suffix,
+    .input-validation-message {
+      border-color: var(--input-border-error);
+    }
+  }
+
+  &.success {
+    border-color: var(--input-border-success);
+    outline-color: var(--input-border-success);
+
+    &.has-suffix .input,
+    .suffix,
+    .input-validation-message {
+      border-color: var(--input-border-success);
+    }
+  }
+}

@@ -8,9 +8,8 @@ import calculateInputState from "./helpers/calculateInputState";
 import getCorrectMobileKeyboard from "./helpers/getCorrectMobileKeyboard";
 import parseDigits from "./helpers/parseDigits";
 import type { InputState } from "./helpers/InputState";
-import "./input-wrapper-design.css";
-import "./input-wrapper-layout.css";
-import "./input-wrapper-state.css";
+import "./input-layout.css";
+import "./input-states.css";
 
 interface Props {
   /** Unique identifier of a form field. */
