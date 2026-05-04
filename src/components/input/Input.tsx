@@ -37,6 +37,8 @@ export default function Input({ id, form, placeholder, suffix, type }: Props) {
   // State
   // @ts-ignore
   const field = useField(form, { path: [id] });
+  // @ts-ignore
+  const [value, setValue] = useState<string | number | undefined>(field.input);
   const [inputState, setInputState] = useState<InputState>("default");
   const [fieldIsFocused, setFieldIsFocused] = useState(false);
 
@@ -58,6 +60,13 @@ export default function Input({ id, form, placeholder, suffix, type }: Props) {
     },
     [fieldIsFocused, form.isSubmitted, field.isDirty, field.isValid],
   );
+
+  useEffect(() => {
+    if (!Number.isNaN(field.input)) {
+      // @ts-ignore
+      setValue(field.input);
+    }
+  }, [field.input]);
 
   function onBlur(event: FocusEvent<HTMLInputElement>): void {
     field.props.onBlur(event);
@@ -92,6 +101,7 @@ export default function Input({ id, form, placeholder, suffix, type }: Props) {
         onFocus={onFocus}
         placeholder={customPlaceholder}
         type={curatedType}
+        value={value ?? ""}
       />
       {suffix && <span className="suffix">{suffix}</span>}
       {inputState === "error" && (

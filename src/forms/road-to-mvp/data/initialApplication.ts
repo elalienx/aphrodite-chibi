@@ -5,8 +5,8 @@ const initialApplication: Application = {
   monthly_fee: 0,
   operating_cost: 0,
   property_type: undefined,
-  tenancy_type: undefined,
-  rooms: 0,
+  tenancy_type: "ownership",
+  rooms: 1,
   size: 0,
 };
 
