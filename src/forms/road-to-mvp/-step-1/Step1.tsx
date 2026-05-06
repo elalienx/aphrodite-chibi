@@ -46,10 +46,10 @@ export default function Step1({ setStep }: Props) {
 
         <RadioGroup form={form} id="property_type">
           <Label hint={propertyTypeHint}>För vilken typ av bostad söker du lån</Label>
-          <RadioOption value={house}>Villa</RadioOption>
-          <RadioOption value={apartment}>Lägenhet</RadioOption>
-          <RadioOption value={terracedHouse}>Radhus</RadioOption>
-          <RadioOption value={holidayHome}>Fritidshus</RadioOption>
+          <RadioOption value={apartment}>Aparment</RadioOption>
+          <RadioOption value={house}>House</RadioOption>
+          <RadioOption value={holidayHome}>Holiday home</RadioOption>
+          <RadioOption value={terracedHouse}>Terraced house</RadioOption>
         </RadioGroup>
       </section>
 
