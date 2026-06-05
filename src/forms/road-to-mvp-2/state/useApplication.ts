@@ -7,7 +7,7 @@ import initialApplication from "../data/initialApplication";
 import type Application from "../types/Application";
 
 interface Store {
-  /** The information of the entire mortgage application. */
+  /** The information of the entire business loan application. */
   application: Application;
 
   /** Method to reset the loan application. */
@@ -24,7 +24,7 @@ const store: StateCreator<Store> = (set) => ({
 });
 
 const localStorage: PersistOptions<Store> = {
-  name: "mortgage-application",
+  name: "business-loan-application",
 };
 
 const useApplication = create<Store>()(persist(store, localStorage));
