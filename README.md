@@ -1,4 +1,4 @@
-# Aphrodite Chibi
+# Aphrodite Chibi 2
 
 Making Lendo more Kawaii <3
 
