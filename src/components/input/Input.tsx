@@ -30,6 +30,7 @@ interface Props {
   type: "email" | "number" | "password" | "tel" | "text";
 }
 
+// About this branch: This branch is a backup in case i dont like the new branch where we refactor the inputs per type
 export default function Input({ id, form, placeholder, suffix, type }: Props) {
   // Safeguards
   if (!form) return <p>This component requires a Formisch form and id</p>;
