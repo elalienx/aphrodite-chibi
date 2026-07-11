@@ -12,7 +12,10 @@ export default defineConfig({
   use: {
     trace: "on-first-retry",
     ctPort: 3100,
-    ctViteConfig: { resolve: { tsconfigPaths: true } },
+    ctViteConfig: {
+      resolve: { tsconfigPaths: true },
+      css: { devSourcemap: false },
+    },
   },
   projects: [
     {
