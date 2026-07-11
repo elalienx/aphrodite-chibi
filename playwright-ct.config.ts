@@ -1,7 +1,4 @@
 import { defineConfig, devices } from "@playwright/experimental-ct-react";
-import tsconfigPaths from "vite-tsconfig-paths";
-
-// Properties
 
 export default defineConfig({
   testDir: "./playwright",
@@ -15,7 +12,7 @@ export default defineConfig({
   use: {
     trace: "on-first-retry",
     ctPort: 3100,
-    ctViteConfig: { plugins: [tsconfigPaths()] },
+    ctViteConfig: { resolve: { tsconfigPaths: true } },
   },
   projects: [
     {
