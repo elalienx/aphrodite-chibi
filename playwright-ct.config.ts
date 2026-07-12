@@ -14,7 +14,7 @@ export default defineConfig({
     ctPort: 3100,
     ctViteConfig: {
       resolve: { tsconfigPaths: true },
-      css: { devSourcemap: false },
+      css: { devSourcemap: false, transformer: 'lightningcss' },
     },
   },
   projects: [
