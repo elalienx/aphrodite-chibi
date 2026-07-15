@@ -1,9 +1,8 @@
 // Node modules
-import { expect, test } from "vitest";
+import { describe, expect, test } from "vitest";
 
 // Project files
 import cleanInitialInput from "./cleanInitialInput";
-import { describe } from "node:test";
 
 describe("Number logic", () => {
   test("Converts numeric values to strings", () => {
@@ -12,10 +11,10 @@ describe("Number logic", () => {
     const result = { name: "Candy", quantity: "30" };
 
     // Act
-    const test = cleanInitialInput({ input: initialInput });
+    const testResult = cleanInitialInput({ input: initialInput });
 
     // Assert
-    expect(test).toStrictEqual(result);
+    expect(testResult).toStrictEqual(result);
   });
 
   test("Keep zero numbers if flag treatZeroAsEmpty is off", () => {
@@ -24,10 +23,10 @@ describe("Number logic", () => {
     const result = { item: "Eggs", quantity: "0" };
 
     // Act
-    const test = cleanInitialInput({ input: initialInput, treatZeroAsEmpty: false });
+    const testResult = cleanInitialInput({ input: initialInput, treatZeroAsEmpty: false });
 
     // Assert
-    expect(test).toStrictEqual(result);
+    expect(testResult).toStrictEqual(result);
   });
 
   test("Remove zero numbers if flag treatZeroAsEmpty is on", () => {
@@ -36,10 +35,10 @@ describe("Number logic", () => {
     const result = { item: "Eggs", quantity: "" };
 
     // Act
-    const test = cleanInitialInput({ input: initialInput, treatZeroAsEmpty: true });
+    const testResult = cleanInitialInput({ input: initialInput, treatZeroAsEmpty: true });
 
     // Assert
-    expect(test).toStrictEqual(result);
+    expect(testResult).toStrictEqual(result);
   });
 });
 
@@ -50,9 +49,63 @@ describe("Boolean logic", () => {
     const result = { has_hear_about_miku: "true", is_chibi: "false" };
 
     // Act
-    const test = cleanInitialInput({ input: initialInput });
+    const testResult = cleanInitialInput({ input: initialInput });
 
     // Assert
-    expect(test).toStrictEqual(result);
+    expect(testResult).toStrictEqual(result);
+  });
+});
+
+describe("Recursive logic", () => {
+  test("Recursively converts values inside nested objects", () => {
+    // Arrange
+    const initialInput = {
+      user: { name: "Miku", age: 16, isActive: true },
+    };
+    const result = {
+      user: { name: "Miku", age: "16", isActive: "true" },
+    };
+
+    // Act
+    const testResult = cleanInitialInput({ input: initialInput });
+
+    // Assert
+    expect(testResult).toStrictEqual(result);
+  });
+
+  test("Recursively converts values in arrays and arrays of objects", () => {
+    // Arrange
+    const initialInput = {
+      scores: [10, 20, 0],
+      friends: [
+        { id: 1, isBest: true },
+        { id: 2, isBest: false },
+      ],
+    };
+    const result = {
+      scores: ["10", "20", ""],
+      friends: [
+        { id: "1", isBest: "true" },
+        { id: "2", isBest: "false" },
+      ],
+    };
+
+    // Act
+    const testResult = cleanInitialInput({ input: initialInput, treatZeroAsEmpty: true });
+
+    // Assert
+    expect(testResult).toStrictEqual(result);
+  });
+
+  test("Safely ignores null values without crashing", () => {
+    // Arrange
+    const initialInput = { settings: null, items: [null, 1] };
+    const result = { settings: null, items: [null, "1"] };
+
+    // Act
+    const testResult = cleanInitialInput({ input: initialInput });
+
+    // Assert
+    expect(testResult).toStrictEqual(result);
   });
 });
