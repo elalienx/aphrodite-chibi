@@ -11,10 +11,10 @@ describe("Number logic", () => {
     const result = { name: "Candy", quantity: "30" };
 
     // Act
-    const testResult = cleanInitialInput({ input: initialInput });
+    const test = cleanInitialInput({ input: initialInput });
 
     // Assert
-    expect(testResult).toStrictEqual(result);
+    expect(test).toStrictEqual(result);
   });
 
   test("Keep zero numbers if flag treatZeroAsEmpty is off", () => {
@@ -23,10 +23,10 @@ describe("Number logic", () => {
     const result = { item: "Eggs", quantity: "0" };
 
     // Act
-    const testResult = cleanInitialInput({ input: initialInput, treatZeroAsEmpty: false });
+    const test = cleanInitialInput({ input: initialInput, treatZeroAsEmpty: false });
 
     // Assert
-    expect(testResult).toStrictEqual(result);
+    expect(test).toStrictEqual(result);
   });
 
   test("Remove zero numbers if flag treatZeroAsEmpty is on", () => {
@@ -35,10 +35,10 @@ describe("Number logic", () => {
     const result = { item: "Eggs", quantity: "" };
 
     // Act
-    const testResult = cleanInitialInput({ input: initialInput, treatZeroAsEmpty: true });
+    const test = cleanInitialInput({ input: initialInput, treatZeroAsEmpty: true });
 
     // Assert
-    expect(testResult).toStrictEqual(result);
+    expect(test).toStrictEqual(result);
   });
 });
 
@@ -49,10 +49,10 @@ describe("Boolean logic", () => {
     const result = { has_hear_about_miku: "true", is_chibi: "false" };
 
     // Act
-    const testResult = cleanInitialInput({ input: initialInput });
+    const test = cleanInitialInput({ input: initialInput });
 
     // Assert
-    expect(testResult).toStrictEqual(result);
+    expect(test).toStrictEqual(result);
   });
 });
 
@@ -67,10 +67,10 @@ describe("Recursive logic", () => {
     };
 
     // Act
-    const testResult = cleanInitialInput({ input: initialInput });
+    const test = cleanInitialInput({ input: initialInput });
 
     // Assert
-    expect(testResult).toStrictEqual(result);
+    expect(test).toStrictEqual(result);
   });
 
   test("Recursively converts values in arrays and arrays of objects", () => {
@@ -91,10 +91,10 @@ describe("Recursive logic", () => {
     };
 
     // Act
-    const testResult = cleanInitialInput({ input: initialInput, treatZeroAsEmpty: true });
+    const test = cleanInitialInput({ input: initialInput, treatZeroAsEmpty: true });
 
     // Assert
-    expect(testResult).toStrictEqual(result);
+    expect(test).toStrictEqual(result);
   });
 
   test("Safely ignores null values without crashing", () => {
@@ -103,9 +103,9 @@ describe("Recursive logic", () => {
     const result = { settings: null, items: [null, "1"] };
 
     // Act
-    const testResult = cleanInitialInput({ input: initialInput });
+    const test = cleanInitialInput({ input: initialInput });
 
     // Assert
-    expect(testResult).toStrictEqual(result);
+    expect(test).toStrictEqual(result);
   });
 });
