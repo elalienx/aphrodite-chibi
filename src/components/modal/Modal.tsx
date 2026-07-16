@@ -10,13 +10,14 @@ export default function Modal() {
   const { modal, closeModal } = useModal();
   const nativeDialogRef = useRef<HTMLDialogElement>(null);
 
-  // Methodds
+  // Methods
   useEffect(() => {
-    // Safeguard
-    if (!nativeDialogRef.current) return;
+    const dialog = nativeDialogRef.current;
 
-    if (modal) nativeDialogRef.current.showModal();
-    if (!modal) nativeDialogRef.current.close();
+    // Safeguards
+    if (!dialog) return;
+    if (modal && !dialog.open) dialog.showModal();
+    if (!modal && dialog.open) dialog.close();
   }, [modal]);
 
   function closeOnBackgroundClick(event: MouseEvent<HTMLDialogElement>) {
@@ -24,7 +25,7 @@ export default function Modal() {
   }
 
   return (
-    <dialog id="modal" ref={nativeDialogRef} onClick={closeOnBackgroundClick}>
+    <dialog id="modal" ref={nativeDialogRef} onClick={closeOnBackgroundClick} onClose={closeModal}>
       {modal}
     </dialog>
   );
