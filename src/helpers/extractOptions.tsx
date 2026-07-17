@@ -23,7 +23,9 @@ export default function extractOptions<TProps extends {}>({ component, extractFr
   const rawProps = Object.entries(props).filter(([_, value]) => value !== undefined);
   const cleanProps = Object.fromEntries(rawProps);
 
-  return components
-    .filter((child) => isValidElement(child) && child.type === component)
-    .map((child) => cloneElement(child as ReactElement, cleanProps as Partial<any>));
+  return components.flatMap((child) =>
+    isValidElement(child) && child.type === component
+      ? [cloneElement(child as ReactElement, cleanProps as Partial<any>)]
+      : [],
+  );
 }
