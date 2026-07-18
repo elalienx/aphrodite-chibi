@@ -15,7 +15,6 @@ export default defineConfig({
     ctViteConfig: {
       resolve: { tsconfigPaths: true },
       css: { devSourcemap: false },
-      build: { sourcemap: false },
     },
   },
   projects: [
