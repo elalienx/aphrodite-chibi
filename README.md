@@ -8,6 +8,8 @@ Our motto is... making Lendo more Kawaii <3
 
 ## Syntax Overview
 
+Aprhodite Chibi aims to be small, tiny, Chibi! It achieves it by making the user write the least amount of syntax needed.
+
 ```jsx
 <InputField form={form} id={"name"}>
   <Label>Your full name</Label>
