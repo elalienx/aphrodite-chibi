@@ -23,7 +23,7 @@ This syntax is possible thanks to the Slot pattern:
 1. This allow the children to receive these props without "prop drilling".
 1. The children can still normally access their props such as `type` and `placeholder` .
 
-See more examples in the `forms/` section.
+See more examples in the forms section.
 
 ## Project Structure
 
