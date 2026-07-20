@@ -6,6 +6,23 @@ Our motto is... making Lendo more Kawaii <3
 
 [Demo website](https://aphrodite-chibi.web.app) | [Storybook gallery](https://aphrodite-chibi-storybook.web.app)
 
+## Syntax Overview
+
+```jsx
+<InputField form={form} id={"name"}>
+  <Label>Your full name</Label>
+  <Input type="number" placeholder="18" />
+</InputField>
+```
+
+This syntax is possible thanks to the [Slot pattern](https://en.wikipedia.org/wiki/Signals_and_slots):
+
+1. The parent passes down `form` and `id` using an internal method named `extractComponent()`.
+1. This allow the children to receive these props without "prop drilling".
+1. The children can still normally access their props such as `type` and `placeholder` .
+
+See more examples in the `forms/` section.
+
 ## Project Structure
 
 ```text
@@ -23,7 +40,6 @@ Our motto is... making Lendo more Kawaii <3
 │   └── state/
 │   └── styles/
 └── package.json
-
 ```
 
 Here is an explanation of the main folders:
