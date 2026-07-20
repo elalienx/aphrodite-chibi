@@ -21,7 +21,7 @@ This syntax is possible thanks to the Slot pattern:
 
 1. The parent passes down `form` and `id` using an internal method named `extractComponent()`.
 1. This allow the children to receive these props without "prop drilling".
-1. The children can still normally access their props such as `type` and `placeholder` .
+1. The children can still access their props such as `type` and `placeholder` normally.
 
 See more examples in the forms section.
 
