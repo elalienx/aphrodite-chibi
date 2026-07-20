@@ -11,8 +11,8 @@ Our motto is... making Lendo more Kawaii <3
 Aprhodite Chibi aims to be small, tiny, Chibi! It achieves it by making the user write the least amount of syntax needed.
 
 ```jsx
-<InputField form={form} id={"name"}>
-  <Label>Your full name</Label>
+<InputField form={form} id={"age"}>
+  <Label>What is your age?</Label>
   <Input type="number" placeholder="18" />
 </InputField>
 ```
