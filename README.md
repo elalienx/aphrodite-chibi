@@ -17,7 +17,7 @@ Aprhodite Chibi aims to be small, tiny, Chibi! It achieves it by making the user
 </InputField>
 ```
 
-This syntax is possible thanks to the [Slot pattern](https://en.wikipedia.org/wiki/Signals_and_slots):
+This syntax is possible thanks to the Slot pattern:
 
 1. The parent passes down `form` and `id` using an internal method named `extractComponent()`.
 1. This allow the children to receive these props without "prop drilling".
