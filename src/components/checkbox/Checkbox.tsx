@@ -17,12 +17,12 @@ interface Props {
 }
 
 export default function Checkbox({ id, children, form }: Props) {
+  // Local state
+  const field = useField(form as FormStore, { path: [id as string] });
+
   // Safeguards
   if (!form) return <p>This component requires a Formisch form and id</p>;
   if (!id) return <p>Pass an id to know which field this input belongs</p>;
-
-  // Local state
-  const field = useField(form, { path: [id] });
 
   return (
     <label className="checkbox">
