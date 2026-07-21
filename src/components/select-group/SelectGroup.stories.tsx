@@ -22,7 +22,7 @@ const schema = v.object({ source_of_income });
 // Stories
 export const Default = meta.story({
   name: "SelectGroup",
-  render: () => {
+  render: function Default() {
     // Local state
     const form = useForm({ schema: schema, validate: "blur", revalidate: "blur" });
 

@@ -19,7 +19,7 @@ const schema = v.object(terms);
 // Stories
 export const Unchecked = meta.story({
   name: "Unchecked",
-  render: () => {
+  render: function Unchecked() {
     // Local state
     const form = useForm({
       schema: schema,
@@ -39,7 +39,7 @@ export const Unchecked = meta.story({
 
 export const Checked = meta.story({
   name: "Checked",
-  render: () => {
+  render: function Checked() {
     // Local state
     const form = useForm({
       schema: schema,
@@ -60,7 +60,7 @@ export const Checked = meta.story({
 
 export const CheckboxWithNoIdError = meta.story({
   name: "Checkbox (id error)",
-  render: () => {
+  render: function CheckboxWithNoIdError() {
     // Local state
     const form = useForm({
       schema: schema,
@@ -79,7 +79,9 @@ export const CheckboxWithNoIdError = meta.story({
 
 export const CheckboxWithNoFormError = meta.story({
   name: "Checbox (form error)",
-  render: () => <Checkbox>I accept the terms and conditions</Checkbox>,
+  render: function CheckboxWithNoFormError() {
+    return <Checkbox>I accept the terms and conditions</Checkbox>;
+  },
 });
 
 export default meta;

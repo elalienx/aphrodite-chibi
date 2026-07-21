@@ -19,7 +19,7 @@ const schema = v.object({ favorite_beer });
 // Stories
 export const Default = meta.story({
   name: "Default",
-  render: () => {
+  render: function Default() {
     const form = useForm({
       schema: schema,
       validate: "blur",
@@ -40,7 +40,7 @@ export const Default = meta.story({
 
 export const Selected = meta.story({
   name: "Selected",
-  render: () => {
+  render: function Selected() {
     const form = useForm({
       schema: schema,
       validate: "blur",
