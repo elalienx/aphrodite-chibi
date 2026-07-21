@@ -33,7 +33,7 @@ export default function SelectGroup({ id, children, form, hints }: Props) {
   // Local state
   const field = useField(form, { path: [id] });
 
-  // Properties
+  // Derived state
   const anchorId = `--anchor-${id}`; // Requires "--" to work properly.
   const ariaErrorId = `aria-error-${id}`;
   const listId = `list-${id}`;
@@ -51,7 +51,7 @@ export default function SelectGroup({ id, children, form, hints }: Props) {
     <div className="select-group">
       {label}
       {select}
-      {hasErrors && <ValidationMessage ariaErrorId={ariaErrorId}>{field.errors?.[0]}</ValidationMessage>}
+      {hasErrors && <ValidationMessage ariaErrorId={ariaErrorId}>{field.errors[0]}</ValidationMessage>}
       <div id={listId} className="select-list" popover="auto" style={{ positionAnchor: anchorId }}>
         {selectOptions}
       </div>

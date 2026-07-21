@@ -23,7 +23,7 @@ export default function InputNumber({ id, form, placeholder = "0", suffix, type 
   const [committedState, setCommittedState] = useState<InputState>("default");
   const [isFocused, setIsFocused] = useState(false);
 
-  // Properties
+  // Derived state
   const ariaErrorId = `aria-error-${id}`;
   const cssSuffix = suffix ? "has-suffix" : "";
   const customValue = String(field.input ?? "");
@@ -69,7 +69,7 @@ export default function InputNumber({ id, form, placeholder = "0", suffix, type 
       {suffix && <span className="suffix">{suffix}</span>}
       {hasErrors && (
         <p id={ariaErrorId} aria-live="polite" className="input-validation-message">
-          {field.errors?.[0]}
+          {field.errors[0]}
         </p>
       )}
     </div>
