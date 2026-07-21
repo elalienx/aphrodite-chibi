@@ -1,6 +1,6 @@
 // Node modules
 import { useState, type ChangeEvent, type FocusEvent } from "react";
-import { useField } from "@formisch/react";
+import { useField, type FormStore } from "@formisch/react";
 
 // Project files
 import formatWithSpaces from "./helpers/formatWithSpaces";
@@ -14,14 +14,14 @@ import "./styles/input-wrapper-layout.css";
 import "./styles/input-wrapper-state.css";
 
 export default function InputNumber({ id, form, placeholder = "0", suffix, type }: InputProps) {
+  // Local state
+  const field = useField(form as FormStore, { path: [id as string] });
+  const [committedState, setCommittedState] = useState<InputState>("default");
+  const [isFocused, setIsFocused] = useState(false);
+
   // Safeguards
   if (!form) return <p>This component requires a Formisch form and id</p>;
   if (!id) return <p>Pass an id to know which field this input belongs</p>;
-
-  // Local state
-  const field = useField(form, { path: [id] });
-  const [committedState, setCommittedState] = useState<InputState>("default");
-  const [isFocused, setIsFocused] = useState(false);
 
   // Derived state
   const ariaErrorId = `aria-error-${id}`;
