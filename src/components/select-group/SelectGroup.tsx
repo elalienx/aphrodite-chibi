@@ -26,12 +26,12 @@ interface Props {
 }
 
 export default function SelectGroup({ id, children, form, hints }: Props) {
+  // Local state
+  const field = useField(form, { path: [id] });
+
   // Safeguards
   if (!children) return <p>Please add a Label and at least two SelectorOption to get started</p>;
   if (!form) return <p>Please add a Formisch form to get started</p>;
-
-  // Local state
-  const field = useField(form, { path: [id] });
 
   // Derived state
   const anchorId = `--anchor-${id}`; // Requires "--" to work properly.
