@@ -3,4 +3,5 @@
   "rules": {
     "react/rules-of-hooks": "error",
   },
+  "ignorePatterns": ["*.stories.*"],
 }
