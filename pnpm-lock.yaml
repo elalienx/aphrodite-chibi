@@ -34,8 +34,8 @@ importers:
         version: 5.0.14(@types/react@19.2.17)(react@19.2.7)(use-sync-external-store@1.6.0(react@19.2.7))
     devDependencies:
       '@playwright/experimental-ct-react':
-        specifier: 1.62.0-alpha-2026-07-18
-        version: 1.62.0-alpha-2026-07-18(@types/node@25.9.5)(esbuild@0.28.1)(vite@8.1.5(@types/node@25.9.5)(esbuild@0.28.1))
+        specifier: 1.62.0-alpha-2026-07-23
+        version: 1.62.0-alpha-2026-07-23(@types/node@25.9.5)(esbuild@0.28.1)(vite@8.1.5(@types/node@25.9.5)(esbuild@0.28.1))
       '@storybook/react-vite':
         specifier: ^10.5.2
         version: 10.5.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(storybook@10.5.2(@types/react@19.2.17)(react@19.2.7))(typescript@5.9.3)(vite@8.1.5(@types/node@25.9.5)(esbuild@0.28.1))
@@ -1193,12 +1193,12 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@playwright/experimental-ct-core@1.62.0-alpha-2026-07-18':
-    resolution: {integrity: sha512-9JezpeiY1VtPNffQlYd4qmZjV9rAZgD8VLrfBssTO3Ber6s/VCVFVibkjqEWRH0xFmKDwJW+aS0XntUr8nISxA==}
+  '@playwright/experimental-ct-core@1.62.0-alpha-2026-07-23':
+    resolution: {integrity: sha512-L139MxExo8oea4Es0sb27iJn86Rg4jzWpEw+X8Yu5Ko3pCNVui4D3KiqhsNAw2Sl8rem0mZZO/aBXBsjUBMeQQ==}
     engines: {node: '>=20'}
 
-  '@playwright/experimental-ct-react@1.62.0-alpha-2026-07-18':
-    resolution: {integrity: sha512-ER7oTZBHj0uu5AkzFx4rMAUQt8a7R9wWvS3ZQwd/7a17e4YsFgkDD5R4geDAmIgazvyphM0g0kA4hls+SjfQXw==}
+  '@playwright/experimental-ct-react@1.62.0-alpha-2026-07-23':
+    resolution: {integrity: sha512-zbzN2OzsISwiTmVuWLaNZY6BsEDVoRTR2BgRR4hF9s1F1CkpOBxV/Epkyj/FYOBPyF13yysXC939HvBBf399rA==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -1503,8 +1503,8 @@ packages:
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
 
-  '@vitejs/plugin-react@6.0.3':
-    resolution: {integrity: sha512-vmFvco5/QuC2f9Oj+wTk0+9XeDFkHxSamwZKYc7MxYwKICfvUvlMhqKI0VuICPltGqh1neqBKDvO4kes1ya8vg==}
+  '@vitejs/plugin-react@6.0.4':
+    resolution: {integrity: sha512-XcCQz0TBpBgljhj0gMuuDj49i6Ytqh5q1osT/Gp5uAVJUCTWxyskk/l1jwYYiu2xcNHHipdMz40EGfM1VdamVg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     peerDependencies:
       '@rolldown/plugin-babel': ^0.1.7 || ^0.2.0
@@ -2266,13 +2266,13 @@ packages:
     resolution: {integrity: sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==}
     engines: {node: '>=12'}
 
-  playwright-core@1.62.0-alpha-2026-07-18:
-    resolution: {integrity: sha512-Lr4Cdl/Weeq+j1KWroygSmG5Ru/TsITU+YmqdrCLsw8w8qdSxjJuq/D4jwooJzE6u4hXdopjKCLyYEuwhIyRhw==}
+  playwright-core@1.62.0-alpha-2026-07-23:
+    resolution: {integrity: sha512-D0934egkm34bL+WTRoFNASM4x3lnCnQsOG+3JLuZDVcdpFaGTn2212SsfyGryYyrgKLoEIBmoHJxuO5XEakcUw==}
     engines: {node: '>=20'}
     hasBin: true
 
-  playwright@1.62.0-alpha-2026-07-18:
-    resolution: {integrity: sha512-+ZtRbzIeeF4SoXbubr39Heddj+w3b96ZN0przAYvPkCEv8mqjkcn2E1ROunj6xpxEbnN3DQF5e5ampjEPKQNHA==}
+  playwright@1.62.0-alpha-2026-07-23:
+    resolution: {integrity: sha512-v0mtpDynyrqnu6+L4HyNSChw6bX7LlcOF2LMp6+//V4oXRvyG16FAZZskOvzmOTRcnabNUhicvarDbT4aYcyeQ==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -3653,10 +3653,10 @@ snapshots:
   '@oxlint/binding-win32-x64-msvc@1.74.0':
     optional: true
 
-  '@playwright/experimental-ct-core@1.62.0-alpha-2026-07-18(@types/node@25.9.5)(esbuild@0.28.1)':
+  '@playwright/experimental-ct-core@1.62.0-alpha-2026-07-23(@types/node@25.9.5)(esbuild@0.28.1)':
     dependencies:
-      playwright: 1.62.0-alpha-2026-07-18
-      playwright-core: 1.62.0-alpha-2026-07-18
+      playwright: 1.62.0-alpha-2026-07-23
+      playwright-core: 1.62.0-alpha-2026-07-23
       vite: 8.1.5(@types/node@25.9.5)(esbuild@0.28.1)
     transitivePeerDependencies:
       - '@types/node'
@@ -3672,10 +3672,10 @@ snapshots:
       - tsx
       - yaml
 
-  '@playwright/experimental-ct-react@1.62.0-alpha-2026-07-18(@types/node@25.9.5)(esbuild@0.28.1)(vite@8.1.5(@types/node@25.9.5)(esbuild@0.28.1))':
+  '@playwright/experimental-ct-react@1.62.0-alpha-2026-07-23(@types/node@25.9.5)(esbuild@0.28.1)(vite@8.1.5(@types/node@25.9.5)(esbuild@0.28.1))':
     dependencies:
-      '@playwright/experimental-ct-core': 1.62.0-alpha-2026-07-18(@types/node@25.9.5)(esbuild@0.28.1)
-      '@vitejs/plugin-react': 6.0.3(vite@8.1.5(@types/node@25.9.5)(esbuild@0.28.1))
+      '@playwright/experimental-ct-core': 1.62.0-alpha-2026-07-23(@types/node@25.9.5)(esbuild@0.28.1)
+      '@vitejs/plugin-react': 6.0.4(vite@8.1.5(@types/node@25.9.5)(esbuild@0.28.1))
     transitivePeerDependencies:
       - '@rolldown/plugin-babel'
       - '@types/node'
@@ -3978,7 +3978,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-react@6.0.3(vite@8.1.5(@types/node@25.9.5)(esbuild@0.28.1))':
+  '@vitejs/plugin-react@6.0.4(vite@8.1.5(@types/node@25.9.5)(esbuild@0.28.1))':
     dependencies:
       '@rolldown/pluginutils': 1.0.1
       vite: 8.1.5(@types/node@25.9.5)(esbuild@0.28.1)
@@ -4829,11 +4829,11 @@ snapshots:
 
   picomatch@4.0.5: {}
 
-  playwright-core@1.62.0-alpha-2026-07-18: {}
+  playwright-core@1.62.0-alpha-2026-07-23: {}
 
-  playwright@1.62.0-alpha-2026-07-18:
+  playwright@1.62.0-alpha-2026-07-23:
     dependencies:
-      playwright-core: 1.62.0-alpha-2026-07-18
+      playwright-core: 1.62.0-alpha-2026-07-23
     optionalDependencies:
       fsevents: 2.3.2
 
