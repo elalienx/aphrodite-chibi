@@ -24,11 +24,9 @@ test.use({ viewport: { width: 544, height: 700 } }); // Same as Mortgage compone
 
 test("should submit form data for house", async ({ mount }) => {
   // Arrange
-
   const form = await mount(<Step2 propertyType="house" setStep={setStep} />);
 
   // Act
-  await form.getByRole("heading", { name: "Om bostaden" }).waitFor();
   await form.getByRole("textbox", { name: item1 }).fill(String(120));
   await form.getByRole("textbox", { name: item2 }).fill(String(5));
   await form.getByRole("textbox", { name: item3 }).fill(String(3_000));

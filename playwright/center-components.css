@@ -6,4 +6,11 @@ body {
 body {
   display: grid;
   place-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+body > * {
+  justify-self: stretch;
+  align-self: stretch;
 }
