@@ -27,7 +27,7 @@
     "zustand": "^5.0.14"
   },
   "devDependencies": {
-    "@playwright/experimental-ct-react": "^1.61.1",
+    "@playwright/experimental-ct-react": "1.62.0-alpha-2026-07-23",
     "@storybook/react-vite": "^10.5.2",
     "@types/node": "^25.9.5",
     "@types/react": "^19.2.17",
