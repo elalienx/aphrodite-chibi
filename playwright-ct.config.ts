@@ -9,7 +9,6 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: 0,
   workers: process.env.CI ? 2 : undefined,
-  reporter: "list",
   use: {
     trace: "on-first-retry",
     ctPort: 3100,
@@ -18,13 +17,5 @@ export default defineConfig({
       css: { devSourcemap: false },
     },
   },
-  projects: [
-    {
-      name: "chromium",
-      use: {
-        ...devices["Desktop Chrome"],
-        viewport: { width: 800, height: 600 },
-      },
-    },
-  ],
+  projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"], viewport: { width: 544, height: 700 } } }],
 });
