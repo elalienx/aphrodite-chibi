@@ -20,8 +20,6 @@ function setStep() {
  *
  * It has a specific screen resolution to match the original Aphrodite Master test.
  */
-test.use({ viewport: { width: 544, height: 700 } }); // Same as Mortgage component tests
-
 test("should submit form data for house", async ({ mount }) => {
   // Arrange
   const form = await mount(<Step2 propertyType="house" setStep={setStep} />);
