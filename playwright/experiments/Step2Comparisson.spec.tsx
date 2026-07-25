@@ -4,21 +4,15 @@ import { test, expect } from "@playwright/experimental-ct-react";
 // Project files
 import Step2 from "forms/mvp-mortgage/-step-2/Step2";
 
-function setStep() {
-  //
-}
-
 /**
  * About:
  * This file exist to compare the Step 2 on Aphrodite Master vs Aphrodite Chibi.
  * It renders the Step 2 directly with the house properly pre-selected and ends
  * as soon as the submit button stores the user data.
- *
- * It has a specific screen resolution to match the original Aphrodite Master test.
  */
 test("should submit form data for house", async ({ mount }) => {
   // Arrange
-  const form = await mount(<Step2 propertyType="house" setStep={setStep} />);
+  const form = await mount(<Step2 propertyType="house" setStep={() => {}} />);
 
   // Act
   await form.getByRole("textbox", { name: "Kvadratmeter" }).fill(String(120));
