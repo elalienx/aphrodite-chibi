@@ -4,10 +4,6 @@ import { test, expect } from "@playwright/experimental-ct-react";
 // Project files
 import Step2 from "forms/mvp-mortgage/-step-2/Step2";
 
-const item1 = "Kvadratmeter";
-const item2 = "Antal rum";
-const item3 = "Driftskostnad";
-
 function setStep() {
   //
 }
@@ -25,13 +21,13 @@ test("should submit form data for house", async ({ mount }) => {
   const form = await mount(<Step2 propertyType="house" setStep={setStep} />);
 
   // Act
-  await form.getByRole("textbox", { name: item1 }).fill(String(120));
-  await form.getByRole("textbox", { name: item2 }).fill(String(5));
-  await form.getByRole("textbox", { name: item3 }).fill(String(3_000));
+  await form.getByRole("textbox", { name: "Kvadratmeter" }).fill(String(120));
+  await form.getByRole("textbox", { name: "Antal rum" }).fill(String(5));
+  await form.getByRole("textbox", { name: "Driftskostnad" }).fill(String(3_000));
   await form.getByRole("button", { name: "Nästa" }).click();
 
   // Assert
-  await expect(form.getByRole("textbox", { name: item1 })).toHaveValue("120");
-  await expect(form.getByRole("textbox", { name: item2 })).toHaveValue("5");
-  await expect(form.getByRole("textbox", { name: item3 })).toHaveValue("3 000"); // with extra space on purpse due to number formatting
+  await expect(form.getByRole("textbox", { name: "Kvadratmeter" })).toHaveValue("120");
+  await expect(form.getByRole("textbox", { name: "Antal rum" })).toHaveValue("5");
+  await expect(form.getByRole("textbox", { name: "Driftskostnad" })).toHaveValue("3 000"); // with extra space on purpse due to number formatting
 });
