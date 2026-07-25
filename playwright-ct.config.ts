@@ -17,5 +17,5 @@ export default defineConfig({
       css: { devSourcemap: false },
     },
   },
-  projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"], viewport: { width: 544, height: 700 } } }],
+  projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"], viewport: { width: 800, height: 600 } } }],
 });
