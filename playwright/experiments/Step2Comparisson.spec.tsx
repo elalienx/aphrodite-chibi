@@ -9,7 +9,7 @@ const item2 = "Antal rum";
 const item3 = "Driftskostnad";
 
 function setStep() {
-  alert("Data validated, you can move to the next step...");
+  //
 }
 
 /**
