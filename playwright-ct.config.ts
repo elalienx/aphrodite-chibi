@@ -1,6 +1,4 @@
-// Node modules
-import { defineConfig, devices } from "@playwright/experimental-ct-react";
-import tsconfigPaths from "vite-tsconfig-paths";
+import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
   testDir: "./playwright",
@@ -13,8 +11,13 @@ export default defineConfig({
   reporter: "list",
   use: {
     trace: "on-first-retry",
-    ctPort: 3100,
-    ctViteConfig: { plugins: [tsconfigPaths()] },
+    baseURL: "http://localhost:3100",
+  },
+  webServer: {
+    // Runs 'astro dev --port 3100' using pnpm
+    command: "pnpm dev --port 3100",
+    url: "http://localhost:3100",
+    reuseExistingServer: !process.env.CI,
   },
   projects: [
     {
