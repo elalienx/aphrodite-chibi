@@ -1,5 +1,6 @@
 // Node modules
 import { defineConfig, devices } from "@playwright/experimental-ct-react";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   testDir: "./playwright",
@@ -9,13 +10,19 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: 0,
   workers: process.env.CI ? 2 : undefined,
+  reporter: "list",
   use: {
     trace: "on-first-retry",
     ctPort: 3100,
-    ctViteConfig: {
-      resolve: { tsconfigPaths: true },
-      css: { devSourcemap: false },
-    },
+    ctViteConfig: { plugins: [tsconfigPaths()] },
   },
-  projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"], viewport: { width: 800, height: 600 } } }],
+  projects: [
+    {
+      name: "chromium",
+      use: {
+        ...devices["Desktop Chrome"],
+        viewport: { width: 800, height: 600 },
+      },
+    },
+  ],
 });
