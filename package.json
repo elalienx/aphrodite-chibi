@@ -38,6 +38,5 @@
     "storybook": "^10.5.5",
     "vite": "^8.1.5",
     "vitest": "^4.1.10"
-  },
-  "packageManager": "pnpm@12.0.0-beta.0"
+  }
 }
