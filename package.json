@@ -9,6 +9,7 @@
     "dev": "astro dev",
     "format:check": "oxfmt --check",
     "format": "oxfmt",
+    "format:changed": "git diff --name-only -relative --diff-filter=ACMR origin/main…HEAD | xargs -r oxfmt",
     "lint:check": "oxlint --deny-warnings --format=github",
     "lint": "oxlint --fix",
     "playwright": "playwright test --project=components",
