@@ -14,7 +14,6 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Install pnpm
-        uses: actions/checkout@v6
         uses: pnpm/action-setup@8912a9102ac27614460f54aedde9e1e7f9aec20d # v6.0.5
 
       - name: Setup Node
