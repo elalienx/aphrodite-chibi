@@ -2,7 +2,7 @@
 
 Aphrodite Chibi is a UI component library for building complex multi-step forms.
 
-Our motto is... making Lendo more Kawaii <3
+Our motto is _making Lendo more Kawaii_ <3
 
 [Demo website](https://aphrodite-chibi.web.app) | [Storybook gallery](https://aphrodite-chibi-storybook.web.app)
 
@@ -35,7 +35,6 @@ Here is an explanation of the main folders:
 
 ## Terminal commands
 
-All commands are run from the root of the project:
 
 | Command                | Action                                       |
 | :--------------------- | :------------------------------------------- |
