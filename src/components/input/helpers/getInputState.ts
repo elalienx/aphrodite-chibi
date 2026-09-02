@@ -22,7 +22,7 @@ function getInputState(form: FormStore, field: FieldStore, inputState: InputStat
   if (inputState === "error" && isFocused) return "error";
 
   // If the field already had an error, keep it if user clears the input
-  if (field.input === "" && inputState === "error") return "error";
+  if (inputState === "error" && field.input === "") return "error";
 
   // If the field already had a success, keep it when focusing again
   if (inputState === "success" && isFocused) return "success";
