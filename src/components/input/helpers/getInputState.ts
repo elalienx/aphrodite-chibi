@@ -28,8 +28,12 @@ function getInputState(form: FormStore, field: FieldStore, inputState: InputStat
   // While editing a fresh field, stay in focus state
   if (isFocused) return "focus";
 
-  // Default before interaction
-  if (!field.isDirty) return "default";
+  // Restored values can be valid without differing from the initial input.
+  if (!field.isDirty) {
+    const hasValue = field.input != null && String(field.input).trim() !== "";
+
+    return hasValue && !form.isValidating && field.isValid ? "success" : "default";
+  }
 
   // Validate success
   if (field.isValid) return "success";
