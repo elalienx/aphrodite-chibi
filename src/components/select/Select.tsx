@@ -1,8 +1,10 @@
 // Node modules
-import type { ReactNode } from "react";
+import { Children, isValidElement, type ReactNode } from "react";
+import type { FormStore } from "@formisch/react";
 
 // Project files
 import Icon from "components/icon/Icon";
+import InputText from "components/input/InputText";
 import "./select.css";
 
 interface Props {
@@ -15,22 +17,51 @@ interface Props {
   /** Text to display inside the selector option. */
   children: ReactNode;
 
+  /** An instance of a Formisch form. */
+  form?: FormStore;
+
   /** The text inside the user selected option. */
   activeText?: ReactNode;
 }
 
-export default function Select({ id, anchorId, children, activeText }: Props) {
+function getTextContent(node: ReactNode): string {
+  return Children.toArray(node)
+    .map((child) => {
+      if (typeof child === "string" || typeof child === "number") return String(child);
+      if (isValidElement<{ children?: ReactNode }>(child)) return getTextContent(child.props.children);
+      return "";
+    })
+    .join("");
+}
+
+export default function Select({ id, anchorId, children, form, activeText }: Props) {
   // Safeguards
   if (!id) return <p>Pass an id to know which field this input belongs</p>;
+  if (!form) return <p>This component requires a Formisch form</p>;
 
   // Derived state
   const listId = `list-${id}`;
-  const textToDisplay = activeText ? activeText : children;
+  const displayValue = activeText === undefined ? "" : getTextContent(activeText);
+  const placeholder = getTextContent(children);
+
+  // Methods
+  function openOptions(): void {
+    const list = document.getElementById(listId);
+    if (list && !list.matches(":popover-open")) list.showPopover();
+  }
 
   return (
-    <button id={id} className="select" popoverTarget={listId} style={{ anchorName: anchorId }} type="button">
-      {textToDisplay}
+    <div className="select" onClick={openOptions} onFocus={openOptions} style={{ anchorName: anchorId }}>
+      <InputText
+        displayValue={displayValue}
+        form={form}
+        id={id}
+        placeholder={placeholder}
+        readOnly
+        showValidationMessage={false}
+        type="text"
+      />
       <Icon name={"chevron-down"} />
-    </button>
+    </div>
   );
 }

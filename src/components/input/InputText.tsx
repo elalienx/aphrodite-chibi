@@ -11,7 +11,16 @@ import "./styles/input-wrapper-design.css";
 import "./styles/input-wrapper-layout.css";
 import "./styles/input-wrapper-state.css";
 
-export default function InputText({ id, form, placeholder = "", suffix, type }: InputProps) {
+export default function InputText({
+  displayValue,
+  id,
+  form,
+  placeholder = "",
+  readOnly = false,
+  showValidationMessage = true,
+  suffix,
+  type,
+}: InputProps) {
   // Safeguards
   if (!form) return <p>This component requires a Formisch form and id</p>;
   if (!id) return <p>Pass an id to know which field this input belongs</p>;
@@ -24,7 +33,7 @@ export default function InputText({ id, form, placeholder = "", suffix, type }: 
   // Derived state
   const ariaErrorId = `aria-error-${id}`;
   const cssSuffix = suffix ? "has-suffix" : "";
-  const customValue = String(field.input ?? "");
+  const customValue = displayValue ?? String(field.input ?? "");
   const inputState = getInputState(form, field, committedState, isFocused);
   const mobileKeyboard = getCorrectMobileKeyboard(type);
   const hasErrors = inputState === "error" && field.errors;
@@ -54,11 +63,12 @@ export default function InputText({ id, form, placeholder = "", suffix, type }: 
         onBlur={onBlur}
         onFocus={onFocus}
         placeholder={placeholder}
+        readOnly={readOnly}
         type={type}
         value={customValue}
       />
       {suffix && <span className="suffix">{suffix}</span>}
-      {hasErrors && (
+      {showValidationMessage && hasErrors && (
         <p id={ariaErrorId} aria-live="polite" className="input-validation-message">
           {field.errors[0]}
         </p>

@@ -6,6 +6,9 @@ import type { FormStore } from "@formisch/react";
  * We split the Input component into InputText and InputNumber as we have too many customizations just for number which clutters the other component.
  */
 export default interface InputProps {
+  /** A value to display instead of the field's stored value. */
+  displayValue?: string;
+
   /** Unique identifier of a form field. */
   id?: string;
 
@@ -14,6 +17,12 @@ export default interface InputProps {
 
   /** An example value to show when the field is empty. */
   placeholder?: string;
+
+  /** Prevents the user from changing the value directly. */
+  readOnly?: boolean;
+
+  /** Whether to render the validation message inside the input wrapper. */
+  showValidationMessage?: boolean;
 
   /** Decoration text on the right side of the input. Used to indicate a currency or measurement unit. */
   suffix?: string;

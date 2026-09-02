@@ -1,3 +1,7 @@
+// Node modules
+import { Form, useForm } from "@formisch/react";
+import * as v from "valibot";
+
 // Project files
 import preview from "../../../.storybook/preview";
 import Select from "./Select";
@@ -12,6 +16,14 @@ const meta = preview.meta({
 export const Default = meta.story({
   name: "Default",
   render: () => {
-    return <Select id="favorite_videogame">Favorite videogame</Select>;
+    const form = useForm({ schema: v.object({ favorite_videogame: v.string() }) });
+
+    return (
+      <Form of={form} onSubmit={() => undefined}>
+        <Select form={form} id="favorite_videogame">
+          Favorite videogame
+        </Select>
+      </Form>
+    );
   },
 });
