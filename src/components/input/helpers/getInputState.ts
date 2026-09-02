@@ -22,7 +22,7 @@ function getInputState(form: FormStore, field: FieldStore, inputState: InputStat
   if (inputState === "error" && isFocused) return "error";
 
   // If the field already had an error, keep it if user clears the input
-  if (inputState === "error" && field.input === "") return "error";
+  if (field.input === "" && inputState === "error") return "error";
 
   // If the field already had a success, keep it when focusing again
   if (inputState === "success" && isFocused) return "success";
@@ -31,7 +31,7 @@ function getInputState(form: FormStore, field: FieldStore, inputState: InputStat
   if (isFocused) return "focus";
 
   // Show success for valid restored values once validation finishes
-  if (!field.isDirty && hasValue && !form.isValidating && field.isValid) return "success";
+  if (!form.isValidating && !field.isDirty && field.isValid && hasValue) return "success";
 
   // Keep other unchanged fields in the default state
   if (!field.isDirty) return "default";
