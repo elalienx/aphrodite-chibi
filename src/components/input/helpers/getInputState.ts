@@ -33,7 +33,7 @@ function getInputState(form: FormStore, field: FieldStore, inputState: InputStat
   // Show success for valid restored values once validation finishes
   if (!form.isValidating && !field.isDirty && field.isValid && hasValue) return "success";
 
-  // Keep other unchanged fields in the default state
+  // Default before interaction
   if (!field.isDirty) return "default";
 
   // Validate success
