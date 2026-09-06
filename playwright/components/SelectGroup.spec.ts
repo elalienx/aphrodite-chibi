@@ -5,6 +5,7 @@ const error1 = "Choose one game developer company.";
 const error2 = "Choose one accessory.";
 const item1 = "What is your favorite game developer company?";
 const item1Option1 = "Capcom";
+const item1Option2 = "Electronic Arts";
 const item2 = "What was the best accessory in history?";
 const item2Option1 = "Arcade stick";
 const item2Option2 = "Zapper";
@@ -91,4 +92,17 @@ test("4. Should be able to submit a long list", async () => {
   await expect(form.getByText(output2B)).toBeVisible();
   await expect(form.getByText(error1)).not.toBeVisible();
   await expect(form.getByText(error2)).not.toBeVisible();
+});
+
+test("5. Should select an option by typing its label", async () => {
+  // Arrange
+  const select = form.getByRole("textbox", { name: item1 });
+  await select.focus();
+
+  // Act
+  await select.pressSequentially("Ele");
+
+  // Assert
+  await expect(select).toHaveValue(item1Option2);
+  await expect(form.getByText("Select 1 internal value: electronic_arts")).toBeVisible();
 });
